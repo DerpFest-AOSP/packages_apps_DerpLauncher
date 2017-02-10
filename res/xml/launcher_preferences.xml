@@ -56,4 +56,11 @@
         android:summary="@string/pref_show_google_now_summary"
         android:title="@string/title_show_google_feed"/>
 
+    <SwitchPreference
+        android:key="pref_dt_gesture"
+        android:title="@string/pref_dt_gesture_title"
+        android:summary="@string/pref_dt_gesture_summary"
+        android:defaultValue="true"
+        android:persistent="true"/>
+
 </androidx.preference.PreferenceScreen>

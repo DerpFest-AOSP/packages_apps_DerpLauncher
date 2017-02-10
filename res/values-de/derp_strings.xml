@@ -19,4 +19,8 @@
 
     <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Wische auf dem Startbildschirm nach rechts, um die Google App zu öffnen</string>
+
+    <!-- Gestures -->
+    <string name="pref_dt_gesture_title">Tippen für Standby</string>
+    <string name="pref_dt_gesture_summary">Doppeltippe auf dem Startbildschirm, um das Display auszuschalten</string>
 </resources>
