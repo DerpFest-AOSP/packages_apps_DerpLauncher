@@ -25,4 +25,10 @@
     <!-- Developer options -->
     <string name="dev_options_title">Entwickler-Optionen</string>
     <string name="dev_options_summary">Einige versteckte Funktionen auf eigene Gefahr aktivieren</string>
+
+    <!-- Edit workspace -->
+    <string name="settings_lock_layout_title">Layout sperren</string>
+    <string name="settings_lock_layout_summary_on">Symbole und Widgets können nicht auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>
+    <string name="settings_lock_layout_summary_off">Symbole und Widgets können auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>
+    <string name="settings_edit_widgets_error">Es ist nicht möglich, Widgets zum Startbildschirm hinzuzufügen</string>
 </resources>
