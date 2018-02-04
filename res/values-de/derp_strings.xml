@@ -31,4 +31,10 @@
     <!-- Suggestions -->
     <string name="suggestion_pref_screen_title">App-Vorschläge</string>
     <string name="suggestion_pref_screen_desc">In Liste aller Apps &amp; auf Startbildschirm</string>
+
+    <!-- Edit workspace -->
+    <string name="settings_lock_layout_title">Layout sperren</string>
+    <string name="settings_lock_layout_summary_on">Symbole und Widgets können nicht auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>
+    <string name="settings_lock_layout_summary_off">Symbole und Widgets können auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>
+    <string name="settings_edit_widgets_error">Es ist nicht möglich, Widgets zum Startbildschirm hinzuzufügen</string>
 </resources>
