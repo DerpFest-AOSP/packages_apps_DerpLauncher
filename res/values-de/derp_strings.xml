@@ -40,4 +40,11 @@
     <string name="summary_desktop_labels">Symbolbeschriftungen auf dem Startbildschirm anzeigen</string>
     <string name="title_drawer_labels">App-Übersicht-Beschriftungen</string>
     <string name="summary_drawer_labels">Symbolbeschriftungen in der App-Übersicht anzeigen</string>
+
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_app">Wischen, um auf die Google-App zuzugreifen</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">Wenn auf der ersten Seite nach links gewischt wird</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">Wenn auf der ersten Seite nach rechts gewischt wird</string>
 </resources>
