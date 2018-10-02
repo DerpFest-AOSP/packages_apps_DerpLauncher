@@ -178,7 +178,7 @@ android_library {
 // Build rule for Launcher3 app.
 //
 android_app {
-    name: "Launcher3",
+    name: "DerpLauncher",
 
     static_libs: [
         "Launcher3ResLib",
@@ -298,7 +298,7 @@ android_library {
 
 // Build rule for Quickstep app.
 android_app {
-    name: "Launcher3QuickStep",
+    name: "DerpLauncherQuickStep",
 
     static_libs: ["Launcher3QuickStepLib"],
     optimize: {
@@ -315,6 +315,7 @@ android_app {
         "Home",
         "Launcher2",
         "Launcher3",
+        "Launcher3QuickStep",
     ],
     required: ["privapp_whitelist_com.android.launcher3"],
 
@@ -358,6 +359,7 @@ android_app {
         "Launcher2",
         "Launcher3",
         "Launcher3QuickStep",
+        "Launcher3QuickStepGo",
     ],
     required: ["privapp_whitelist_com.android.launcher3"],
 
