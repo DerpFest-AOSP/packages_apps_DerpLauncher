@@ -19,4 +19,12 @@
     xmlns:launcher="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.launcher3">
 
+    <SwitchPreferenceCompat
+        android:key="pref_drawer_show_labels"
+        android:title="@string/title_drawer_labels"
+        android:summary="@string/summary_drawer_labels"
+        android:defaultValue="true"
+        android:persistent="true"
+        launcher:iconSpaceReserved="false" />
+
 </androidx.preference.PreferenceScreen>
