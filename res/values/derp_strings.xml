@@ -37,4 +37,10 @@
     <string name="settings_lock_layout_summary_on">Icons and widgets can\'t be added, removed and moved on the homescreen</string>
     <string name="settings_lock_layout_summary_off">Icons and widgets can be added, removed and moved on the homescreen</string>
     <string name="settings_edit_widgets_error">It\'s not possible to add widgets to the home screen</string>
+
+    <!-- Hide labels -->
+    <string name="title_desktop_labels">Desktop labels</string>
+    <string name="summary_desktop_labels">Show icon labels on desktop</string>
+    <string name="title_drawer_labels">Drawer labels</string>
+    <string name="summary_drawer_labels">Show icon labels in drawer</string>
 </resources>
