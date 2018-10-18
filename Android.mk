@@ -33,8 +33,8 @@ LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/go/res
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
-LOCAL_SDK_VERSION := current
-LOCAL_MIN_SDK_VERSION := 26
+LOCAL_PRIVATE_PLATFORM_APIS := true
+LOCAL_CERTIFICATE := platform
 LOCAL_PACKAGE_NAME := DerpLauncherGo
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_SYSTEM_EXT_MODULE := true
@@ -69,6 +69,7 @@ else
   LOCAL_MIN_SDK_VERSION := 26
 endif
 LOCAL_PACKAGE_NAME := DerpLauncherQuickStep
+LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_SYSTEM_EXT_MODULE := true
 LOCAL_OVERRIDES_PACKAGES := Home Launcher2 Launcher3 Launcher3QuickStep
@@ -123,6 +124,7 @@ LOCAL_PROGUARD_ENABLED := full
 
 LOCAL_PACKAGE_NAME := DerpLauncherQuickStepGo
 LOCAL_PRIVILEGED_MODULE := true
+LOCAL_CERTIFICATE := platform
 LOCAL_SYSTEM_EXT_MODULE := true
 LOCAL_OVERRIDES_PACKAGES := Home Launcher2 Launcher3 Launcher3QuickStep Launcher3QuickStepGo
 LOCAL_REQUIRED_MODULES := privapp_whitelist_com.android.launcher3
