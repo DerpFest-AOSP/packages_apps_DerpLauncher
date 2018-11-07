@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 DerpFest
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Kill App recents action shortcut -->
+    <string name="recent_task_option_kill_app">Force close</string>
+    <string name="recents_app_killed">App closed</string>
+</resources>
