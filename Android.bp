@@ -179,7 +179,10 @@ android_app {
         "Home",
         "Launcher2",
     ],
-    required: ["privapp_whitelist_com.android.launcher3"],
+    required: [
+        "privapp_whitelist_com.android.launcher3",
+        "privapp_whitelist_derp_launcher3.xml",
+    ],
 
     jacoco: {
         include_filter: ["com.android.launcher3.**"],
@@ -322,4 +325,11 @@ android_library {
     lint: {
         baseline_filename: "lint-baseline-launcher3.xml",
     },
+}
+
+prebuilt_etc {
+    name: "privapp_whitelist_derp_launcher3.xml",
+    src: "privapp_whitelist_derp_launcher3.xml",
+    system_ext_specific: true,
+    sub_dir: "permissions",
 }
