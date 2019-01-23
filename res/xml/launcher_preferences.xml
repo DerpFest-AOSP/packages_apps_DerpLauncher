@@ -47,6 +47,10 @@
         android:defaultValue="true"
         android:persistent="true"/>
 
+    <Preference
+        android:key="pref_trust_apps"
+        android:title="@string/trust_apps_manager_name" />
+
     <androidx.preference.PreferenceCategory
         android:key="google_category"
         android:title="@string/category_google">
