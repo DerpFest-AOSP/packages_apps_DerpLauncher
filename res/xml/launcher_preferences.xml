@@ -198,6 +198,10 @@
 
     </androidx.preference.PreferenceCategory>
 
+    <Preference
+        android:key="pref_trust_apps"
+        android:title="@string/trust_apps_manager_name" />
+
     <androidx.preference.PreferenceCategory
         android:key="dev_category"
         android:title="@string/category_dev">
