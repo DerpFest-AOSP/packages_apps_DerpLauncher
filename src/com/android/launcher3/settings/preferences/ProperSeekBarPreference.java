@@ -223,7 +223,7 @@ public class ProperSeekBarPreference extends Preference implements SeekBar.OnSee
                 if (mDefaultValueTextExists && mDefaultValueExists && mTrackingValue == mDefaultValue) {
                     mValueTextView.setText("[" + mDefaultValueText + "]");
                 } else {
-                    mValueTextView.setText(getContext().getString(R.string.proper_seekbar_value, "[" + getTextValue(mTrackingValue) + "]"));
+                    mValueTextView.setText(getContext().getString(R.string.proper_seekbar_value, getTextValue(mTrackingValue)));
                 }
             }
         }

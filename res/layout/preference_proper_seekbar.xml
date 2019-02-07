@@ -72,6 +72,7 @@
             android:id="@+id/value_frame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
             android:layout_below="@android:id/summary"
             android:layout_alignStart="@android:id/title" >
 
@@ -125,6 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginEnd="3dp"
                 android:layout_toEndOf="@id/minus"
                 android:layout_toStartOf="@id/plus"
                 android:layout_centerVertical="true" />
