@@ -13,9 +13,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Application name -->
-    <string name="derp_app_name" translatable="false">DerpLauncher</string>
-
     <!-- General -->
     <string name="settings_title">الإعدادات</string>
 
@@ -110,7 +107,6 @@
     <string name="recents_app_force_stopped">تم إيقاف التطبيق إجباريا</string>
 
     <!-- About info -->
-    <string name="about_derp_title" translatable="false">@string/derp_app_name</string>
     <string name="about_thanks_cat">شكر خاص إلى</string>
     <string name="about">حول</string>
     <string name="about_summary">DerpLauncher معلومات حول</string>

@@ -110,7 +110,7 @@
     <string name="recents_app_force_stopped">App force stopped</string>
 
     <!-- About info -->
-    <string name="about_derp_title" translatable="false">@string/derp_app_name</string>
+    <string name="about_derp_title" translatable="false">DerpLauncher</string>
     <string name="about_thanks_cat">Special thanks to</string>
     <string name="about">About</string>
     <string name="about_summary">Info about the DerpLauncher</string>

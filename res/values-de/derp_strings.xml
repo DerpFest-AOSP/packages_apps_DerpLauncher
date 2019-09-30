@@ -16,9 +16,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- General -->
-    <string name="settings_title">Einstellungen</string>
-
     <!-- Categories -->
     <string name="home_category_title">Startbildschirm</string>
     <string name="home_category_summary">Google Now-Panel und mehr einstellen</string>
