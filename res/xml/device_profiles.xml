@@ -18,6 +18,35 @@
 <profiles xmlns:launcher="http://schemas.android.com/apk/res-auto" >
 
     <grid-option
+        launcher:name="2_by_2"
+        launcher:numRows="2"
+        launcher:numColumns="2"
+        launcher:numFolderRows="2"
+        launcher:numFolderColumns="2"
+        launcher:numHotseatIcons="2"
+        launcher:dbFile="launcher_2_by_2.db"
+        launcher:defaultLayoutId="@xml/default_workspace_2x2"
+        launcher:deviceCategory="phone|multi_display" >
+
+        <display-option
+            launcher:name="Super Short Stubby"
+            launcher:minWidthDps="200"
+            launcher:minHeightDps="200"
+            launcher:iconImageSize="48"
+            launcher:iconTextSize="13.0"
+            launcher:canBeDefault="true" />
+
+        <display-option
+            launcher:name="Shorter Stubby"
+            launcher:minWidthDps="200"
+            launcher:minHeightDps="300"
+            launcher:iconImageSize="48"
+            launcher:iconTextSize="13.0"
+            launcher:canBeDefault="true" />
+
+    </grid-option>
+
+    <grid-option
         launcher:name="3_by_3"
         launcher:numRows="3"
         launcher:numColumns="3"
@@ -51,23 +80,23 @@
     </grid-option>
 
     <grid-option
-        launcher:name="4_by_4"
-        launcher:numRows="4"
+        launcher:name="4_by_5"
+        launcher:numRows="5"
         launcher:numColumns="4"
-        launcher:numFolderRows="3"
+        launcher:numFolderRows="4"
         launcher:numFolderColumns="4"
-        launcher:numHotseatIcons="4"
+        launcher:numHotseatIcons="5"
         launcher:numExtendedHotseatIcons="6"
-        launcher:dbFile="launcher_4_by_4.db"
+        launcher:dbFile="launcher_4_by_5.db"
         launcher:inlineNavButtonsEndSpacing="@dimen/taskbar_button_margin_split"
-        launcher:defaultLayoutId="@xml/default_workspace_4x4"
+        launcher:defaultLayoutId="@xml/default_workspace_4x5"
         launcher:deviceCategory="phone|multi_display" >
 
         <display-option
             launcher:name="Short Stubby"
             launcher:minWidthDps="275"
             launcher:minHeightDps="420"
-            launcher:iconImageSize="48"
+            launcher:iconImageSize="46"
             launcher:iconTextSize="13.0"
             launcher:allAppsBorderSpace="16"
             launcher:allAppsCellHeight="104"
@@ -77,7 +106,7 @@
             launcher:name="Stubby"
             launcher:minWidthDps="255"
             launcher:minHeightDps="450"
-            launcher:iconImageSize="48"
+            launcher:iconImageSize="46"
             launcher:iconTextSize="13.0"
             launcher:allAppsBorderSpace="16"
             launcher:allAppsCellHeight="104"
@@ -87,7 +116,7 @@
             launcher:name="Nexus S"
             launcher:minWidthDps="296"
             launcher:minHeightDps="491.33"
-            launcher:iconImageSize="48"
+            launcher:iconImageSize="46"
             launcher:iconTextSize="13.0"
             launcher:allAppsBorderSpace="16"
             launcher:allAppsCellHeight="104"
@@ -97,7 +126,7 @@
             launcher:name="Nexus 4"
             launcher:minWidthDps="359"
             launcher:minHeightDps="567"
-            launcher:iconImageSize="54"
+            launcher:iconImageSize="50"
             launcher:iconTextSize="13.0"
             launcher:allAppsBorderSpace="16"
             launcher:allAppsCellHeight="104"
@@ -107,7 +136,7 @@
             launcher:name="Nexus 5"
             launcher:minWidthDps="335"
             launcher:minHeightDps="567"
-            launcher:iconImageSize="54"
+            launcher:iconImageSize="50"
             launcher:iconTextSize="13.0"
             launcher:allAppsBorderSpace="16"
             launcher:allAppsCellHeight="104"
@@ -161,6 +190,48 @@
     </grid-option>
 
     <grid-option
+        launcher:name="5_by_6"
+        launcher:numRows="6"
+        launcher:numColumns="5"
+        launcher:numFolderRows="5"
+        launcher:numFolderColumns="4"
+        launcher:numHotseatIcons="5"
+        launcher:dbFile="launcher_5_by_6.db"
+        launcher:defaultLayoutId="@xml/default_workspace_5x6"
+        launcher:deviceCategory="phone|multi_display" >
+
+        <display-option
+            launcher:name="Large Phone"
+            launcher:minWidthDps="406"
+            launcher:minHeightDps="694"
+            launcher:iconImageSize="56"
+            launcher:iconTextSize="13.0"
+            launcher:canBeDefault="true" />
+
+    </grid-option>
+
+    <grid-option
+        launcher:name="5_by_7"
+        launcher:numRows="7"
+        launcher:numColumns="5"
+        launcher:numFolderRows="6"
+        launcher:numFolderColumns="4"
+        launcher:numHotseatIcons="5"
+        launcher:dbFile="launcher_5_by_7.db"
+        launcher:defaultLayoutId="@xml/default_workspace_5x7"
+        launcher:deviceCategory="phone|multi_display" >
+
+        <display-option
+            launcher:name="Large Phone"
+            launcher:minWidthDps="406"
+            launcher:minHeightDps="694"
+            launcher:iconImageSize="56"
+            launcher:iconTextSize="13.0"
+            launcher:canBeDefault="true" />
+
+    </grid-option>
+
+    <grid-option
         launcher:name="6_by_5"
         launcher:numRows="5"
         launcher:numColumns="6"
@@ -204,6 +275,27 @@
             launcher:allAppsBorderSpaceLandscape="16"
             launcher:hotseatBarBottomSpace="76"
             launcher:hotseatBarBottomSpaceLandscape="40"
+            launcher:canBeDefault="true" />
+
+    </grid-option>
+
+    <grid-option
+        launcher:name="6_by_6"
+        launcher:numRows="6"
+        launcher:numColumns="6"
+        launcher:numFolderRows="5"
+        launcher:numFolderColumns="5"
+        launcher:numHotseatIcons="6"
+        launcher:dbFile="launcher_6_by_6.db"
+        launcher:defaultLayoutId="@xml/default_workspace_6x6"
+        launcher:deviceCategory="phone|multi_display" >
+
+        <display-option
+            launcher:name="Large Phone"
+            launcher:minWidthDps="406"
+            launcher:minHeightDps="694"
+            launcher:iconImageSize="48"
+            launcher:iconTextSize="13.0"
             launcher:canBeDefault="true" />
 
     </grid-option>

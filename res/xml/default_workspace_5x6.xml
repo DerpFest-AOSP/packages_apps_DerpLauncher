@@ -17,7 +17,7 @@
 <favorites xmlns:launcher="http://schemas.android.com/apk/res-auto/com.android.launcher3">
 
     <!-- Hotseat (We use the screen as the position of the item in the hotseat) -->
-    <!-- Dialer, Messaging, Contacts, Browser, Camera -->
+    <!-- Dialer, Messaging, [Maps/Music], Browser, Camera -->
     <resolve
         launcher:container="-101"
         launcher:screen="0"
@@ -76,13 +76,14 @@
         launcher:spanX="5"
         launcher:spanY="1" />
 
+
     <!-- Google Folder -->
     <!-- Google, Gmail, Maps, YouTube, Drive, YouTube Music, Play Movies, Duo, Photos -->
     <folder
         launcher:title="@string/google_folder_title"
         launcher:screen="0"
         launcher:x="0"
-        launcher:y="4">
+        launcher:y="5">
         <favorite
             launcher:packageName="com.google.android.googlequicksearchbox"
             launcher:className="com.google.android.googlequicksearchbox.SearchActivity"/>
@@ -115,7 +116,7 @@
     <favorite
         launcher:screen="0"
         launcher:x="4"
-        launcher:y="4"
+        launcher:y="5"
         launcher:packageName="com.android.vending"
         launcher:className="com.android.vending.AssetBrowserActivity"/>
 

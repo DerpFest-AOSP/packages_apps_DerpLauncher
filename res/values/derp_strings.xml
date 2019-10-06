@@ -8,4 +8,6 @@
     <!-- Application name -->
     <string name="derp_app_name" translatable="false">DerpLauncher</string>
 
+    <!-- Folder titles -->
+    <string name="google_folder_title" translatable="false">Google</string>
 </resources>
