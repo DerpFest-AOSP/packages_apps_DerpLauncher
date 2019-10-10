@@ -111,4 +111,12 @@
     <!-- Force stop shortcut -->
     <string name="recent_task_force_stop_app">Force stop</string>
     <string name="recents_app_force_stopped">App force stopped</string>
+
+    <!-- About info -->
+    <string name="about_derp_title" translatable="false">@string/derp_app_name</string>
+    <string name="about_thanks_cat">Special thanks to</string>
+    <string name="about">About</string>
+    <string name="about_summary">Info about the DerpLauncher</string>
+    <string name="about_app_version">Version 1.0 beta</string>
+
 </resources>
