@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <PreferenceScreen
+            android:layout="@layout/derp_logo"
+            android:key="derp_logo"
+            android:selectable="false" />
+
+    <PreferenceCategory 
+        android:title="@string/about_thanks_cat" >
+
+        <Preference
+            android:key="about_credit01"
+            android:title="Lawnchair team"
+            android:persistent="false"
+            android:selectable="false">
+        </Preference>
+
+        <Preference
+            android:key="about_credit01"
+            android:title="LineageOS"
+            android:persistent="false"
+            android:selectable="false">
+        </Preference>
+
+        <Preference
+            android:key="about_credit01"
+            android:title="Amir Zaidi (Shade Launcher)"
+            android:persistent="false"
+            android:selectable="false">
+        </Preference>
+
+        <Preference
+            android:key="about_credit01"
+            android:title="Bootleggers ROM"
+            android:persistent="false"
+            android:selectable="false">
+        </Preference>
+
+        <Preference
+            android:key="about_credit01"
+            android:title="crDroid team"
+            android:persistent="false"
+            android:selectable="false">
+        </Preference>
+
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen> 

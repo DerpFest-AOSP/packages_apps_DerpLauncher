@@ -127,4 +127,11 @@
 
     <!-- Background opacity -->
     <string name="background_opacity_title">Background opacity\nWarning: Use at your own risk</string>
+
+    <!-- About info -->
+    <string name="about_derp_title" translatable="false">@string/derp_app_name</string>
+    <string name="about_thanks_cat">Special thanks to</string>
+    <string name="about">About</string>
+    <string name="about_summary">Info about the DerpLauncher</string>
+    <string name="about_app_version">Version 1.0</string>
 </resources>
