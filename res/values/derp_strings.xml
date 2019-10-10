@@ -159,4 +159,11 @@
     <string name="icon_pack_default_label">Default</string>
     <string name="icon_pack_add">Install more</string>
     <string name="icon_pack_no_market">There\'s no available app store</string>
+
+    <!-- About info -->
+    <string name="about_derp_title" translatable="false">@string/derp_app_name</string>
+    <string name="about_thanks_cat">Special thanks to</string>
+    <string name="about">About</string>
+    <string name="about_summary">Info about the DerpLauncher</string>
+    <string name="about_app_version">Version 1.0 beta</string>
 </resources>

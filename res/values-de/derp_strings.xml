@@ -149,4 +149,10 @@
     <string name="icon_pack_default_label">Standard</string>
     <string name="icon_pack_add">Weitere installieren</string>
     <string name="icon_pack_no_market">Es ist kein App-Store verfügbar</string>
+
+    <!-- About info -->
+    <string name="about_thanks_cat">Besonderen Dank an</string>
+    <string name="about">Über</string>
+    <string name="about_summary">Info über den DerpLauncher</string>
+    <string name="about_app_version">Version 1.0 beta</string>
 </resources>
