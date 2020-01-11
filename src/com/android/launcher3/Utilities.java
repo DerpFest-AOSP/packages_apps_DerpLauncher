@@ -22,6 +22,8 @@ import static com.android.launcher3.util.Executors.MODEL_EXECUTOR;
 import static com.android.launcher3.util.SplitConfigurationOptions.STAGE_POSITION_BOTTOM_OR_RIGHT;
 import static com.android.launcher3.util.SplitConfigurationOptions.STAGE_POSITION_TOP_OR_LEFT;
 import static com.android.launcher3.util.SplitConfigurationOptions.STAGE_TYPE_MAIN;
+import static com.android.launcher3.util.Executors.MODEL_EXECUTOR;
+import com.android.launcher3.icons.IconProvider;
 
 import android.annotation.TargetApi;
 import android.app.ActivityManager;
@@ -129,6 +131,9 @@ public final class Utilities {
     public static final boolean ATLEAST_T = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU;
 
     private static final long WAIT_BEFORE_RESTART = 250;
+    
+    public static final boolean ATLEAST_OREO =
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.O;
 
     /**
      * Set on a motion event dispatched from the nav bar. See {@link MotionEvent#setEdgeFlags(int)}.
@@ -151,7 +156,7 @@ public final class Utilities {
     public static final String KEY_SMARTSPACE = "pref_smartspace";
     public static final String KEY_RECENTS_OPACITY = "pref_recents_opacity";
     public static final String KEY_APP_DRAWER_OPACITY = "pref_app_drawer_opacity";
-
+    public static final String KEY_ICON_PACK = "pref_icon_pack";
     /**
      * Returns true if theme is dark.
      */
@@ -584,8 +589,7 @@ public final class Utilities {
             LauncherActivityInfo activityInfo = context.getSystemService(LauncherApps.class)
                     .resolveActivity(info.getIntent(), info.user);
             outObj[0] = activityInfo;
-            return activityInfo == null ? null : LauncherAppState.getInstance(context)
-                    .getIconProvider().getIcon(
+            return activityInfo == null ? null : IconProvider.INSTANCE.get(context).getIcon(
                             activityInfo, activity.getDeviceProfile().inv.fillResIconDpi);
         } else if (info.itemType == LauncherSettings.Favorites.ITEM_TYPE_DEEP_SHORTCUT) {
             if (info instanceof PendingAddShortcutInfo) {
