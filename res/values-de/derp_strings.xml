@@ -114,4 +114,8 @@
     <string name="about_thanks_cat">Besonderen Dank an</string>
     <string name="about">Über</string>
     <string name="about_summary">Info über den DerpLauncher</string>
+
+    <!-- DT2S -->
+    <string name="pref_sleep_gesture_title">Doppeltippen zum Sperren</string>
+    <string name="pref_sleep_gesture_summary">Zum Sperren auf einen leeren Bereich doppeltippen</string>
 </resources>
