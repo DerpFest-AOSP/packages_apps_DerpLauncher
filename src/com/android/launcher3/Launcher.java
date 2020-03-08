@@ -304,6 +304,7 @@ public class Launcher extends StatefulActivity<LauncherState>
     private static final int ON_ACTIVITY_RESULT_ANIMATION_DELAY = 500;
 
     private static final String KEY_DARK_STATUS_BAR = "pref_dark_status_bar";
+    public static final String KEY_HOMESCREEN_DT_GESTURES = "pref_homescreen_dt_gestures";
 
     // How long to wait before the new-shortcut animation automatically pans the workspace
     @VisibleForTesting public static final int NEW_APPS_PAGE_MOVE_DELAY = 500;
@@ -684,6 +685,10 @@ public class Launcher extends StatefulActivity<LauncherState>
     public void onSharedPreferenceChanged(SharedPreferences SharedPrefs, String key) {
         if (key.equals(KEY_DARK_STATUS_BAR)) {
             recreate();
+        }
+        if (KEY_HOMESCREEN_DT_GESTURES.equals(key)) {
+            mWorkspace.setDoubleTapGestures(Integer.valueOf(SharedPrefs.getString(
+                "KEY_HOMESCREEN_DT_GESTURES", "0")));
         }
     }
 

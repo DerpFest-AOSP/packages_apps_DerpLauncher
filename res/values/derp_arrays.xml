@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2024 DerpFest
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <!-- Homescreen gestures -->
+    <string-array translatable="false" name="pref_homescreen_dt_gestures_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="pref_homescreen_dt_gestures_names">
+        <item>@string/pref_homescreen_gestures_none</item>
+        <item>@string/pref_homescreen_gestures_sleep</item>
+        <item>@string/pref_homescreen_gestures_torch</item>
+        <item>@string/pref_homescreen_gestures_volume_panel</item>
+        <item>@string/pref_homescreen_gestures_clear_notifications</item>
+        <item>@string/pref_homescreen_gestures_screenshot</item>
+        <item>@string/pref_homescreen_gestures_notifications</item>
+        <item>@string/pref_homescreen_gestures_qspanel</item>
+        <item>@string/pref_homescreen_gestures_powermenu</item>
+    </string-array>
+</resources>

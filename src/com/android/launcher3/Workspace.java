@@ -17,6 +17,7 @@
 package com.android.launcher3;
 
 import static com.android.launcher3.LauncherAnimUtils.SPRING_LOADED_EXIT_DELAY;
+import static com.android.launcher3.LauncherPrefs.getDevicePrefs;
 import static com.android.launcher3.LauncherSettings.Favorites.ITEM_TYPE_APPLICATION;
 import static com.android.launcher3.LauncherState.ALL_APPS;
 import static com.android.launcher3.LauncherState.EDIT_MODE;
@@ -298,6 +299,7 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
     private final StatsLogManager mStatsLogManager;
 
     private GestureDetector mGestureListener;
+    private int mDoubleGestureMode;
 
     /**
      * Used to inflate the Workspace from XML.
@@ -333,17 +335,59 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
 
         context.enforceCallingOrSelfPermission(
                     android.Manifest.permission.DEVICE_POWER, null);
+        mDoubleGestureMode = Integer.valueOf(
+                getDevicePrefs(getContext()).getString("pref_homescreen_dt_gestures", "0"));
         mGestureListener =
                 new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
             @Override
             public boolean onDoubleTap(MotionEvent event) {
-                derpUtils.switchScreenOff(context);
+                // Double tap gestures
+                Gestures(event, mDoubleGestureMode);
                 return true;
             }
         });
 
         setOnTouchListener(new WorkspaceTouchListener(mLauncher, this));
         mStatsLogManager = StatsLogManager.newInstance(context);
+    }
+
+    // Gestures
+    private void Gestures(MotionEvent event, int gestureType) {
+        switch(gestureType) {
+            // Stock behavior
+            case 0:
+                break;
+            // Sleep
+            case 1:
+                derpUtils.switchScreenOff(getContext());
+                break;
+            // Flashlight
+            case 2:
+                derpUtils.toggleCameraFlash();
+                break;
+            case 3: // Volume panel
+                derpUtils.toggleVolumePanel(getContext());
+                break;
+            case 4: // Clear notifications
+                derpUtils.clearAllNotifications();
+                break;
+            case 5: // Screenshot
+                derpUtils.takeScreenshot(true);
+                break;
+            case 6: // Notifications
+                derpUtils.toggleNotifications();
+                break;
+            case 7: // QS panel
+                derpUtils.toggleQsPanel();
+                break;
+            case 8: // Powermenu
+                derpUtils.showPowerMenu();
+                break;
+        }
+    }
+
+    public void setDoubleTapGestures(int mode) {
+        mDoubleGestureMode = mode;
     }
 
     public boolean checkDoubleTap(MotionEvent ev) {

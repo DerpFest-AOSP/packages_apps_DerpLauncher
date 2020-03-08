@@ -187,4 +187,17 @@
     <!-- Scroll Vibration -->
     <string name="pref_scroll_vibration_title">Scroll-Vibration</string>
     <string name="pref_scroll_vibration_summary">Haptisches Feedback beim Scrollen durch aktuelle Apps, sofern unterstützt</string>
+
+    <!-- Gestures -->
+    <string name="pref_homescreen_dt_gestures_title">Doppeltes Tippen</string>
+    <string name="pref_homescreen_dt_gestures_summary">Wähle die Aktion der Doppeltipp-Geste auf dem Startbildschirm aus</string>
+    <string name="pref_homescreen_gestures_none">Keine</string>
+    <string name="pref_homescreen_gestures_sleep">Bildschirm ausschalten</string>
+    <string name="pref_homescreen_gestures_torch">Taschenlampe</string>
+    <string name="pref_homescreen_gestures_volume_panel">Lautstärkeregler</string>
+    <string name="pref_homescreen_gestures_clear_notifications">Benachrichtigungen löschen</string>
+    <string name="pref_homescreen_gestures_screenshot">Screenshot</string>
+    <string name="pref_homescreen_gestures_notifications">Benachrichtigungen</string>
+    <string name="pref_homescreen_gestures_qs_panel">Schnelleinstellungen</string>
+    <string name="pref_homescreen_gestures_powermenu">Ein-/Aus-Menü</string>
 </resources>
