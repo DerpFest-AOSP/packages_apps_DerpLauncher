@@ -31,6 +31,7 @@ import static com.android.launcher3.logging.StatsLogManager.LAUNCHER_STATE_HOME;
 import static com.android.launcher3.logging.StatsLogManager.LauncherEvent.LAUNCHER_SWIPELEFT;
 import static com.android.launcher3.logging.StatsLogManager.LauncherEvent.LAUNCHER_SWIPERIGHT;
 import static com.android.launcher3.testing.TestProtocol.BAD_STATE;
+import static com.android.launcher3.Utilities.getDevicePrefs;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -66,6 +67,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 import com.android.internal.util.derp.ActionUtils;
+import com.android.internal.util.derp.derpUtils;
 
 import com.android.launcher3.accessibility.AccessibleDragListenerAdapter;
 import com.android.launcher3.accessibility.WorkspaceAccessibilityHelper;
@@ -271,6 +273,7 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
     private final StatsLogManager mStatsLogManager;
 
     private GestureDetector mGestureListener;
+    private int mDoubleGestureMode;
 
     /**
      * Used to inflate the Workspace from XML.
@@ -306,17 +309,55 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
 
         context.enforceCallingOrSelfPermission(
                     android.Manifest.permission.DEVICE_POWER, null);
+        mDoubleGestureMode = Integer.valueOf(
+                getDevicePrefs(getContext()).getString("pref_homescreen_dt_gestures", "0"));
         mGestureListener =
                 new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
             @Override
             public boolean onDoubleTap(MotionEvent event) {
-                ActionUtils.switchScreenOff(context);
+                Gestures(event, mDoubleGestureMode);
                 return true;
             }
         });
 
         setOnTouchListener(new WorkspaceTouchListener(mLauncher, this));
         mStatsLogManager = StatsLogManager.newInstance(context);
+    }
+
+    // Gestures
+    private void Gestures(MotionEvent event, int gestureType) {
+        switch(gestureType) {
+            // Stock behavior
+            case 0:
+                break;
+            // Sleep
+            case 1:
+                ActionUtils.switchScreenOff(getContext());
+                break;
+            // Flashlight
+            case 2:
+                ActionUtils.toggleCameraFlash();
+                break;
+            case 3: // Volume panel
+                ActionUtils.toggleVolumePanel(getContext());
+                break;
+            case 4: // Clear notifications
+                ActionUtils.clearAllNotifications();
+                break;
+            case 5: // Screenshot
+                derpUtils.takeScreenshot(true);
+                break;
+            case 6: // Notifications
+                ActionUtils.toggleNotifications();
+                break;
+            case 7: // QS panel
+                ActionUtils.toggleQsPanel();
+                break;
+        }
+    }
+
+    public void setDoubleTapGestures(int mode) {
+        mDoubleGestureMode = mode;
     }
 
     public boolean checkDoubleTap(MotionEvent ev) {

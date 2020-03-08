@@ -169,4 +169,16 @@
     <!-- Wallpaper zooming -->
     <string name="allow_wallpaper_zooming">Wallpaper zooming</string>
     <string name="allow_wallpaper_zooming_desc">Zoom in or out the wallpaper when using drawer or recent apps</string>
+
+    <!-- Gestures -->
+    <string name="pref_homescreen_dt_gestures_title">Double-tap on screen action</string>
+    <string name="pref_homescreen_dt_gestures_summary">Double-tap on screen action</string>
+    <string name="pref_homescreen_gestures_none">None</string>
+    <string name="pref_homescreen_gestures_sleep">Screen off</string>
+    <string name="pref_homescreen_gestures_torch">Flashlight</string>
+    <string name="pref_homescreen_gestures_volume_panel">Volume panel</string>
+    <string name="pref_homescreen_gestures_clear_notifications">Clear notifications</string>
+    <string name="pref_homescreen_gestures_screenshot">Screenshot</string>
+    <string name="pref_homescreen_gestures_notifications">Notifications</string>
+    <string name="pref_homescreen_gestures_qspanel">QS panel</string>
 </resources>

@@ -22,6 +22,15 @@
     <PreferenceCategory
         android:title="@string/general_category_title">
 
+        <ListPreference
+            android:key="pref_homescreen_dt_gestures"
+            android:title="@string/pref_homescreen_dt_gestures_title"
+            android:summary="@string/pref_homescreen_dt_gestures_summary"
+            android:entries="@array/pref_homescreen_dt_gestures_names"
+            android:entryValues="@array/pref_homescreen_dt_gestures_values"
+            android:defaultValue="0"
+            android:persistent="false" />
+
         <SwitchPreference
             android:defaultValue="false"
             android:key="pref_workspace_lock"

@@ -161,4 +161,16 @@
     <!-- Wallpaper zooming -->
     <string name="allow_wallpaper_zooming">Hintergrundbild-Zoomeffekt</string>
     <string name="allow_wallpaper_zooming_desc">Herein- und Herauszoomen des Hintergrundbilds bei Verwendung der App-Übersicht und des App-Verlaufs</string>
+
+    <!-- Gestures -->
+    <string name="pref_homescreen_dt_gestures_title">Aktion bei Doppeltippen</string>
+    <string name="pref_homescreen_dt_gestures_summary">Aktion bei Doppeltippen</string>
+    <string name="pref_homescreen_gestures_none">Nichts</string>
+    <string name="pref_homescreen_gestures_sleep">Bildschirm ausschalten</string>
+    <string name="pref_homescreen_gestures_torch">Taschenlampe</string>
+    <string name="pref_homescreen_gestures_volume_panel">Lautstärke</string>
+    <string name="pref_homescreen_gestures_clear_notifications">Benachrichtigungen schließen</string>
+    <string name="pref_homescreen_gestures_screenshot">Screenshot</string>
+    <string name="pref_homescreen_gestures_notifications">Benachrichtigungen anzeigen</string>
+    <string name="pref_homescreen_gestures_qspanel">Schnelleinstellungen</string>
 </resources>

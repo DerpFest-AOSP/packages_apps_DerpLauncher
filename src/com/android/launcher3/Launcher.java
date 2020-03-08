@@ -81,6 +81,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.database.sqlite.SQLiteDatabase;
@@ -282,6 +283,7 @@ public class Launcher extends StatefulActivity<LauncherState> implements Launche
     public static final String ON_START_EVT = "Launcher.onStart";
     public static final String ON_RESUME_EVT = "Launcher.onResume";
     public static final String ON_NEW_INTENT_EVT = "Launcher.onNewIntent";
+    public static final String KEY_HOMESCREEN_DT_GESTURES = "pref_homescreen_dt_gestures";
 
     private StateManager<LauncherState> mStateManager;
 
@@ -559,10 +561,16 @@ public class Launcher extends StatefulActivity<LauncherState> implements Launche
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences SharedPrefs, String key) {
-        if (key.equals(KEY_DARK_STATUS_BAR)) {
-            recreate();
+            switch (key) {
+                case KEY_DARK_STATUS_BAR:
+                    recreate();
+                    break;
+                case KEY_HOMESCREEN_DT_GESTURES:
+                    mWorkspace.setDoubleTapGestures(Integer.valueOf(SharedPrefs.getString(
+                        "KEY_HOMESCREEN_DT_GESTURES", "0")));
+                    break;
+            }
         }
-    }
 
     @Override
     public void onPluginConnected(OverlayPlugin overlayManager, Context context) {
