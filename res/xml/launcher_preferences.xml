@@ -19,6 +19,16 @@
     xmlns:launcher="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.launcher3">
 
+    <Preference
+        android:key="pref_icon_pack"
+        android:title="@string/icon_pack_title" />
+
+    <com.android.launcher3.settings.NotificationDotsPreference
+        android:key="pref_icon_badging"
+        android:title="@string/notification_dots_title"
+        android:persistent="false"
+        android:widgetLayout="@layout/notification_pref_warning" />
+
     <!--
     LAUNCHER_HOME_SCREEN_ROTATION_ENABLED(615)
     LAUNCHER_HOME_SCREEN_ROTATION_DISABLED(616)
@@ -96,12 +106,6 @@
             android:summary="@string/pref_themed_icons_summary"
             android:defaultValue="false"
             android:persistent="true" />
-
-        <com.android.launcher3.settings.NotificationDotsPreference
-            android:key="pref_icon_badging"
-            android:title="@string/notification_dots_title"
-            android:persistent="false"
-            android:widgetLayout="@layout/notification_pref_warning" />
 
         <SwitchPreference
             android:key="pref_desktop_show_labels"
