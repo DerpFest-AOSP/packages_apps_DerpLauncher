@@ -29,6 +29,9 @@
     <!-- String representing the fragment class for misc settings activity.-->
     <string name="misc_settings_fragment_name" translatable="false">com.android.launcher3.settings.SettingsMisc$MiscSettingsFragment</string>
 
+    <!-- Icon pack -->
+    <string name="icon_pack_settings_class" translatable="false">com.android.launcher3.lineage.icon.IconPackSettingsFragment</string>
+
     <!-- String representing the fragment class for about activity.-->
     <string name="about_fragment_name" translatable="false">com.android.launcher3.settings.SettingsAbout$AboutFragment</string>
 
