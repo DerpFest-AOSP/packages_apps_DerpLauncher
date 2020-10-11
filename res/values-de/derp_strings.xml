@@ -12,12 +12,11 @@
     <string name="google_folder_title" translatable="false">Google</string>
 
     <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
-    <string name="title_show_google_feed">Swipe to access Google feed</string>
+    <string name="title_show_google_app">Wischen, um die Google-App aufzurufen</string>
 
     <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-    <string name="msg_minus_one_on_left">From Home screen, swipe left to open Google feed</string>
-    <string name="pref_show_google_now_summary" translatable="false">@string/msg_minus_one_on_left</string>
+    <string name="msg_minus_one_on_left">Wische auf dem Startbildschirm nach links, um die Google App zu öffnen</string>
 
     <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
-    <string name="msg_minus_one_on_right">From Home screen, swipe right to open Google feed</string>
+    <string name="msg_minus_one_on_right">Wische auf dem Startbildschirm nach rechts, um die Google App zu öffnen</string>
 </resources>
