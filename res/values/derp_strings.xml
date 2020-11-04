@@ -93,4 +93,8 @@
 
     <!-- Homescreen Statusbar -->
     <string name="show_statusbar_title">Show Statusbar</string>
+
+    <!-- Suggestions -->
+    <string name="suggestion_pref_screen_title">Suggestions</string>
+    <string name="suggestion_pref_screen_desc">For All Apps &amp; Home screen suggestions</string>
 </resources>
