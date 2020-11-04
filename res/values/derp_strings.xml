@@ -24,4 +24,8 @@
     <!-- Gestures -->
     <string name="pref_dt_gesture_title">Double tap to sleep</string>
     <string name="pref_dt_gesture_summary">Double tap on empty space to turn screen off</string>
+
+    <!-- Suggestions -->
+    <string name="suggestion_pref_screen_title">Suggestions</string>
+    <string name="suggestion_pref_screen_desc">For All Apps &amp; Home screen suggestions</string>
 </resources>
