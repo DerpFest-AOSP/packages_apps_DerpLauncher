@@ -99,4 +99,8 @@
     <!-- Background blur -->
     <string name="background_blur_title">Tiefenschärfegrad des Hintergrunds</string>
     <string name="background_blur_summary">Tiefenschärfegrad in App-Übersicht und -Verlauf anpassen</string>
+
+    <!-- Suggestions -->
+    <string name="suggestion_pref_screen_title">App-Vorschläge</string>
+    <string name="suggestion_pref_screen_desc">In Liste aller Apps &amp; auf Startbildschirm</string>
 </resources>
