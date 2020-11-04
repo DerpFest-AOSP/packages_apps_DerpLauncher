@@ -33,4 +33,7 @@
     <string name="msg_minus_one_on_right">From Home screen, swipe right to open Google app</string>
     <string name="pref_show_google_now_summary" translatable="false">@string/msg_minus_one_on_left</string>
 
+    <!-- Suggestions -->
+    <string name="suggestion_pref_screen_title">Suggestions</string>
+    <string name="suggestion_pref_screen_desc">For All Apps &amp; Home screen suggestions</string>
 </resources>
