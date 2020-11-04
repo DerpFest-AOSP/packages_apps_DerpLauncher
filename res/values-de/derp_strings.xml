@@ -28,4 +28,7 @@
     <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Wische auf dem Startbildschirm nach rechts, um die Google App zu öffnen</string>
 
+    <!-- Suggestions -->
+    <string name="suggestion_pref_screen_title">App-Vorschläge</string>
+    <string name="suggestion_pref_screen_desc">In Liste aller Apps &amp; auf Startbildschirm</string>
 </resources>
