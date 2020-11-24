@@ -16,22 +16,34 @@
 
 package com.android.launcher3.settings;
 
+import static android.provider.Settings.Global.DEVELOPMENT_SETTINGS_ENABLED;
+
 import static androidx.preference.PreferenceFragmentCompat.ARG_PREFERENCE_ROOT;
 
+import static com.android.launcher3.BuildConfig.IS_STUDIO_BUILD;
+import static com.android.launcher3.states.RotationHelper.ALLOW_ROTATION_PREFERENCE_KEY;
+
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.Nullable;
+import androidx.annotation.VisibleForTesting;
 import androidx.core.view.WindowCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceFragmentCompat.OnPreferenceStartFragmentCallback;
 import androidx.preference.PreferenceFragmentCompat.OnPreferenceStartScreenCallback;
@@ -41,14 +53,29 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.LauncherFiles;
-import com.android.launcher3.Utilities;
+import com.android.launcher3.LauncherPrefs;
 import com.android.launcher3.R;
+import com.android.launcher3.Utilities;
+import com.android.launcher3.model.WidgetsModel;
+import com.android.launcher3.states.RotationHelper;
+import com.android.launcher3.util.DisplayController;
+import com.android.launcher3.util.Executors;
+import com.android.launcher3.util.SettingsCache;
 
-/**
- * Settings activity for Launcher.
- */
-public class SettingsActivity extends FragmentActivity
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+
+import com.android.systemui.shared.system.BlurUtils;
+
+import android.util.Log;
+import java.util.Collections;
+import java.util.List;
+
+public class SettingsMisc extends CollapsingToolbarBaseActivity
         implements OnPreferenceStartFragmentCallback, OnPreferenceStartScreenCallback {
+
+    @VisibleForTesting
+    static final String DEVELOPER_OPTIONS_KEY = "pref_developer_options";
+    private static final String SUGGESTIONS_KEY = "pref_suggestions";
 
     public static final String EXTRA_FRAGMENT_ARGS = ":settings:fragment_args";
 
@@ -56,6 +83,7 @@ public class SettingsActivity extends FragmentActivity
     public static final String EXTRA_FRAGMENT_HIGHLIGHT_KEY = ":settings:fragment_args_key";
     // Intent extra to indicate the pref-key of the root screen when opening the settings activity
     public static final String EXTRA_FRAGMENT_ROOT_KEY = ARG_PREFERENCE_ROOT;
+    public static final String EXTRA_FRAGMENT = ":settings:fragment";
 
     private static final int DELAY_HIGHLIGHT_DURATION_MILLIS = 600;
     public static final String SAVE_HIGHLIGHTED_KEY = "android:preference_highlighted";
@@ -69,7 +97,7 @@ public class SettingsActivity extends FragmentActivity
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
         Intent intent = getIntent();
-        if (intent.hasExtra(EXTRA_FRAGMENT_ROOT_KEY) || intent.hasExtra(EXTRA_FRAGMENT_ARGS)
+        if (intent.hasExtra(EXTRA_FRAGMENT) || intent.hasExtra(EXTRA_FRAGMENT_ROOT_KEY) || intent.hasExtra(EXTRA_FRAGMENT_ARGS)
                 || intent.hasExtra(EXTRA_FRAGMENT_HIGHLIGHT_KEY)) {
             getActionBar().setDisplayHomeAsUpEnabled(true);
         }
@@ -91,10 +119,32 @@ public class SettingsActivity extends FragmentActivity
 
             final FragmentManager fm = getSupportFragmentManager();
             final Fragment f = fm.getFragmentFactory().instantiate(getClassLoader(),
-                    getString(R.string.settings_fragment_name));
+                    getPreferenceFragment());
             f.setArguments(args);
             // Display the fragment as the main content.
-            fm.beginTransaction().replace(R.id.content_frame, f).commit();
+            fm.beginTransaction().replace(
+                    com.android.settingslib.collapsingtoolbar.R.id.content_frame, f).commit();
+        }
+        LauncherPrefs.getPrefs(getApplicationContext()).registerOnSharedPreferenceChangeListener(this);
+    }
+
+    /**
+     * Obtains the preference fragment to instantiate in this activity.
+     *
+     * @return the preference fragment class
+     * @throws IllegalArgumentException if the fragment is unknown to this activity
+     */
+    private String getPreferenceFragment() {
+        String preferenceFragment = getIntent().getStringExtra(EXTRA_FRAGMENT);
+        String defaultFragment = getString(R.string.misc_settings_fragment_name);
+
+        if (TextUtils.isEmpty(preferenceFragment)) {
+            return defaultFragment;
+        } else if (!preferenceFragment.equals(defaultFragment)) {
+            throw new IllegalArgumentException(
+                    "Invalid fragment for this activity: " + preferenceFragment);
+        } else {
+            return preferenceFragment;
         }
     }
 
@@ -110,7 +160,8 @@ public class SettingsActivity extends FragmentActivity
             f.setArguments(args);
             ((DialogFragment) f).show(fm, key);
         } else {
-            startActivity(new Intent(this, SettingsActivity.class)
+            startActivity(new Intent(this, SettingsMisc.class)
+                    .putExtra(EXTRA_FRAGMENT, fragment)
                     .putExtra(EXTRA_FRAGMENT_ARGS, args));
         }
         return true;
@@ -126,7 +177,7 @@ public class SettingsActivity extends FragmentActivity
     public boolean onPreferenceStartScreen(PreferenceFragmentCompat caller, PreferenceScreen pref) {
         Bundle args = new Bundle();
         args.putString(ARG_PREFERENCE_ROOT, pref.getKey());
-        return startPreference(getString(R.string.settings_title), args, pref.getKey());
+        return startPreference(getString(R.string.misc_category_title), args, pref.getKey());
     }
 
     @Override
@@ -141,12 +192,26 @@ public class SettingsActivity extends FragmentActivity
     /**
      * This fragment shows the launcher preferences.
      */
-    public static class LauncherSettingsFragment extends PreferenceFragmentCompat {
+    public static class MiscSettingsFragment extends PreferenceFragmentCompat implements
+            SettingsCache.OnChangeListener {
+
+        protected boolean mDeveloperOptionsEnabled = false;
 
         private boolean mRestartOnResume = false;
 
         private String mHighLightKey;
         private boolean mPreferenceHighlighted = false;
+
+        @Override
+        public void onCreate(@Nullable Bundle savedInstanceState) {
+            if (Utilities.IS_DEBUG_DEVICE) {
+                Uri devUri = Settings.Global.getUriFor(DEVELOPMENT_SETTINGS_ENABLED);
+                SettingsCache settingsCache = SettingsCache.INSTANCE.get(getContext());
+                mDeveloperOptionsEnabled = settingsCache.getValue(devUri);
+                settingsCache.register(devUri, this);
+            }
+            super.onCreate(savedInstanceState);
+        }
 
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -158,7 +223,15 @@ public class SettingsActivity extends FragmentActivity
             }
 
             getPreferenceManager().setSharedPreferencesName(LauncherFiles.SHARED_PREFERENCES_KEY);
-            setPreferencesFromResource(R.xml.launcher_preferences, rootKey);
+            setPreferencesFromResource(R.xml.launcher_misc_preferences, rootKey);
+
+            PreferenceScreen screen = getPreferenceScreen();
+            for (int i = screen.getPreferenceCount() - 1; i >= 0; i--) {
+                Preference preference = screen.getPreference(i);
+                if (!initPreference(preference)) {
+                    screen.removePreference(preference);
+                }
+            }
 
             if (getActivity() != null && !TextUtils.isEmpty(getPreferenceScreen().getTitle())) {
                 getActivity().setTitle(getPreferenceScreen().getTitle());
@@ -189,6 +262,33 @@ public class SettingsActivity extends FragmentActivity
             outState.putBoolean(SAVE_HIGHLIGHTED_KEY, mPreferenceHighlighted);
         }
 
+        /**
+         * Initializes a preference. This is called for every preference. Returning false here
+         * will remove that preference from the list.
+         */
+        protected boolean initPreference(Preference preference) {
+            switch (preference.getKey()) {
+                case ALLOW_ROTATION_PREFERENCE_KEY:
+                    DisplayController.Info info =
+                            DisplayController.INSTANCE.get(getContext()).getInfo();
+                    if (info.isTablet(info.realBounds)) {
+                        // Launcher supports rotation by default. No need to show this setting.
+                        return false;
+                    }
+                    // Initialize the UI once
+                    preference.setDefaultValue(RotationHelper.getAllowRotationDefaultValue(info));
+                    return true;
+
+                case DEVELOPER_OPTIONS_KEY:
+                    if (IS_STUDIO_BUILD) {
+                        preference.setOrder(0);
+                    }
+                    return mDeveloperOptionsEnabled;
+            }
+
+            return true;
+        }
+
         @Override
         public void onResume() {
             super.onResume();
@@ -203,6 +303,21 @@ public class SettingsActivity extends FragmentActivity
 
             if (mRestartOnResume) {
                 recreateActivityNow();
+            }
+        }
+
+        @Override
+        public void onSettingsChanged(boolean isEnabled) {
+            // Developer options changed, try recreate
+            tryRecreateActivity();
+        }
+
+        @Override
+        public void onDestroy() {
+            super.onDestroy();
+            if (Utilities.IS_DEBUG_DEVICE) {
+                SettingsCache.INSTANCE.get(getContext())
+                        .unregister(Settings.Global.getUriFor(DEVELOPMENT_SETTINGS_ENABLED), this);
             }
         }
 
