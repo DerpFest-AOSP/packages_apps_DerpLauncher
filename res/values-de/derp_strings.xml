@@ -58,4 +58,10 @@
     <string name="restarting_launcher">DerpLauncher wird neu gestartet …</string>
     <string name="restarting_launcher_changes">DerpLauncher wird neu gestartet, um Änderungen anzuwenden …</string>
     <string name="updating_launcher_components">DerpLauncher wird neu gestartet, um Elemente zu aktualisieren …</string>
+
+    <!-- Proper seekbar -->
+    <string name="proper_seekbar_value">Wert: <xliff:g id="v">%s</xliff:g></string>
+    <string name="proper_seekbar_default_value">Standardmäßig</string>
+    <string name="proper_seekbar_default_value_to_set">Standardwert: <xliff:g id="v">%s</xliff:g>\nZum Einstellen lange gedrückt halten</string>
+    <string name="proper_seekbar_default_value_is_set">Standardwert ist eingestellt</string>
 </resources>
