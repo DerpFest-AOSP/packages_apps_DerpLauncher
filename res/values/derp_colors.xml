@@ -10,4 +10,6 @@
     <color name="qsb_tertiary">@*android:color/system_neutral1_500</color>
     <color name="qsb_quaternary">@*android:color/system_neutral1_800</color>
 
+    <!-- Disable text color -->
+    <color name="disabled_text_color">#66000000</color> <!-- 38% black -->
 </resources>
