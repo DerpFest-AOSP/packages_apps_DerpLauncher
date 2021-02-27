@@ -64,4 +64,10 @@
     <string name="proper_seekbar_default_value">Standardmäßig</string>
     <string name="proper_seekbar_default_value_to_set">Standardwert: <xliff:g id="v">%s</xliff:g>\nZum Einstellen lange gedrückt halten</string>
     <string name="proper_seekbar_default_value_is_set">Standardwert ist eingestellt</string>
+
+    <!-- Icon size -->
+    <string name="icon_size_title">Symbolgröße</string>
+
+    <!-- Font size -->
+    <string name="font_size_title">Schriftgröße</string>
 </resources>
