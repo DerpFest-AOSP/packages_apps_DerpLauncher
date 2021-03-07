@@ -42,37 +42,29 @@ import android.os.UserHandle;
 import androidx.annotation.NonNull;
 
 import com.android.launcher3.icons.BaseIconFactory;
+import com.android.launcher3.icons.BitmapInfo;
+import com.android.launcher3.icons.FixedScaleDrawable;
+import com.android.launcher3.icons.ShadowGenerator;
 
-public class DerpIconFactory /* extends BaseIconFactory  */{
-/*
-    private final Context mContext;
-    private final PackageManager mPm;
+public class DerpIconFactory extends BaseIconFactory {
+
     private final IconPackStore mIconPackStore;
+    
+    protected static final boolean ATLEAST_OREO = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O;
 
-    public DerpIconFactory(Context context) {
-        mContext = context;
-        mPm = context.getPackageManager();
+    public DerpIconFactory(Context context, int fillResIconDpi, int iconBitmapSize) {
+        super(context, fillResIconDpi, iconBitmapSize);
+        mIconPackStore = new IconPackStore(context);
+    }
+
+    public DerpIconFactory(Context context, int fillResIconDpi, int iconBitmapSize,
+            boolean shapeDetection) {
+        super(context, fillResIconDpi, iconBitmapSize, shapeDetection);
         mIconPackStore = new IconPackStore(context);
     }
 
     @Override
-     public BitmapInfo createBadgedIconBitmap(@NonNull Drawable icon, UserHandle user,
-            boolean shrinkNonAdaptiveIcons, boolean isInstantApp, float[] scale) {
-        if (scale == null) {
-            scale = new float[1];
-        }
-    }
-
-    @Override
-    public Bitmap createScaledBitmapWithoutShadow(Drawable icon, boolean shrinkNonAdaptiveIcons) {
-        RectF iconBounds = new RectF();
-        float[] scale = new float[1];
-        icon = normalizeAndWrapToAdaptiveIcon(icon, shrinkNonAdaptiveIcons, iconBounds, scale);
-        return createIconBitmap(icon,
-                Math.min(scale[0], ShadowGenerator.getScaleForBounds(iconBounds)));
-    }
-
-    private Drawable normalizeAndWrapToAdaptiveIcon(@NonNull Drawable icon,
+    protected Drawable normalizeAndWrapToAdaptiveIcon(@NonNull Drawable icon,
             boolean shrinkNonAdaptiveIcons, RectF outIconBounds, float[] outScale) {
         if (icon == null) {
             return null;
@@ -82,7 +74,7 @@ public class DerpIconFactory /* extends BaseIconFactory  */{
         final boolean defaultIcons = mIconPackStore.isUsingSystemIcons();
         if (shrinkNonAdaptiveIcons && ATLEAST_OREO && defaultIcons) {
             if (mWrapperIcon == null) {
-                mWrapperIcon = mContext.getDrawable(R.drawable.adaptive_icon_drawable_wrapper)
+                mWrapperIcon = mContext.getDrawable(com.android.launcher3.icons.R.drawable.adaptive_icon_drawable_wrapper)
                         .mutate();
             }
             AdaptiveIconDrawable dr = (AdaptiveIconDrawable) mWrapperIcon;
@@ -105,5 +97,4 @@ public class DerpIconFactory /* extends BaseIconFactory  */{
         outScale[0] = scale;
         return icon;
     }
-*/
 }
