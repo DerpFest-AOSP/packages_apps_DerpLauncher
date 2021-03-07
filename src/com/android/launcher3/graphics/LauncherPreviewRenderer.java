@@ -74,9 +74,9 @@ import com.android.launcher3.Workspace;
 import com.android.launcher3.WorkspaceLayoutManager;
 import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.folder.FolderIcon;
-import com.android.launcher3.icons.BaseIconFactory;
 import com.android.launcher3.icons.BitmapInfo;
 import com.android.launcher3.icons.LauncherIcons;
+import com.android.launcher3.derp.icon.DerpIconFactory;
 import com.android.launcher3.model.BgDataModel;
 import com.android.launcher3.model.BgDataModel.FixedContainerItems;
 import com.android.launcher3.model.WidgetItem;
@@ -217,8 +217,8 @@ public class LauncherPreviewRenderer extends ContextWrapper
                 mDp.isTaskbarPresent ? 0 : currentWindowInsets.getSystemWindowInsetBottom());
         mDp.updateInsets(mInsets);
 
-        BaseIconFactory iconFactory =
-                new BaseIconFactory(context, mIdp.fillResIconDpi, mIdp.iconBitmapSize) { };
+        DerpIconFactory iconFactory =
+                new DerpIconFactory(context, mIdp.fillResIconDpi, mIdp.iconBitmapSize) { };
         BitmapInfo iconInfo = iconFactory.createBadgedIconBitmap(
                 new AdaptiveIconDrawable(
                         new ColorDrawable(Color.WHITE),
