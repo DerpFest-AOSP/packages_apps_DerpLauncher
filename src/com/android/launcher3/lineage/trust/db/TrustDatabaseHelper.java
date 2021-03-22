@@ -32,7 +32,6 @@ public class TrustDatabaseHelper extends SQLiteOpenHelper {
     private static final String KEY_UID = "uid";
     private static final String KEY_PKGNAME = "pkgname";
     private static final String KEY_HIDDEN = "hidden";
-    private static final String KEY_PROTECTED = "protected";
 
     @Nullable
     private static TrustDatabaseHelper sSingleton;
@@ -55,8 +54,7 @@ public class TrustDatabaseHelper extends SQLiteOpenHelper {
                 "(" +
                 KEY_UID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 KEY_PKGNAME + " TEXT," +
-                KEY_HIDDEN + " INTEGER DEFAULT 0," +
-                KEY_PROTECTED + " INTEGER DEFAULT 0" +
+                KEY_HIDDEN + " INTEGER DEFAULT 0" +
                 ")";
         db.execSQL(CMD_CREATE_TABLE);
     }
@@ -77,32 +75,6 @@ public class TrustDatabaseHelper extends SQLiteOpenHelper {
             ContentValues values = new ContentValues();
             values.put(KEY_PKGNAME, packageName);
             values.put(KEY_HIDDEN, 1);
-
-            int rows = db.update(TABLE_NAME, values, KEY_PKGNAME + " = ?", new String[]{KEY_PKGNAME});
-            if (rows != 1) {
-                // Entry doesn't exist, create a new one
-                db.insertOrThrow(TABLE_NAME, null, values);
-            }
-            db.setTransactionSuccessful();
-        } catch (Exception e) {
-            // Ignored
-        } finally {
-            db.endTransaction();
-        }
-    }
-
-    public void addProtectedApp(@NonNull String packageName) {
-        if (isPackageProtected(packageName)) {
-            return;
-        }
-
-        SQLiteDatabase db = getWritableDatabase();
-        db.beginTransaction();
-
-        try {
-            ContentValues values = new ContentValues();
-            values.put(KEY_PKGNAME, packageName);
-            values.put(KEY_PROTECTED, 1);
 
             int rows = db.update(TABLE_NAME, values, KEY_PKGNAME + " = ?", new String[]{KEY_PKGNAME});
             if (rows != 1) {
@@ -139,27 +111,6 @@ public class TrustDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public void removeProtectedApp(@NonNull String packageName) {
-        if (!isPackageProtected(packageName)) {
-            return;
-        }
-
-        SQLiteDatabase db = getWritableDatabase();
-        db.beginTransaction();
-
-        try {
-            ContentValues values = new ContentValues();
-            values.put(KEY_PROTECTED, 0);
-
-            db.update(TABLE_NAME, values, KEY_PKGNAME + " = ?", new String[]{packageName});
-            db.setTransactionSuccessful();
-        } catch (Exception e) {
-            // Ignored
-        } finally {
-            db.endTransaction();
-        }
-    }
-
     public boolean isPackageHidden(@NonNull String packageName) {
         String query = String.format("SELECT * FROM %s WHERE %s = ? AND %s = ?", TABLE_NAME, KEY_PKGNAME, KEY_HIDDEN);
         SQLiteDatabase db = getReadableDatabase();
@@ -185,24 +136,6 @@ public class TrustDatabaseHelper extends SQLiteOpenHelper {
         int result = 0;
         try {
             result = cursor.getCount();
-        } catch (Exception e) {
-            // Ignored
-        } finally {
-            if (cursor != null && !cursor.isClosed()) {
-                cursor.close();
-            }
-        }
-
-        return result;
-    }
-
-    public boolean isPackageProtected(@NonNull String packageName) {
-        String query = String.format("SELECT * FROM %s WHERE %s = ? AND %s = ?", TABLE_NAME, KEY_PKGNAME, KEY_PROTECTED);
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery(query, new String[]{packageName, String.valueOf(1)});
-        boolean result = false;
-        try {
-            result = cursor.getCount() != 0;
         } catch (Exception e) {
             // Ignored
         } finally {

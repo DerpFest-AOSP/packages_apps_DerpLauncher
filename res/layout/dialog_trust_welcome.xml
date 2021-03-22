@@ -29,26 +29,6 @@
         <ImageView
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:src="@drawable/ic_protected_locked" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/trust_apps_info_protected"
-            android:textAlignment="center" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
             android:src="@drawable/ic_hidden_locked" />
 
         <TextView

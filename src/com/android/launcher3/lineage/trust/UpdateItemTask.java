@@ -54,13 +54,6 @@ public class UpdateItemTask extends AsyncTask<TrustComponent, Void, Boolean> {
                     mDbHelper.removeHiddenApp(pkgName);
                 }
                 break;
-            case PROTECTED:
-                if (component.isProtected()) {
-                    mDbHelper.addProtectedApp(pkgName);
-                } else {
-                    mDbHelper.removeProtectedApp(pkgName);
-                }
-                break;
         }
         return true;
     }
