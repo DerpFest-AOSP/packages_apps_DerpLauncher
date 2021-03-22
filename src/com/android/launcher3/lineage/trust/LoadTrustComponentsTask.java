@@ -69,9 +69,8 @@ public class LoadTrustComponentsTask extends AsyncTask<Void, Integer, List<Trust
                                 PackageManager.GET_META_DATA)).toString();
                 Drawable icon = app.loadIcon(mPackageManager);
                 boolean isHidden = mDbHelper.isPackageHidden(pkgName);
-                boolean isProtected = mDbHelper.isPackageProtected(pkgName);
 
-                list.add(new TrustComponent(pkgName, icon, label, isHidden, isProtected));
+                list.add(new TrustComponent(pkgName, icon, label, isHidden));
 
                 publishProgress(Math.round(i * 100f / numPackages));
             } catch (PackageManager.NameNotFoundException ignored) {

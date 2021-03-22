@@ -27,15 +27,13 @@ public class TrustComponent {
     private final String mLabel;
 
     private boolean mIsHidden;
-    private boolean mIsProtected;
 
     public TrustComponent(@NonNull String packageName, @NonNull Drawable icon,
-                          @NonNull String label, boolean isHidden, boolean isProtected) {
+                          @NonNull String label, boolean isHidden) {
         mPackageName = packageName;
         mIcon = icon;
         mLabel = label;
         mIsHidden = isHidden;
-        mIsProtected = isProtected;
     }
 
     @NonNull
@@ -57,16 +55,8 @@ public class TrustComponent {
         return mIsHidden;
     }
 
-    public boolean isProtected() {
-        return mIsProtected;
-    }
-
     public void invertVisibility() {
         mIsHidden = !mIsHidden;
-    }
-
-    public void invertProtection() {
-        mIsProtected = !mIsProtected;
     }
 
     @Override
@@ -87,6 +77,5 @@ public class TrustComponent {
 
     public enum Kind {
         HIDDEN,
-        PROTECTED,
     }
 }

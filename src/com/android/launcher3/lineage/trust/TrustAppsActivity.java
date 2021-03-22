@@ -16,7 +16,6 @@
 package com.android.launcher3.lineage.trust;
 
 import static com.android.launcher3.lineage.trust.db.TrustComponent.Kind.HIDDEN;
-import static com.android.launcher3.lineage.trust.db.TrustComponent.Kind.PROTECTED;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -112,11 +111,6 @@ public class TrustAppsActivity extends Activity implements
     @Override
     public void onHiddenItemChanged(@NonNull TrustComponent component) {
         new UpdateItemTask(mDbHelper, this, HIDDEN).execute(component);
-    }
-
-    @Override
-    public void onProtectedItemChanged(@NonNull TrustComponent component) {
-        new UpdateItemTask(mDbHelper, this, PROTECTED).execute(component);
     }
 
     @Override
