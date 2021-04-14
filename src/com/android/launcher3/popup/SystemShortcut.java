@@ -10,6 +10,7 @@ import android.graphics.Rect;
 import android.net.Uri;
 import android.util.Log;
 import android.view.View;
+import android.view.InflateException;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -191,25 +192,22 @@ public abstract class SystemShortcut<T extends Context & ActivityContext> extend
             }
         }
 
-        private InfoBottomSheet cbs;
 
         @Override
         public void onClick(View view) {
-/*
+            InfoBottomSheet cbs;
             dismissTaskMenuView(mTarget);
             Rect sourceBounds = Utilities.getViewBounds(view);
-            new PackageManagerHelper(mTarget).startDetailsActivityForInfo(
-                    mItemInfo, sourceBounds, ActivityOptions.makeBasic().toBundle());
-*/
-            if (cbs == null) {
-                dismissTaskMenuView(mTarget);
-                Rect sourceBounds = Utilities.getViewBounds(view);
+            try {
                 cbs = (InfoBottomSheet) mTarget.getLayoutInflater().inflate(
                         R.layout.app_info_bottom_sheet,
                         mTarget.getDragLayer(),
                         false);
                 cbs.configureBottomSheet(sourceBounds, mTarget);
                 cbs.populateAndShow(mItemInfo);
+            } catch (InflateException e) {
+                new PackageManagerHelper(mTarget).startDetailsActivityForInfo(
+                        mItemInfo, sourceBounds, ActivityOptions.makeBasic().toBundle());
             }
 
             mTarget.getStatsLogManager().logger().withItemInfo(mItemInfo)
