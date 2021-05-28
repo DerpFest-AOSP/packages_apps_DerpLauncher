@@ -83,6 +83,15 @@
             settings:units="%"
             android:defaultValue="100" />
 
+        <com.android.launcher3.settings.preference.CustomSeekBarPreference
+            android:key="pref_max_lines"
+            android:title="@string/icon_max_lines_title"
+            android:persistent="true"
+            android:max="3"
+            android:min="1"
+            settings:units=""
+            android:defaultValue="1" />
+
     </androidx.preference.PreferenceCategory>
 
     <androidx.preference.PreferenceCategory
