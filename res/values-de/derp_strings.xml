@@ -137,4 +137,7 @@
     <!-- Homescreen Statusbar -->
     <string name="show_statusbar_title">Statusleiste anzeigen</string>
     <string name="show_statusbar_summary">Statusleiste auf dem Startbildschirm anzeigen</string>
+
+    <!-- App label - max lines -->
+    <string name="icon_max_lines_title">Max. Zeilenanzahl für App-Beschriftungen</string>
 </resources>

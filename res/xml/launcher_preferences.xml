@@ -215,6 +215,15 @@
             android:persistent="true" />
 
         <com.android.launcher3.settings.preference.CustomSeekBarPreference
+            android:key="pref_max_lines"
+            android:title="@string/icon_max_lines_title"
+            android:persistent="true"
+            android:max="3"
+            android:min="1"
+            settings:units=""
+            android:defaultValue="1" />
+
+        <com.android.launcher3.settings.preference.CustomSeekBarPreference
             android:key="pref_app_drawer_opacity"
             android:title="@string/drawer_background_opacity_title"
             android:persistent="true"

@@ -155,4 +155,7 @@
     <!-- Homescreen Statusbar -->
     <string name="show_statusbar_title">Show status bar</string>
     <string name="show_statusbar_summary">Show status bar on Home screen</string>
+
+    <!-- App label - max lines -->
+    <string name="icon_max_lines_title">Max lines for app label</string>
 </resources>
