@@ -62,4 +62,7 @@
     <string name="icon_size_title">Symbolgröße</string>
     <!-- Font size -->
     <string name="font_size_title">Schriftgröße</string>
+
+    <!-- App label - max lines -->
+    <string name="icon_max_lines_title">Max. Zeilenanzahl für App-Beschriftungen</string>
 </resources>
