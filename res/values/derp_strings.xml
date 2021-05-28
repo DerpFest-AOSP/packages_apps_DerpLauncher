@@ -94,4 +94,6 @@
     <string name="show_top_shadow_title">Top shadow</string>
     <string name="show_top_shadow_summary">Show shadow on the top of Home screen</string>
 
+    <!-- App label - max lines -->
+    <string name="icon_max_lines_title">Max lines for app label</string>
 </resources>
