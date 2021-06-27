@@ -84,6 +84,8 @@ public class BaseDepthController {
      */
     protected boolean mInEarlyWakeUp;
 
+    private boolean mRestoreDepth;
+
     public BaseDepthController(Launcher activity) {
         mLauncher = activity;
         mMaxBlurRadius = activity.getResources().getInteger(R.integer.max_depth_blur_radius);
@@ -147,14 +149,28 @@ public class BaseDepthController {
         }
     }
 
+    public void onRestoreState(float depth) {
+        mDepth = depth;
+        onResume();
+    }
+
+    public float getCurrentDepth() {
+        return mDepth;
+    }
+
+    public void onResume() {
+        mRestoreDepth = true;
+    }
+
     private void setDepth(float depth) {
         depth = Utilities.boundToRange(depth, 0, 1);
         // Round out the depth to dedupe frequent, non-perceptable updates
         int depthI = (int) (depth * 256);
         float depthF = depthI / 256f;
-        if (Float.compare(mDepth, depthF) == 0) {
+        if (Float.compare(mDepth, depthF) == 0 && !mRestoreDepth) {
             return;
         }
+        mRestoreDepth = false;
         mDepth = depthF;
         applyDepthAndBlur();
     }
