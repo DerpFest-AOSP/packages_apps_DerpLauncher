@@ -89,4 +89,12 @@
 
     <!-- App label - max lines -->
     <string name="icon_max_lines_title">Max. Zeilenanzahl für App-Beschriftungen</string>
+
+    <!-- Pause apps shortcut -->
+    <string name="pause">Pausieren</string>
+    <string name="pause_apps_dialog_title">%1$s pausieren\?</string>
+    <string name="pause_apps_dialog_message">Benachrichtigungen für %1$s werden pausiert</string>
+    <string name="paused_apps_dialog_title">App pausiert</string>
+    <string name="paused_apps_dialog_message">%1$s wurde direkt vom DerpLauncher pausiert</string>
+    <string name="paused_apps_drop_target_label">App pausieren</string>
 </resources>
