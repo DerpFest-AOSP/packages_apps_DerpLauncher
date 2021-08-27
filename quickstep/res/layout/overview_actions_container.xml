@@ -42,6 +42,20 @@
             android:theme="@style/ThemeControlHighlightWorkspaceColor" />
 
         <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/action_lock"
+            style="@style/OverviewActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/recents_locked"
+            android:text="@string/recents_task_lock"
+            android:theme="@style/ThemeControlHighlightWorkspaceColor" />
+
+        <Space
             android:id="@+id/action_split_space"
             android:layout_width="@dimen/overview_actions_button_spacing"
             android:layout_height="1dp"
