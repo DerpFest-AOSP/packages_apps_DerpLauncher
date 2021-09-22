@@ -157,5 +157,9 @@
     <!-- Dark Status Bar -->
     <string name="perf_dark_status_bar_title">Dark status bar</string>
     <string name="perf_dark_status_bar_summary">Use dark status bar on Home screen</string>
+    
+    <!-- Hotseat Background -->
+    <string name="hotseat_bg_title">Show hotseat background</string>
+    <string name="hotseat_bg_summary">Adds a translucent background to the app dock</string>
 
 </resources>

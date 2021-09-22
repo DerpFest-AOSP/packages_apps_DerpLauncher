@@ -1258,6 +1258,8 @@ public class Launcher extends StatefulActivity<LauncherState> implements Launche
         mHotseat = findViewById(R.id.hotseat);
         mHotseat.setWorkspace(mWorkspace);
 
+        mHotseat.setBackgroundResource(Utilities.isDockBgEnabled(this) ? R.drawable.bkg_appseat : 0);
+
         // Setup the drag layer
         mDragLayer.setup(mDragController, mWorkspace);
 

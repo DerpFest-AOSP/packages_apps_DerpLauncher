@@ -155,6 +155,7 @@ public final class Utilities {
     public static final String KEY_DOCK_THEME = "pref_dock_theme";
     public static final String KEY_SEARCH_RADIUS = "pref_search_radius_size";
     public static final String KEY_STATUS_BAR = "pref_show_statusbar";
+    public static final String SHOW_HOTSEAT_BG = "show_hotseat_bg";
 
     /**
      * Returns true if theme is dark.
@@ -921,6 +922,11 @@ public final class Utilities {
     public static boolean isWorkspaceEditAllowed(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return !prefs.getBoolean(InvariantDeviceProfile.KEY_WORKSPACE_LOCK, false);
+    }
+
+    public static boolean isDockBgEnabled(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(SHOW_HOTSEAT_BG, false);
     }
 
     public static boolean showQSB(Context context) {

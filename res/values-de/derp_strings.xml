@@ -150,4 +150,8 @@
     <string name="perf_dark_status_bar_title">Dunkle Statusleiste</string>
     <string name="perf_dark_status_bar_summary">Aktiviert eine dunkle Statusleiste auf dem Startbildschirm</string>
 
+    <!-- Hotseat Background -->
+    <string name="hotseat_bg_title">Hotseat-Hintergrund anzeigen</string>
+    <string name="hotseat_bg_summary">Fügt dem App-Dock einen durchscheinenden Hintergrund hinzu</string>
+
 </resources>
