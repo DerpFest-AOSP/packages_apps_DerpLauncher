@@ -78,4 +78,8 @@
     <string name="label_voice_search">Voice search</string>
     <string name="dock_search_title">Google search bar</string>
     <string name="dock_search_summary">Search bar in the bottom dock</string>
+
+    <!-- Hotseat Background -->
+    <string name="hotseat_bg_title">Hotseat background</string>
+    <string name="hotseat_bg_summary">Add translucent background to the app dock</string>
 </resources>
