@@ -41,6 +41,12 @@
         android:summaryOff="@string/settings_lock_layout_summary_off" />
 
     <SwitchPreference
+        android:key="pref_show_hotseat_bg"
+        android:title="@string/hotseat_bg_title"
+        android:summary="@string/hotseat_bg_summary"
+        android:defaultValue="false" />
+
+    <SwitchPreference
         android:key="pref_allow_wallpaper_zooming"
         android:title="@string/allow_wallpaper_zooming"
         android:summary="@string/allow_wallpaper_zooming_summary"
