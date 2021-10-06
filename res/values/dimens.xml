@@ -426,4 +426,8 @@
 
     <!-- State transition -->
     <item name="workspace_content_scale" format="float" type="dimen">0.97</item>
+
+    <!-- For Themed icon support -->
+    <dimen name="theme_icon_size">24dp</dimen>
+
 </resources>
