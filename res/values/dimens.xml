@@ -409,4 +409,8 @@
     <dimen name="bottom_sheet_handle_height">4dp</dimen>
     <dimen name="bottom_sheet_handle_margin">16dp</dimen>
     <dimen name="bottom_sheet_handle_corner_radius">2dp</dimen>
+
+    <!-- For Themed icon support -->
+    <dimen name="theme_icon_size">24dp</dimen>
+
 </resources>
