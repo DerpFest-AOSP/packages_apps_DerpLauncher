@@ -94,15 +94,7 @@ public class FlagsFactory {
      */
     public static BooleanFlag getDebugFlag(
             int bugId, String key, FlagState flagState, String description) {
-        if (IS_DEBUG_DEVICE) {
-            boolean defaultValue = getEnabledValue(flagState);
-            boolean currentValue = getSharedPreferences().getBoolean(key, defaultValue);
-            DebugFlag flag = new DebugFlag(key, description, flagState, currentValue);
-            sDebugFlags.add(flag);
-            return flag;
-        } else {
-            return new BooleanFlag(getEnabledValue(flagState));
-        }
+        return new BooleanFlag(getEnabledValue(flagState));
     }
 
     /**
