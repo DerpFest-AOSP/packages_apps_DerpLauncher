@@ -143,4 +143,7 @@
 
     <!-- Branding -->
     <string name="derp_branding">derpfest.</string>
+
+    <!-- Recents -->
+    <string name="action_lens">Lens</string>
 </resources>
