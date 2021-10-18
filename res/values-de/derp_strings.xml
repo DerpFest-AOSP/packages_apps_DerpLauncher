@@ -49,4 +49,7 @@
     <string name="label_voice_search">Sprachsuche</string>
     <string name="dock_search_title">Google Suchleiste</string>
     <string name="dock_search_summary">Suchleiste im unteren Dock</string>
+
+    <!-- Recents -->
+    <string name="action_lens">Lens</string>
 </resources>

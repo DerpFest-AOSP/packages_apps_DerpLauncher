@@ -50,4 +50,7 @@
     <string name="label_voice_search">Voice search</string>
     <string name="dock_search_title">Google search bar</string>
     <string name="dock_search_summary">Search bar in the bottom dock</string>
+
+    <!-- Recents -->
+    <string name="action_lens">Lens</string>
 </resources>
