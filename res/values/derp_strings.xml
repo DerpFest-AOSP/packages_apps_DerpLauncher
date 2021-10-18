@@ -53,4 +53,7 @@
     <string name="category_icon">Icons</string>
     <string name="category_misc">Misc</string>
 
+    <!-- Recents -->
+    <string name="action_lens">Lens</string>
+
 </resources>
