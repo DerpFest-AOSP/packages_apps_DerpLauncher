@@ -81,6 +81,7 @@
     <string name="dock_search_summary">Search bar in the bottom dock</string>
     <string name="dock_theme_title">Themed icons</string>
     <string name="dock_theme_summary">Use themed icons for search bar</string>
+    <string name="search_radius_title">Corner radius</string>
 
     <!-- Hotseat Background -->
     <string name="hotseat_bg_title">Hotseat background</string>
