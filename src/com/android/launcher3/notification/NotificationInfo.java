@@ -27,6 +27,7 @@ import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.service.notification.StatusBarNotification;
 import android.view.View;
+import androidx.core.graphics.ColorUtils;
 
 import com.android.launcher3.AbstractFloatingView;
 import com.android.launcher3.Launcher;
@@ -121,7 +122,7 @@ public class NotificationInfo implements View.OnClickListener {
             // Only small icons should be tinted.
             return mIconDrawable;
         }
-        mIconColor = IconPalette.resolveContrastColor(context, mIconColor, background);
+        mIconColor = IconPalette.resolveContrastColor(context, mIconColor, ColorUtils.setAlphaComponent(background, 0xFF));
         Drawable icon = mIconDrawable.mutate();
         // DrawableContainer ignores the color filter if it's already set, so clear it first to
         // get it set and invalidated properly.
