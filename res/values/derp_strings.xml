@@ -49,4 +49,9 @@
     <string name="title_drawer_labels">Drawer labels</string>
     <string name="summary_drawer_labels">Show icon labels in drawer</string>
 
+    <!-- Settings Categories -->
+    <string name="category_home">HOME</string>
+    <string name="category_icon">ICONS</string>
+    <string name="category_misc">MISC</string>
+
 </resources>
