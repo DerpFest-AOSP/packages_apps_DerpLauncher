@@ -27,6 +27,7 @@
     <string name="misc_category_summary">Other options</string>
     <string name="general_category_title">General</string>
     <string name="interface_category_title">Interface</string>
+    <string name="search_bar_category_title">Search bar</string>
 
     <!-- Developer options -->
     <string name="dev_options_title">Developer options</string>
@@ -93,4 +94,6 @@
     <string name="label_search">Search</string>
     <string name="label_lens">Google Lens</string>
     <string name="label_voice_search">Voice search</string>
+    <string name="dock_search_title">Google search bar</string>
+    <string name="dock_search_summary">Search bar in the bottom dock</string>
 </resources>
