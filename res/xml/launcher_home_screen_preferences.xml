@@ -63,4 +63,16 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/search_bar_category_title">
+
+        <SwitchPreferenceCompat
+            android:key="pref_dock_search"
+            android:title="@string/dock_search_title"
+            android:summary="@string/dock_search_summary"
+            android:defaultValue="true"
+            launcher:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
 </androidx.preference.PreferenceScreen>
