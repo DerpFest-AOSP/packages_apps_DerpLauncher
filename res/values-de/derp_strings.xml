@@ -65,4 +65,9 @@
 
     <!-- App label - max lines -->
     <string name="icon_max_lines_title">Max. Zeilenanzahl für App-Beschriftungen</string>
+
+    <!-- Hotseat searchbar -->
+    <string name="label_search">Suche</string>
+    <string name="label_lens">Google Lens</string>
+    <string name="label_voice_search">Sprachsuche</string>
 </resources>
