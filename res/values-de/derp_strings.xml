@@ -75,4 +75,6 @@
     <string name="label_search">Suche</string>
     <string name="label_lens">Google Lens</string>
     <string name="label_voice_search">Sprachsuche</string>
+    <string name="dock_search_title">Google-Suchleiste</string>
+    <string name="dock_search_summary">Suchleiste im unteren Dock</string>
 </resources>

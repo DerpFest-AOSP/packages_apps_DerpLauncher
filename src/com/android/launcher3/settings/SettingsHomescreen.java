@@ -54,7 +54,8 @@ import androidx.preference.PreferenceScreen;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class SettingsHomescreen extends CollapsingToolbarBaseActivity
-        implements OnPreferenceStartFragmentCallback, OnPreferenceStartScreenCallback {
+        implements OnPreferenceStartFragmentCallback, OnPreferenceStartScreenCallback,
+        SharedPreferences.OnSharedPreferenceChangeListener{
 
     public static final String EXTRA_FRAGMENT_ARGS = ":settings:fragment_args";
 
@@ -125,6 +126,17 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
         }
     }
 
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) { 
+        switch (key) {
+            case Utilities.KEY_DOCK_SEARCH:
+                LauncherAppState.getInstance(this).setNeedsRestart();
+                break;
+            default:
+                break;
+        }
+    }
+
     private boolean startPreference(String fragment, Bundle args, String key) {
         if (getFragmentManager().isStateSaved()) {
             // Sometimes onClick can come after onPause because of being posted on the handler.
@@ -174,6 +186,7 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
         private static final String KEY_MINUS_ONE = "pref_enable_minus_one";
 
         private Preference mShowGoogleAppPref;
+        private Preference mShowGoogleBarPref;
 
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -195,6 +208,7 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
             }
 
             mShowGoogleAppPref = screen.findPreference(KEY_MINUS_ONE);
+            mShowGoogleBarPref = screen.findPreference(Utilities.KEY_DOCK_SEARCH);
             updateIsGoogleAppEnabled();
 
             if (getActivity() != null && !TextUtils.isEmpty(getPreferenceScreen().getTitle())) {
@@ -229,6 +243,9 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
         private void updateIsGoogleAppEnabled() {
             if (mShowGoogleAppPref != null) {
                 mShowGoogleAppPref.setEnabled(Utilities.isGSAEnabled(getContext()));
+            }
+            if (mShowGoogleBarPref != null) {
+                mShowGoogleBarPref.setEnabled(Utilities.isGSAEnabled(getContext()));
             }
         }
 
