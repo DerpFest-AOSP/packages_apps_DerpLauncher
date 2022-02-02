@@ -161,6 +161,7 @@ public final class Utilities {
     public @interface AdjustmentDirection{}
 
     public static final String GSA_PACKAGE = "com.google.android.googlequicksearchbox";
+    public static final String KEY_DOCK_SEARCH = "pref_dock_search";
 
     /**
      * Returns true if theme is dark.
@@ -855,6 +856,15 @@ public final class Utilities {
             }
             android.os.Process.killProcess(android.os.Process.myPid());
         });
+    }
+
+    public static boolean showQSB(Context context) {
+        return isGSAEnabled(context) && isQSBEnabled(context);
+    }
+
+    private static boolean isQSBEnabled(Context context) {
+        SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(KEY_DOCK_SEARCH, true);
     }
 
 }

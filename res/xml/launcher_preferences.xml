@@ -46,6 +46,12 @@
         android:summaryOff="@string/settings_lock_layout_summary_off" />
 
     <SwitchPreference
+        android:key="pref_dock_search"
+        android:title="@string/dock_search_title"
+        android:summary="@string/dock_search_summary"
+        android:defaultValue="true" />
+
+    <SwitchPreference
         android:key="pref_dt_gesture"
         android:title="@string/pref_dt_gesture_title"
         android:summary="@string/pref_dt_gesture_summary"
