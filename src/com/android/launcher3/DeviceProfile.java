@@ -398,7 +398,9 @@ public class DeviceProfile {
         numShownAllAppsColumns =
                 isTwoPanels ? inv.numDatabaseAllAppsColumns : inv.numAllAppsColumns;
 
-        int hotseatBarBottomSpace = pxFromDp(inv.hotseatBarBottomSpace[mTypeIndex], mMetrics);
+        int hotseatBarBottomSpace = Utilities.showQSB(context)
+                ? pxFromDp(inv.hotseatBarBottomSpace[mTypeIndex], mMetrics)
+                : R.dimen.dynamic_grid_hotseat_bottom_non_tall_padding;
         int minQsbMargin = res.getDimensionPixelSize(R.dimen.min_qsb_margin);
         hotseatQsbSpace = pxFromDp(inv.hotseatQsbSpace[mTypeIndex], mMetrics);
         // Have a little space between the inset and the QSB

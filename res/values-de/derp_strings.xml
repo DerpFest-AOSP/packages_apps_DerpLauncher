@@ -52,4 +52,11 @@
     <!-- Recents Lens -->
     <string name="show_lens_button_title">Google Lens-Schaltfläche anzeigen</string>
     <string name="show_lens_button_summary">Ersetzt die Screenshot-Schaltfläche durch die Google Lens-Schaltfläche, falls verfügbar</string>
+
+    <!-- Hotseat searchbar -->
+    <string name="label_search">Suche</string>
+    <string name="label_lens">Google Lens</string>
+    <string name="label_voice_search">Sprachsuche</string>
+    <string name="dock_search_title">Google-Suchleiste</string>
+    <string name="dock_search_summary">Suchleiste im unteren Dock</string>
 </resources>
