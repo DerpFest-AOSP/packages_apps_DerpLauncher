@@ -42,4 +42,9 @@
 
     <!-- Settings Categories -->
     <string name="category_icon">Symbole</string>
+
+    <!-- Hotseat searchbar -->
+    <string name="label_search">Suche</string>
+    <string name="label_lens">Google Lens</string>
+    <string name="label_voice_search">Sprachsuche</string>
 </resources>
