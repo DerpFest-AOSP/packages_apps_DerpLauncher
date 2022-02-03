@@ -204,12 +204,6 @@ public class PackageManagerHelper implements SafeCloseable{
         return (info.flags & ApplicationInfo.FLAG_SUSPENDED) != 0;
     }
 
-    public Intent getUninstallIntent(String packageName) {
-        return new Intent(Intent.ACTION_UNINSTALL_PACKAGE)
-                .setData(Uri.parse("package:" + packageName))
-                .putExtra(Intent.EXTRA_RETURN_RESULT, true);
-    }
-
     /**
      * Starts the details activity for {@code info}
      */
