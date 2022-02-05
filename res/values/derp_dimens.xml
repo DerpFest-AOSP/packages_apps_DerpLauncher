@@ -5,6 +5,9 @@
 -->
 <resources>
 
+    <!-- Overview scrolling scale animation -->
+    <dimen name="overview_scroll_scale">0.9</dimen>
+
     <dimen name="derp_branding_half_height">40dp</dimen>
     <dimen name="derp_card_radius">22dp</dimen>
     <dimen name="derp_card_side_margin">18dp</dimen>
