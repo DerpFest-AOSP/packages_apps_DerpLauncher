@@ -468,4 +468,7 @@
     <!--  Folder spaces  -->
     <dimen name="folder_top_padding_default">24dp</dimen>
     <dimen name="folder_footer_horiz_padding">20dp</dimen>
+
+    <!-- Overview scrolling scale animation -->
+    <dimen name="overview_scroll_scale">0.9</dimen>
 </resources>
