@@ -150,4 +150,6 @@
     <!-- Faster statusbar expansion -->
     <string name="faster_sb_expansion">Faster status bar expansion</string>
 
+    <!-- Memory info -->
+    <string name="meminfo_text">%1$s Available | %2$s Total</string>
 </resources>
