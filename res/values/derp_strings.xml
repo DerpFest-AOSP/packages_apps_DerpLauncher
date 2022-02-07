@@ -127,4 +127,7 @@
     <!-- Hide top shadow -->
     <string name="hide_top_shadow_title">Hide top shadow</string>
     <string name="hide_top_shadow_summary">Remove shadow underneath the status bar</string>
+
+    <!-- Memory info -->
+    <string name="meminfo_text">%1$s Available | %2$s Total</string>
 </resources>

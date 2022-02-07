@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 DerpFest
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+     <!-- Meminfo in overview -->
+    <dimen name="meminfo_bottom_margin_gesture">15dp</dimen>
+    <dimen name="meminfo_bottom_margin_three_button">15dp</dimen>
+</resources>

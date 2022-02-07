@@ -113,4 +113,7 @@
     <!-- Hide top shadow -->
     <string name="hide_top_shadow_title">Schatten oben verstecken</string>
     <string name="hide_top_shadow_summary">Schatten oben auf dem Startbildschirm entfernen</string>
+
+    <!-- Memory info -->
+    <string name="meminfo_text">Frei: %1$s | Gesamt: %2$s</string>
 </resources>
