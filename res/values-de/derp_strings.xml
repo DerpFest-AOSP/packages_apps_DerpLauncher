@@ -72,6 +72,8 @@
     <string name="label_voice_search">Sprachsuche</string>
     <string name="dock_search_title">Google-Suchleiste</string>
     <string name="dock_search_summary">Suchleiste im unteren Dock</string>
+    <string name="dock_theme_title">Symboldesigns</string>
+    <string name="dock_theme_summary">Symboldesigns in der Suchleiste verwenden</string>
 
     <!-- Hotseat Background -->
     <string name="hotseat_bg_title">Hintergrund im Dock</string>

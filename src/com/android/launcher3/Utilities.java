@@ -185,6 +185,7 @@ public final class Utilities {
     public static final String LENS_SHARE_ACTIVITY = "com.google.android.apps.search.lens.LensShareEntryPointActivity";
 
     public static final String KEY_DOCK_SEARCH = "pref_dock_search";
+    public static final String KEY_DOCK_THEME = "pref_dock_theme";
     public static final String KEY_SHOW_HOTSEAT_BG = "pref_show_hotseat_bg";
     public static final String KEY_ALLOW_WALLPAPER_ZOOMING = "pref_allow_wallpaper_zooming";
     public static final String KEY_STATUS_BAR = "pref_show_statusbar";
@@ -959,6 +960,11 @@ public final class Utilities {
     private static boolean isQSBEnabled(Context context) {
         SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
         return prefs.getBoolean(KEY_DOCK_SEARCH, true);
+    }
+
+    public static boolean isThemedIconsEnabled(Context context) {
+        SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(KEY_DOCK_THEME, false);
     }
 
     public static boolean isHotseatBgEnabled(Context context) {
