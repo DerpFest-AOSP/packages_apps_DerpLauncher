@@ -173,4 +173,7 @@
     <string name="pref_homescreen_gestures_screenshot">Screenshot</string>
     <string name="pref_homescreen_gestures_notifications">Benachrichtigungen anzeigen</string>
     <string name="pref_homescreen_gestures_qspanel">Schnelleinstellungen</string>
+
+    <!-- Memory info -->
+    <string name="meminfo_text">%1$s Verfügbar | %2$s Gesamt</string>
 </resources>
