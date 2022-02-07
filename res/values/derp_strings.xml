@@ -146,4 +146,7 @@
     <string name="action_lens">Lens</string>
     <string name="show_lens_button_title">Show lens button</string>
     <string name="show_lens_button_summary">Replace screenshot button with Google Lens button, if available</string>
+
+    <!-- Memory info -->
+    <string name="meminfo_text">%1$s Available | %2$s Total</string>
 </resources>

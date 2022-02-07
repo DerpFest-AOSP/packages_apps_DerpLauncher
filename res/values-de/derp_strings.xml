@@ -118,4 +118,7 @@
     <!-- DT2S -->
     <string name="pref_sleep_gesture_title">Doppeltippen zum Sperren</string>
     <string name="pref_sleep_gesture_summary">Zum Sperren auf einen leeren Bereich doppeltippen</string>
+
+    <!-- Memory info -->
+    <string name="meminfo_text">Frei: %1$s | Gesamt: %2$s</string>
 </resources>
