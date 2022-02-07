@@ -122,4 +122,7 @@
     <!-- Haptics on DT2S -->
     <string name="pref_haptics_on_dt2s_title">Haptik beim Doppeltippen zum Sperren</string>
     <string name="pref_haptics_on_dt2s_summary">Haptischer Effekt bei der Geste Doppeltippen zum Sperren</string>
+
+    <!-- Memory info -->
+    <string name="meminfo_text">Frei: %1$s | Gesamt: %2$s</string>
 </resources>

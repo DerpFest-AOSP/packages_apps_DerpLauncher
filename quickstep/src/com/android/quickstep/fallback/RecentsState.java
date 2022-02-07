@@ -45,13 +45,15 @@ public class RecentsState implements BaseState<RecentsState> {
     private static final int FLAG_LIVE_TILE = BaseState.getFlag(6);
     private static final int FLAG_RECENTS_VIEW_VISIBLE = BaseState.getFlag(7);
     private static final int FLAG_TASK_THUMBNAIL_SPLASH = BaseState.getFlag(8);
+    private static final int FLAG_MEMINFO = BaseState.getFlag(8);
 
     public static final RecentsState DEFAULT = new RecentsState(0,
             FLAG_DISABLE_RESTORE | FLAG_CLEAR_ALL_BUTTON | FLAG_OVERVIEW_ACTIONS | FLAG_SHOW_AS_GRID
-                    | FLAG_SCRIM | FLAG_LIVE_TILE | FLAG_RECENTS_VIEW_VISIBLE);
+                    | FLAG_SCRIM | FLAG_LIVE_TILE | FLAG_RECENTS_VIEW_VISIBLE | FLAG_MEMINFO);
     public static final RecentsState MODAL_TASK = new ModalState(1,
             FLAG_DISABLE_RESTORE | FLAG_CLEAR_ALL_BUTTON | FLAG_OVERVIEW_ACTIONS | FLAG_MODAL
-                    | FLAG_SHOW_AS_GRID | FLAG_SCRIM | FLAG_LIVE_TILE | FLAG_RECENTS_VIEW_VISIBLE);
+                    | FLAG_SHOW_AS_GRID | FLAG_SCRIM | FLAG_LIVE_TILE | FLAG_RECENTS_VIEW_VISIBLE
+                    | FLAG_MEMINFO);
     public static final RecentsState BACKGROUND_APP = new BackgroundAppState(2,
             FLAG_DISABLE_RESTORE | FLAG_NON_INTERACTIVE | FLAG_FULL_SCREEN
                     | FLAG_RECENTS_VIEW_VISIBLE
@@ -118,6 +120,13 @@ public class RecentsState implements BaseState<RecentsState> {
      */
     public boolean hasOverviewActions() {
         return hasFlag(FLAG_OVERVIEW_ACTIONS);
+    }
+
+    /**
+     * For this state, whether mem info view should be shown.
+     */
+    public boolean hasMemInfoView() {
+        return hasFlag(FLAG_MEMINFO);
     }
 
     /**
