@@ -165,4 +165,7 @@
     <!-- Wallpaper zooming -->
     <string name="allow_wallpaper_zooming">Hintergrundbild-Zoomeffekt</string>
     <string name="allow_wallpaper_zooming_desc">Herein- und Herauszoomen des Hintergrundbilds bei Verwendung der App-Übersicht und des App-Verlaufs</string>
+
+    <!-- Memory info -->
+    <string name="meminfo_text">%1$s Verfügbar | %2$s Gesamt</string>
 </resources>
