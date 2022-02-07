@@ -122,4 +122,7 @@
     <!-- Kill App recents action shortcut -->
     <string name="recent_task_option_kill_app">Beenden</string>
     <string name="recents_app_killed">App beendet</string>
+
+    <!-- Memory info -->
+    <string name="meminfo_text">Frei: %1$s | Gesamt: %2$s</string>
 </resources>
