@@ -45,6 +45,7 @@
     <string name="category_recents">Anwendungsverlauf</string>
     <string name="category_dev">Entwickler</string>
     <string name="category_gesture">Gesten</string>
+    <string name="category_statusbar">Statusleiste</string>
 
     <!-- Hotseat searchbar -->
     <string name="label_search">Suche</string>
@@ -132,4 +133,8 @@
     <!-- Wallpaper scrolling -->
     <string name="allow_wallpaper_scrolling">Hintergrundbild-Bewegung</string>
     <string name="allow_wallpaper_scrolling_summary">Hintergrundbild-Bewegung beim Seitenwechsel</string>
+
+    <!-- Homescreen Statusbar -->
+    <string name="show_statusbar_title">Statusleiste anzeigen</string>
+    <string name="show_statusbar_summary">Statusleiste auf dem Startbildschirm anzeigen</string>
 </resources>

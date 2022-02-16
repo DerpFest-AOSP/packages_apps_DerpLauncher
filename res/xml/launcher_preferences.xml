@@ -68,20 +68,6 @@
         android:summary="@string/allow_wallpaper_scrolling_summary"
         android:defaultValue="true" />
 
-    <SwitchPreference
-        android:key="pref_hide_top_shadow"
-        android:title="@string/hide_top_shadow_title"
-        android:summary="@string/hide_top_shadow_summary"
-        android:defaultValue="false"
-        android:persistent="true" />
-
-    <SwitchPreference
-        android:key="pref_dark_status_bar"
-        android:title="@string/perf_dark_status_bar_title"
-        android:summary="@string/perf_dark_status_bar_summary"
-        android:defaultValue="false"
-        android:persistent="true" />
-
      <com.android.launcher3.settings.preference.CustomSeekBarPreference
         android:key="pref_blur_depth"
         android:title="@string/background_blur_title"
@@ -111,6 +97,33 @@
             android:key="pref_faster_sb_expansion"
             android:title="@string/faster_sb_expansion_title"
             android:summary="@string/faster_sb_expansion_summary"
+            android:defaultValue="false"
+            android:persistent="true" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:key="statusbar_category"
+        android:title="@string/category_statusbar">
+
+        <SwitchPreference
+            android:key="pref_show_statusbar"
+            android:title="@string/show_statusbar_title"
+            android:summary="@string/show_statusbar_summary"
+            android:defaultValue="true"
+            android:persistent="true" />
+
+        <SwitchPreference
+            android:key="pref_hide_top_shadow"
+            android:title="@string/hide_top_shadow_title"
+            android:summary="@string/hide_top_shadow_summary"
+            android:defaultValue="false"
+            android:persistent="true" />
+
+        <SwitchPreference
+            android:key="pref_dark_status_bar"
+            android:title="@string/perf_dark_status_bar_title"
+            android:summary="@string/perf_dark_status_bar_summary"
             android:defaultValue="false"
             android:persistent="true" />
 

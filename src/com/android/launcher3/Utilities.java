@@ -181,6 +181,7 @@ public final class Utilities {
     public static final String KEY_SHOW_HOTSEAT_BG = "pref_show_hotseat_bg";
     public static final String KEY_HOTSEAT_OPACITY = "pref_hotseat_opacity";
     public static final String KEY_BLUR_DEPTH = "pref_blur_depth";
+    public static final String KEY_STATUS_BAR = "pref_show_statusbar";
 
     /**
      * Returns true if theme is dark.
@@ -936,5 +937,10 @@ public final class Utilities {
         SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
         return prefs.getInt(KEY_BLUR_DEPTH,
                 (int) context.getResources().getDimension(R.dimen.max_depth_blur_radius));
+    }
+
+    public static boolean showStatusbarEnabled(Context context) {
+        SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(KEY_STATUS_BAR, true);
     }
 }

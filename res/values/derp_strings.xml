@@ -47,6 +47,7 @@
     <string name="category_recents">Recents</string>
     <string name="category_dev">Developer</string>
     <string name="category_gesture">Gestures</string>
+    <string name="category_statusbar">Status Bar</string>
 
     <!-- Hotseat searchbar -->
     <string name="label_search">Search</string>
@@ -150,4 +151,8 @@
     <!-- Wallpaper scrolling -->
     <string name="allow_wallpaper_scrolling">Wallpaper scrolling</string>
     <string name="allow_wallpaper_scrolling_summary">Wallpaper scrolling effect for multiple screens</string>
+
+    <!-- Homescreen Statusbar -->
+    <string name="show_statusbar_title">Show status bar</string>
+    <string name="show_statusbar_summary">Show status bar on Home screen</string>
 </resources>
