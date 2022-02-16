@@ -93,4 +93,8 @@
     <!-- Wallpaper zooming -->
     <string name="allow_wallpaper_zooming">Hintergrundbild-Zoomeffekt</string>
     <string name="allow_wallpaper_zooming_summary">Herein- und Herauszoomen des Hintergrundbilds bei Verwendung von App-Übersicht und -Verlauf</string>
+
+    <!-- Homescreen Statusbar -->
+    <string name="show_statusbar_title">Statusleiste anzeigen</string>
+    <string name="show_statusbar_summary">Statusleiste auf dem Startbildschirm anzeigen</string>
 </resources>
