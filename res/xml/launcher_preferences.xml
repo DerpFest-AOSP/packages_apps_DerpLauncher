@@ -19,44 +19,40 @@
     xmlns:launcher="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.launcher3">
 
-    <androidx.preference.PreferenceCategory
-        android:key="home_category"
-        android:title="@string/category_home">
+    <!--
+    LAUNCHER_HOME_SCREEN_ROTATION_ENABLED(615)
+    LAUNCHER_HOME_SCREEN_ROTATION_DISABLED(616)
+    -->
+    <SwitchPreference
+        android:key="pref_allowRotation"
+        android:title="@string/allow_rotation_title"
+        android:summary="@string/allow_rotation_desc"
+        android:defaultValue="false"
+        android:persistent="true"
+        launcher:logIdOn="615"
+        launcher:logIdOff="616" />
 
-        <!--
-        LAUNCHER_HOME_SCREEN_ROTATION_ENABLED(615)
-        LAUNCHER_HOME_SCREEN_ROTATION_DISABLED(616)
-        -->
-        <SwitchPreference
-            android:key="pref_allowRotation"
-            android:title="@string/allow_rotation_title"
-            android:summary="@string/allow_rotation_desc"
-            android:defaultValue="false"
-            android:persistent="true"
-            launcher:logIdOn="615"
-            launcher:logIdOff="616" />
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="pref_enable_minus_one"
+        android:summary="@string/pref_show_google_now_summary"
+        android:title="@string/title_show_google_app"/>
 
-        <SwitchPreference
-            android:defaultValue="true"
-            android:key="pref_enable_minus_one"
-            android:summary="@string/pref_show_google_now_summary"
-            android:title="@string/title_show_google_app"/>
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="pref_workspace_lock"
+        android:persistent="true"
+        android:title="@string/settings_lock_layout_title"
+        android:summaryOn="@string/settings_lock_layout_summary_on"
+        android:summaryOff="@string/settings_lock_layout_summary_off" />
 
-        <SwitchPreference
-            android:defaultValue="false"
-            android:key="pref_workspace_lock"
-            android:persistent="true"
-            android:title="@string/settings_lock_layout_title"
-            android:summaryOn="@string/settings_lock_layout_summary_on"
-            android:summaryOff="@string/settings_lock_layout_summary_off" />
-
-        <com.android.launcher3.settings.NotificationDotsPreference
-            android:key="pref_icon_badging"
-            android:title="@string/notification_dots_title"
-            android:persistent="false"
-            android:widgetLayout="@layout/notification_pref_warning" />
-
-    </androidx.preference.PreferenceCategory>
+    <Preference
+        android:persistent="false"
+        android:title="@string/suggestion_pref_screen_title"
+        android:key="pref_suggestions"
+        android:summary="@string/suggestion_pref_screen_desc">
+        <intent android:action="android.settings.ACTION_CONTENT_SUGGESTIONS_SETTINGS" />
+    </Preference>
 
     <androidx.preference.PreferenceCategory
         android:key="icon_category"
@@ -74,6 +70,12 @@
             android:persistent="true"
             launcher:logIdOn="613"
             launcher:logIdOff="614" />
+
+        <com.android.launcher3.settings.NotificationDotsPreference
+            android:key="pref_icon_badging"
+            android:title="@string/notification_dots_title"
+            android:persistent="false"
+            android:widgetLayout="@layout/notification_pref_warning" />
 
         <SwitchPreference
             android:key="pref_desktop_show_labels"
@@ -94,14 +96,6 @@
     <androidx.preference.PreferenceCategory
         android:key="misc_category"
         android:title="@string/category_misc">
-
-        <Preference
-            android:persistent="false"
-            android:title="@string/suggestion_pref_screen_title"
-            android:key="pref_suggestions"
-            android:summary="@string/suggestion_pref_screen_desc">
-            <intent android:action="android.settings.ACTION_CONTENT_SUGGESTIONS_SETTINGS" />
-        </Preference>
 
         <Preference
             android:key="pref_developer_options"
