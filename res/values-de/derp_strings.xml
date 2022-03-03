@@ -45,7 +45,6 @@
     <string name="summary_drawer_labels">Symbolbeschriftungen in der App-Übersicht anzeigen</string>
 
     <!-- Settings Categories -->
-    <string name="category_home">START</string>
-    <string name="category_icon">SYMBOLE</string>
-    <string name="category_misc">VERSCHIEDENES</string>
+    <string name="category_icon">Symbole</string>
+    <string name="category_misc">Verschiedenes</string>
 </resources>
