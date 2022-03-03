@@ -48,6 +48,7 @@ import com.android.launcher3.icons.IconProvider;
 import com.android.launcher3.icons.LauncherIconProvider;
 import com.android.launcher3.icons.LauncherIcons;
 import com.android.launcher3.lineage.trust.HiddenAppsFilter;
+import com.android.launcher3.lineage.trust.db.TrustDatabaseHelper;
 import com.android.launcher3.model.ModelLauncherCallbacks;
 import com.android.launcher3.notification.NotificationListener;
 import com.android.launcher3.pm.InstallSessionHelper;
@@ -257,6 +258,10 @@ public class LauncherAppState implements SafeCloseable {
 
     public boolean isSafeModeEnabled() {
         return mIsSafeModeEnabled;
+    }
+
+    public TrustDatabaseHelper getTrustData() {
+        return TrustDatabaseHelper.getInstance(this.mContext);
     }
 
     /**
