@@ -4265,6 +4265,10 @@ public abstract class RecentsView<CONTAINER_TYPE extends Context & RecentsViewCo
         mContainer.getStatsLogManager().logger().log(LAUNCHER_TASK_CLEAR_ALL);
     }
 
+    public void dismissAllTasks() {
+        dismissAllTasks(null);
+    }
+
     private void dismissCurrentTask() {
         TaskView taskView = getNextPageTaskView();
         if (taskView != null) {
