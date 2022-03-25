@@ -106,6 +106,12 @@
             android:widgetLayout="@layout/notification_pref_warning" />
 
         <SwitchPreference
+            android:key="pref_allapps_themed_icons"
+            android:title="@string/pref_allapps_themed_icons"
+            android:defaultValue="false"
+            android:persistent="true" />
+
+        <SwitchPreference
             android:key="pref_desktop_show_labels"
             android:title="@string/title_desktop_labels"
             android:summary="@string/summary_desktop_labels"

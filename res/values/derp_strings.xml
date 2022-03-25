@@ -89,4 +89,7 @@
 
     <!-- Font size -->
     <string name="font_size_title">Font size</string>
+
+    <!-- All apps themed icons -->
+    <string name="pref_allapps_themed_icons">Use themed icons in drawer</string>
 </resources>

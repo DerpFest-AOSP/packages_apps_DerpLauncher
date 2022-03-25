@@ -80,4 +80,7 @@
     <string name="custom_seekbar_default_value">Standardmäßig</string>
     <string name="custom_seekbar_default_value_to_set">Standardwert: <xliff:g id="v">%s</xliff:g>\nZum Einstellen gedrückt halten</string>
     <string name="custom_seekbar_default_value_is_set">Standardwert ist eingestellt</string>
+
+    <!-- All apps themed icons -->
+    <string name="pref_allapps_themed_icons">Thematische Symbole für App-Übersicht verwenden</string>
 </resources>
