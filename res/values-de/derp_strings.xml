@@ -59,4 +59,8 @@
     <string name="label_voice_search">Sprachsuche</string>
     <string name="dock_search_title">Google-Suchleiste</string>
     <string name="dock_search_summary">Suchleiste im unteren Dock</string>
+
+    <!-- All apps themed icons -->
+    <string name="pref_themed_icons_title">Thematische Symbole für App-Übersicht</string>
+    <string name="pref_themed_icons_summary">Thematische Symbole für die App-Übersicht verwenden</string>
 </resources>

@@ -66,4 +66,8 @@
     <string name="dock_search_title">Google search bar</string>
     <string name="dock_search_summary">Show search bar in the bottom dock</string>
 
+    <!-- All apps themed icons -->
+    <string name="pref_themed_icons_title">Drawer themed icons</string>
+    <string name="pref_themed_icons_summary">Apply themed icons in drawer</string>
+
 </resources>
