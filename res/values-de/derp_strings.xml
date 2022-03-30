@@ -37,4 +37,8 @@
     <string name="summary_desktop_labels">Symbolbeschriftungen auf dem Startbildschirm anzeigen</string>
     <string name="title_drawer_labels">App-Übersicht-Beschriftungen</string>
     <string name="summary_drawer_labels">Symbolbeschriftungen in der App-Übersicht anzeigen</string>
+
+    <!-- All apps themed icons -->
+    <string name="pref_themed_icons_title">Symboldesigns</string>
+    <string name="pref_themed_icons_summary">Stil der Symboldesigns auf dem Startbildschirm folgen</string>
 </resources>
