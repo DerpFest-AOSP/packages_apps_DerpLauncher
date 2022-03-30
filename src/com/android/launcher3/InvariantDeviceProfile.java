@@ -107,6 +107,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
     public static final String KEY_ICON_SIZE = "pref_custom_icon_size";
     public static final String KEY_FONT_SIZE = "pref_custom_font_size";
     public static final String KEY_MAX_LINES = "pref_max_lines";
+    public static final String KEY_ALLAPPS_THEMED_ICONS = "pref_allapps_themed_icons";
 
     // Constants that affects the interpolation curve between statically defined device profile
     // buckets.
@@ -404,6 +405,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
             case KEY_MAX_LINES:
             case DeviceProfile.KEY_ROW_HEIGHT:
             case IconDatabase.KEY_ICON_PACK:
+            case KEY_ALLAPPS_THEMED_ICONS:
                 onConfigChanged(mContext);
                 break;
         }
