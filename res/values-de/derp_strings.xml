@@ -35,6 +35,8 @@
     <string name="settings_edit_widgets_error">Es ist nicht möglich, Widgets zum Startbildschirm hinzuzufügen</string>
 
     <!-- Hide labels -->
-    <string name="desktop_show_labels">Symbolbeschriftungen auf dem Startbildschirm</string>
-    <string name="drawer_show_labels">Symbolbeschriftungen in der Übersicht</string>
+    <string name="title_desktop_labels">Startbildschirm-Beschriftungen</string>
+    <string name="summary_desktop_labels">Symbolbeschriftungen auf dem Startbildschirm anzeigen</string>
+    <string name="title_drawer_labels">App-Übersicht-Beschriftungen</string>
+    <string name="summary_drawer_labels">Symbolbeschriftungen in der App-Übersicht anzeigen</string>
 </resources>
