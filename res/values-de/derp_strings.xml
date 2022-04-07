@@ -50,8 +50,10 @@
     <string name="msg_minus_one_on_right">Wische auf dem Startbildschirm nach rechts, um die Google App zu öffnen</string>
 
     <!-- Hide labels -->
-    <string name="desktop_show_labels">Symbolbeschriftungen auf dem Startbildschirm anzeigen</string>
-    <string name="drawer_show_labels">Symbolbeschriftungen in der App-Übersicht anzeigen</string>
+    <string name="title_desktop_labels">Startbildschirm-Beschriftungen</string>
+    <string name="summary_desktop_labels">Symbolbeschriftungen auf dem Startbildschirm anzeigen</string>
+    <string name="title_drawer_labels">App-Übersicht-Beschriftungen</string>
+    <string name="summary_drawer_labels">Symbolbeschriftungen in der App-Übersicht anzeigen</string>
 
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Wert: <xliff:g id="v">%s</xliff:g></string>

@@ -64,7 +64,8 @@
 
         <SwitchPreference
             android:key="pref_desktop_show_labels"
-            android:title="@string/desktop_show_labels"
+            android:title="@string/title_desktop_labels"
+            android:summary="@string/summary_desktop_labels"
             android:defaultValue="true"
             android:persistent="true" />
     </PreferenceCategory>
