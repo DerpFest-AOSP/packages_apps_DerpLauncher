@@ -104,6 +104,9 @@
         package="com.google.android.calculator" />
     <icon
         drawable="@drawable/themed_icon_camera"
+        package="app.grapheneos.camera" />
+    <icon
+        drawable="@drawable/themed_icon_camera"
         package="com.google.android.GoogleCamera" />
     <icon
         drawable="@drawable/themed_icon_camera"
@@ -144,6 +147,9 @@
     <icon
         drawable="@drawable/themed_icon_camera"
         package="com.google.android.apps.lens.example.release" />
+    <icon
+        drawable="@drawable/themed_icon_miuicamera"
+        package="com.android.camera" />
     <icon
         drawable="@drawable/themed_icon_canvas"
         package="com.canva.editor" />
@@ -552,6 +558,9 @@
         drawable="@drawable/themed_icon_retro_music"
         package="code.name.monkey.retromusic" />
     <icon
+        drawable="@drawable/themed_icon_retro_music"
+        package="io.github.muntashirakon.Music.debug" />
+    <icon
         drawable="@drawable/themed_icon_safety"
         package="com.google.android.apps.safetyhub" />
     <icon
@@ -845,9 +854,6 @@
     <icon
         drawable="@drawable/themed_icon_espn"
         package="com.espn.score_center" />
-    <icon
-        drawable="@drawable/themed_icon_find_my_device"
-        package="com.google.android.apps.adm" />
     <icon
         drawable="@drawable/themed_icon_fng"
         package="com.fb.fluid" />
@@ -1410,9 +1416,6 @@
         drawable="@drawable/themed_icon_mercado_libre"
         package="com.mercadopago.wallet" />
     <icon
-        drawable="@drawable/themed_icon_retro_music"
-        package="io.github.muntashirakon.Music.debug" />
-    <icon
         drawable="@drawable/themed_icon_mini_metro"
         package="nz.co.codepoint.minimetro" />
     <icon
@@ -1691,6 +1694,21 @@
     <icon
         drawable="@drawable/themed_icon_fitbit"
         package="com.fitbit.FitbitMobile" />
+    <icon
+        drawable="@drawable/themed_icon_admin"
+        package="com.google.android.apps.enterprise.cpanel" />
+    <icon
+        drawable="@drawable/themed_icon_nest"
+        package="com.nest.android" />
+    <icon
+        drawable="@drawable/themed_icon_classroom"
+        package="com.google.android.apps.classroom" />
+    <icon
+        drawable="@drawable/themed_icon_earth"
+        package="com.google.earth" />
+    <icon
+        drawable="@drawable/themed_icon_voice"
+        package="com.google.android.apps.googlevoice" />
     <icon
         drawable="@drawable/themed_icon_fasthub"
         package="com.fastaccess.github.debug" />
@@ -2007,6 +2025,9 @@
         drawable="@drawable/themed_icon_cod"
         package="com.activision.callofduty.shooter" />
     <icon
+        drawable="@drawable/themed_icon_cod"
+        package="com.tencent.tmgp.cod" />
+    <icon
         drawable="@drawable/themed_icon_mobile_legends"
         package="com.mobile.legends" />
     <icon
@@ -2024,4 +2045,301 @@
     <icon
         drawable="@drawable/themed_icon_dolby"
         package="com.motorola.dolby.dolbyui" />
+    <icon
+        drawable="@drawable/themed_icon_bilibili"
+        package="tv.danmaku.bili" />
+    <icon
+        drawable="@drawable/themed_icon_alipay"
+        package="com.eg.android.AlipayGphone" />
+    <icon
+        drawable="@drawable/themed_icon_jingdong"
+        package="com.jingdong.app.mall" />
+    <icon
+        drawable="@drawable/themed_icon_coolapk"
+        package="com.coolapk.market" />
+    <icon
+        drawable="@drawable/themed_icon_zhihu"
+        package="com.zhihu.android" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_bilibili_comic"
+        package="com.bilibili.comic" />
+    <icon
+        drawable="@drawable/themed_icon_island"
+        package="com.oasisfeng.island" />
+    <icon
+        drawable="@drawable/themed_icon_geometricweather"
+        package="wangdaye.com.geometricweather" />
+    <icon
+        drawable="@drawable/themed_icon_tvtime"
+        package="com.tozelabs.tvshowtime" />
+    <icon
+        drawable="@drawable/themed_icon_meituan"
+        package="com.sankuai.meituan" />
+    <icon
+        drawable="@drawable/themed_icon_meituanwaimai"
+        package="com.sankuai.meituan.takeoutnew" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_fenbi_android_solar"
+        package="com.fenbi.android.solar" />
+    <icon
+        drawable="@drawable/themed_icon_qq"
+        package="com.tencent.mobileqq" />
+    <icon
+        drawable="@drawable/themed_icon_weibo"
+        package="com.sina.weibo" />
+    <icon
+        drawable="@drawable/themed_icon_weibo"
+        package="com.weico.international" />
+    <icon
+        drawable="@drawable/themed_icon_weibo"
+        package="com.sina.weibolite" />
+    <icon
+        drawable="@drawable/themed_icon_wps"
+        package="cn.wps.moffice_eng" />
+    <icon
+        drawable="@drawable/themed_icon_wps"
+        package="cn.wps.moffice_i18n" />
+    <icon
+        drawable="@drawable/themed_icon_wps"
+        package="com.kingsoft.moffice_pro" />
+    <icon
+        drawable="@drawable/themed_icon_bangla"
+        package="com.ybwl.distributionedition" />
+    <icon
+        drawable="@drawable/themed_icon_bijian"
+        package="com.bilibili.studio" />
+    <icon
+        drawable="@drawable/themed_icon_bubei"
+        package="cn.com.langeasy.LangEasyLexis" />
+    <icon
+        drawable="@drawable/themed_icon_budao"
+        package="com.lptiyu.tanke" />
+    <icon
+        drawable="@drawable/themed_icon_cn_xuexi_android"
+        package="cn.xuexi.android" />
+    <icon
+        drawable="@drawable/themed_icon_com_deepl_mobiletranslator"
+        package="com.deepl.mobiletranslator" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_douyu_rush"
+        package="com.douyu.rush" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_douyu_rush"
+        package="air.tv.douyu.android" />
+    <icon
+        drawable="@drawable/themed_icon_com_fooview_android_fooview"
+        package="com.fooview.android.fooview" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_duowan_kiwi"
+        package="com.duowan.kiwi" />
+    <icon
+        drawable="@drawable/themed_icon_com_kugou_android"
+        package="com.kugou.android" />
+    <icon
+        drawable="@drawable/themed_icon_com_tencent_qt_qtl"
+        package="com.tencent.qt.qtl" />
+    <icon
+        drawable="@drawable/themed_icon_com_tencent_weread"
+        package="com.tencent.weread" />
+    <icon
+        drawable="@drawable/themed_icon_dazhong"
+        package="com.dianping.v1" />
+    <icon
+        drawable="@drawable/themed_icon_didi"
+        package="com.sdu.didi.psnger" />
+    <icon
+        drawable="@drawable/themed_icon_dmzj"
+        package="com.dmzj.manhua" />
+    <icon
+        drawable="@drawable/themed_icon_dmzj"
+        package="com.nsapp.dmzj.MainActivity" />
+    <icon
+        drawable="@drawable/themed_icon_dmzj"
+        package="com.nsapp.dmzj" />
+    <icon
+        drawable="@drawable/themed_icon_douban"
+        package="com.douban.frodo" />
+    <icon
+        drawable="@drawable/themed_icon_feizhu"
+        package="com.taobao.trip" />
+    <icon
+        drawable="@drawable/themed_icon_gaoji"
+        package="gjzs.online" />
+    <icon
+        drawable="@drawable/themed_icon_gjzs"
+        package="Han.GJZS" />
+    <icon
+        drawable="@drawable/themed_icon_hali"
+        package="com.tencent.tmgp.harrypotter" />
+    <icon
+        drawable="@drawable/themed_icon_hali"
+        package="com.netease.harrypotter.mi" />
+    <icon
+        drawable="@drawable/themed_icon_hali"
+        package="com.netease.harrypotter" />
+    <icon
+        drawable="@drawable/themed_icon_halo"
+        package="com.jingyao.easybike" />
+    <icon
+        drawable="@drawable/themed_icon_huaxiaozhu"
+        package="com.huaxiaozhu.rider" />
+    <icon
+        drawable="@drawable/themed_icon_hupu"
+        package="com.hupu.games" />
+    <icon
+        drawable="@drawable/themed_icon_ic_cn_kuwo_player"
+        package="cn.kuwo.player" />
+    <icon
+        drawable="@drawable/themed_icon_ic_cn_soulapp_android"
+        package="cn.soulapp.android" />
+    <icon
+        drawable="@drawable/themed_icon_ic_cn_xiaochuankeji_zuiyoulite"
+        package="cn.xiaochuankeji.zuiyouLite" />
+    <icon
+        drawable="@drawable/themed_icon_ic_cn_xiaochuankeji_tieba"
+        package="cn.xiaochuankeji.tieba" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_app_shanghai_metro"
+        package="com.app.shanghai.metro" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_baidu_baidumap"
+        package="com.baidu.BaiduMap" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_baidu_homework"
+        package="com.baidu.homework" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_baidu_input"
+        package="com.baidu.input" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_catchingnow_icebox"
+        package="com.catchingnow.icebox" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_chaoxing_mobile_wuhanuniversity"
+        package="com.chaoxing.mobile.wuhanuniversity" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_douyu_rush"
+        package="com.douyu.rush" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_douyu_rush"
+        package="air.tv.douyu.android" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_duokan_reader"
+        package="com.duokan.reader" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_duowan_kiwi"
+        package="com.duowan.kiwi" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_farplace_qingzhuo"
+        package="com.farplace.qingzhuo" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_gotokeep_keep"
+        package="com.gotokeep.keep" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_mojang_minecraftpe"
+        package="com.mojang.minecraftpe" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_pwrd_hotta_laohu"
+        package="com.pwrd.hotta.laohu" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_qidian_qdreader"
+        package="com.qidian.QDReader" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_qingqikeji_blackhorse_passenger"
+        package="com.qingqikeji.blackhorse.passenger" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_qiyi_video"
+        package="com.qiyi.video" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_qq_ac_android"
+        package="com.qq.ac.android" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_quark_browser"
+        package="com.quark.browser" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_shizhuang_duapp"
+        package="com.shizhuang.duapp" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_smile_gifmaker"
+        package="com.smile.gifmaker" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_taptap"
+        package="com.taptap" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_tencent_qqlite"
+        package="com.tencent.qqlite" />
+    <icon
+        drawable="@drawable/themed_icon_ic_com_youdao_dict"
+        package="com.youdao.dict" />
+    <icon
+        drawable="@drawable/themed_icon_ic_tv_acfundanmaku_video"
+        package="tv.acfundanmaku.video" />
+    <icon
+        drawable="@drawable/themed_icon_migu"
+        package="tv.icntv.migu" />
+    <icon
+        drawable="@drawable/themed_icon_migu"
+        package="cmccwm.mobilemusic" />
+    <icon
+        drawable="@drawable/themed_icon_mijia"
+        package="com.xiaomi.smarthome" />
+    <icon
+        drawable="@drawable/themed_icon_qqfc"
+        package="com.tencent.tmgp.speedmobile" />
+    <icon
+        drawable="@drawable/themed_icon_qqyy"
+        package="com.tencent.qqmusic" />
+    <icon
+        drawable="@drawable/themed_icon_qqyy"
+        package="com.tencent.qqmusiclite" />
+    <icon
+        drawable="@drawable/themed_icon_shaoshupai"
+        package="com.sspai.sspaiandroid" />
+    <icon
+        drawable="@drawable/themed_icon_tim"
+        package="com.tencent.tim" />
+    <icon
+        drawable="@drawable/themed_icon_toutiao"
+        package="com.ss.android.article.news" />
+    <icon
+        drawable="@drawable/themed_icon_toutiao"
+        package="com.ss.android.article.lite" />
+    <icon
+        drawable="@drawable/themed_icon_txhy"
+        package="com.tencent.wemeet.app" />
+    <icon
+        drawable="@drawable/themed_icon_txmap"
+        package="com.tencent.map" />
+    <icon
+        drawable="@drawable/themed_icon_txsp"
+        package="com.tencent.qqlive" />
+    <icon
+        drawable="@drawable/themed_icon_wzry"
+        package="com.tencent.tmgp.sgame" />
+    <icon
+        drawable="@drawable/themed_icon_xhs"
+        package="com.xingin.xhs" />
+    <icon
+        drawable="@drawable/themed_icon_xianyu"
+        package="com.taobao.idlefish" />
+    <icon
+        drawable="@drawable/themed_icon_xmly"
+        package="com.ximalaya.ting.android" />
+    <icon
+        drawable="@drawable/themed_icon_xuexi"
+        package="com.chaoxing.mobile" />
+    <icon
+        drawable="@drawable/themed_icon_yys"
+        package="com.netease.onmyoji" />
+    <icon
+        drawable="@drawable/themed_icon_yys"
+        package="com.netease.onmyoji.bili" />
+    <icon
+        drawable="@drawable/themed_icon_qingli"
+        package="com.ktls.fileinfo" />
+    <icon
+        drawable="@drawable/themed_icon_ic_flar2_devcheck"
+        package="flar2.devcheck" />
+    <icon
+        drawable="@drawable/themed_icon_ic_org_wikipedia"
+        package="org.wikipedia" />
 </icons>
