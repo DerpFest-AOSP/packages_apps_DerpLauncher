@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022 DerpFest
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- General -->
+    <string name="settings_title">Einstellungen</string>
+
+    <!-- Categories -->
+    <string name="home_category_title">Startbildschirm</string>
+    <string name="home_category_summary">Google Now-Panel und mehr einstellen</string>
+    <string name="icons_category_title">Symbole</string>
+    <string name="icons_category_summary">Symbolgröße und mehr festlegen</string>
+    <string name="app_drawer_category_title">App-Übersicht</string>
+    <string name="app_drawer_category_summary">App-Übersicht anpassen</string>
+    <string name="misc_category_title">Verschiedenes</string>
+    <string name="misc_category_summary">Andere Optionen</string>
+    <string name="dev_options_title">Entwickleroptionen</string>
+    <string name="dev_options_desc">Einige versteckte Funktionen auf eigene Gefahr aktivieren</string>
+    <string name="general_category_title">Allgemein</string>
+    <string name="interface_category_title">Oberfläche</string>
+    <string name="search_bar_category_title">Suchleiste</string>
+
+    <!-- Settings -->
+
+    <!-- Edit workspace -->
+    <string name="settings_lock_layout_title">Layout sperren</string>
+    <string name="settings_lock_layout_summary_on">Symbole und Widgets können nicht auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>
+    <string name="settings_lock_layout_summary_off">Symbole und Widgets können auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>
+    <string name="settings_edit_widgets_error">Es ist nicht möglich, Widgets zum Startbildschirm hinzuzufügen</string>
+
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_app">Wischen, um die Google App aufzurufen</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">Wische auf dem Startbildschirm nach links, um die Google App zu öffnen</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">Wische auf dem Startbildschirm nach rechts, um die Google App zu öffnen</string>
+
+    <!-- Hide labels -->
+    <string name="desktop_show_labels">Symbolbeschriftungen auf dem Startbildschirm anzeigen</string>
+    <string name="drawer_show_labels">Symbolbeschriftungen in der App-Übersicht anzeigen</string>
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Wert: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">Standard</string>
+    <string name="custom_seekbar_default_value_to_set">Standardwert: <xliff:g id="v">%s</xliff:g>\nZum Einstellen lange drücken</string>
+    <string name="custom_seekbar_default_value_is_set">Standardwert ist eingestellt</string>
+
+    <!-- Icon size -->
+    <string name="icon_size_title">Symbolgröße</string>
+
+    <!-- Font size -->
+    <string name="font_size_title">Schriftgröße</string>
+
+    <!-- App label - max lines -->
+    <string name="icon_max_lines_title">Maximale Zeilen für Symbolbeschriftungen</string>
+
+    <!-- DT2S -->
+    <string name="pref_sleep_gesture_title">Doppeltippen zum Schlafen</string>
+    <string name="pref_sleep_gesture_summary">Auf eine leere Stelle doppelt tippen, um den Bildschirm auszuschalten</string>
+
+    <!-- Hotseat searchbar -->
+    <string name="label_search">Suche</string>
+    <string name="label_lens">Google Lens</string>
+    <string name="label_voice_search">Sprachsuche</string>
+    <string name="dock_search_title">Google-Suchleiste</string>
+    <string name="dock_search_summary">Suchleiste im unteren Dock anzeigen</string>
+    <string name="dock_theme_title">Farb-Themenbezogene Symbole</string>
+    <string name="dock_theme_summary">Farb-Thematische Symbole für die Suchleiste verwenden</string>
+    <string name="search_radius_title">Eckenradius</string>
+
+    <!-- Recents -->
+    <string name="action_lens">Lens</string>
+
+    <!-- Homescreen Statusbar -->
+    <string name="show_statusbar_title">Statusleiste anzeigen</string>
+
+    <!-- Suggestions -->
+    <string name="suggestion_pref_screen_title">Vorschläge</string>
+    <string name="suggestion_pref_screen_desc">Für Vorschläge in allen Apps und auf dem Startbildschirm</string>
+
+    <!-- Trust apps -->
+    <string name="trust_apps_manager_name">Versteckte Apps</string>
+    <string name="trust_apps_auth_manager">Entsperren, um die versteckten Apps zu verwalten</string>
+    <string name="trust_apps_loading">Wird geladen\u2026</string>
+    <string name="trust_apps_no_lock_error">Bitte richte einen sicheren Sperrbildschirm ein, um den Zugriff auf die Apps zu beschränken</string>
+    <string name="trust_apps_help">Hilfe</string>
+    <string name="trust_apps_info_hidden">Versteckte Apps und ihre Widgets werden in der App-Übersicht nicht angezeigt</string>
+
+    <!-- Force stop shortcut -->
+    <string name="recent_task_force_stop_app">Stopp erzwingen</string>
+    <string name="recents_app_force_stopped">Stopp der App erzwingen</string>
+
+    <!-- About info -->
+    <string name="about_thanks_cat">Besonderer Dank an</string>
+    <string name="about">Über</string>
+    <string name="about_summary">Infos zum DerpLauncher</string>
+    <string name="about_app_version">Version 1.0 Beta</string>
+
+</resources>
