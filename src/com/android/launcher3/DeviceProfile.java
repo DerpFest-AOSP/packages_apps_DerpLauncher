@@ -70,6 +70,9 @@ import com.android.launcher3.util.ResourceHelper;
 import com.android.launcher3.util.WindowBounds;
 import com.android.launcher3.util.window.WindowManagerProxy;
 
+import org.derpfest.providers.DerpFestSettings;
+import android.provider.Settings;
+
 import java.io.PrintWriter;
 import java.util.Locale;
 import java.util.function.Consumer;
@@ -416,7 +419,9 @@ public class DeviceProfile {
         isTablet = info.isTablet(windowBounds);
         isPhone = !isTablet;
         isTwoPanels = isTablet && isMultiDisplay;
-        isTaskbarPresent = (isTablet || (enableTinyTaskbar() && isGestureMode))
+        boolean isTaskBarEnabled = Settings.System.getInt(context.getContentResolver(),
+                DerpFestSettings.System.ENABLE_TASKBAR, isTablet ? 1 : 0) == 1;
+        isTaskbarPresent = (isTaskBarEnabled || (enableTinyTaskbar() && isGestureMode))
                 && WindowManagerProxy.INSTANCE.get(context).isTaskbarDrawnInProcess();
 
         // Some more constants.
