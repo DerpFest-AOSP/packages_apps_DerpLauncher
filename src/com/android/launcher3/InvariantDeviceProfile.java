@@ -307,6 +307,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
             case KEY_MAX_LINES:
             case KEY_ALLAPPS_THEMED_ICONS:
             case IconPackStore.KEY_ICON_PACK:
+            case DeviceProfile.KEY_PHONE_OVERVIEW_GRID:
                 onConfigChanged(mContext);
                 break;
             case DeviceProfile.KEY_PHONE_TASKBAR:

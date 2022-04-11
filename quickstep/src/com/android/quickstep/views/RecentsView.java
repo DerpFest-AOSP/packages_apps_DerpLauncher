@@ -3261,7 +3261,9 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
             return;
         }
         mActionsView.setSplitButtonVisible(
-                mActivity.getDeviceProfile().overviewShowAsGrid && getTaskViewCount() > 1);
+                mActivity.getDeviceProfile().overviewShowAsGrid &&
+                        mActivity.getDeviceProfile().isTablet &&
+                        getTaskViewCount() > 1);
     }
 
     /**
