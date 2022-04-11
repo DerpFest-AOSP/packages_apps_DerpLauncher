@@ -28,6 +28,7 @@ import static com.android.launcher3.util.Executors.MAIN_EXECUTOR;
 import android.annotation.TargetApi;
 import android.appwidget.AppWidgetHostView;
 import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
@@ -35,9 +36,14 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
+import android.database.ContentObserver;
 import android.graphics.Point;
 import android.graphics.PointF;
 import android.graphics.Rect;
+import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
@@ -65,6 +71,7 @@ import com.android.launcher3.util.MainThreadInitializedObject;
 import com.android.launcher3.util.Partner;
 import com.android.launcher3.util.WindowBounds;
 import com.android.launcher3.util.window.WindowManagerProxy;
+import com.android.quickstep.SystemUiProxy;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -209,6 +216,31 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
 
     private final ArrayList<OnIDPChangeListener> mChangeListeners = new ArrayList<>();
 
+    private static final Uri ENABLE_TASKBAR_URI = Settings.System.getUriFor(
+            Settings.System.ENABLE_TASKBAR);
+
+    private final class SettingsContentObserver extends ContentObserver {
+        SettingsContentObserver() {
+            super(new Handler(Looper.getMainLooper()));
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            if (ENABLE_TASKBAR_URI.equals(uri)) {
+                // Create the illusion of this taking effect immediately
+                // Also needed because TaskbarManager inits before SystemUiProxy on start
+                boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
+                        Settings.System.ENABLE_TASKBAR, 0) == 1;
+                SystemUiProxy.INSTANCE.get(mContext).setTaskbarEnabled(enabled);
+
+                // Restart launcher
+                System.exit(0);
+            }
+        }
+    }
+
+    private final SettingsContentObserver mSettingsObserver = new SettingsContentObserver();
+
     @VisibleForTesting
     public InvariantDeviceProfile() { }
 
@@ -234,6 +266,10 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
                         onConfigChanged(displayContext);
                     }
                 });
+
+        final ContentResolver resolver = mContext.getContentResolver();
+        resolver.registerContentObserver(ENABLE_TASKBAR_URI, false,
+                mSettingsObserver);
     }
 
     /**
