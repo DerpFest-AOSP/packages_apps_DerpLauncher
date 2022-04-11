@@ -415,13 +415,15 @@ public class TaskbarManager {
             destroyExistingTaskbar();
 
             boolean isTaskbarEnabled = dp != null && isTaskbarPresent(dp);
+
+            SystemUiProxy sysui = SystemUiProxy.INSTANCE.get(mContext);
+            sysui.setTaskbarEnabled(isTaskbarEnabled);
             debugWhyTaskbarNotDestroyed("recreateTaskbar: isTaskbarEnabled=" + isTaskbarEnabled
                 + " [dp != null (i.e. mUserUnlocked)]=" + (dp != null)
                 + " FLAG_HIDE_NAVBAR_WINDOW=" + FLAG_HIDE_NAVBAR_WINDOW
                 + " dp.isTaskbarPresent=" + (dp == null ? "null" : dp.isTaskbarPresent));
             if (!isTaskbarEnabled) {
-                SystemUiProxy.INSTANCE.get(mContext)
-                    .notifyTaskbarStatus(/* visible */ false, /* stashed */ false);
+                sysui.notifyTaskbarStatus(/* visible */ false, /* stashed */ false);
                 return;
             }
 
