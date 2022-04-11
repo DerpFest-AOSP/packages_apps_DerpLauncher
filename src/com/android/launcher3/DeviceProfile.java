@@ -52,6 +52,8 @@ import java.util.List;
 @SuppressLint("NewApi")
 public class DeviceProfile {
 
+    public static final String KEY_PHONE_TASKBAR = "pref_allow_phone_taskbar";
+
     private static final int DEFAULT_DOT_SIZE = 100;
     // Ratio of empty space, qsb should take up to appear visually centered.
     private final float mQsbCenterFactor;
@@ -261,7 +263,8 @@ public class DeviceProfile {
         isTablet = info.isTablet(windowBounds);
         isPhone = !isTablet;
         isTwoPanels = isTablet && useTwoPanels;
-        isTaskbarPresent = isTablet && ApiWrapper.TASKBAR_DRAWN_IN_PROCESS;
+        boolean allowPhone = Utilities.getPrefs(context).getBoolean(KEY_PHONE_TASKBAR, false);
+        isTaskbarPresent = (isTablet || allowPhone) && ApiWrapper.TASKBAR_DRAWN_IN_PROCESS;
 
         // Some more constants.
         context = getContext(context, info, isVerticalBarLayout() || (isTablet && isLandscape)

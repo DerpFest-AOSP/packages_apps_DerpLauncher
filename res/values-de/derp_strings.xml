@@ -101,4 +101,8 @@
     <!-- Smartspace -->
     <string name="smartspace_pref_title">Live-Anzeige</string>
     <string name="smartspace_pref_summary">Live-Anzeige oben auf dem Startbildschirm anzeigen</string>
+
+    <!-- Taskbar -->
+    <string name="pref_allow_phone_taskbar">Taskleiste verwenden</string>
+    <string name="pref_allow_phone_taskbar_desc">Zum jederzeitigen Öffnen von und Wechseln zwischen Apps</string>
 </resources>

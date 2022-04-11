@@ -108,4 +108,8 @@
     <!-- Smartspace -->
     <string name="smartspace_pref_title">At a Glance</string>
     <string name="smartspace_pref_summary">Show smartspace at the top of home screen</string>
+
+    <!-- Taskbar -->
+    <string name="pref_allow_phone_taskbar">Use taskbar</string>
+    <string name="pref_allow_phone_taskbar_desc">For opening and switching apps anywhere</string>
 </resources>
