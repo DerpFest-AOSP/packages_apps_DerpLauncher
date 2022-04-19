@@ -175,4 +175,16 @@
             android:persistent="true" />
     </androidx.preference.PreferenceCategory>
 
+    <androidx.preference.PreferenceCategory
+        android:key="dev_category"
+        android:title="@string/category_dev">
+
+        <Preference
+            android:key="pref_developer_options"
+            android:persistent="false"
+            android:title="Developer Options"
+            android:fragment="com.android.launcher3.uioverrides.flags.DeveloperOptionsFragment"/>
+
+    </androidx.preference.PreferenceCategory>
+
 </androidx.preference.PreferenceScreen>

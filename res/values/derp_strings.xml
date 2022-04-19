@@ -45,6 +45,7 @@
     <string name="category_google">Google</string>
     <string name="category_icon">Icons</string>
     <string name="category_recents">Recents</string>
+    <string name="category_dev">Developer</string>
 
     <!-- Hotseat searchbar -->
     <string name="label_search">Search</string>
