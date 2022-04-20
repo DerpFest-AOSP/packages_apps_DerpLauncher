@@ -22,24 +22,18 @@ import static com.android.launcher3.config.FeatureFlags.IS_STUDIO_BUILD;
 
 import static com.android.launcher3.Utilities.KEY_DOCK_SEARCH;
 import static com.android.launcher3.Utilities.KEY_SMARTSPACE;
-import static com.android.launcher3.Utilities.KEY_ICON_PACK;
 import static com.android.launcher3.states.RotationHelper.ALLOW_ROTATION_PREFERENCE_KEY;
 
 import static com.android.launcher3.OverlayCallbackImpl.KEY_ENABLE_MINUS_ONE;
 
 import android.content.Context;
-import android.app.Activity;
-import com.android.launcher3.customization.IconDatabase;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
-
-import com.android.launcher3.settings.preference.IconPackPrefSetter;
-import com.android.launcher3.settings.preference.ReloadingListPreference;
-import com.android.launcher3.util.AppReloader;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
@@ -73,30 +67,20 @@ import com.android.launcher3.util.DisplayController;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
+import com.android.launcher3.customization.IconDatabase;
+import com.android.launcher3.settings.preference.IconPackPrefSetter;
+import com.android.launcher3.settings.preference.ReloadingListPreference;
+import com.android.launcher3.util.AppReloader;
+
 import java.util.Collections;
 import java.util.List;
-
-import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.PreferenceFragmentCompat.OnPreferenceStartFragmentCallback;
-import androidx.preference.PreferenceFragmentCompat.OnPreferenceStartScreenCallback;
-import androidx.preference.PreferenceGroup.PreferencePositionCallback;
-import androidx.preference.PreferenceScreen;
-import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Settings activity for Launcher. Currently implements the following setting: Allow rotation
  */
 public class SettingsActivity extends CollapsingToolbarBaseActivity
         implements OnPreferenceStartFragmentCallback, OnPreferenceStartScreenCallback,
-        SharedPreferences.OnSharedPreferenceChangeListener {
-
-    public interface OnResumePreferenceCallback {
-        void onResume();
-    }
+        SharedPreferences.OnSharedPreferenceChangeListener{
 
     /** List of fragments that can be hosted by this activity. */
     private static final List<String> VALID_PREFERENCE_FRAGMENTS =
@@ -114,6 +98,8 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
     public static final String SAVE_HIGHLIGHTED_KEY = "android:preference_highlighted";
 
     private static final String KEY_SUGGESTIONS = "pref_suggestions";
+
+    private static final String KEY_ICON_PACK = "pref_icon_pack";
 
     @VisibleForTesting
     static final String EXTRA_FRAGMENT = ":settings:fragment";
@@ -144,7 +130,7 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
                     getPreferenceFragment());
             f.setArguments(args);
             // Display the fragment as the main content.
-            fm.beginTransaction().replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame, f).commit();
+            fm.beginTransaction().replace(com.android.settingslib.widget.R.id.content_frame, f).commit();
         }
         LauncherPrefs.getPrefs(getApplicationContext())
                 .registerOnSharedPreferenceChangeListener(this);
@@ -182,7 +168,6 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
                 break;
         }
     }
-
 
     private boolean startPreference(String fragment, Bundle args, String key) {
         if (Utilities.ATLEAST_P && getSupportFragmentManager().isStateSaved()) {
@@ -234,6 +219,7 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
         private boolean mPreferenceHighlighted = false;
         private Preference mDeveloperOptionPref;
         private PreferenceGroup mDeveloperOptionPrefGroup;
+	private ReloadingListPreference mIconPackPref;
 
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -357,19 +343,21 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
 
                 case KEY_SUGGESTIONS:
                     preference.setEnabled(isAsiEnabled());
-
+                    return true;
                 case KEY_ICON_PACK:
-                    ReloadingListPreference icons = (ReloadingListPreference) findPreference(KEY_ICON_PACK);
-                    icons.setValue(IconDatabase.getGlobal(getActivity()));
-                    icons.setOnReloadListener(IconPackPrefSetter::new);
-                    icons.setOnPreferenceChangeListener((pref, val) -> {
+                    mIconPackPref = (ReloadingListPreference) preference;
+                    mIconPackPref.setValue(IconDatabase.getGlobal(getActivity()));
+                    mIconPackPref.setOnReloadListener(IconPackPrefSetter::new);
+                    mIconPackPref.setIcon(getPackageIcon(IconDatabase.getGlobal(getActivity())));
+                    mIconPackPref.setOnPreferenceChangeListener((pref, val) -> {
                         IconDatabase.clearAll(getActivity());
                         IconDatabase.setGlobal(getActivity(), (String) val);
+                        mIconPackPref.setIcon(getPackageIcon((String) val));
                         AppReloader.get(getActivity()).reload();
                         return true;
                     });
-                    return true;
             }
+
             return true;
         }
 
@@ -446,5 +434,20 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
                 }
             });
         }
+
+        private Drawable getPackageIcon(String pkgName) {
+            Drawable icon = getContext().getResources().
+                              getDrawable(com.android.internal.R.drawable.sym_def_app_icon);
+            try {
+                 icon = getContext().getPackageManager().
+                              getApplicationIcon(pkgName);
+            } catch (PackageManager.NameNotFoundException e) {  }
+            return icon;
+        }
+    }
+
+    public interface OnResumePreferenceCallback {
+        void onResume();
+
     }
 }
