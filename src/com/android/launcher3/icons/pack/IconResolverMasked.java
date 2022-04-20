@@ -15,6 +15,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 
+import com.android.launcher3.icons.BaseIconFactory;
 import com.android.launcher3.icons.LauncherIcons;
 import static com.android.launcher3.icons.LauncherIcons.CONFIG_HINT_NO_WRAP;
 
@@ -62,7 +63,7 @@ public class IconResolverMasked implements IconResolver {
             Resources res = pm.getResourcesForApplication(mPackInfo);
 
             // Re-render without scaling after creating the bitmap in the right dimensions.
-            Bitmap iconBm = li.createScaledBitmapWithoutShadow(icon);
+            Bitmap iconBm = li.createScaledBitmap(icon, BaseIconFactory.MODE_WITH_SHADOW);
             mCanvas.setBitmap(iconBm);
             icon.setBounds(0, 0, iconBm.getWidth(), iconBm.getHeight());
             icon.draw(mCanvas);
