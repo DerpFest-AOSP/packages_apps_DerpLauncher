@@ -244,10 +244,12 @@ public abstract class SystemShortcut<T extends Context & ActivityContext> extend
         }
     }
 
-    public static final Factory<BaseDraggingActivity> UNINSTALL = (activity, itemInfo, originalView) ->
-            PackageManagerHelper.isSystemApp(activity,
-                 itemInfo.getTargetComponent().getPackageName())
-                    ? null : new UnInstall(activity, itemInfo, originalView);
+    public static final Factory<BaseDraggingActivity> UNINSTALL = (activity, itemInfo, originalView) -> {
+        final String packageName = itemInfo.getTargetPackage();
+        if (packageName == null) return null;
+        return PackageManagerHelper.isSystemApp(activity, packageName)
+            ? null : new UnInstall(activity, itemInfo, originalView);
+    };
 
     public static class UnInstall extends SystemShortcut<BaseDraggingActivity> {
 
