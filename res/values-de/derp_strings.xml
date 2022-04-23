@@ -43,7 +43,7 @@
     <string name="settings_edit_widgets_error">Es ist nicht möglich, Widgets zum Startbildschirm hinzuzufügen</string>
 
     <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
-    <string name="title_show_google_app">Wischen, um die Google App aufzurufen</string>
+    <string name="title_show_google_app">Wischen, um die Google-App aufzurufen</string>
     <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Wische auf dem Startbildschirm nach links, um die Google App zu öffnen</string>
     <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
@@ -58,7 +58,7 @@
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Wert: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">Standard</string>
-    <string name="custom_seekbar_default_value_to_set">Standardwert: <xliff:g id="v">%s</xliff:g>\nZum Einstellen lange drücken</string>
+    <string name="custom_seekbar_default_value_to_set">Standardwert: <xliff:g id="v">%s</xliff:g>\nZum Einstellen gedrückt halten</string>
     <string name="custom_seekbar_default_value_is_set">Standardwert ist eingestellt</string>
 
     <!-- Icon size -->
@@ -68,11 +68,11 @@
     <string name="font_size_title">Schriftgröße</string>
 
     <!-- App label - max lines -->
-    <string name="icon_max_lines_title">Maximale Zeilen für Symbolbeschriftungen</string>
+    <string name="icon_max_lines_title">Max. Zeilenanzahl für App-Beschriftungen</string>
 
     <!-- DT2S -->
-    <string name="pref_sleep_gesture_title">Doppeltippen zum Schlafen</string>
-    <string name="pref_sleep_gesture_summary">Auf eine leere Stelle doppelt tippen, um den Bildschirm auszuschalten</string>
+    <string name="pref_sleep_gesture_title">Doppeltippen zum Sperren</string>
+    <string name="pref_sleep_gesture_summary">Zum Sperren auf einen leeren Bereich doppeltippen</string>
 
     <!-- Hotseat searchbar -->
     <string name="label_search">Suche</string>
@@ -103,8 +103,8 @@
     <string name="trust_apps_info_hidden">Versteckte Apps und ihre Widgets werden in der App-Übersicht nicht angezeigt</string>
 
     <!-- Force stop shortcut -->
-    <string name="recent_task_force_stop_app">Stopp erzwingen</string>
-    <string name="recents_app_force_stopped">Stopp der App erzwingen</string>
+    <string name="recent_task_force_stop_app">Beenden erzwingen</string>
+    <string name="recents_app_force_stopped">App wurde beendet</string>
 
     <!-- About info -->
     <string name="about_thanks_cat">Besonderer Dank an</string>
@@ -115,5 +115,19 @@
     <!-- All apps themed icons -->
     <string name="pref_themed_icons_title">Thematische Symbole für App-Übersicht</string>
     <string name="pref_themed_icons_summary">Thematische Symbole für die App-Übersicht verwenden</string>
+
+    <!-- Icon pack -->
+    <string name="icon_pack_title">Symbolpaket</string>
+    <string name="icon_pack_default_label">Standard</string>
+    <string name="icon_pack_add">Mehr Pakete installieren</string>
+    <string name="icon_pack_no_market">Es ist kein App-Store verfügbar</string>
+
+    <!-- AppInfo -->
+    <string name="app_info_subtext">Nach unten wischen, um die App-Info zu schließen</string>
+    <string name="app_info_source">Quelle</string>
+    <string name="app_info_source_system">System</string>
+    <string name="app_info_last_update">Letzte Aktualisierung</string>
+    <string name="app_info_version">Version</string>
+    <string name="app_info_more">Mehr</string>
 
 </resources>
