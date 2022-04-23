@@ -111,4 +111,11 @@
     <string name="recents_screenshot_title">Screenshot</string>
     <string name="recents_clear_all_title">Alle Apps schließen</string>
     <string name="recents_lens_title">Lens</string>
+
+    <!-- AppInfo -->
+    <string name="app_info_source">Quelle</string>
+    <string name="app_info_source_system">System</string>
+    <string name="app_info_last_update">Letzte Aktualisierung</string>
+    <string name="app_info_version">Version</string>
+    <string name="app_info_more">Mehr</string>
 </resources>
