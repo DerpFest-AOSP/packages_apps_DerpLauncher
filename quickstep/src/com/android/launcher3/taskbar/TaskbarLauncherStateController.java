@@ -155,7 +155,7 @@ import java.util.function.Supplier;
     }
 
     public boolean isAnimatingToLauncher() {
-        return mIsAnimatingToLauncherViaResume || mIsAnimatingToLauncherViaGesture;
+        return mIsAnimatingToLauncherViaResume || mIsAnimatingToLauncherViaGesture || hasAnyFlag(FLAG_TRANSITION_STATE_RUNNING);
     }
 
     /**
