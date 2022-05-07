@@ -19,6 +19,7 @@ import static android.graphics.Paint.DITHER_FLAG;
 import static android.graphics.Paint.FILTER_BITMAP_FLAG;
 
 import android.animation.ObjectAnimator;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
@@ -34,6 +35,7 @@ import androidx.annotation.VisibleForTesting;
 
 import com.android.launcher3.BaseDraggingActivity;
 import com.android.launcher3.DeviceProfile;
+import com.android.launcher3.LauncherPrefs;
 import com.android.launcher3.R;
 import com.android.launcher3.anim.AnimatedFloat;
 import com.android.launcher3.testing.shared.ResourceUtils;
@@ -44,7 +46,8 @@ import com.android.launcher3.util.Themes;
 /**
  * View scrim which draws behind hotseat and workspace
  */
-public class SysUiScrim implements View.OnAttachStateChangeListener {
+public class SysUiScrim implements View.OnAttachStateChangeListener,
+        SharedPreferences.OnSharedPreferenceChangeListener {
 
     /**
      * Receiver used to get a signal that the user unlocked their device.
@@ -70,6 +73,8 @@ public class SysUiScrim implements View.OnAttachStateChangeListener {
 
     private static final int BOTTOM_MASK_HEIGHT_DP = 200;
     private static final int TOP_MASK_HEIGHT_DP = 70;
+
+    private static final String KEY_SHOW_TOP_SHADOW = "pref_show_top_shadow";
 
     private boolean mDrawTopScrim, mDrawBottomScrim;
 
@@ -99,7 +104,9 @@ public class SysUiScrim implements View.OnAttachStateChangeListener {
 
         mTopMaskHeight = ResourceUtils.pxFromDp(TOP_MASK_HEIGHT_DP, dm);
         mBottomMaskHeight = ResourceUtils.pxFromDp(BOTTOM_MASK_HEIGHT_DP, dm);
-        mHideSysUiScrim = Themes.getAttrBoolean(view.getContext(), R.attr.isWorkspaceDarkText);
+        SharedPreferences prefs = LauncherPrefs.getPrefs(view.getContext());
+        final boolean showScrim = prefs.getBoolean(KEY_SHOW_TOP_SHADOW, true);
+        mHideSysUiScrim = !showScrim;
 
         mTopMaskBitmap = mHideSysUiScrim ? null : createDitheredAlphaMask(mTopMaskHeight,
                 new int[]{0x3DFFFFFF, 0x0AFFFFFF, 0x00FFFFFF},
@@ -112,6 +119,7 @@ public class SysUiScrim implements View.OnAttachStateChangeListener {
         if (!mHideSysUiScrim) {
             view.addOnAttachStateChangeListener(this);
         }
+        prefs.registerOnSharedPreferenceChangeListener(this);
     }
 
     /**
@@ -179,6 +187,13 @@ public class SysUiScrim implements View.OnAttachStateChangeListener {
     @Override
     public void onViewDetachedFromWindow(View view) {
         ScreenOnTracker.INSTANCE.get(mActivity).removeListener(mScreenOnListener);
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+        if (key.equals(KEY_SHOW_TOP_SHADOW)) {
+            mRoot.invalidate();
+        }
     }
 
     /**
