@@ -116,4 +116,8 @@
     <!-- Homescreen Statusbar -->
     <string name="show_statusbar_title">Show status bar</string>
     <string name="show_statusbar_summary">Show status bar on Home screen</string>
+
+    <!-- Top shadow -->
+    <string name="show_top_shadow_title">Show top shadow</string>
+    <string name="show_top_shadow_summary">Add shadow underneath the status bar</string>
 </resources>

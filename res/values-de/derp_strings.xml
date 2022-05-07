@@ -97,4 +97,8 @@
     <!-- Homescreen Statusbar -->
     <string name="show_statusbar_title">Statusleiste anzeigen</string>
     <string name="show_statusbar_summary">Statusleiste auf dem Startbildschirm anzeigen</string>
+
+    <!-- Top shadow -->
+    <string name="show_top_shadow_title">Schatten oben anzeigen</string>
+    <string name="show_top_shadow_summary">Schatten oben auf dem Startbildschirm anzeigen</string>
 </resources>
