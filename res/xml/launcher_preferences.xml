@@ -121,6 +121,13 @@
             android:defaultValue="true"
             android:persistent="true" />
 
+        <SwitchPreference
+            android:key="pref_show_top_shadow"
+            android:title="@string/show_top_shadow_title"
+            android:summary="@string/show_top_shadow_summary"
+            android:defaultValue="true"
+            android:persistent="true" />
+
         <com.android.launcher3.settings.preference.CustomSeekBarPreference
             android:key="pref_custom_icon_size"
             android:title="@string/icon_size_title"

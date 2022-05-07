@@ -81,4 +81,8 @@
 
     <!-- Font size -->
     <string name="font_size_title">Schriftgröße</string>
+
+    <!-- Show top shadow -->
+    <string name="show_top_shadow_title">Schatten oben</string>
+    <string name="show_top_shadow_summary">Schatten oben auf dem Startbildschirm anzeigen</string>
 </resources>

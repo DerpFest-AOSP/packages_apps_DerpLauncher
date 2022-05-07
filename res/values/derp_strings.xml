@@ -88,4 +88,8 @@
     <!-- Font size -->
     <string name="font_size_title">Font size</string>
 
+    <!-- Show top shadow -->
+    <string name="show_top_shadow_title">Top shadow</string>
+    <string name="show_top_shadow_summary">Show shadow on the top of Home screen</string>
+
 </resources>
