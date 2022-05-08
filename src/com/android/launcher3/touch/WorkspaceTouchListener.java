@@ -30,6 +30,7 @@ import android.content.Context;
 import android.graphics.PointF;
 import android.graphics.Rect;
 import android.os.PowerManager;
+import android.provider.Settings;
 import android.view.GestureDetector;
 import android.view.HapticFeedbackConstants;
 import android.view.MotionEvent;
@@ -208,7 +209,10 @@ public class WorkspaceTouchListener extends GestureDetector.SimpleOnGestureListe
 
     @Override
     public boolean onDoubleTap(MotionEvent event) {
-        mPm.goToSleep(event.getEventTime());
+        if (Settings.Secure.getInt(mWorkspace.getContext().getContentResolver(),
+                Settings.Secure.DOUBLE_TAP_TO_WAKE, 1) == 1) {
+            mPm.goToSleep(event.getEventTime());
+        }
         return true;
     }
 }
