@@ -16,7 +16,9 @@
 
 package com.android.quickstep.views;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Rect;
 import android.util.AttributeSet;
@@ -46,7 +48,7 @@ import java.lang.annotation.RetentionPolicy;
  * View for showing action buttons in Overview
  */
 public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayout
-        implements OnClickListener, Insettable {
+        implements OnClickListener, Insettable, SharedPreferences.OnSharedPreferenceChangeListener {
 
     private final Rect mInsets = new Rect();
 
@@ -87,6 +89,8 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
 
     public static final int FLAG_IS_NOT_TABLET = 1 << 0;
     public static final int FLAG_SINGLE_TASK = 1 << 1;
+
+    private static final String KEY_SHOW_LENS_BUTTON = "pref_show_lens_button";
 
     private MultiValueAlpha mMultiValueAlpha;
     private Button mSplitButton;
@@ -131,11 +135,23 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
         mSplitButton = findViewById(R.id.action_split);
         mSplitButton.setOnClickListener(this);
 
-        if (Utilities.isGSAEnabled(getContext())) {
+        SharedPreferences prefs = Utilities.getPrefs(getContext());
+        prefs.registerOnSharedPreferenceChangeListener(this);
+
+        if (Utilities.isGSAEnabled(getContext()) && prefs.getBoolean(KEY_SHOW_LENS_BUTTON, false)) {
             View lens = findViewById(R.id.action_lens);
             lens.setOnClickListener(this);
             lens.setVisibility(VISIBLE);
             findViewById(R.id.lens_space).setVisibility(VISIBLE);
+            findViewById(R.id.action_screenshot).setVisibility(GONE);
+            findViewById(R.id.screenshot_space).setVisibility(GONE);
+        }
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+        if (key.equals(KEY_SHOW_LENS_BUTTON)) {
+            ((Activity) getContext()).recreate();
         }
     }
 

@@ -52,8 +52,11 @@
     <!-- Settings Categories -->
     <string name="category_icon">Icons</string>
     <string name="category_misc">Misc</string>
+    <string name="category_recents">Recents</string>
 
-    <!-- Recents -->
+    <!-- Recents Lens -->
     <string name="action_lens">Lens</string>
+    <string name="show_lens_button_title">Show lens button</string>
+    <string name="show_lens_button_summary">Replace screenshot button with Google Lens button, if available</string>
 
 </resources>
