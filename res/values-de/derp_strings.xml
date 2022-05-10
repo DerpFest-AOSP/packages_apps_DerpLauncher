@@ -47,4 +47,9 @@
     <!-- Settings Categories -->
     <string name="category_icon">Symbole</string>
     <string name="category_misc">Verschiedenes</string>
+    <string name="category_recents">Letzte Apps</string>
+
+    <!-- Recents Lens -->
+    <string name="show_lens_button_title">Google Lens-Schaltfläche anzeigen</string>
+    <string name="show_lens_button_summary">Ersetzt die Screenshot-Schaltfläche durch die Google Lens-Schaltfläche, falls verfügbar</string>
 </resources>
