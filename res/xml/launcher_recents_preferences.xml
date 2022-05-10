@@ -32,4 +32,16 @@
             android:defaultValue="40" />
    </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/category_recents">
+
+        <SwitchPreferenceCompat
+            android:key="pref_show_lens_button"
+            android:title="@string/show_lens_button_title"
+            android:summary="@string/show_lens_button_summary"
+            android:defaultValue="false"
+            android:persistent="true"
+            launcher:iconSpaceReserved="false" />
+   </PreferenceCategory>
+
 </androidx.preference.PreferenceScreen>
