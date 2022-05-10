@@ -16,8 +16,10 @@
 
 package com.android.quickstep.views;
 
+import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Rect;
 import android.util.AttributeSet;
@@ -34,6 +36,7 @@ import androidx.annotation.Nullable;
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.Flags;
 import com.android.launcher3.Insettable;
+import com.android.launcher3.LauncherPrefs;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.anim.AnimatedFloat;
@@ -51,7 +54,7 @@ import java.util.Arrays;
  * View for showing action buttons in Overview
  */
 public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayout
-        implements OnClickListener, Insettable {
+        implements OnClickListener, Insettable, SharedPreferences.OnSharedPreferenceChangeListener {
     public static final String TAG = "OverviewActionsView";
     private final Rect mInsets = new Rect();
 
@@ -98,6 +101,8 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
 
     public @interface SplitButtonHiddenFlags { }
     public static final int FLAG_SMALL_SCREEN_HIDE_SPLIT = 1 << 0;
+
+    private static final String KEY_SHOW_LENS_BUTTON = "pref_show_lens_button";
 
     /**
      * Holds an AnimatedFloat for each alpha property, used to set or animate alpha values in
@@ -185,11 +190,22 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
         mSaveAppPairButton.setOnClickListener(this);
         findViewById(R.id.action_clear_all).setOnClickListener(this);
 
-        if (Utilities.isGSAEnabled(getContext())) {
+        SharedPreferences prefs = LauncherPrefs.getPrefs(getContext());
+        prefs.registerOnSharedPreferenceChangeListener(this);
+
+        if (Utilities.isGSAEnabled(getContext()) && prefs.getBoolean(KEY_SHOW_LENS_BUTTON, false)) {
             View lens = findViewById(R.id.action_lens);
             lens.setOnClickListener(this);
             lens.setVisibility(VISIBLE);
             findViewById(R.id.lens_space).setVisibility(VISIBLE);
+            findViewById(R.id.action_screenshot).setVisibility(GONE);
+        }
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+        if (key.equals(KEY_SHOW_LENS_BUTTON)) {
+            ((Activity) getContext()).recreate();
         }
     }
 

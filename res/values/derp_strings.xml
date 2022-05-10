@@ -141,6 +141,9 @@
     <string name="pref_sleep_gesture_title">Double tap to sleep</string>
     <string name="pref_sleep_gesture_summary">Double tap on empty space for screen off</string>
 
-    <!-- Recents -->
+    <!-- Recents Lens -->
+    <string name="category_recents">Quick actions</string>
     <string name="action_lens">Lens</string>
+    <string name="show_lens_button_title">Show lens button</string>
+    <string name="show_lens_button_summary">Replace screenshot button with Google Lens button, if available</string>
 </resources>
