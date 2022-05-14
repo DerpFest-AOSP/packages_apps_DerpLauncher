@@ -69,6 +69,13 @@
         android:defaultValue="false"
         android:persistent="true" />
 
+    <SwitchPreference
+        android:key="pref_dark_status_bar"
+        android:title="@string/perf_dark_status_bar_title"
+        android:summary="@string/perf_dark_status_bar_summary"
+        android:defaultValue="false"
+        android:persistent="true" />
+
      <com.android.launcher3.settings.preference.CustomSeekBarPreference
         android:key="pref_blur_depth"
         android:title="@string/background_blur_title"

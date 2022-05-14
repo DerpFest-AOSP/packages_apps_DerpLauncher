@@ -261,7 +261,7 @@ import java.util.stream.Stream;
  */
 public class Launcher extends StatefulActivity<LauncherState>
         implements LauncherExterns, Callbacks, InvariantDeviceProfile.OnIDPChangeListener,
-        PluginListener<LauncherOverlayPlugin> {
+        PluginListener<LauncherOverlayPlugin>, SharedPreferences.OnSharedPreferenceChangeListener {
     public static final String TAG = "Launcher";
 
     public static final ActivityTracker<Launcher> ACTIVITY_TRACKER = new ActivityTracker<>();
@@ -316,6 +316,8 @@ public class Launcher extends StatefulActivity<LauncherState>
     private StateManager<LauncherState> mStateManager;
 
     private static final int ON_ACTIVITY_RESULT_ANIMATION_DELAY = 500;
+
+    private static final String KEY_DARK_STATUS_BAR = "pref_dark_status_bar";
 
     // How long to wait before the new-shortcut animation automatically pans the workspace
     @VisibleForTesting public static final int NEW_APPS_PAGE_MOVE_DELAY = 500;
@@ -576,7 +578,10 @@ public class Launcher extends StatefulActivity<LauncherState>
         // Listen for screen turning off
         ScreenOnTracker.INSTANCE.get(this).addListener(mScreenOnListener);
         getSystemUiController().updateUiState(SystemUiController.UI_STATE_BASE_WINDOW,
-                Themes.getAttrBoolean(this, R.attr.isWorkspaceDarkText));
+                Themes.getAttrBoolean(this, R.attr.isWorkspaceDarkText)
+                || mSharedPrefs.getBoolean(KEY_DARK_STATUS_BAR, false));
+
+        mSharedPrefs.registerOnSharedPreferenceChangeListener(this);
 
         if (mLauncherCallbacks != null) {
             mLauncherCallbacks.onCreate(savedInstanceState);
@@ -671,6 +676,13 @@ public class Launcher extends StatefulActivity<LauncherState>
 
     public OnboardingPrefs<? extends Launcher> getOnboardingPrefs() {
         return mOnboardingPrefs;
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences SharedPrefs, String key) {
+        if (key.equals(KEY_DARK_STATUS_BAR)) {
+            recreate();
+        }
     }
 
     @Override
