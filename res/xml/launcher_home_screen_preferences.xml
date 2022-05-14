@@ -30,6 +30,13 @@
             android:persistent="true" />
 
         <SwitchPreference
+            android:key="pref_dark_status_bar"
+            android:title="@string/perf_dark_status_bar_title"
+            android:summary="@string/perf_dark_status_bar_summary"
+            android:defaultValue="false"
+            android:persistent="true" />
+
+        <SwitchPreference
             android:defaultValue="false"
             android:key="pref_workspace_lock"
             android:persistent="true"
