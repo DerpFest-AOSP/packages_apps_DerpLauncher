@@ -93,4 +93,8 @@
     <!-- Smartspace -->
     <string name="smartspace_pref_title">Live-Anzeige</string>
     <string name="smartspace_pref_summary">Live-Anzeige oben auf dem Startbildschirm anzeigen</string>
+
+    <!-- Dark Status Bar -->
+    <string name="perf_dark_status_bar_title">Dunkle Statusleiste</string>
+    <string name="perf_dark_status_bar_summary">Dunkle Statusleiste auf dem Startbildschirm verwenden</string>
 </resources>
