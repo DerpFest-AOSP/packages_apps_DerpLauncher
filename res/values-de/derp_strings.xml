@@ -173,4 +173,8 @@
     <!-- All apps themed icons -->
     <string name="pref_themed_icons_title">Symboldesigns</string>
     <string name="pref_themed_icons_summary">Stil der Symboldesigns auf dem Startbildschirm folgen</string>
+
+    <!-- Dark Status Bar -->
+    <string name="perf_dark_status_bar_title">Dunkle Statusleiste</string>
+    <string name="perf_dark_status_bar_summary">Dunkle Statusleiste auf dem Startbildschirm verwenden</string>
 </resources>
