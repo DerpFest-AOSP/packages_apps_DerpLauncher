@@ -105,4 +105,8 @@
     <!-- Taskbar -->
     <string name="pref_allow_phone_taskbar">Taskleiste verwenden</string>
     <string name="pref_allow_phone_taskbar_desc">Zum jederzeitigen Öffnen von und Wechseln zwischen Apps</string>
+
+    <!-- Dark Status Bar -->
+    <string name="perf_dark_status_bar_title">Dunkle Statusleiste</string>
+    <string name="perf_dark_status_bar_summary">Dunkle Statusleiste auf dem Startbildschirm verwenden</string>
 </resources>

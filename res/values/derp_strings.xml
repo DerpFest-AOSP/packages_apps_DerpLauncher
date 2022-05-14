@@ -112,4 +112,8 @@
     <!-- Taskbar -->
     <string name="pref_allow_phone_taskbar">Use taskbar</string>
     <string name="pref_allow_phone_taskbar_desc">For opening and switching apps anywhere</string>
+
+    <!-- Dark Status Bar -->
+    <string name="perf_dark_status_bar_title">Dark status bar</string>
+    <string name="perf_dark_status_bar_summary">Use dark status bar on Home screen</string>
 </resources>
