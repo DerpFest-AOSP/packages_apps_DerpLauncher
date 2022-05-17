@@ -187,4 +187,8 @@
     <!-- Smartspace -->
     <string name="smartspace_pref_title">Live-Anzeige</string>
     <string name="smartspace_pref_summary">Live-Anzeige oben auf dem Startbildschirm anzeigen</string>
+
+    <!-- Scroll Vibration -->
+    <string name="pref_scroll_vibration_title">Scroll-Vibration</string>
+    <string name="pref_scroll_vibration_summary">Haptisches Feedback beim Scrollen durch aktuelle Apps, sofern unterstützt</string>
 </resources>

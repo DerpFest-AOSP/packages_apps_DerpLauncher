@@ -200,4 +200,8 @@
     <!-- Smartspace -->
     <string name="smartspace_pref_title">At a Glance</string>
     <string name="smartspace_pref_summary">Show smartspace at the top of home screen</string>
+
+    <!-- Scroll Vibration -->
+    <string name="pref_scroll_vibration_title">Scroll Vibration</string>
+    <string name="pref_scroll_vibration_summary">Haptic feedback while scrolling through recent apps, if supported</string>
 </resources>
