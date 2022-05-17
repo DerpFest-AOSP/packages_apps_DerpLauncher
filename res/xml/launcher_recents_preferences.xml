@@ -23,6 +23,14 @@
         android:title="@string/general_category_title">
 
         <SwitchPreferenceCompat
+            android:key="pref_scroll_vibration"
+            android:title="@string/pref_scroll_vibration_title"
+            android:summary="@string/pref_scroll_vibration_summary"
+            android:defaultValue="true"
+            android:persistent="true"
+            launcher:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
             android:key="pref_recents_meminfo"
             android:title="@string/recents_meminfo_title"
             android:defaultValue="false"
