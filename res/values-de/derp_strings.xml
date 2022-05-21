@@ -130,4 +130,24 @@
     <string name="app_info_version">Version</string>
     <string name="app_info_more">Mehr</string>
 
+    <!-- Taskbar -->
+    <string name="pref_allow_phone_taskbar">Taskleiste verwenden</string>
+    <string name="pref_allow_phone_taskbar_desc">Zum jederzeitigen Öffnen von und Wechseln zwischen Apps</string>
+
+    <!-- Recent Grid -->
+    <string name="pref_allow_phone_overview_grid">App-Verlauf als Raster anzeigen</string>
+    <string name="pref_allow_phone_overview_grid_desc">Im App-Verlauf mehr Apps anzeigen</string>
+
+    <!-- Show top shadow -->
+    <string name="show_top_shadow_title">Oberer Schatten</string>
+    <string name="show_top_shadow_summary">Schatten oben auf dem Startbildschirm anzeigen</string>
+
+    <!-- Scroll Vibration -->
+    <string name="pref_scroll_vibration_title">Scroll-Vibration</string>
+    <string name="pref_scroll_vibration_summary">Haptisches Feedback beim Scrollen durch aktuelle Apps, sofern unterstützt</string>
+
+    <!-- Dark Status Bar -->
+    <string name="perf_dark_status_bar_title">Dunkle Statusleiste</string>
+    <string name="perf_dark_status_bar_summary">Aktiviert eine dunkle Statusleiste auf dem Startbildschirm</string>
+
 </resources>
