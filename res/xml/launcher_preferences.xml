@@ -46,6 +46,12 @@
         android:summaryOn="@string/settings_lock_layout_summary_on"
         android:summaryOff="@string/settings_lock_layout_summary_off" />
 
+    <SwitchPreference
+        android:key="pref_dock_search"
+        android:title="@string/dock_search_title"
+        android:summary="@string/dock_search_summary"
+        android:defaultValue="true" />
+
     <Preference
         android:persistent="false"
         android:title="@string/suggestion_pref_screen_title"
@@ -64,12 +70,6 @@
             android:summary="@string/show_lens_button_summary"
             android:defaultValue="false"
             android:persistent="true" />
-
-        <SwitchPreference
-            android:key="pref_dock_search"
-            android:title="@string/dock_search_title"
-            android:summary="@string/dock_search_summary"
-            android:defaultValue="false" />
 
     </androidx.preference.PreferenceCategory>
 
