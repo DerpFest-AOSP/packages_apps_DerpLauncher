@@ -92,4 +92,7 @@
     <!-- Top shadow -->
     <string name="show_top_shadow_title">Schatten oben anzeigen</string>
     <string name="show_top_shadow_summary">Schatten oben auf dem Startbildschirm anzeigen</string>
+
+    <!-- Row Height -->
+    <string name="row_height_title">Zeilenhöhe</string>
 </resources>

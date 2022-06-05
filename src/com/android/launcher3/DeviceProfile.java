@@ -33,6 +33,7 @@ import static com.android.launcher3.testing.shared.ResourceUtils.roundPxValueFro
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -76,6 +77,8 @@ import java.util.function.Consumer;
 
 @SuppressLint("NewApi")
 public class DeviceProfile {
+
+    public static final String KEY_ROW_HEIGHT = "pref_row_height";
 
     private static final int DEFAULT_DOT_SIZE = 100;
     private static final float ALL_APPS_TABLET_MAX_ROWS = 5.5f;
@@ -241,6 +244,7 @@ public class DeviceProfile {
     public int allAppsLeftRightMargin;
     public final int numShownAllAppsColumns;
     public float allAppsIconTextSizePx;
+    private float allAppsCellHeightMultiplier;
 
     // Overview
     public int overviewTaskMarginPx;
@@ -319,6 +323,8 @@ public class DeviceProfile {
         this.rotationHint = windowBounds.rotationHint;
         mInsets.set(windowBounds.insets);
 
+        SharedPreferences prefs = LauncherPrefs.getPrefs(context);
+
         // TODO(b/241386436): shouldn't change any launcher behaviour
         mIsResponsiveGrid = inv.workspaceSpecsId != INVALID_RESOURCE_HANDLE
                 && inv.allAppsSpecsId != INVALID_RESOURCE_HANDLE
@@ -388,6 +394,9 @@ public class DeviceProfile {
             taskbarBottomMargin = 0;
             startAlignTaskbar = inv.startAlignTaskbar[mTypeIndex];
         }
+
+        allAppsCellHeightMultiplier =
+                    (float) prefs.getInt(KEY_ROW_HEIGHT, 100) / 100F;
 
         edgeMarginPx = res.getDimensionPixelSize(R.dimen.dynamic_grid_edge_margin);
         workspaceContentScale = res.getFloat(R.dimen.workspace_content_scale);
@@ -1161,8 +1170,9 @@ public class DeviceProfile {
                 pxFromDp(inv.allAppsBorderSpaces[mTypeIndex].y, mMetrics, scale));
         // AllApps cells don't have real space between cells,
         // so we add the border space to the cell height
-        allAppsCellHeightPx = pxFromDp(inv.allAppsCellSize[mTypeIndex].y, mMetrics)
+        int baseCellHeight = pxFromDp(inv.allAppsCellSize[mTypeIndex].y, mMetrics)
                 + allAppsBorderSpacePx.y;
+        allAppsCellHeightPx = (int) (baseCellHeight * allAppsCellHeightMultiplier);
         // but width is just the cell,
         // the border is added in #updateAllAppsContainerWidth
         if (mIsScalableGrid) {
@@ -1228,8 +1238,9 @@ public class DeviceProfile {
     public void autoResizeAllAppsCells() {
         int textHeight = Utilities.calculateTextHeight(allAppsIconTextSizePx);
         int topBottomPadding = textHeight;
-        allAppsCellHeightPx = allAppsIconSizePx + allAppsIconDrawablePaddingPx
+        int baseCellHeight = allAppsIconSizePx + allAppsIconDrawablePaddingPx
                 + textHeight + (topBottomPadding * 2);
+        allAppsCellHeightPx = (int) (baseCellHeight * allAppsCellHeightMultiplier);
     }
 
     private void updateAllAppsContainerWidth() {
