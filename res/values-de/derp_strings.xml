@@ -154,4 +154,8 @@
     <string name="hotseat_bg_title">Hotseat-Hintergrund anzeigen</string>
     <string name="hotseat_bg_summary">Fügt dem App-Dock einen durchscheinenden Hintergrund hinzu</string>
 
+    <!-- Row Height -->
+    <string name="row_height_title">Zeilenhöhe</string>
+    <string name="row_height_summary">Höhe der Zeilen in der App-Übersicht</string>
+
 </resources>

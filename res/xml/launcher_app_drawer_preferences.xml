@@ -16,7 +16,8 @@
 -->
 <androidx.preference.PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:launcher="http://schemas.android.com/apk/res-auto">
+    xmlns:launcher="http://schemas.android.com/apk/res-auto"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.launcher3">
 
     <SwitchPreference
         android:key="pref_allapps_themed_icons"
@@ -31,5 +32,15 @@
         android:summary="@string/summary_drawer_labels"
         android:defaultValue="true"
         android:persistent="true" />
+
+    <com.android.launcher3.settings.preferences.CustomSeekBarPreference
+        android:key="pref_row_height"
+        android:title="@string/row_height_title"
+        android:summary="@string/row_height_summary"
+        android:persistent="true"
+        android:max="150"
+        android:min="75"
+        settings:units="%"
+        android:defaultValue="100" />
 
 </androidx.preference.PreferenceScreen>
