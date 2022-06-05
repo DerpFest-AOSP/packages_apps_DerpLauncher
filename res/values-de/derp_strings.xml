@@ -140,4 +140,7 @@
 
     <!-- App label - max lines -->
     <string name="icon_max_lines_title">Max. Zeilenanzahl für App-Beschriftungen</string>
+
+    <!-- Row Height -->
+    <string name="row_height_title">Zeilenhöhe</string>
 </resources>
