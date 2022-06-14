@@ -1675,7 +1675,7 @@
         package="com.truecaller" />
     <icon
         drawable="@drawable/themed_icon_tinkoff"
-        package="com.truecaller" />
+        package="com.idamob.tinkoff.android" />
     <icon
         drawable="@drawable/themed_icon_fitbit"
         package="com.fitbit.FitbitMobile" />
@@ -2327,4 +2327,31 @@
     <icon
         drawable="@drawable/themed_icon_ic_org_wikipedia"
         package="org.wikipedia" />
+    <icon
+        drawable="@drawable/themed_icon_pokemon_go"
+        package="com.nianticlabs.pokemongo" />
+    <icon
+        drawable="@drawable/themed_icon_pokemon_unite"
+        package="jp.pokemon.pokemonunite" />
+    <icon
+        drawable="@drawable/themed_icon_apex_legends"
+        package="com.ea.gp.apexlegendsmobilefps" />
+    <icon
+        drawable="@drawable/themed_icon_subway_surfers"
+        package="com.kiloo.subwaysurf" />
+    <icon
+        drawable="@drawable/themed_icon_simtoolkit"
+        package="com.android.stk" />
+    <icon
+        drawable="@drawable/themed_icon_physicswallah"
+        package="xyz.penpencil.physicswala" />
+    <icon
+        drawable="@drawable/themed_icon_tinkoff"
+        package="ru.tinkoff.mb.kids" />
+    <icon
+        drawable="@drawable/themed_icon_tinkoff"
+        package="ru.tinkoff.mvno" />
+    <icon
+        drawable="@drawable/themed_icon_tinkoff"
+        package="ru.tinkoff.sme" />
 </icons>
