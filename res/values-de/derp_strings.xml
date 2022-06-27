@@ -120,4 +120,8 @@
     <string name="trust_apps_help">Hilfe</string>
     <string name="trust_apps_info_hidden">Versteckte Apps und ihre Widgets werden in der App-Übersicht nicht angezeigt</string>
     <string name="trust_apps_info_protected">Geschützte Apps erfordern eine Authentifizierung, um gestartet werden zu können</string>
+
+    <!-- Wallpaper scrolling -->
+    <string name="allow_wallpaper_scrolling">Hintergrundbild-Bewegung</string>
+    <string name="allow_wallpaper_scrolling_summary">Hintergrundbild-Bewegung beim Seitenwechsel</string>
 </resources>

@@ -183,6 +183,12 @@
             android:summaryOff="@string/settings_lock_layout_summary_off" />
 
         <SwitchPreference
+            android:key="pref_allow_wallpaper_scrolling"
+            android:title="@string/allow_wallpaper_scrolling"
+            android:summary="@string/allow_wallpaper_scrolling_summary"
+            android:defaultValue="true" />
+
+        <SwitchPreference
             android:key="pref_show_top_shadow"
             android:title="@string/show_top_shadow_title"
             android:summary="@string/show_top_shadow_summary"
