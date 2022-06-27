@@ -85,4 +85,8 @@
     <!-- Hotseat Background -->
     <string name="hotseat_bg_title">Hintergrund im Dock</string>
     <string name="hotseat_bg_summary">Transparenten Hintergrund im Dock anzeigen</string>
+
+    <!-- Wallpaper scrolling -->
+    <string name="allow_wallpaper_scrolling">Hintergrundbild-Bewegung</string>
+    <string name="allow_wallpaper_scrolling_summary">Hintergrundbild-Bewegung beim Seitenwechsel</string>
 </resources>
