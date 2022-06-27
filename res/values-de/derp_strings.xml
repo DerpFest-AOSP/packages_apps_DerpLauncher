@@ -158,4 +158,7 @@
     <string name="row_height_title">Zeilenhöhe</string>
     <string name="row_height_summary">Höhe der Zeilen in der App-Übersicht</string>
 
+    <!-- Wallpaper scrolling -->
+    <string name="allow_wallpaper_scrolling">Hintergrundbild-Bewegung</string>
+    <string name="allow_wallpaper_scrolling_desc">Hintergrundbild-Bewegung beim Seitenwechsel</string>
 </resources>
