@@ -2331,9 +2331,6 @@
         drawable="@drawable/themed_icon_pokemon_go"
         package="com.nianticlabs.pokemongo" />
     <icon
-        drawable="@drawable/themed_icon_pokemon_unite"
-        package="jp.pokemon.pokemonunite" />
-    <icon
         drawable="@drawable/themed_icon_apex_legends"
         package="com.ea.gp.apexlegendsmobilefps" />
     <icon
