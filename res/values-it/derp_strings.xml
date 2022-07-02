@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022 DerpFest
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- General -->
+    <string name="settings_title">Impostazioni</string>
+
+    <!-- Categories -->
+    <string name="home_category_title">Schermata iniziale</string>
+    <string name="home_category_summary">Impostazioni Google now e altro</string>
+    <string name="icons_category_title">Icone</string>
+    <string name="icons_category_summary">Imposta dimenisioni icone e altro</string>
+    <string name="app_drawer_category_title">Cassetto delle app</string>
+    <string name="app_drawer_category_summary">Personalizza il tuo cassetto delle app</string>
+    <string name="misc_category_title">Varie</string>
+    <string name="misc_category_summary">Altre impostazioni</string>
+    <string name="dev_options_title">Opzioni da sviluppatore</string>
+    <string name="dev_options_desc">Abilita alcune impostazioni nascoste a tuo rischio</string>
+    <string name="general_category_title">Generale</string>
+    <string name="interface_category_title">Interfaccia</string>
+    <string name="search_bar_category_title">Barra di ricerca</string>
+
+    <!-- Settings -->
+
+    <!-- Edit workspace -->
+    <string name="settings_lock_layout_title">Blocca layout</string>
+    <string name="settings_lock_layout_summary_on">Icone e widgets non possono essere aggiunte, rimosse e spostate nella schermata iniziale</string>
+    <string name="settings_lock_layout_summary_off">Icone e widgets possono essere aggiunte, rimosse e spostate nella schermata iniziale</string>
+    <string name="settings_edit_widgets_error">Non è possibile aggiungere widget alla schermata iniziale</string>
+
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_app">Scorri per accedere all\'app Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">Dalla schermata iniziale, scorri a sinistra per accedere all\'app Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">Dalla schermata iniziale, scorri a destra per accedere all\'app Google</string>
+
+    <!-- Hide labels -->
+    <string name="title_desktop_labels">Etichette schermata iniziale</string>
+    <string name="summary_desktop_labels">Mostra le etichette delle icone nella schermata iniziale</string>
+    <string name="title_drawer_labels">Etichette cassetto app</string>
+    <string name="summary_drawer_labels">Mostra le etichette delle icone nel cassetto app</string>
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">Default</string>
+    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong press to set</string>
+    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
+
+    <!-- Icon size -->
+    <string name="icon_size_title">Grandezza icone</string>
+
+    <!-- Font size -->
+    <string name="font_size_title">Grandezza carattere</string>
+
+    <!-- App label - max lines -->
+    <string name="icon_max_lines_title">Numero massimo di righe per le etichette delle app</string>
+
+    <!-- DT2S -->
+    <string name="pref_sleep_gesture_title">Doppio tocco per bloccare</string>
+    <string name="pref_sleep_gesture_summary">Doppio tocco su una parte vuota della schermata per bloccare il dispositivo</string>
+
+    <!-- Hotseat searchbar -->
+    <string name="label_search">Ricerca</string>
+    <string name="label_lens">Google Lens</string>
+    <string name="label_voice_search">Ricerca vovale</string>
+    <string name="dock_search_title">Barra di ricerca Google</string>
+    <string name="dock_search_summary">Mostra la barra di ricerca Google</string>
+    <string name="dock_theme_title">Icone a tema</string>
+    <string name="dock_theme_summary">Usa icone a tema per la barra di ricerca</string>
+    <string name="search_radius_title">Raggio dell\'angolo</string>
+
+    <!-- Recents -->
+    <string name="action_lens">Lens</string>
+
+    <!-- Homescreen Statusbar -->
+    <string name="show_statusbar_title">Mostra barra di stato</string>
+
+    <!-- Suggestions -->
+    <string name="suggestion_pref_screen_title">Suggerimenti</string>
+    <string name="suggestion_pref_screen_desc">Suggerimenti per tutte le app nella schermata iniziale</string>
+
+    <!-- Trust apps -->
+    <string name="trust_apps_manager_name">App nascoste</string>
+    <string name="trust_apps_auth_manager">Sblocca per gestire le app nascoste</string>
+    <string name="trust_apps_loading">Caricamento\u2026</string>
+    <string name="trust_apps_no_lock_error">Imposta una schermata di blocco sicura per limitare l\'accesso all\'app</string>
+    <string name="trust_apps_help">Aiuto</string>
+    <string name="trust_apps_info_hidden">Le app nascoste e i relativi widget sono nascosti nel cassetto</string>
+
+    <!-- Force stop shortcut -->
+    <string name="recent_task_force_stop_app">Arresto forzato</string>
+    <string name="recents_app_force_stopped">App arrestata</string>
+
+    <!-- About info -->
+    <string name="about_thanks_cat">Ringraziamenti speciali a</string>
+    <string name="about">Informazioni</string>
+    <string name="about_summary">Informazioni su DerpLauncher</string>
+    <string name="about_app_version">Version 1.0</string>
+
+    <!-- Drawer themed icons -->
+    <string name="pref_themed_icons_title">Icone a tema nel cassetto</string>
+    <string name="pref_themed_icons_summary">Applica icone a tema nel cassetto</string>
+
+    <!-- Icon pack -->
+    <string name="icon_pack_title">Pacchetto icone</string>
+    <string name="icon_pack_default_label">Default</string>
+    <string name="icon_pack_add">Installa altri pacchetti</string>
+    <string name="icon_pack_no_market">Non ci sono app store disponibili</string>
+
+    <!-- AppInfo -->
+    <string name="app_info_subtext">Scorri verso il basso per chiudere le informazioni sull\'app</string>
+    <string name="app_info_source">Fonte</string>
+    <string name="app_info_source_system">Sistema</string>
+    <string name="app_info_last_update">Ultimo aggiornamento</string>
+    <string name="app_info_version">Versione</string>
+    <string name="app_info_more">Dettagli</string>
+
+    <!-- Taskbar -->
+    <string name="pref_allow_phone_taskbar">Usa la taskbar</string>
+    <string name="pref_allow_phone_taskbar_desc">Per aprire e cambiare app ovunque</string>
+
+    <!-- Recent Grid -->
+    <string name="pref_allow_phone_overview_grid">Mostra la griglia nelle app recenti</string>
+    <string name="pref_allow_phone_overview_grid_desc">Visualizza le app recenti in griglia</string>
+
+    <!-- Show top shadow -->
+    <string name="show_top_shadow_title">Ombra superiore</string>
+    <string name="show_top_shadow_summary">Mostra l\'ombra nella parte superiore della schermata iniziale</string>
+
+    <!-- Scroll Vibration -->
+    <string name="pref_scroll_vibration_title">Vibrazione allo scorrimento</string>
+    <string name="pref_scroll_vibration_summary">Feedback aptico durante lo scorrimento delle app recenti, se supportato</string>
+
+    <!-- Dark Status Bar -->
+    <string name="perf_dark_status_bar_title">Barra di stato scura</string>
+    <string name="perf_dark_status_bar_summary">Usa la barra di stato scura sulla schermata iniziale</string>
+    
+    <!-- Hotseat Background -->
+    <string name="hotseat_bg_title">Mostra sfondo della dock</string>
+    <string name="hotseat_bg_summary">Aggiunge uno sfondo traslucido al dock dell\'app</string>
+
+</resources>
