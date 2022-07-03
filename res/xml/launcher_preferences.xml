@@ -47,6 +47,12 @@
         android:defaultValue="true"
         android:persistent="true"/>
 
+    <SwitchPreference
+        android:key="pref_allow_wallpaper_zooming"
+        android:title="@string/allow_wallpaper_zooming"
+        android:summary="@string/allow_wallpaper_zooming_summary"
+        android:defaultValue="true" />
+
     <Preference
         android:key="pref_trust_apps"
         android:title="@string/trust_apps_manager_name" />
