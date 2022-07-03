@@ -161,4 +161,8 @@
     <!-- Wallpaper scrolling -->
     <string name="allow_wallpaper_scrolling">Hintergrundbild-Bewegung</string>
     <string name="allow_wallpaper_scrolling_desc">Hintergrundbild-Bewegung beim Seitenwechsel</string>
+
+    <!-- Wallpaper zooming -->
+    <string name="allow_wallpaper_zooming">Hintergrundbild-Zoomeffekt</string>
+    <string name="allow_wallpaper_zooming_desc">Herein- und Herauszoomen des Hintergrundbilds bei Verwendung der App-Übersicht und des App-Verlaufs</string>
 </resources>
