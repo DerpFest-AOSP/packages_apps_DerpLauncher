@@ -128,4 +128,8 @@
     <string name="icon_pack_default_label">Standard</string>
     <string name="icon_pack_add">Weitere installieren</string>
     <string name="icon_pack_no_market">Es ist kein App-Store verfügbar</string>
+
+    <!-- Wallpaper zooming -->
+    <string name="allow_wallpaper_zooming">Hintergrundbild-Zoomeffekt</string>
+    <string name="allow_wallpaper_zooming_summary">Herein- und Herauszoomen des Hintergrundbilds bei Verwendung von App-Übersicht und -Verlauf</string>
 </resources>

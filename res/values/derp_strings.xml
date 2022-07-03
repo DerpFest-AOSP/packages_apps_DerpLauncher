@@ -136,4 +136,8 @@
     <string name="icon_pack_default_label">Default</string>
     <string name="icon_pack_add">Install more</string>
     <string name="icon_pack_no_market">There\'s no available app store</string>
+
+    <!-- Wallpaper zooming -->
+    <string name="allow_wallpaper_zooming">Wallpaper zooming</string>
+    <string name="allow_wallpaper_zooming_summary">Zoom in or out the wallpaper when using drawer or recent apps</string>
 </resources>
