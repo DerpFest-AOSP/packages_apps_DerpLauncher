@@ -21,7 +21,7 @@
 
     <!-- Categories -->
     <string name="home_category_title">Schermata iniziale</string>
-    <string name="home_category_summary">Impostazioni Google now e altro</string>
+    <string name="home_category_summary">Impostazioni Google Feed e altro</string>
     <string name="icons_category_title">Icone</string>
     <string name="icons_category_summary">Imposta dimenisioni icone e altro</string>
     <string name="app_drawer_category_title">Cassetto delle app</string>
@@ -110,7 +110,7 @@
     <string name="about_thanks_cat">Ringraziamenti speciali a</string>
     <string name="about">Informazioni</string>
     <string name="about_summary">Informazioni su DerpLauncher</string>
-    <string name="about_app_version">Version 1.0</string>
+    <string name="about_app_version">Versione 1.0</string>
 
     <!-- Drawer themed icons -->
     <string name="pref_themed_icons_title">Icone a tema nel cassetto</string>
