@@ -67,6 +67,15 @@
         drawable="@drawable/themed_icon_bir"
         package="az.kapitalbank.mbanking" />
     <icon
+        drawable="@drawable/themed_icon_mbank" 
+        package="cz.mbank" />
+    <icon
+        drawable="@drawable/themed_icon_mbank"
+        package="pl.mbank" />
+    <icon
+        drawable="@drawable/themed_icon_mbank"
+        package="sk.mbank" />
+    <icon
         drawable="@drawable/themed_icon_bitwarden"
         package="com.x8bit.bitwarden" />
     <icon
@@ -147,6 +156,12 @@
     <icon
         drawable="@drawable/themed_icon_chrome"
         package="com.android.chrome" />
+    <icon
+        drawable="@drawable/themed_icon_chrome"
+        package="org.chromium.chrome" />
+    <icon
+        drawable="@drawable/themed_icon_chrome"
+        package="org.ungoogled.chromium.stable" />
     <icon
         drawable="@drawable/themed_icon_chrome_canary"
         package="com.chrome.canary" />
@@ -274,6 +289,12 @@
         drawable="@drawable/themed_icon_gmail"
         package="com.google.android.gm" />
     <icon
+        drawable="@drawable/themed_icon_gmail"
+        package="com.google.android.gm.lite" />
+    <icon
+        drawable="@drawable/themed_icon_google"
+        package="com.google.android.apps.searchlite" />
+    <icon
         drawable="@drawable/themed_icon_google"
         package="com.google.android.googlequicksearchbox" />
     <icon
@@ -341,18 +362,34 @@
         package="eu.ctwoon.lewdfi" />
     <icon
         drawable="@drawable/themed_icon_linkedin"
-        package="com.linkedin.android" />b <icon
+        package="com.linkedin.android" />
+    <icon
         drawable="@drawable/themed_icon_lsposed"
         package="org.lsposed.manager" />
     <icon
         drawable="@drawable/themed_icon_magisk"
         package="com.topjohnwu.magisk" />
     <icon
+        drawable="@drawable/themed_icon_magisk"
+        package="com.thehitman7.cygisk" />
+    <icon
         drawable="@drawable/themed_icon_maps"
         package="com.google.android.apps.maps" />
     <icon
+        drawable="@drawable/themed_icon_maps"
+        package="com.google.android.apps.mapslite" />
+    <icon
         drawable="@drawable/themed_icon_matlog"
         package="com.pluscubed.matlog" />
+    <icon
+        drawable="@drawable/themed_icon_matlog"
+        package="com.pluscubed.matlog.debug" />
+    <icon
+        drawable="@drawable/themed_icon_matlog"
+        package="om.pluscubed.matloglibre" />
+    <icon
+        drawable="@drawable/themed_icon_matlog"
+        package="org.omnirom.logcat" />
     <icon
         drawable="@drawable/themed_icon_maxim"
         package="com.taxsee.taxsee" />
@@ -660,6 +697,9 @@
         drawable="@drawable/themed_icon_twitter"
         package="com.twitter.android" />
     <icon
+        drawable="@drawable/themed_icon_twitter"
+        package="com.twitter.android.lite" />
+    <icon
         drawable="@drawable/themed_icon_uber"
         package="com.ubercab" />
     <icon
@@ -713,6 +753,21 @@
     <icon
         drawable="@drawable/themed_icon_shopee"
         package="com.shopee.ph" />
+    <icon
+        drawable="@drawable/themed_icon_shopee"
+        package="com.shopee.br" />
+    <icon
+        drawable="@drawable/themed_icon_shopee"
+        package="com.shopee.my" />
+    <icon
+        drawable="@drawable/themed_icon_shopee"
+        package="com.shopee.th" />
+    <icon
+        drawable="@drawable/themed_icon_shopee"
+        package="com.shopee.tw" />
+    <icon
+        drawable="@drawable/themed_icon_shopee"
+        package="com.shopee.vn" />
     <icon
         drawable="@drawable/themed_icon_tor_browser"
         package="org.torproject.torbrowser" />
@@ -969,6 +1024,9 @@
         drawable="@drawable/themed_icon_twitch"
         package="tv.twitch.android.app" />
     <icon
+        drawable="@drawable/themed_icon_twitch"
+        package="tv.twitch.bttvandroid.app" />
+    <icon
         drawable="@drawable/themed_icon_ubereats"
         package="com.ubercab.eats" />
     <icon
@@ -1002,8 +1060,20 @@
         drawable="@drawable/themed_icon_mixplorer"
         package="com.mixplorer.silver" />
     <icon
+        drawable="@drawable/themed_icon_mixplorer"
+        package="com.mixplorer.beta" />
+    <icon
         drawable="@drawable/themed_icon_firefox"
         package="org.mozilla.firefox" />
+    <icon
+        drawable="@drawable/themed_icon_firefox"
+        package="org.mozilla.focus" />
+    <icon
+        drawable="@drawable/themed_icon_firefox"
+        package="org.mozilla.fenix" />
+    <icon
+        drawable="@drawable/themed_icon_firefox"
+        package="org.mozilla.fennec_fdroid" />
     <icon
         drawable="@drawable/themed_icon_boost"
         package="com.rubenmayayo.reddit" />
@@ -1476,6 +1546,9 @@
         drawable="@drawable/themed_icon_sync"
         package="com.laurencedawson.reddit_sync.pro" />
     <icon
+        drawable="@drawable/themed_icon_sync"
+        package="com.laurencedawson.reddit_sync.dev" />
+    <icon
         drawable="@drawable/themed_icon_telegraph"
         package="ir.ilmili.telegraph" />
     <icon
@@ -1581,6 +1654,9 @@
         drawable="@drawable/themed_icon_xda"
         package="com.xda.labs.play" />
     <icon
+        drawable="@drawable/themed_icon_xda"
+        package="com.xda.labs" />
+    <icon
         drawable="@drawable/themed_icon_yandex_mail"
         package="ru.yandex.mail" />
     <icon
@@ -1598,6 +1674,9 @@
     <icon
         drawable="@drawable/themed_icon_kiwi_browser"
         package="com.kiwibrowser.browser" />
+    <icon
+        drawable="@drawable/themed_icon_kiwi_browser"
+        package="com.kiwibrowser.browser.dev" />
     <icon
         drawable="@drawable/themed_icon_discord_themer"
         package="com.aliucord.themer" />
@@ -2006,6 +2085,9 @@
     <icon
         drawable="@drawable/themed_icon_pubg"
         package="com.tencent.ig" />
+    <icon
+        drawable="@drawable/themed_icon_pubg"
+        package="com.pubg.newstate" />
     <icon
         drawable="@drawable/themed_icon_cod"
         package="com.activision.callofduty.shooter" />
