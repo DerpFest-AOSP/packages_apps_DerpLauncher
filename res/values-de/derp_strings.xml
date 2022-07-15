@@ -106,4 +106,9 @@
 
     <!-- Background opacity -->
     <string name="background_opacity_title">Hintergrundtransparenz</string>
+
+    <!-- Recents icons -->
+    <string name="recents_screenshot_title">Screenshot</string>
+    <string name="recents_clear_all_title">Alle Apps schließen</string>
+    <string name="recents_lens_title">Lens</string>
 </resources>
