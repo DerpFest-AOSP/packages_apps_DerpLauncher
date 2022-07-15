@@ -42,6 +42,7 @@
 
     <!-- Settings Categories -->
     <string name="category_icon">Symbole</string>
+    <string name="category_recents">Anwendungsverlauf</string>
 
     <!-- Hotseat searchbar -->
     <string name="label_search">Suche</string>
@@ -50,6 +51,8 @@
     <string name="dock_search_title">Google Suchleiste</string>
     <string name="dock_search_summary">Suchleiste im unteren Dock</string>
 
-    <!-- Recents -->
-    <string name="action_lens">Lens</string>
+    <!-- Recents icons -->
+    <string name="recents_screenshot_title">Screenshot</string>
+    <string name="recents_clear_all_title">Alles schließen</string>
+    <string name="recents_lens_title">Lens</string>
 </resources>
