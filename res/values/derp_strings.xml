@@ -116,4 +116,8 @@
     <string name="paused_apps_dialog_title">App paused</string>
     <string name="paused_apps_dialog_message">%1$s was directly paused from the DerpLauncher</string>
     <string name="paused_apps_drop_target_label">Pause app</string>
+
+    <!-- Background opacity -->
+    <string name="drawer_background_opacity_title">Drawer background opacity</string>
+    <string name="recents_background_opacity_title">Recents background opacity</string>
 </resources>
