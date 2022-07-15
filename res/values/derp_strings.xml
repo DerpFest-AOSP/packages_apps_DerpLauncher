@@ -98,4 +98,8 @@
     <!-- Force monocrome icons -->
     <string name="pref_force_mono_icons_title">Force monochrome icons</string>
     <string name="pref_force_mono_icons_summary">Force monochrome icons for apps that don\'t support them natively</string>
+
+    <!-- Background opacity -->
+    <string name="drawer_background_opacity_title">Drawer background opacity</string>
+    <string name="recents_background_opacity_title">Recents background opacity</string>
 </resources>

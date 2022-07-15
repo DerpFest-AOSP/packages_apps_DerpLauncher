@@ -84,4 +84,8 @@
 
     <!-- All apps themed icons -->
     <string name="pref_allapps_themed_icons">Thematische Symbole für App-Übersicht verwenden</string>
+
+    <!-- Background opacity -->
+    <string name="drawer_background_opacity_title">Hintergrundtransparenz der App-Übersicht</string>
+    <string name="recents_background_opacity_title">Hintergrundtransparenz der Ansicht in Letzte Apps</string>
 </resources>
