@@ -166,6 +166,9 @@ public final class Utilities {
     public static final String KEY_DOCK_SEARCH = "pref_dock_search";
     public static final String KEY_SMARTSPACE = "pref_smartspace";
     public static final String KEY_ICON_PACK = "pref_icon_pack";
+    public static final String KEY_RECENTS_OPACITY = "pref_recents_opacity";
+    public static final String KEY_APP_DRAWER_OPACITY = "pref_app_drawer_opacity";
+
     /**
      * Returns true if theme is dark.
      */
@@ -884,5 +887,15 @@ public final class Utilities {
     private static boolean isSmartspaceEnabled(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return prefs.getBoolean(KEY_SMARTSPACE, true);
+    }
+
+    public static int getRecentsOpacity(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getInt(KEY_RECENTS_OPACITY, 100);
+    }
+
+    public static int getAllAppsOpacity(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getInt(KEY_APP_DRAWER_OPACITY, 100);
     }
 }
