@@ -124,4 +124,7 @@
     <!-- Background blur -->
     <string name="background_blur_title">Background blur depth</string>
     <string name="background_blur_summary">Set blur depth level for recents and app drawer</string>
+
+    <!-- Background opacity -->
+    <string name="background_opacity_title">Background opacity\nWarning: Use at your own risk</string>
 </resources>

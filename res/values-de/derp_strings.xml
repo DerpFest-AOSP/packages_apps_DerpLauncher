@@ -105,4 +105,7 @@
     <!-- Background blur -->
     <string name="background_blur_title">Tiefenschärfegrad des Hintergrunds</string>
     <string name="background_blur_summary">Tiefenschärfegrad in App-Übersicht und -Verlauf anpassen</string>
+
+    <!-- Background opacity -->
+    <string name="background_opacity_title">Hintergrundtransparenz\nWarnung: Benutzung auf eigene Gefahr</string>
 </resources>
