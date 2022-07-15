@@ -103,4 +103,7 @@
     <!-- Suggestions -->
     <string name="suggestion_pref_screen_title">App-Vorschläge</string>
     <string name="suggestion_pref_screen_desc">In Liste aller Apps &amp; auf Startbildschirm</string>
+
+    <!-- Background opacity -->
+    <string name="background_opacity_title">Hintergrundtransparenz</string>
 </resources>
