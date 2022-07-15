@@ -21,6 +21,8 @@
     <string name="misc_category_summary">Andere Optionen</string>
     <string name="general_category_title">Allgemein</string>
     <string name="interface_category_title">Benutzeroberfläche</string>
+    <string name="search_bar_category_title">Suchleiste</string>
+    <string name="actions_category_title">Schnellaktionen</string>
 
     <!-- Developer options -->
     <string name="dev_options_title">Entwickler-Optionen</string>
@@ -122,6 +124,11 @@
     <!-- Haptics on DT2S -->
     <string name="pref_haptics_on_dt2s_title">Haptik beim Doppeltippen zum Sperren</string>
     <string name="pref_haptics_on_dt2s_summary">Haptischer Effekt bei der Geste Doppeltippen zum Sperren</string>
+
+    <!-- Recents icons -->
+    <string name="recents_screenshot_title">Screenshot</string>
+    <string name="recents_clear_all_title">Alle Apps schließen</string>
+    <string name="recents_lens_title">Lens</string>
 
     <!-- Memory info -->
     <string name="meminfo_text">Frei: %1$s | Gesamt: %2$s</string>
