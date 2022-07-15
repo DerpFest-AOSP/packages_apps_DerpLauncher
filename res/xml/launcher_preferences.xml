@@ -49,6 +49,15 @@
             android:persistent="true" />
 
         <com.android.launcher3.settings.preference.CustomSeekBarPreference
+            android:key="pref_app_drawer_opacity"
+            android:title="@string/drawer_background_opacity_title"
+            android:persistent="true"
+            android:max="100"
+            android:min="0"
+            settings:units="%"
+            android:defaultValue="100" />
+
+        <com.android.launcher3.settings.preference.CustomSeekBarPreference
             android:key="pref_custom_icon_size"
             android:title="@string/icon_size_title"
             android:persistent="true"
@@ -126,6 +135,15 @@
             android:summary="@string/pref_scroll_vibration_summary"
             android:defaultValue="true"
             android:persistent="true" />
+
+         <com.android.launcher3.settings.preference.CustomSeekBarPreference
+            android:key="pref_recents_opacity"
+            android:title="@string/recents_background_opacity_title"
+            android:persistent="true"
+            android:max="100"
+            android:min="0"
+            settings:units="%"
+            android:defaultValue="100" />
 
     </androidx.preference.PreferenceCategory>
 
