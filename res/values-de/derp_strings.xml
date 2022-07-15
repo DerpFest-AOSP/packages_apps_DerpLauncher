@@ -109,4 +109,8 @@
     <string name="paused_apps_dialog_title">App pausiert</string>
     <string name="paused_apps_dialog_message">%1$s wurde direkt vom DerpLauncher pausiert</string>
     <string name="paused_apps_drop_target_label">App pausieren</string>
+
+    <!-- Background opacity -->
+    <string name="drawer_background_opacity_title">Hintergrundtransparenz der App-Übersicht</string>
+    <string name="recents_background_opacity_title">Hintergrundtransparenz der Ansicht in Letzte Apps</string>
 </resources>
