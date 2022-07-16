@@ -72,7 +72,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class SettingsMisc extends CollapsingToolbarBaseActivity
-        implements OnPreferenceStartFragmentCallback, OnPreferenceStartScreenCallback {
+        implements OnPreferenceStartFragmentCallback, OnPreferenceStartScreenCallback,
+        SharedPreferences.OnSharedPreferenceChangeListener{
 
     @VisibleForTesting
     static final String DEVELOPER_OPTIONS_KEY = "pref_developer_options";
@@ -148,6 +149,17 @@ public class SettingsMisc extends CollapsingToolbarBaseActivity
                     "Invalid fragment for this activity: " + preferenceFragment);
         } else {
             return preferenceFragment;
+        }
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) { 
+        switch (key) {
+            case Utilities.KEY_BLUR_DEPTH:
+                LauncherAppState.getInstance(this).setNeedsRestart();
+                break;
+            default:
+                break;
         }
     }
 

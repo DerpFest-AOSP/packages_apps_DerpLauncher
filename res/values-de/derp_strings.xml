@@ -101,4 +101,8 @@
     <!-- Top shadow -->
     <string name="show_top_shadow_title">Schatten oben anzeigen</string>
     <string name="show_top_shadow_summary">Schatten oben auf dem Startbildschirm anzeigen</string>
+
+    <!-- Background blur -->
+    <string name="background_blur_title">Tiefenschärfegrad des Hintergrunds</string>
+    <string name="background_blur_summary">Tiefenschärfegrad in App-Übersicht und -Verlauf anpassen</string>
 </resources>
