@@ -95,4 +95,8 @@
 
     <!-- Row Height -->
     <string name="row_height_title">Zeilenhöhe</string>
+
+    <!-- Background blur -->
+    <string name="background_blur_title">Tiefenschärfegrad des Hintergrunds</string>
+    <string name="background_blur_summary">Tiefenschärfegrad in App-Übersicht und -Verlauf anpassen</string>
 </resources>
