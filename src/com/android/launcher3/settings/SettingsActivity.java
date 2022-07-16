@@ -164,6 +164,7 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
             case KEY_DOCK_SEARCH:
             case Utilities.KEY_SHOW_HOTSEAT_BG:
             case Utilities.KEY_HOTSEAT_OPACITY:
+            case Utilities.KEY_BLUR_DEPTH:
             case KEY_SMARTSPACE:
                 LauncherAppState.getInstanceNoCreate().setNeedsRestart();
                 break;
