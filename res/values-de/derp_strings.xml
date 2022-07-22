@@ -125,4 +125,5 @@
 
     <!-- Memory info -->
     <string name="meminfo_text">Frei: %1$s | Gesamt: %2$s</string>
+    <string name="recents_meminfo_title">RAM-Info</string>
 </resources>
