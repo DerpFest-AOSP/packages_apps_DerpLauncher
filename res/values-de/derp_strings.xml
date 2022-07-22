@@ -168,4 +168,5 @@
 
     <!-- Memory info -->
     <string name="meminfo_text">%1$s Verfügbar | %2$s Gesamt</string>
+    <string name="recents_meminfo_title">Speicherinfo</string>
 </resources>
