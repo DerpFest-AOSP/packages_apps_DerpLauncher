@@ -107,6 +107,9 @@
         package="app.grapheneos.camera" />
     <icon
         drawable="@drawable/themed_icon_camera"
+        package="com.oneplus.camera" />
+    <icon
+        drawable="@drawable/themed_icon_camera"
         package="com.google.android.GoogleCamera" />
     <icon
         drawable="@drawable/themed_icon_camera"
