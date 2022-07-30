@@ -166,7 +166,9 @@ android_library {
         "view_capture",
         "animationlib",
         "libGoogleFeed",
-        "SettingsLib"
+        "SettingsLib",
+        "bcsmartspace-google",
+        "SystemUIPluginLib"
     ],
     manifest: "AndroidManifest-common.xml",
     sdk_version: "current",
