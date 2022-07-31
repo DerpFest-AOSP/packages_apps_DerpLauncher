@@ -198,7 +198,7 @@ public class LoaderTask implements Runnable {
 
     private void sendFirstScreenActiveInstallsBroadcast() {
         // Screen set is never empty
-        IntArray allScreens = mBgDataModel.collectWorkspaceScreens();
+        IntArray allScreens = mBgDataModel.collectWorkspaceScreens(mApp.getContext());
         final int firstScreen = allScreens.get(0);
         IntSet firstScreens = IntSet.wrap(firstScreen);
 

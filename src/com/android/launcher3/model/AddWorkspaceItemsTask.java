@@ -29,6 +29,7 @@ import androidx.annotation.Nullable;
 import com.android.launcher3.LauncherModel.CallbackTask;
 import com.android.launcher3.LauncherModel.ModelUpdateTask;
 import com.android.launcher3.LauncherSettings;
+import com.android.launcher3.Utilities;
 import com.android.launcher3.icons.IconCache;
 import com.android.launcher3.logging.FileLog;
 import com.android.launcher3.model.BgDataModel.Callbacks;
@@ -91,7 +92,7 @@ public class AddWorkspaceItemsTask implements ModelUpdateTask {
         final Context context = taskController.getApp().getContext();
 
         synchronized (dataModel) {
-            IntArray workspaceScreens = dataModel.collectWorkspaceScreens();
+            IntArray workspaceScreens = dataModel.collectWorkspaceScreens(context);
 
             List<ItemInfo> filteredItems = new ArrayList<>();
             for (Pair<ItemInfo, Object> entry : mItemList) {

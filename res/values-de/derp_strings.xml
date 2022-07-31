@@ -23,6 +23,7 @@
     <string name="interface_category_title">Benutzeroberfläche</string>
     <string name="search_bar_category_title">Suchleiste</string>
     <string name="actions_category_title">Schnellaktionen</string>
+    <string name="quickspace_category_title">Live-Anzeige</string>
 
     <!-- Developer options -->
     <string name="dev_options_title">Entwickler-Optionen</string>
@@ -173,4 +174,8 @@
     <!-- Auto keyboard -->
     <string name="pref_auto_keyboard_title">Tastaturautomatik</string>
     <string name="pref_auto_keyboard_summary">Suche direkt starten, sobald die App-Übersicht geöffnet ist</string>
+
+    <!-- Smartspace -->
+    <string name="smartspace_pref_title">Live-Anzeige</string>
+    <string name="smartspace_pref_summary">Live-Anzeige oben auf dem Startbildschirm anzeigen</string>
 </resources>

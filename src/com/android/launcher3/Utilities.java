@@ -190,6 +190,7 @@ public final class Utilities {
     public static final String KEY_FORCE_MONOCHROME_ICONS = "pref_forced_monochrome_icons";
     public static final String KEY_RECENTS_CHIPS = "pref_recents_chips";
     public static final String KEY_AUTO_KEYABORD = "pref_auto_keyboard";
+    public static final String KEY_SMARTSPACE = "pref_smartspace";
 
     /**
      * Returns true if theme is dark.
@@ -1115,5 +1116,14 @@ public final class Utilities {
     public static boolean enableAutoIme(Context context) {
         SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
         return prefs.getBoolean(KEY_AUTO_KEYABORD, false);
+    }
+
+    public static boolean showSmartspace(Context context) {
+        return isGSAEnabled(context) && isSmartspaceEnabled(context);
+    }
+
+    private static boolean isSmartspaceEnabled(Context context) {
+        SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(KEY_SMARTSPACE, true);
     }
 }

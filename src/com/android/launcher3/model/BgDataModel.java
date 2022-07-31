@@ -41,6 +41,7 @@ import androidx.annotation.Nullable;
 
 import com.android.launcher3.LauncherSettings;
 import com.android.launcher3.LauncherSettings.Favorites;
+import com.android.launcher3.Utilities;
 import com.android.launcher3.Workspace;
 import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.model.data.AppInfo;
@@ -137,6 +138,7 @@ public class BgDataModel {
      * Load id for which the callbacks were successfully bound
      */
     public int lastLoadId = -1;
+
     public boolean isFirstPagePinnedItemEnabled = QSB_ON_FIRST_SCREEN
             && !enableSmartspaceRemovalToggle();
 
@@ -155,15 +157,14 @@ public class BgDataModel {
     /**
      * Creates an array of valid workspace screens based on current items in the model.
      */
-    public synchronized IntArray collectWorkspaceScreens() {
+    public synchronized IntArray collectWorkspaceScreens(Context context) {
         IntSet screenSet = new IntSet();
         for (ItemInfo item: itemsIdMap) {
             if (item.container == LauncherSettings.Favorites.CONTAINER_DESKTOP) {
                 screenSet.add(item.screenId);
             }
         }
-        if ((FeatureFlags.QSB_ON_FIRST_SCREEN
-                && !SHOULD_SHOW_FIRST_PAGE_WIDGET)
+        if (Utilities.showSmartspace(context)
                 || screenSet.isEmpty()) {
             screenSet.add(Workspace.FIRST_SCREEN_ID);
         }
