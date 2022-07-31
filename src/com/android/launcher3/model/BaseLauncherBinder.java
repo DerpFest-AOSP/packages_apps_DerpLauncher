@@ -88,7 +88,7 @@ public abstract class BaseLauncherBinder {
         try {
             if (FeatureFlags.ENABLE_WORKSPACE_LOADING_OPTIMIZATION.get()) {
                 DisjointWorkspaceBinder workspaceBinder =
-                    initWorkspaceBinder(incrementBindId, mBgDataModel.collectWorkspaceScreens());
+                    initWorkspaceBinder(incrementBindId, mBgDataModel.collectWorkspaceScreens(mApp.getContext()));
                 workspaceBinder.bindCurrentWorkspacePages(isBindSync);
                 workspaceBinder.bindOtherWorkspacePages();
             } else {
@@ -129,7 +129,7 @@ public abstract class BaseLauncherBinder {
         synchronized (mBgDataModel) {
             workspaceItems.addAll(mBgDataModel.workspaceItems);
             appWidgets.addAll(mBgDataModel.appWidgets);
-            orderedScreenIds.addAll(mBgDataModel.collectWorkspaceScreens());
+            orderedScreenIds.addAll(mBgDataModel.collectWorkspaceScreens(mApp.getContext()));
             mBgDataModel.extraItems.forEach(extraItems::add);
             if (incrementBindId) {
                 mBgDataModel.lastBindId++;

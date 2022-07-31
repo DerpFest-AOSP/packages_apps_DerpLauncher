@@ -55,4 +55,8 @@
     <string name="recents_screenshot_title">Screenshot</string>
     <string name="recents_clear_all_title">Alles schließen</string>
     <string name="recents_lens_title">Lens</string>
+
+    <!-- Smartspace -->
+    <string name="smartspace_pref_title">Live-Anzeige</string>
+    <string name="smartspace_pref_summary">Live-Anzeige oben auf dem Startbildschirm anzeigen</string>
 </resources>
