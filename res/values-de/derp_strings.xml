@@ -97,4 +97,8 @@
     <string name="paused_apps_dialog_title">App pausiert</string>
     <string name="paused_apps_dialog_message">%1$s wurde direkt vom DerpLauncher pausiert</string>
     <string name="paused_apps_drop_target_label">App pausieren</string>
+
+    <!-- Smartspace -->
+    <string name="smartspace_pref_title">Live-Anzeige</string>
+    <string name="smartspace_pref_summary">Live-Anzeige oben auf dem Startbildschirm anzeigen</string>
 </resources>
