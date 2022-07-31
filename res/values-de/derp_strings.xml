@@ -89,4 +89,8 @@
 
     <!-- App label - max lines -->
     <string name="icon_max_lines_title">Max. Zeilenanzahl für App-Beschriftungen</string>
+
+    <!-- Smartspace -->
+    <string name="smartspace_pref_title">Live-Anzeige</string>
+    <string name="smartspace_pref_summary">Live-Anzeige oben auf dem Startbildschirm anzeigen</string>
 </resources>
