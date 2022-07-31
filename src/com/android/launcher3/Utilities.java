@@ -159,6 +159,7 @@ public final class Utilities {
             Build.TYPE.toLowerCase(Locale.ROOT).equals("eng");
 
     public static final String GSA_PACKAGE = "com.google.android.googlequicksearchbox";
+    public static final String ASI_PACKAGE = "com.google.android.as";
     public static final String LENS_ACTIVITY = "com.google.android.apps.lens.MainActivity";
     public static final String LENS_URI = "google://lens";
     public static final String LENS_SHARE_ACTIVITY = "com.google.android.apps.search.lens.LensShareEntryPointActivity";
@@ -976,6 +977,14 @@ public final class Utilities {
         }
     }
 
+    public static boolean isASIEnabled(Context context) {
+        try {
+            return context.getPackageManager().getApplicationInfo(ASI_PACKAGE, 0).enabled;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
+    }
+
     public static boolean isWorkspaceEditAllowed(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return !prefs.getBoolean(InvariantDeviceProfile.KEY_WORKSPACE_LOCK, false);
@@ -991,7 +1000,7 @@ public final class Utilities {
     }
 
     public static boolean showSmartspace(Context context) {
-        return isGSAEnabled(context) && isSmartspaceEnabled(context);
+        return isGSAEnabled(context) && isASIEnabled(context) && isSmartspaceEnabled(context);
     }
 
     private static boolean isSmartspaceEnabled(Context context) {

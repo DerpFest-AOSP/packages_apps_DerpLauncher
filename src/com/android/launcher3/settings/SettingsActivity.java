@@ -18,6 +18,8 @@ package com.android.launcher3.settings;
 
 import static androidx.core.view.accessibility.AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS;
 
+import static com.android.launcher3.Utilities.KEY_DOCK_SEARCH;
+import static com.android.launcher3.Utilities.KEY_SMARTSPACE;
 import static com.android.launcher3.states.RotationHelper.ALLOW_ROTATION_PREFERENCE_KEY;
 
 import static com.android.launcher3.OverlayCallbackImpl.KEY_ENABLE_MINUS_ONE;
@@ -41,9 +43,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceFragmentCompat.OnPreferenceStartFragmentCallback;
 import androidx.preference.PreferenceFragmentCompat.OnPreferenceStartScreenCallback;
+import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceGroup.PreferencePositionCallback;
 import androidx.preference.PreferenceScreen;
 import androidx.recyclerview.widget.RecyclerView;
@@ -87,6 +91,8 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
     public static final String EXTRA_SHOW_FRAGMENT_ARGS = ":settings:show_fragment_args";
     private static final int DELAY_HIGHLIGHT_DURATION_MILLIS = 600;
     public static final String SAVE_HIGHLIGHTED_KEY = "android:preference_highlighted";
+
+    private static final String KEY_SUGGESTIONS = "pref_suggestions";
 
     @VisibleForTesting
     static final String EXTRA_FRAGMENT = ":settings:fragment";
@@ -146,8 +152,8 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         switch (key) {
-            case Utilities.KEY_DOCK_SEARCH:
-            case Utilities.KEY_SMARTSPACE:
+            case KEY_DOCK_SEARCH:
+            case KEY_SMARTSPACE:
                 LauncherAppState.getInstanceNoCreate().setNeedsRestart();
                 break;
             default:
@@ -206,8 +212,7 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
         private String mHighLightKey;
         private boolean mPreferenceHighlighted = false;
         private Preference mDeveloperOptionPref;
-
-        private Preference mShowGoogleAppPref;
+        private PreferenceGroup mDeveloperOptionPrefGroup;
 
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -241,7 +246,18 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
             PreferenceScreen screen = getPreferenceScreen();
             for (int i = screen.getPreferenceCount() - 1; i >= 0; i--) {
                 Preference preference = screen.getPreference(i);
-                if (!initPreference(preference)) {
+                if (preference instanceof PreferenceCategory) {
+                    PreferenceCategory category = (PreferenceCategory) preference;
+                    for (int j = category.getPreferenceCount() - 1; j >= 0; j--) {
+                        Preference pref = category.getPreference(j);
+                        if (!initPreference(pref, category)) {
+                            category.removePreference(pref);
+                        }
+                    }
+                    if (category.getPreferenceCount() == 0) {
+                        screen.removePreference(category);
+                    }
+                } else if (!initPreference(preference, screen)) {
                     screen.removePreference(preference);
                 }
             }
@@ -297,7 +313,7 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
          * Initializes a preference. This is called for every preference. Returning false here
          * will remove that preference from the list.
          */
-        protected boolean initPreference(Preference preference) {
+        protected boolean initPreference(Preference preference, PreferenceGroup group) {
             switch (preference.getKey()) {
                 case NOTIFICATION_DOTS_PREFERENCE_KEY:
                     return !WidgetsModel.GO_DISABLE_NOTIFICATION_DOTS;
@@ -320,11 +336,23 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
 
                 case DEVELOPER_OPTIONS_KEY:
                     mDeveloperOptionPref = preference;
+                    mDeveloperOptionPrefGroup = group;
                     return updateDeveloperOption();
 
                 case KEY_ENABLE_MINUS_ONE:
-                    mShowGoogleAppPref = preference;
-                    updateIsGoogleAppEnabled();
+                    preference.setEnabled(isGsaEnabled());
+                    return true;
+
+                case KEY_DOCK_SEARCH:
+                    preference.setEnabled(isGsaEnabled());
+                    return true;
+
+                case KEY_SMARTSPACE:
+                    preference.setEnabled(isGsaEnabled() && isAsiEnabled());
+                    return true;
+
+                case KEY_SUGGESTIONS:
+                    preference.setEnabled(isAsiEnabled());
                     return true;
                 case KEY_ICON_PACK:
                     setupIconPackPreference(preference);
@@ -341,21 +369,27 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
         private boolean updateDeveloperOption() {
             boolean showPreference = FeatureFlags.showFlagTogglerUi(getContext())
                     || PluginManagerWrapper.hasPlugins(getContext());
-            if (mDeveloperOptionPref != null) {
+            if (mDeveloperOptionPref != null && mDeveloperOptionPrefGroup != null) {
                 mDeveloperOptionPref.setEnabled(showPreference);
                 if (showPreference) {
-                    getPreferenceScreen().addPreference(mDeveloperOptionPref);
+                    getPreferenceScreen().addPreference(mDeveloperOptionPrefGroup);
+                    mDeveloperOptionPrefGroup.addPreference(mDeveloperOptionPref);
                 } else {
-                    getPreferenceScreen().removePreference(mDeveloperOptionPref);
+                    mDeveloperOptionPrefGroup.removePreference(mDeveloperOptionPref);
+                    if (mDeveloperOptionPrefGroup.getPreferenceCount() == 0) {
+                        getPreferenceScreen().removePreference(mDeveloperOptionPrefGroup);
+                    }
                 }
             }
             return showPreference;
         }
 
-        private void updateIsGoogleAppEnabled() {
-            if (mShowGoogleAppPref != null) {
-                mShowGoogleAppPref.setEnabled(Utilities.isGSAEnabled(getContext()));
-            }
+        private boolean isGsaEnabled() {
+            return Utilities.isGSAEnabled(getContext());
+        }
+
+        private boolean isAsiEnabled() {
+            return Utilities.isASIEnabled(getContext());
         }
 
         @Override
@@ -373,7 +407,6 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
                     requestAccessibilityFocus(getListView());
                 }
             }
-            updateIsGoogleAppEnabled();
         }
 
         @Override
