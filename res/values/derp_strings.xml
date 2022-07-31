@@ -42,6 +42,7 @@
     <string name="summary_drawer_labels">Show icon labels in drawer</string>
 
     <!-- Settings Categories -->
+    <string name="category_google">Google</string>
     <string name="category_icon">Icons</string>
     <string name="category_recents">Recents</string>
 
