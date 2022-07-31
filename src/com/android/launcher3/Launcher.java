@@ -402,6 +402,7 @@ public class Launcher extends StatefulActivity<LauncherState>
     private final CannedAnimationCoordinator mAnimationCoordinator =
             new CannedAnimationCoordinator(this);
 
+    private boolean mSmartspaceEnabled;
     private final List<BackPressHandler> mBackPressedHandlers = new ArrayList<>();
     private boolean mIsColdStartupAfterReboot;
 
@@ -513,6 +514,8 @@ public class Launcher extends StatefulActivity<LauncherState>
         mStateManager = new StateManager<>(this, NORMAL);
 
         setupViews();
+
+        mSmartspaceEnabled = Utilities.showSmartspace(this);
 
         mAppWidgetManager = new WidgetManagerHelper(this);
         mAppWidgetHolder = createAppWidgetHolder();
@@ -2122,6 +2125,15 @@ public class Launcher extends StatefulActivity<LauncherState>
 
     @Override
     public void bindScreens(IntArray orderedScreenIds) {
+        int firstScreenPosition = 0;
+        if (mSmartspaceEnabled &&
+                orderedScreenIds.indexOf(Workspace.FIRST_SCREEN_ID) != firstScreenPosition) {
+            orderedScreenIds.removeValue(Workspace.FIRST_SCREEN_ID);
+            orderedScreenIds.add(firstScreenPosition, Workspace.FIRST_SCREEN_ID);
+        } else if (!mSmartspaceEnabled && orderedScreenIds.isEmpty()) {
+            // If there are no screens, we need to have an empty screen
+            mWorkspace.addExtraEmptyScreens();
+        }
         mModelCallbacks.bindScreens(orderedScreenIds);
     }
 

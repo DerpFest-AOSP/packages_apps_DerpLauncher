@@ -183,4 +183,8 @@
     <!-- Force monocrome icons -->
     <string name="pref_force_mono_icons_title">Thematische Symbole erzwingen</string>
     <string name="pref_force_mono_icons_summary">Thematische Symbole für Apps erzwingen, die diese nicht nativ unterstützen (erfordert ein erneutes Umschalten der thematischen Symbole)</string>
+
+    <!-- Smartspace -->
+    <string name="smartspace_pref_title">Live-Anzeige</string>
+    <string name="smartspace_pref_summary">Live-Anzeige oben auf dem Startbildschirm anzeigen</string>
 </resources>

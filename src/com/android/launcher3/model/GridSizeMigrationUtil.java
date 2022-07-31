@@ -331,11 +331,7 @@ public class GridSizeMigrationUtil {
             @NonNull final List<DbEntry> sortedItemsToPlace, final boolean matchingScreenIdOnly) {
         final GridOccupancy occupied = new GridOccupancy(trgX, trgY);
         final Point trg = new Point(trgX, trgY);
-        final Point next = new Point(0, screenId == 0
-                && (FeatureFlags.QSB_ON_FIRST_SCREEN
-                && (!ENABLE_SMARTSPACE_REMOVAL.get() || LauncherPrefs.getPrefs(destReader.mContext)
-                .getBoolean(SMARTSPACE_ON_HOME_SCREEN, true))
-                && !shouldShowFirstPageWidget())
+        final Point next = new Point(0, screenId == 0 && helper.isQsbOnFirstScreen()
                 ? 1 /* smartspace */ : 0);
         List<DbEntry> existedEntries = destReader.mWorkspaceEntriesByScreenId.get(screenId);
         if (existedEntries != null) {

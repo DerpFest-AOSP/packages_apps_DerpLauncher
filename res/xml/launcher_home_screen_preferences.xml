@@ -80,7 +80,14 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/interface_category_title">
+        android:title="@string/quickspace_category_title">
+
+        <SwitchPreferenceCompat
+            android:key="pref_smartspace"
+            android:title="@string/smartspace_pref_title"
+            android:summary="@string/smartspace_pref_summary"
+            android:defaultValue="true"
+            launcher:iconSpaceReserved="false" />
 
         <SwitchPreferenceCompat
             android:key="pref_enable_minus_one"
@@ -88,6 +95,11 @@
             android:summary="@string/pref_show_google_now_summary"
             android:defaultValue="true"
             launcher:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/interface_category_title">
 
         <SwitchPreferenceCompat
             android:key="pref_show_statusbar"
