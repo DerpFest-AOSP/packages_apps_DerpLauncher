@@ -108,9 +108,7 @@ public class PackageUpdatedTask extends BaseModelUpdateTask {
             case OP_ADD: {
                 for (int i = 0; i < N; i++) {
                     if (DEBUG) Log.d(TAG, "mAllAppsList.addPackage " + packages[i]);
-                    if (isTargetPackage(packages[i])) {
-                        needsRestart = true;
-                    }
+                    needsRestart = isTargetPackage(packages[i]);
                     iconCache.updateIconsForPkg(packages[i], mUser);
                     if (FeatureFlags.PROMISE_APPS_IN_ALL_APPS.get()) {
                         appsList.removePackage(packages[i], mUser);
@@ -126,6 +124,7 @@ public class PackageUpdatedTask extends BaseModelUpdateTask {
                              appsList.trackRemoves(a -> removedComponents.add(a.componentName))) {
                     for (int i = 0; i < N; i++) {
                         if (DEBUG) Log.d(TAG, "mAllAppsList.updatePackage " + packages[i]);
+                        needsRestart = isTargetPackage(packages[i]);
                         iconCache.updateIconsForPkg(packages[i], mUser);
                         activitiesLists.put(
                                 packages[i], appsList.updatePackage(context, packages[i], mUser));
@@ -146,9 +145,6 @@ public class PackageUpdatedTask extends BaseModelUpdateTask {
                 for (int i = 0; i < N; i++) {
                     FileLog.d(TAG, "Removing app icon" + packages[i]);
                     iconCache.removeIconsForPkg(packages[i], mUser);
-                    if (isTargetPackage(packages[i])) {
-                        needsRestart = true;
-                    }
                 }
                 // Fall through
             }
@@ -165,11 +161,7 @@ public class PackageUpdatedTask extends BaseModelUpdateTask {
                         WorkspaceItemInfo.FLAG_DISABLED_SUSPENDED, mOp == OP_SUSPEND);
                 if (DEBUG) Log.d(TAG, "mAllAppsList.(un)suspend " + N);
                 appsList.updateDisabledFlags(matcher, flagOp);
-                for (int i = 0; i < N; i++) {
-                    if (isTargetPackage(packages[i])) {
-                        needsRestart = true;
-                    }
-                }
+                needsRestart = Arrays.stream(packages).anyMatch(this::isTargetPackage);
                 break;
             case OP_USER_AVAILABILITY_CHANGE: {
                 UserManagerState ums = new UserManagerState();
@@ -399,6 +391,7 @@ public class PackageUpdatedTask extends BaseModelUpdateTask {
     }
 
     private boolean isTargetPackage(String packageName) {
-        return packageName.equals(Utilities.GSA_PACKAGE);
+        return packageName.equals(Utilities.GSA_PACKAGE)
+                || packageName.equals(Utilities.ASI_PACKAGE);
     }
 }

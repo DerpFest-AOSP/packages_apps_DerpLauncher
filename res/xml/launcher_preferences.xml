@@ -99,6 +99,14 @@
             android:summary="@string/dock_search_summary"
             android:defaultValue="true" />
 
+        <Preference
+            android:persistent="false"
+            android:title="@string/suggestion_pref_screen_title"
+            android:key="pref_suggestions"
+            android:summary="@string/suggestion_pref_screen_desc">
+            <intent android:action="android.settings.ACTION_CONTENT_SUGGESTIONS_SETTINGS" />
+        </Preference>
+
     </androidx.preference.PreferenceCategory>
 
     <androidx.preference.PreferenceCategory
@@ -169,14 +177,6 @@
             android:summary="@string/show_top_shadow_summary"
             android:defaultValue="true"
             android:persistent="true" />
-
-        <Preference
-            android:persistent="false"
-            android:title="@string/suggestion_pref_screen_title"
-            android:key="pref_suggestions"
-            android:summary="@string/suggestion_pref_screen_desc">
-            <intent android:action="android.settings.ACTION_CONTENT_SUGGESTIONS_SETTINGS" />
-        </Preference>
 
     </androidx.preference.PreferenceCategory>
 
