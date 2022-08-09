@@ -56,10 +56,10 @@
     <string name="summary_drawer_labels">Mostra le etichette delle icone nel cassetto app</string>
 
     <!-- Custom seekbar -->
-    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
-    <string name="custom_seekbar_default_value">Default</string>
-    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong press to set</string>
-    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
+    <string name="custom_seekbar_value">Valore: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">Predefinito</string>
+    <string name="custom_seekbar_default_value_to_set">Valore predefinito: <xliff:g id="v">%s</xliff:g>\nimposta con pressione prolungata</string>
+    <string name="custom_seekbar_default_value_is_set">Impostato il valore predefinito</string>
 
     <!-- Icon size -->
     <string name="icon_size_title">Grandezza icone</string>
@@ -153,5 +153,9 @@
     <!-- Hotseat Background -->
     <string name="hotseat_bg_title">Mostra sfondo della dock</string>
     <string name="hotseat_bg_summary">Aggiunge uno sfondo traslucido al dock dell\'app</string>
-
+     
+     <!-- Row Height -->
+    <string name="row_height_title">Altezza della riga</string>
+    <string name="row_height_summary">Modifica l\'altezza delle righe nel cassetto delle app</string>
+     
 </resources>
