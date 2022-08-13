@@ -70,10 +70,6 @@
     <!-- App label - max lines -->
     <string name="icon_max_lines_title">Numero massimo di righe per le etichette delle app</string>
 
-    <!-- DT2S -->
-    <string name="pref_sleep_gesture_title">Doppio tocco per bloccare</string>
-    <string name="pref_sleep_gesture_summary">Doppio tocco su una parte vuota della schermata per bloccare il dispositivo</string>
-
     <!-- Hotseat searchbar -->
     <string name="label_search">Ricerca</string>
     <string name="label_lens">Google Lens</string>

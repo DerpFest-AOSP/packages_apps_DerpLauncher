@@ -52,9 +52,6 @@
     <string name="font_size_title">Размер шрифта</string>
     <!-- App label - max lines -->
     <string name="icon_max_lines_title">Максимальное количество строк в названии ярлыка приложений</string>
-    <!-- DT2S -->
-    <string name="pref_sleep_gesture_title">Выключение экрана двойным нажатием</string>
-    <string name="pref_sleep_gesture_summary">Дважды нажмите по пустому месту для выключения</string>
     <!-- Hotseat searchbar -->
     <string name="label_search">Поиск</string>
     <string name="label_lens">Объектив Google</string>

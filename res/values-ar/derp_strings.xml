@@ -14,7 +14,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Application name -->
-    <string name="derp_app_name" translatable="false">DerpLauncher</string>
 
     <!-- General -->
     <string name="settings_title">الإعدادات</string>
@@ -49,9 +48,6 @@
     <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">من الشاشة الرئيسية اسحب إلى اليمين لفتح تطبيق جوجل</string>
 
-    <!-- Folder titles -->
-    <string name="google_folder_title" translatable="false">جوجل</string>
-
     <!-- Hide labels -->
     <string name="title_desktop_labels">اسماء التطبيقات سطح المكتب</string>
     <string name="summary_desktop_labels">اظهر أسماء الأيقونات على الشاشة الرئيسية</string>
@@ -72,10 +68,6 @@
 
     <!-- App label - max lines -->
     <string name="icon_max_lines_title">أقصى عدد سطور لإسم التطبيق</string>
-
-    <!-- DT2S -->
-    <string name="pref_sleep_gesture_title">اللمس مرتين لإطفاء الشاشة</string>
-    <string name="pref_sleep_gesture_summary">المس مرتين في مكتن خالي لإطفاء الشاشة</string>
 
     <!-- Hotseat searchbar -->
     <string name="label_search">البحث</string>
@@ -110,7 +102,6 @@
     <string name="recents_app_force_stopped">تم إيقاف التطبيق إجباريا</string>
 
     <!-- About info -->
-    <string name="about_derp_title" translatable="false">@string/derp_app_name</string>
     <string name="about_thanks_cat">شكر خاص إلى</string>
     <string name="about">حول</string>
     <string name="about_summary">DerpLauncher معلومات حول</string>
@@ -128,7 +119,6 @@
 
     <!-- AppInfo -->
     <string name="app_info_subtext">اسحب إلى الأسفل لإغلاق معلومات التطبيق</string>
-    <string name="app_info_version_value" translatable="false">%1$s (%2$d)</string>
     <string name="app_info_source">المصدر</string>
     <string name="app_info_source_system">النظام</string>
     <string name="app_info_last_update">آخر تحديث</string>
