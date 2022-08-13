@@ -172,7 +172,6 @@
 
     <!-- Gestures -->
     <string name="pref_homescreen_dt_gestures_title">Double-tap on screen action</string>
-    <string name="pref_homescreen_dt_gestures_summary">Double-tap on screen action</string>
     <string name="pref_homescreen_gestures_none">None</string>
     <string name="pref_homescreen_gestures_sleep">Screen off</string>
     <string name="pref_homescreen_gestures_torch">Flashlight</string>
