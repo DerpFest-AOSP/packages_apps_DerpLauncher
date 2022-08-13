@@ -44,6 +44,13 @@
             android:selectable="false">
         </Preference>
 
+        <Preference
+            android:key="about_credit01"
+            android:title="RiceDroid"
+            android:persistent="false"
+            android:selectable="false">
+        </Preference>
+
     </PreferenceCategory>
 
 </androidx.preference.PreferenceScreen> 
