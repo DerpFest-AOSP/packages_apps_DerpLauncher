@@ -213,6 +213,7 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
             updateIsGoogleAppEnabled();
 
                     final ListPreference doubletabAction = (ListPreference) findPreference(KEY_HOMESCREEN_DT_GESTURES);
+                    doubletabAction.setIconSpaceReserved(false);
                     doubletabAction.setValue(getDevicePrefs(getActivity()).getString(KEY_HOMESCREEN_DT_GESTURES, "0"));
                     doubletabAction.setSummary(doubletabAction.getEntry());
                     doubletabAction.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
