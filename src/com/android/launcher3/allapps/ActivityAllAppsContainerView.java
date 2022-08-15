@@ -289,6 +289,7 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
                 0 // Bottom left
         };
         updateBackgroundVisibility(mActivityContext.getDeviceProfile());
+        getSearchView().setBackgroundResource(R.drawable.bg_all_apps_searchbox_google_themed);
         mSearchUiManager.initializeSearch(this);
     }
 
@@ -740,6 +741,7 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
             mTabsProtectionAlpha = tabsAlpha;
             invalidateHeader();
         }
+        getSearchView().setBackgroundResource(R.drawable.bg_all_apps_searchbox_google_themed);
         if (mSearchUiManager.getEditText() == null) {
             return;
         }
