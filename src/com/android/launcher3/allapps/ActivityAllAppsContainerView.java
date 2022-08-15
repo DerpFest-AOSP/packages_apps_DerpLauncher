@@ -161,6 +161,7 @@ public class ActivityAllAppsContainerView<T extends Context & AppLauncher
     protected void onFinishInflate() {
         super.onFinishInflate();
         mSearchContainer = findViewById(R.id.search_container_all_apps);
+        getSearchView().setBackgroundResource(R.drawable.bg_all_apps_searchbox_google_themed);
         mSearchUiManager = (SearchUiManager) mSearchContainer;
         mSearchUiManager.initializeSearch(this);
     }
@@ -246,7 +247,7 @@ public class ActivityAllAppsContainerView<T extends Context & AppLauncher
     @Override
     protected void updateHeaderScroll(int scrolledOffset) {
         super.updateHeaderScroll(scrolledOffset);
-        getSearchView().setBackgroundResource(R.drawable.bg_all_apps_searchbox);
+        getSearchView().setBackgroundResource(R.drawable.bg_all_apps_searchbox_google_themed);
         if (mSearchUiManager.getEditText() == null) {
             return;
         }
@@ -259,13 +260,6 @@ public class ActivityAllAppsContainerView<T extends Context & AppLauncher
             bgVisible = false;
         }
         mSearchUiManager.setBackgroundVisibility(bgVisible, 1 - prog);
-    }
-
-    @Override
-    protected int getHeaderColor(float blendRatio) {
-        return ColorUtils.setAlphaComponent(
-                super.getHeaderColor(blendRatio),
-                (int) (mSearchContainer.getAlpha() * 255));
     }
 
     @Override
