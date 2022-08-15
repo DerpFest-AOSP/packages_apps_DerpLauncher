@@ -261,6 +261,7 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
         getContext().getTheme().resolveAttribute(android.R.attr.colorBackground, value, true);
         mBottomSheetBackgroundColor = value.data;
         updateBackground(mActivityContext.getDeviceProfile());
+        getSearchView().setBackgroundResource(R.drawable.bg_all_apps_searchbox_google_themed);
         mSearchUiManager.initializeSearch(this);
     }
 
@@ -617,7 +618,7 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
     }
 
     protected void updateHeaderScroll(int scrolledOffset) {
-        getSearchView().setBackgroundResource(R.drawable.bg_all_apps_searchbox);
+        getSearchView().setBackgroundResource(R.drawable.bg_all_apps_searchbox_google_themed);
         float prog1 = Utilities.boundToRange((float) scrolledOffset / mHeaderThreshold, 0f, 1f);
         int headerColor = getHeaderColor(prog1);
         int tabsAlpha = mHeader.getPeripheralProtectionHeight() == 0 ? 0
