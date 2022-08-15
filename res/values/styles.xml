@@ -84,10 +84,10 @@
 
     <style name="LauncherTheme" parent="@style/DynamicColorsBaseLauncherTheme">
         <item name="android:textColorSecondary">@*android:color/system_neutral2_800</item>
-        <item name="allAppsScrimColor">@*android:color/system_neutral1_50</item>
-        <item name="allappsHeaderProtectionColor">@*android:color/system_neutral2_100</item>
+        <item name="allAppsScrimColor">@*android:color/system_neutral2_50</item>
+        <item name="allappsHeaderProtectionColor">@*android:color/transparent</item>
+        <item name="searchHintHighlight">@*android:color/system_neutral1_800</item>
         <item name="allAppsNavBarScrimColor">#66FFFFFF</item>
-        <item name="allAppsSearchTextColor">@color/widget_picker_search_text_color_light</item>
         <item name="popupColorPrimary">@color/popup_color_primary_light</item>
         <item name="popupColorSecondary">@color/popup_color_secondary_light</item>
         <item name="popupColorTertiary">@color/popup_color_tertiary_light</item>
@@ -159,10 +159,10 @@
         <item name="android:textColorHint">#A0FFFFFF</item>
         <item name="android:colorControlHighlight">#19FFFFFF</item>
         <item name="android:colorPrimary">#FF212121</item>
-        <item name="allAppsScrimColor">@*android:color/system_neutral1_900</item>
-        <item name="allappsHeaderProtectionColor">@*android:color/system_neutral2_800</item>
+        <item name="allAppsScrimColor">@*android:color/system_neutral2_900</item>
+        <item name="allappsHeaderProtectionColor">@*android:color/transparent</item>
+        <item name="searchHintHighlight">@*android:color/system_accent1_100</item>
         <item name="allAppsNavBarScrimColor">#80000000</item>
-        <item name="allAppsSearchTextColor">@color/widget_picker_search_text_color_dark</item>
         <item name="popupColorPrimary">@color/popup_color_primary_dark</item>
         <item name="popupColorSecondary">@color/popup_color_secondary_dark</item>
         <item name="popupColorTertiary">@color/popup_color_tertiary_dark</item>
@@ -207,7 +207,8 @@
     <!-- A derivative project can extend these themes to customize the application theme without
          affecting the base theme -->
     <style name="AppTheme" parent="@style/LauncherTheme">
-        <item name="qsbFillColor">@color/folder_background_light</item>
+        <item name="qsbFillColor">@*android:color/system_neutral1_0</item>
+        <item name="qsbFillColorThemed">@*android:color/system_accent1_100</item>
         <item name="qsbIconTintPrimary">@color/qsb_primary</item>
         <item name="qsbIconTintQuaternary">@color/qsb_quaternary</item>
         <item name="qsbIconTintSecondary">@color/qsb_secondary</item>
@@ -215,7 +216,8 @@
     </style>
 
     <style name="AppTheme.DarkMainColor" parent="@style/LauncherTheme.DarkMainColor">
-        <item name="qsbFillColor">@color/folder_background_light</item>
+        <item name="qsbFillColor">@*android:color/system_neutral1_0</item>
+        <item name="qsbFillColorThemed">@*android:color/system_accent1_100</item>
         <item name="qsbIconTintPrimary">@color/qsb_primary</item>
         <item name="qsbIconTintQuaternary">@color/qsb_quaternary</item>
         <item name="qsbIconTintSecondary">@color/qsb_secondary</item>
@@ -223,7 +225,8 @@
     </style>
 
     <style name="AppTheme.DarkText" parent="@style/LauncherTheme.DarkText">
-        <item name="qsbFillColor">@color/folder_background_light</item>
+        <item name="qsbFillColor">@*android:color/system_neutral1_0</item>
+        <item name="qsbFillColorThemed">@*android:color/system_accent1_100</item>
         <item name="qsbIconTintPrimary">@color/qsb_primary</item>
         <item name="qsbIconTintQuaternary">@color/qsb_quaternary</item>
         <item name="qsbIconTintSecondary">@color/qsb_secondary</item>
@@ -231,7 +234,8 @@
     </style>
 
     <style name="AppTheme.Dark" parent="@style/LauncherTheme.Dark">
-        <item name="qsbFillColor">@color/folder_background_dark</item>
+        <item name="qsbFillColor">@color/surface</item>
+        <item name="qsbFillColorThemed">@*android:color/system_neutral1_800</item>
         <item name="qsbIconTintPrimary">@color/qsb_primary</item>
         <item name="qsbIconTintQuaternary">@color/qsb_quaternary</item>
         <item name="qsbIconTintSecondary">@color/qsb_secondary</item>
@@ -239,21 +243,29 @@
     </style>
 
     <style name="AppTheme.Dark.DarkMainColor" parent="@style/LauncherTheme.Dark.DarkMainColor">
-        <item name="qsbFillColor">@color/folder_background_dark</item>
+        <item name="qsbFillColor">@color/surface</item>
+        <item name="qsbFillColorThemed">@*android:color/system_neutral1_800</item>
         <item name="qsbIconTintPrimary">@color/qsb_primary</item>
         <item name="qsbIconTintQuaternary">@color/qsb_quaternary</item>
         <item name="qsbIconTintSecondary">@color/qsb_secondary</item>
         <item name="qsbIconTintTertiary">@color/qsb_tertiary</item>
     </style>
     <style name="AppTheme.Dark.DarkText" parent="@style/LauncherTheme.Dark.DarkText">
-        <item name="qsbFillColor">@color/folder_background_dark</item>
+        <item name="qsbFillColor">@color/surface</item>
+        <item name="qsbFillColorThemed">@*android:color/system_neutral1_800</item>
         <item name="qsbIconTintPrimary">@color/qsb_primary</item>
         <item name="qsbIconTintQuaternary">@color/qsb_quaternary</item>
         <item name="qsbIconTintSecondary">@color/qsb_secondary</item>
         <item name="qsbIconTintTertiary">@color/qsb_tertiary</item>
     </style>
 
-    <style name="HomeSettings.Theme" parent="@style/Theme.SubSettingsBase">
+    <style name="HomeSettings.Theme" parent="@android:style/Theme.DeviceDefault.Settings">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="preferenceTheme">@style/HomeSettings.PreferenceTheme</item>
+    </style>
+
+    <style name="HomeSettings.PreferenceTheme" parent="@style/PreferenceThemeOverlay.v14.Material">
         <item name="preferenceFragmentCompatStyle">@style/HomeSettings.FragmentCompatStyle</item>
     </style>
 
@@ -274,6 +286,7 @@
 
     <!-- Theme for the widget container. -->
     <style name="WidgetContainerTheme" parent="@android:style/Theme.DeviceDefault.Settings">
+        <item name="android:colorPrimaryDark">#E8EAED</item>
         <item name="android:textColorSecondary">?android:attr/textColorPrimary</item>
         <item name="android:colorEdgeEffect">?android:attr/textColorSecondary</item>
         <item name="widgetPickerPrimarySurfaceColor">
@@ -315,6 +328,7 @@
     </style>
     <style name="WidgetContainerTheme.Dark" parent="AppTheme.Dark">
         <item name="android:colorEdgeEffect">?android:attr/textColorSecondary</item>
+        <item name="android:colorPrimaryDark">#616161</item> <!-- Gray 700 -->
         <item name="widgetPickerPrimarySurfaceColor">
             @color/widget_picker_primary_surface_color_dark</item>
         <item name="widgetPickerSecondarySurfaceColor">
@@ -369,7 +383,9 @@
         <item name="android:importantForAccessibility">no</item>
     </style>
 
-    <style name="BaseIconRoot" parent="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle"/>
+    <style name="BaseIconRoot" parent="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle">
+        <item name="android:fontFamily">@*android:string/config_bodyFontFamilyMedium</item>
+    </style>
 
     <style name="BaseIconUnBounded" parent="BaseIconRoot">
         <item name="android:layout_width">match_parent</item>
@@ -438,7 +454,9 @@
 
     <style name="DropTargetButton" parent="DropTargetButtonBase" />
 
-    <style name="TextHeadline" parent="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle" />
+    <style name="TextHeadline" parent="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle">
+        <item name="android:fontFamily">@*android:string/config_bodyFontFamilyMedium</item>
+    </style>
 
     <style name="PrimaryHeadline" parent="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle"/>
 
