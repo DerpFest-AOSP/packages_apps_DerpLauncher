@@ -153,5 +153,27 @@
      <!-- Row Height -->
     <string name="row_height_title">Altezza della riga</string>
     <string name="row_height_summary">Modifica l\'altezza delle righe nel cassetto delle app</string>
-     
-</resources>
+
+    <!-- Wallpaper scrolling -->
+    <string name="allow_wallpaper_scrolling">Scorrimento dello sfondo</string>
+    <string name="allow_wallpaper_scrolling_desc">Effetto di scorrimento dello sfondo per più schermate</string>
+
+    <!-- Wallpaper zooming -->
+    <string name="allow_wallpaper_zooming">Zoom dello sfondo</string>
+    <string name="allow_wallpaper_zooming_desc">Zoom dentro o fuori lo sfondo quando si utilizza il cassetto o le app recenti</string>
+
+    <!-- Gestures -->
+    <string name="pref_homescreen_dt_gestures_title">Azione doppio tocco sullo schermo</string>
+    <string name="pref_homescreen_gestures_none">Nessuna</string>
+    <string name="pref_homescreen_gestures_sleep">Schermo disattivato</string>
+    <string name="pref_homescreen_gestures_torch">Torcia</string>
+    <string name="pref_homescreen_gestures_volume_panel">Pannello volume</string>
+    <string name="pref_homescreen_gestures_clear_notifications">Cancella notifiche</string>
+    <string name="pref_homescreen_gestures_screenshot">Screenshot</string>
+    <string name="pref_homescreen_gestures_notifications">Notifiche</string>
+    <string name="pref_homescreen_gestures_qspanel">Pannello impostazioni rapide</string>
+    
+    <!-- Memory info -->
+    <string name="meminfo_text">%1$s Disponibile | %2$s Totale</string>
+    <string name="recents_meminfo_title">Informazioni memoria</string>
+</resources>     
