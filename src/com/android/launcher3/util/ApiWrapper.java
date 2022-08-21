@@ -39,6 +39,8 @@ import com.android.launcher3.Launcher;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
 
+import org.derpfest.app.ParallelSpaceManager;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -82,6 +84,7 @@ public class ApiWrapper implements ResourceBasedOverride, SafeCloseable {
         UserManager um = mContext.getSystemService(UserManager.class);
         Map<UserHandle, UserIconInfo> users = new ArrayMap<>();
         List<UserHandle> usersActual = um.getUserProfiles();
+        usersActual.addAll(ParallelSpaceManager.getInstance().getParallelUserHandles());
         if (usersActual != null) {
             for (UserHandle user : usersActual) {
                 long serial = um.getSerialNumberForUser(user);
