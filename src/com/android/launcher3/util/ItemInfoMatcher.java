@@ -45,6 +45,10 @@ public abstract class ItemInfoMatcher {
         return info -> info != null && info.user.equals(user);
     }
 
+    public static Predicate<ItemInfo> ofUsers(Collection<UserHandle> users) {
+        return info -> info != null && users.contains(info.user);
+    }
+
     public static Predicate<ItemInfo> ofComponents(
             HashSet<ComponentName> components, UserHandle user) {
         return info -> info != null && info.user.equals(user)
