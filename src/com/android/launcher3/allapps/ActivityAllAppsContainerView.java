@@ -59,6 +59,8 @@ import androidx.annotation.VisibleForTesting;
 import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.internal.derp.app.ParallelSpaceManager;
+
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.DeviceProfile.OnDeviceProfileChangeListener;
 import com.android.launcher3.DragSource;
@@ -110,8 +112,7 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
 
     protected final T mActivityContext;
     protected final List<AdapterHolder> mAH;
-    protected final Predicate<ItemInfo> mPersonalMatcher = ItemInfoMatcher.ofUser(
-            Process.myUserHandle());
+    protected Predicate<ItemInfo> mPersonalMatcher;
     protected final WorkProfileManager mWorkManager;
     protected final Point mFastScrollerOffset = new Point();
     protected final int mScrimColor;
@@ -182,6 +183,8 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
                 mActivityContext.getSystemService(UserManager.class),
                 this, mActivityContext.getStatsLogManager());
         mAH = Arrays.asList(null, null, null);
+        updateMatcher();
+
         mNavBarScrimPaint = new Paint();
         mNavBarScrimPaint.setColor(Themes.getAttrColor(context, R.attr.allAppsNavBarScrimColor));
 
@@ -824,8 +827,16 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
         // added in TaskbarAllAppsContainerView and header protection is not yet supported.
     }
 
+    private void updateMatcher() {
+        mPersonalMatcher = ItemInfoMatcher.ofUser(
+                Process.myUserHandle()).or(ItemInfoMatcher.ofUsers(
+                    ParallelSpaceManager.getInstance().getParallelUserHandles()));
+        mWorkManager.updateMatcher();
+    }
+
     private void onAppsUpdated() {
         mHasWorkApps = Stream.of(mAllAppsStore.getApps()).anyMatch(mWorkManager.getMatcher());
+        updateMatcher();
         if (TestProtocol.sDebugTracing) {
             Log.d(WORK_TAB_MISSING, "ActivityAllAppsContainerView#onAppsUpdated hasWorkApps: " +
                     mHasWorkApps + " allApps: " + mAllAppsStore.getApps().length);
