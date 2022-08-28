@@ -16,8 +16,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Application name -->
-    <string name="derp_app_name" translatable="false">DerpLauncher</string>
 
     <!-- General -->
     <string name="settings_title">Настройки</string>
@@ -52,8 +50,6 @@
     <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Когда вы проводите влево с главного Рабочего стола</string>
 
-    <!-- Folder titles -->
-    <string name="google_folder_title" translatable="false">Google</string>
 
     <!-- Hide labels -->
     <string name="title_desktop_labels">Названия на рабочем столе</string>
@@ -113,7 +109,6 @@
     <string name="recents_app_force_stopped">Приложение принудительно остановлено</string>
 
     <!-- About info -->
-    <string name="about_derp_title" translatable="false">@string/derp_app_name</string>
     <string name="about_thanks_cat">Огромное спасибо</string>
     <string name="about">About</string>
     <string name="about_summary">Больше информации о DerpLauncher</string>
@@ -131,7 +126,6 @@
 
     <!-- AppInfo -->
     <string name="app_info_subtext">Смахните вниз чтобы закрыть информацию о приложении</string>
-    <string name="app_info_version_value" translatable="false">%1$s (%2$d)</string>
     <string name="app_info_source">Источник</string>
     <string name="app_info_source_system">Система</string>
     <string name="app_info_last_update">Последнее обновление</string>
