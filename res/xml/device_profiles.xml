@@ -231,6 +231,7 @@
 
     </grid-option>
 
+    <!-- Custom Grids -->
     <grid-option
         launcher:name="5_by_6"
         launcher:numRows="6"
@@ -239,15 +240,18 @@
         launcher:numFolderColumns="4"
         launcher:numHotseatIcons="5"
         launcher:dbFile="launcher_5_by_6.db"
-        launcher:defaultLayoutId="@xml/default_workspace_5x6" >
+        launcher:defaultLayoutId="@xml/default_workspace_5x6"
+        launcher:deviceCategory="tablet|phone|multi_display">
 
         <display-option
-            launcher:name="Large Phone"
+            launcher:name="XLarge Phone"
             launcher:minWidthDps="406"
             launcher:minHeightDps="694"
             launcher:iconImageSize="56"
             launcher:iconTextSize="12.0"
-            launcher:canBeDefault="true" />
+            launcher:canBeDefault="true"
+            launcher:allAppsBorderSpace="16"
+            launcher:allAppsCellHeight="104"/>
 
     </grid-option>
 
@@ -267,7 +271,9 @@
             launcher:minHeightDps="694"
             launcher:iconImageSize="56"
             launcher:iconTextSize="12.0"
-            launcher:canBeDefault="true" />
+            launcher:canBeDefault="true"
+            launcher:allAppsBorderSpace="16"
+            launcher:allAppsCellHeight="104"/>
 
     </grid-option>
 
@@ -287,7 +293,9 @@
             launcher:minHeightDps="694"
             launcher:iconImageSize="48"
             launcher:iconTextSize="12.0"
-            launcher:canBeDefault="true" />
+            launcher:canBeDefault="true"
+            launcher:allAppsBorderSpace="16"
+            launcher:allAppsCellHeight="104"/>
 
     </grid-option>
 
