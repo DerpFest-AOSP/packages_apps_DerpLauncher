@@ -32,4 +32,7 @@
     <!-- Sort sections of apps list, in case AlphabeticIndex (of current locale)
          returns duplicate labels for some reasons. -->
     <bool name="config_appsListSortSections">false</bool>
+
+    <!-- Quickspace -->
+    <item type="id" name="reserved_container_workspace" />
 </resources>
