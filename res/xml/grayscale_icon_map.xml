@@ -2436,4 +2436,7 @@
     <icon
         drawable="@drawable/themed_icon_tinkoff"
         package="ru.tinkoff.sme" />
+    <icon
+        drawable="@drawable/themed_icon_anz"
+        package="com.anz.android.gomoney" />
 </icons>
