@@ -46,8 +46,9 @@
 
     <!-- Settings Categories -->
     <string name="category_icon">Symbole</string>
-    <string name="category_misc">Verschiedenes</string>
+    <string name="category_general">Allgemein</string>
     <string name="category_recents">Letzte Apps</string>
+    <string name="category_dev">Entwickler</string>
 
     <!-- Recents Lens -->
     <string name="show_lens_button_title">Google Lens-Schaltfläche anzeigen</string>
