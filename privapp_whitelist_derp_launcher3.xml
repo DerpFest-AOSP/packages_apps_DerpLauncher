@@ -7,6 +7,7 @@
 
     <!-- Additional permissions on top of privapp-permissions-platform.xml -->
     <privapp-permissions package="com.android.launcher3">
+        <permission name="android.permission.MANAGE_APP_LOCK"/>
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
         <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
     </privapp-permissions>
