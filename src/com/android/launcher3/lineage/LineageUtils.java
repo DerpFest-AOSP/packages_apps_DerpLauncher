@@ -64,4 +64,36 @@ public class LineageUtils {
         return keyguardManager != null && keyguardManager.isKeyguardSecure();
     }
 
+    public static boolean isPackageEnabled(Context context, String pkgName) {
+        try {
+            ApplicationInfo ai = context.getPackageManager().getApplicationInfo(pkgName, 0);
+            return ai.enabled;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
+    }
+
+    public static boolean isSystemApp(Context context, String pkgName) {
+        try {
+            ApplicationInfo ai = context.getPackageManager().getApplicationInfo(pkgName, 0);
+            return ai.isSystemApp();
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
+    }
+
+    private static boolean isPackageWhitelisted(Context context, String pkgName) {
+        String[] whiteListedPackages = context.getResources().getStringArray(
+                com.android.internal.R.array.config_appLockAllowedSystemApps);
+        for (int i = 0; i < whiteListedPackages.length; i++) {
+            if (pkgName.equals(whiteListedPackages[i])) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isPackageLockable(Context context, String pkgName) {
+        return !isSystemApp(context, pkgName) || isPackageWhitelisted(context, pkgName);
+    }
 }
