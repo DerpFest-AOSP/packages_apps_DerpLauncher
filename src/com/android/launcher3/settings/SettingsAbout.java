@@ -18,11 +18,15 @@ package com.android.launcher3.settings;
 
 import static androidx.preference.PreferenceFragmentCompat.ARG_PREFERENCE_ROOT;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.view.MenuItem;
+import android.view.View;
 
+import androidx.core.view.WindowCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -37,6 +41,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.LauncherFiles;
+import com.android.launcher3.LauncherPrefs;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.config.FeatureFlags;
