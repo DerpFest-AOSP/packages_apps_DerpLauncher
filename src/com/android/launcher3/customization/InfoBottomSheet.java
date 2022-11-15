@@ -20,7 +20,9 @@ import android.widget.TextView;
 import com.android.launcher3.BaseDraggingActivity;
 import com.android.launcher3.model.data.ItemInfo;
 import com.android.launcher3.Launcher;
+import com.android.launcher3.QuickstepTransitionManager;
 import com.android.launcher3.R;
+import com.android.launcher3.util.ActivityOptionsWrapper;
 import com.android.launcher3.util.ComponentKey;
 import com.android.launcher3.widget.WidgetsBottomSheet;
 import com.android.launcher3.util.PackageManagerHelper;
@@ -88,11 +90,29 @@ public class InfoBottomSheet extends WidgetsBottomSheet {
 
         private ComponentName mComponent;
         private ComponentKey mKey;
+        private QuickstepTransitionManager mAppTransitionManager;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             mContext = getActivity();
+            mAppTransitionManager = new QuickstepTransitionManager(mContext);
+            mAppTransitionManager.registerRemoteAnimations();
+            mAppTransitionManager.registerRemoteTransitions();
+        }
+
+        private QuickstepTransitionManager getAppTransitionManager() {
+            return mAppTransitionManager;
+        }
+
+        public ActivityOptionsWrapper getActivityLaunchOptions(View v) {
+            return mAppTransitionManager.getActivityLaunchOptions(v);
+        }
+
+        @Override
+            public void onDestroy() {
+            mAppTransitionManager.onActivityDestroyed();
+            super.onDestroy();
         }
 
         @Override
