@@ -5,7 +5,6 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragment;
@@ -155,7 +154,6 @@ public class InfoBottomSheet extends WidgetsBottomSheet {
                         R.string.app_info_version_value,
                         extractor.getVersionName(),
                         extractor.getVersionCode());
-                Intent marketIntent = extractor.getMarketIntent();
 
                 MAIN_EXECUTOR.execute(() -> {
                     Preference sourcePref = findPreference(KEY_SOURCE);
@@ -168,24 +166,8 @@ public class InfoBottomSheet extends WidgetsBottomSheet {
                     versionPref.setSummary(version);
                     morePref.setOnPreferenceClickListener(this);
 
-                    if (marketIntent != null) {
-                        sourcePref.setOnPreferenceClickListener(
-                                pref -> tryStartActivity(marketIntent));
-                    }
                 });
             });
-        }
-
-        private boolean tryStartActivity(Intent intent) {
-            Launcher launcher = Launcher.getLauncher(mContext);
-            Bundle opts = getAppTransitionManager()
-                    .getActivityLaunchOptions(getView())
-                    .toBundle();
-            try {
-                launcher.startActivity(intent, opts);
-            } catch (Exception ignored) {
-            }
-            return false;
         }
 
         @Override
