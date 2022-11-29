@@ -20,6 +20,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.launcher3">
 
     <SwitchPreference
+        android:key="pref_drawer_search"
+        android:title="@string/drawer_search_title"
+        android:summary="@string/drawer_search_summary"
+        android:defaultValue="true" />
+
+    <SwitchPreference
         android:key="pref_drawer_show_labels"
         android:title="@string/title_drawer_labels"
         android:summary="@string/summary_drawer_labels"
