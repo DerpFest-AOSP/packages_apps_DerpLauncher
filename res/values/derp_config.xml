@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2024 DerpFest
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <!-- String representing the fragment class for app drawer settings activity.-->
+    <string name="app_drawer_settings_fragment_name" translatable="false">com.android.launcher3.settings.SettingsAppDrawer$AppDrawerSettingsFragment</string>
+
+    <!-- String representing the fragment class for home screen settings activity.-->
+    <string name="home_screen_settings_fragment_name" translatable="false">com.android.launcher3.settings.SettingsHomescreen$HomescreenSettingsFragment</string>
+
+    <!-- String representing the fragment class for icons settings activity.-->
+    <string name="icons_settings_fragment_name" translatable="false">com.android.launcher3.settings.SettingsIcons$IconsSettingsFragment</string>
+
+    <!-- String representing the fragment class for misc settings activity.-->
+    <string name="misc_settings_fragment_name" translatable="false">com.android.launcher3.settings.SettingsMisc$MiscSettingsFragment</string>
+
+    <!-- String representing the fragment class for recents view settings activity.-->
+    <string name="recents_settings_fragment_name" translatable="false">com.android.launcher3.settings.SettingsRecents$RecentsSettingsFragment</string>
+</resources>
