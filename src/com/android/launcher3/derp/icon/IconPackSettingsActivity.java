@@ -57,7 +57,7 @@ public final class IconPackSettingsActivity extends CollapsingToolbarBaseActivit
                 getString(R.string.icon_pack_settings_class), null);
             // Display the fragment as the main content.
             getFragmentManager().beginTransaction()
-                    .replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame, f)
+                    .replace(com.android.settingslib.widget.R.id.content_frame, f)
                     .commit();
         }
     }
@@ -72,7 +72,7 @@ public final class IconPackSettingsActivity extends CollapsingToolbarBaseActivit
         final Fragment f = Fragment.instantiate(this, fragment, args);
         getFragmentManager()
                 .beginTransaction()
-                .replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame, f)
+                .replace(com.android.settingslib.widget.R.id.content_frame, f)
                 .addToBackStack(key)
                 .commit();
         return true;

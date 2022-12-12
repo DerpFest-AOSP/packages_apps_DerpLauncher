@@ -123,7 +123,7 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
                     getPreferenceFragment());
             f.setArguments(args);
             // Display the fragment as the main content.
-            fm.beginTransaction().replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame, f).commit();
+            fm.beginTransaction().replace(com.android.settingslib.widget.R.id.content_frame, f).commit();
         }
         Utilities.getPrefs(getApplicationContext()).registerOnSharedPreferenceChangeListener(this);
     }
