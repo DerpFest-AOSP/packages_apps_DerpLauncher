@@ -209,7 +209,10 @@ android_app {
         "Launcher2",
         "QuickSearchBox",
     ],
-    required: ["privapp_whitelist_com.android.launcher3"],
+    required: [
+        "privapp_whitelist_com.android.launcher3",
+        "privapp_whitelist_com.android.launcher3-ext",
+    ],
 
     jacoco: {
         include_filter: ["com.android.launcher3.**"],
@@ -330,7 +333,10 @@ android_app {
         "Launcher3QuickStep",
         "QuickSearchBox",
     ],
-    required: ["privapp_whitelist_com.android.launcher3"],
+    required: [
+        "privapp_whitelist_com.android.launcher3",
+        "privapp_whitelist_com.android.launcher3-ext",
+    ],
 
     resource_dirs: ["quickstep/res"],
 
@@ -376,7 +382,10 @@ android_app {
         "Launcher3QuickStepGo",
         "QuickSearchBox",
     ],
-    required: ["privapp_whitelist_com.android.launcher3"],
+    required: [
+        "privapp_whitelist_com.android.launcher3",
+        "privapp_whitelist_com.android.launcher3-ext",
+    ],
 
     additional_manifests: [
         "go/AndroidManifest.xml",
@@ -413,7 +422,10 @@ android_app {
         "Launcher3",
         "Launcher3QuickStep",
     ],
-    required: ["privapp_whitelist_com.android.launcher3"],
+    required: [
+        "privapp_whitelist_com.android.launcher3",
+        "privapp_whitelist_com.android.launcher3-ext",
+    ],
 
     additional_manifests: [
         "go/AndroidManifest.xml",
@@ -425,4 +437,12 @@ android_app {
     jacoco: {
         include_filter: ["com.android.launcher3.*"],
     },
+}
+
+prebuilt_etc {
+    name: "privapp_whitelist_com.android.launcher3-ext",
+    system_ext_specific: true,
+    sub_dir: "permissions",
+    src: "privapp_whitelist_com.android.launcher3-ext.xml",
+    filename_from_src: true,
 }
