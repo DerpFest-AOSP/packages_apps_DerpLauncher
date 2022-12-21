@@ -118,4 +118,8 @@
     <string name="app_info_last_update">Letzte Aktualisierung</string>
     <string name="app_info_version">Version</string>
     <string name="app_info_more">Mehr</string>
+
+    <!-- Kill App recents action shortcut -->
+    <string name="recent_task_option_kill_app">Beenden</string>
+    <string name="recents_app_killed">App beendet</string>
 </resources>
