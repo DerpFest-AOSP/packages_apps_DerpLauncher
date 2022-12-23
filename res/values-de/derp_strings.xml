@@ -110,8 +110,8 @@
     <string name="background_opacity_title">Hintergrundtransparenz\nWarnung: Benutzung auf eigene Gefahr</string>
 
     <!-- About info -->
+    <string name="about_app_subtitle">Basierend auf AOSP Launcher3</string>
     <string name="about_thanks_cat">Besonderen Dank an</string>
     <string name="about">Über</string>
     <string name="about_summary">Info über den DerpLauncher</string>
-    <string name="about_app_version">Version 1.0</string>
 </resources>
