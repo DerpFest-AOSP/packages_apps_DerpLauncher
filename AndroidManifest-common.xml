@@ -151,7 +151,7 @@
         -->
         <activity
             android:name="com.android.launcher3.settings.SettingsActivity"
-            android:label="@string/settings_title"
+            android:label="@string/derp_app_name"
             android:theme="@style/HomeSettings.Theme"
             android:exported="true"
             android:autoRemoveFromRecents="true">
