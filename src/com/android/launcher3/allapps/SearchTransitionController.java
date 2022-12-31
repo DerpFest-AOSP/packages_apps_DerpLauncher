@@ -114,7 +114,7 @@ public class SearchTransitionController extends RecyclerViewAnimationController 
      */
     @Override
     protected boolean shouldAnimate(View view, boolean hasDecorationInfo, boolean appRowComplete) {
-        return !isAppIcon(view) || appRowComplete;
+        return appRowComplete;
     }
 
     @Override
