@@ -12,4 +12,6 @@
 
     <!-- Disable text color -->
     <color name="disabled_text_color">#66000000</color> <!-- 38% black -->
+
+    <color name="mid_clear_all_background_color">@*android:color/system_neutral2_50</color>
 </resources>
