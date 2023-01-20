@@ -107,9 +107,9 @@ public class SearchTransitionController {
         }
 
         mSearchToAzAnimator = ObjectAnimator.ofFloat(this, SEARCH_TO_AZ_PROGRESS, targetProgress);
-        boolean inAllApps = Launcher.getLauncher(
+        boolean inAllApps = mAllAppsContainerView.getContext() instanceof Launcher ? Launcher.getLauncher(
                 mAllAppsContainerView.getContext()).getStateManager().isInStableState(
-                LauncherState.ALL_APPS);
+                LauncherState.ALL_APPS) : true /* assume second screen has no qsb */;
         if (!inAllApps) {
             duration = 0;  // Don't want to animate when coming from QSB.
         }
