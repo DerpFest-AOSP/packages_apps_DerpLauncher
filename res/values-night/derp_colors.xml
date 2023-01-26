@@ -10,4 +10,7 @@
     <color name="op_control_text_color_secondary">#89ffffff</color>
 
     <color name="derp_base_bg">@*android:color/system_accent1_100</color>
+
+    <!-- Appseat -->
+    <color name="appseat_color">#50181c1f</color>
 </resources>
