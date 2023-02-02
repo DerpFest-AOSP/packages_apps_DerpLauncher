@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+* Copyright (C) 2022 DerpFest
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*      http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="google_folder_title">Google</string>
+
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_app">Проведите для доступа к приложению Google</string>
+
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">На главном экране проведите пальцем влево, чтобы открыть приложение Google</string>
+
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">На главном экране проведите вправо, чтобы открыть приложение Google</string>
+
+    <!-- Suggestions -->
+    <string name="suggestion_pref_screen_title">Рекомендации</string>
+    <string name="suggestion_pref_screen_desc">Для всех приложений и предложений на главном экране</string>
+
+    <!-- Edit workspace -->
+    <string name="settings_lock_layout_title">Запретить редактирование</string>
+    <string name="settings_lock_layout_summary_on">Значки и виджеты не могут быть добавлены, удалены и перемещены на домашний экран</string>
+    <string name="settings_lock_layout_summary_off">Значки и виджеты могут быть добавлены, удалены и перемещены на домашнем экране</string>
+    <string name="settings_edit_widgets_error">Невозможно добавить виджеты на домашний экран</string>
+
+    <!-- Hide labels -->
+    <string name="title_desktop_labels">Подписи на рабочем стое</string>
+    <string name="summary_desktop_labels">Показывать подписи значков на рабочем столе</string>
+    <string name="title_drawer_labels">Подписи в меню приложений</string>
+    <string name="summary_drawer_labels">Показывать подписи значков в меню приложений</string>
+
+    <!-- Settings Categories -->
+    <string name="category_icon">Значки</string>
+    <string name="category_recents">Недавние</string>
+    <string name="category_general">Общие</string>
+    <string name="category_google">Google</string>
+    <string name="category_dev">Разработчик</string>
+
+    <!-- Recents Lens -->
+    <string name="action_lens">Объектив</string>
+    <string name="show_lens_button_title">Показать кнопку объектива</string>
+    <string name="show_lens_button_summary">Заменить кнопку скриншота кнопкой Google Объектив, если он доступен</string>
+
+    <!-- Hotseat searchbar -->
+    <string name="label_search">Поиск</string>
+    <string name="label_lens">Google Объектив</string>
+    <string name="label_voice_search">Голосовой поиск</string>
+    <string name="dock_search_title">Панель поиска Google</string>
+    <string name="dock_search_summary">Показать панель поиска в нижней части дока</string>
+
+    <!-- All apps themed icons -->
+    <string name="pref_themed_icons_title">Тематические иконки в меню приложений</string>
+    <string name="pref_themed_icons_summary">Применить тематические значки в меню приложений</string>
+
+    <!-- Icon pack -->
+    <string name="icon_pack_title">Набор значков</string>
+    <string name="icon_pack_default_label">По умолчанию</string>
+    <string name="icon_pack_add">Установить ещё</string>
+    <string name="icon_pack_no_market">Нет доступного магазина приложений</string>
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Значение: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">По умолчанию</string>
+    <string name="custom_seekbar_default_value_to_set">Значение по умолчанию: <xliff:g id="v">%s</xliff:g>\nНажмите и удерживайте, чтобы установить</string>
+    <string name="custom_seekbar_default_value_is_set">Значение по умолчанию установлено</string>
+
+    <!-- Icon size -->
+    <string name="icon_size_title">Размер значков</string>
+
+    <!-- Font size -->
+    <string name="font_size_title">Размер шрифта</string>
+
+    <!-- Show top shadow -->
+    <string name="show_top_shadow_title">Верхняя тень</string>
+    <string name="show_top_shadow_summary">Показать тень в верхней части главного экрана</string>
+
+    <!-- App label - max lines -->
+    <string name="icon_max_lines_title">Максимальное количество строк в названии приложения</string>
+
+    <!-- Smartspace -->
+    <string name="smartspace_pref_title">At a Glance</string>
+    <string name="smartspace_pref_summary">Показывать умное пространство в верхней части главного экрана</string>
+
+    <!-- Dark Status Bar -->
+    <string name="perf_dark_status_bar_title">Тёмная строка состояния</string>
+    <string name="perf_dark_status_bar_summary">Использовать темную строку состояния на главном экране</string>
+
+    <!-- Scroll Vibration -->
+    <string name="pref_scroll_vibration_title">Вибрация при прокрутке</string>
+    <string name="pref_scroll_vibration_summary">Виброотклик при прокрутке последних приложений, если поддерживается</string>
+
+    <!-- Pause apps shortcut -->
+    <string name="pause">Пауза</string>
+    <string name="pause_apps_dialog_title">Приостановить %1$s?</string>
+    <string name="pause_apps_dialog_message">Уведомления для %1$s будут приостановлены</string>
+    <string name="paused_apps_dialog_title">Приложение приостановлено</string>
+    <string name="paused_apps_dialog_message">%1$s был приостановлен из лаунчера</string>
+    <string name="paused_apps_drop_target_label">Приостановить приложение</string>
+
+    <!-- Background opacity -->
+    <string name="drawer_background_opacity_title">Непрозрачность фона меню приложений</string>
+    <string name="recents_background_opacity_title">Непрозрачность фона списка недавних приложений</string>
+
+    <!-- Trust apps -->
+    <string name="trust_apps_manager_name">Скрытые приложения</string>
+    <string name="trust_apps_auth_manager">Разблокируйте, чтобы управлять скрытыми приложениями</string>
+    <string name="trust_apps_loading">Загрузка\u2026</string>
+    <string name="trust_apps_no_lock_error">Пожалуйста, установите блокировку экрана для ограничения доступа к приложениям</string>
+    <string name="trust_apps_help">Помощь</string>
+    <string name="trust_apps_info_hidden">Скрытые приложения и их виджеты не отображаются в меню приложений</string>
+</resources>
