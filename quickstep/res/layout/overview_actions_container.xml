@@ -86,6 +86,27 @@
             android:visibility="gone" />
 
         <Space
+            android:id="@+id/kill_app_space"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/action_kill_app"
+            style="@style/OverviewActionButton"
+            android:text="@string/recents_kill_app_title"
+            android:drawableStart="@drawable/ic_kill_app_recents"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/action2_kill_app"
+            style="@style/OverviewActionChip"
+            android:tooltipText="@string/recents_kill_app_title"
+            android:foreground="@drawable/ic_kill_app_recents"
+            android:visibility="gone" />
+
+        <Space
             android:id="@+id/clear_all_space"
             android:layout_width="0dp"
             android:layout_height="1dp"

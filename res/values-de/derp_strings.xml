@@ -110,6 +110,7 @@
     <string name="recents_screenshot_title">Screenshot</string>
     <string name="recents_clear_all_title">Alle Apps schließen</string>
     <string name="recents_lens_title">Lens</string>
+    <string name="recents_kill_app_title">App beenden</string>
 
     <!-- AppInfo -->
     <string name="app_info_source">Quelle</string>
