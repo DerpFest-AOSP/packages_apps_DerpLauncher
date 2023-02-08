@@ -117,6 +117,9 @@
     <string name="paused_apps_dialog_message">%1$s was directly paused from the DerpLauncher</string>
     <string name="paused_apps_drop_target_label">Pause app</string>
 
+    <!-- button string shown pause work profile -->
+    <string name="work_apps_pause_btn_text_calyx">Turn off work apps</string>
+
     <!-- Background opacity -->
     <string name="drawer_background_opacity_title">Drawer background opacity</string>
     <string name="recents_background_opacity_title">Recents background opacity</string>
