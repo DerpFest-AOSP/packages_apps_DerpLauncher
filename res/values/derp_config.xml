@@ -28,4 +28,8 @@
 
     <!-- String representing the fragment class for about activity.-->
     <string name="about_fragment_name" translatable="false">com.android.launcher3.settings.SettingsAbout$AboutFragment</string>
+
+    <!-- Sort sections of apps list, in case AlphabeticIndex (of current locale)
+         returns duplicate labels for some reasons. -->
+    <bool name="config_appsListSortSections">false</bool>
 </resources>
