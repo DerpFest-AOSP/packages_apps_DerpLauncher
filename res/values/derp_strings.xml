@@ -15,11 +15,11 @@
     <string name="title_show_google_feed">Swipe to access Google feed</string>
 
     <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-    <string name="msg_minus_one_on_left">From Home screen, swipe left to open Google feed</string>
-    <string name="pref_show_google_now_summary" translatable="false">@string/msg_minus_one_on_left</string>
+    <string name="msg_minus_one_on_left">From home screen, swipe left to open Google feed</string>
+    <string name="pref_show_google_now_summary" translatable="false">@string/msg_minus_one_on_right</string>
 
     <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
-    <string name="msg_minus_one_on_right">From Home screen, swipe right to open Google feed</string>
+    <string name="msg_minus_one_on_right">From home screen, swipe right to open Google feed</string>
 
     <!-- Gestures -->
     <string name="pref_dt_gesture_title">Double tap to sleep</string>

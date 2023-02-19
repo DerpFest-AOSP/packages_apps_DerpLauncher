@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
 /*
 * Copyright (C) 2008 The Android Open Source Project
 *
@@ -108,6 +109,9 @@
 
     <!-- A widget category label for grouping widgets related to note taking. [CHAR_LIMIT=30] -->
     <string name="widget_category_note_taking">Note-taking</string>
+
+    <!-- A widget category label for grouping widgets related to weather. [CHAR_LIMIT=30] -->
+    <string name="widget_category_weather">Weather</string>
 
     <!-- Title of a dialog. This dialog lets a user know how they can use widgets on their phone.
          [CHAR_LIMIT=NONE] -->
