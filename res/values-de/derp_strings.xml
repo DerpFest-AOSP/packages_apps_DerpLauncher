@@ -178,4 +178,10 @@
     <!-- Smartspace -->
     <string name="smartspace_pref_title">Live-Anzeige</string>
     <string name="smartspace_pref_summary">Live-Anzeige oben auf dem Startbildschirm anzeigen</string>
+
+    <!-- A widget category label for grouping widgets related to battery. [CHAR_LIMIT=30] -->
+    <string name="widget_category_battery">Akku</string>
+
+    <!-- A widget category label for grouping widgets related to weather. [CHAR_LIMIT=30] -->
+    <string name="widget_category_weather">Wetter</string>
 </resources>
