@@ -634,6 +634,12 @@ public class IconCache extends BaseIconCache {
                 info.getAppLabel());
     }
 
+    // replacement for old removed clear() in BaseIconCache
+    public synchronized void clearDb() {
+        clearMemoryCache();
+        mIconDb.clear();
+    }
+
     /**
      * Interface for receiving itemInfo with high-res icon.
      */
