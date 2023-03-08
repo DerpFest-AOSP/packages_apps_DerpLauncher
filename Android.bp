@@ -156,7 +156,7 @@ android_library {
 // Build rule for Launcher3 app.
 //
 android_app {
-    name: "DerpLauncher",
+    name: "Launcher3",
 
     static_libs: [
         "Launcher3CommonDepsLib",
