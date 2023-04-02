@@ -118,4 +118,8 @@
     <!-- DT2S -->
     <string name="pref_sleep_gesture_title">Doppeltippen zum Sperren</string>
     <string name="pref_sleep_gesture_summary">Zum Sperren auf einen leeren Bereich doppeltippen</string>
+
+    <!-- Haptics on DT2S -->
+    <string name="pref_haptics_on_dt2s_title">Haptik beim Doppeltippen zum Sperren</string>
+    <string name="pref_haptics_on_dt2s_summary">Haptischer Effekt bei der Geste Doppeltippen zum Sperren</string>
 </resources>

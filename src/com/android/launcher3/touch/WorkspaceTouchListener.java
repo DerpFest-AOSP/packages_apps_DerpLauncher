@@ -50,6 +50,7 @@ import com.android.launcher3.logger.LauncherAtom;
 import com.android.launcher3.testing.TestLogging;
 import com.android.launcher3.testing.shared.TestProtocol;
 import com.android.launcher3.util.TouchUtil;
+import com.android.launcher3.util.VibratorWrapper;
 
 /**
  * Helper class to handle touch on empty space in workspace and show options popup on long press
@@ -69,6 +70,7 @@ public class WorkspaceTouchListener extends GestureDetector.SimpleOnGestureListe
     private static final int STATE_COMPLETED = 3;
 
     private static final String SLEEP_GESTURE = "pref_sleep_gesture";
+    private static final String HAPTICS_ON_DT2S = "pref_haptics_on_dt2s";
 
     private final Rect mTempRect = new Rect();
     private final Launcher mLauncher;
@@ -229,8 +231,12 @@ public class WorkspaceTouchListener extends GestureDetector.SimpleOnGestureListe
 
     @Override
     public boolean onDoubleTap(MotionEvent event) {
-        if (LauncherPrefs.getPrefs(mContext).getBoolean(SLEEP_GESTURE, true))
+        if (LauncherPrefs.getPrefs(mContext).getBoolean(SLEEP_GESTURE, true)) {
+            if (LauncherPrefs.getPrefs(mContext).getBoolean(HAPTICS_ON_DT2S, true)) {
+                VibratorWrapper.INSTANCE.get(mContext).vibrate(VibratorWrapper.EFFECT_CLICK);
+            }
             mPm.goToSleep(event.getEventTime());
+        }
         return true;
     }
 }

@@ -140,4 +140,8 @@
     <!-- DT2S -->
     <string name="pref_sleep_gesture_title">Double tap to sleep</string>
     <string name="pref_sleep_gesture_summary">Double tap on empty space for screen off</string>
+
+    <!-- Haptics on DT2S -->
+    <string name="pref_haptics_on_dt2s_title">Haptics on double tap to sleep</string>
+    <string name="pref_haptics_on_dt2s_summary">Whether to perform haptics when doing double tap to sleep gesture or not</string>
 </resources>
