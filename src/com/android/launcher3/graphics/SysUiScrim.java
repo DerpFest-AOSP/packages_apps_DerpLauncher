@@ -43,6 +43,7 @@ import android.view.View;
 import android.view.WindowInsets;
 
 import com.android.launcher3.BaseDraggingActivity;
+import com.android.launcher3.LauncherPrefs;
 import com.android.launcher3.R;
 import com.android.launcher3.testing.shared.ResourceUtils;
 import com.android.launcher3.Utilities;
@@ -136,7 +137,7 @@ public class SysUiScrim implements View.OnAttachStateChangeListener,
         mTopScrim = Themes.getAttrDrawable(view.getContext(), R.attr.workspaceStatusBarScrim);
         mBottomMask = mTopScrim == null ? null : createDitheredAlphaMask();
 
-        SharedPreferences prefs = Utilities.getPrefs(view.getContext());
+        SharedPreferences prefs = LauncherPrefs.getPrefs(view.getContext());
         mHideSysUiScrim = mTopScrim == null || !prefs.getBoolean(KEY_SHOW_TOP_SHADOW, true);
 
         mDrawWallpaperScrim = FeatureFlags.ENABLE_WALLPAPER_SCRIM.get()
