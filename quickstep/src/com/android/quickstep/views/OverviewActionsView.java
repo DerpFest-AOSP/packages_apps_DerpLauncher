@@ -32,8 +32,9 @@ import androidx.annotation.Nullable;
 
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.Insettable;
-import com.android.launcher3.Utilities;
+import com.android.launcher3.LauncherPrefs;
 import com.android.launcher3.R;
+import com.android.launcher3.Utilities;
 import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.util.DisplayController;
 import com.android.launcher3.util.MultiPropertyFactory.MultiProperty;
@@ -142,7 +143,7 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
         mSplitButton = findViewById(R.id.action_split);
         mSplitButton.setOnClickListener(this);
 
-        SharedPreferences prefs = Utilities.getPrefs(getContext());
+        SharedPreferences prefs = LauncherPrefs.getPrefs(getContext());
         prefs.registerOnSharedPreferenceChangeListener(this);
 
         if (Utilities.isGSAEnabled(getContext()) && prefs.getBoolean(KEY_SHOW_LENS_BUTTON, false)) {
