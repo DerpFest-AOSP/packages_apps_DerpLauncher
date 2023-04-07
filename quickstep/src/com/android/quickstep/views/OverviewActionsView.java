@@ -97,6 +97,7 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
     public static final int FLAG_SINGLE_TASK = 1 << 0;
 
     private static final String KEY_SHOW_LENS_BUTTON = "pref_show_lens_button";
+    private static final String KEY_RECENTS_SHAKE_CLEAR_ALL = "pref_recents_shake_clear_all";
 
     private MultiValueAlpha mMultiValueAlpha;
     private Button mSplitButton;
@@ -121,6 +122,8 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
     protected DeviceProfile mDp;
     private final Rect mTaskSize = new Rect();
 
+    private boolean mShakeClearAll;
+
     public OverviewActionsView(Context context) {
         this(context, null);
     }
@@ -131,23 +134,19 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
 
     public OverviewActionsView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr, 0);
-    }
-
-    private void bindShake() {
-        mShakeUtils.bindShakeListener(this);
-    }
-
-    private void unBindShake() {
-        mShakeUtils.unBindShakeListener(this);
+        SharedPreferences prefs = LauncherPrefs.getPrefs(context);
+        prefs.registerOnSharedPreferenceChangeListener(this);
+        mShakeUtils = new ShakeUtils(context);
+        mShakeClearAll = prefs.getBoolean(KEY_RECENTS_SHAKE_CLEAR_ALL, true);
     }
 
     @Override
     public void onVisibilityAggregated(boolean isVisible) {
         super.onVisibilityAggregated(isVisible);
         if (isVisible) {
-            bindShake();
+            mShakeUtils.bindShakeListener(this);
         } else {
-            unBindShake();
+            mShakeUtils.unBindShakeListener(this);
         }
     }
 
@@ -156,7 +155,6 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
         super.onFinishInflate();
         mMultiValueAlpha = new MultiValueAlpha(findViewById(R.id.action_buttons), NUM_ALPHAS);
         mMultiValueAlpha.setUpdateVisibility(true);
-        mShakeUtils = new ShakeUtils(getContext());
 
         findViewById(R.id.action_screenshot).setOnClickListener(this);
         findViewById(R.id.action_clear_all).setOnClickListener(this);
@@ -181,14 +179,15 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
         if (key.equals(KEY_SHOW_LENS_BUTTON)) {
             ((Activity) getContext()).recreate();
+        } else if (key.equals(KEY_RECENTS_SHAKE_CLEAR_ALL)) {
+            mShakeClearAll = prefs.getBoolean(KEY_RECENTS_SHAKE_CLEAR_ALL, true);
         }
     }
 
     @Override
     public void onShake(double speed) {
-        if (mCallbacks != null && findViewById(R.id.action_clear_all).getVisibility() == VISIBLE) {
+        if (mCallbacks != null && mShakeClearAll) {
             mCallbacks.onClearAllTasksRequested();
-            setCallbacks(null); // Clear the listener after shake
         }
     }
 
