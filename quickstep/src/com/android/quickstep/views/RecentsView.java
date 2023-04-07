@@ -133,6 +133,7 @@ import com.android.launcher3.BaseActivity.MultiWindowModeChangedListener;
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.Insettable;
 import com.android.launcher3.InvariantDeviceProfile;
+import com.android.launcher3.LauncherPrefs;
 import com.android.launcher3.PagedView;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
@@ -1502,7 +1503,7 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
     }
 
     private void vibrateForScroll() {
-        if (!Utilities.getPrefs(mContext).getBoolean(KEY_SCROLL_VIBRATION, true)) {
+        if (!LauncherPrefs.getPrefs(mContext).getBoolean(KEY_SCROLL_VIBRATION, true)) {
             return;
         }
         long now = SystemClock.uptimeMillis();
