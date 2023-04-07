@@ -992,9 +992,9 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
             TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ProfileDisplayOption);
 
             float iconSizeModifier =
-                    (float) Utilities.getPrefs(context).getInt(KEY_ICON_SIZE, 100) / 100F;
+                    (float) LauncherPrefs.getPrefs(context).getInt(KEY_ICON_SIZE, 100) / 100F;
             float fontSizeModifier =
-                    (float) Utilities.getPrefs(context).getInt(KEY_FONT_SIZE, 100) / 100F;
+                    (float) LauncherPrefs.getPrefs(context).getInt(KEY_FONT_SIZE, 100) / 100F;
 
             minWidthDps = a.getFloat(R.styleable.ProfileDisplayOption_minWidthDps, 0);
             minHeightDps = a.getFloat(R.styleable.ProfileDisplayOption_minHeightDps, 0);
