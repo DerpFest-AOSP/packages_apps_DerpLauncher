@@ -137,7 +137,7 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
         SharedPreferences prefs = LauncherPrefs.getPrefs(context);
         prefs.registerOnSharedPreferenceChangeListener(this);
         mShakeUtils = new ShakeUtils(context);
-        mShakeClearAll = prefs.getBoolean(KEY_RECENTS_SHAKE_CLEAR_ALL, true);
+        mShakeClearAll = prefs.getBoolean(KEY_RECENTS_SHAKE_CLEAR_ALL, false);
     }
 
     @Override
@@ -180,7 +180,7 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
         if (key.equals(KEY_SHOW_LENS_BUTTON)) {
             ((Activity) getContext()).recreate();
         } else if (key.equals(KEY_RECENTS_SHAKE_CLEAR_ALL)) {
-            mShakeClearAll = prefs.getBoolean(KEY_RECENTS_SHAKE_CLEAR_ALL, true);
+            mShakeClearAll = prefs.getBoolean(KEY_RECENTS_SHAKE_CLEAR_ALL, false);
         }
     }
 
