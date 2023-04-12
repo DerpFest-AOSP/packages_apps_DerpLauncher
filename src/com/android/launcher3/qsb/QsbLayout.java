@@ -56,7 +56,7 @@ public class QsbLayout extends FrameLayout {
         DeviceProfile dp = ActivityContext.lookupContext(mContext).getDeviceProfile();
         int cellWidth = DeviceProfile.calculateCellWidth(requestedWidth, dp.cellLayoutBorderSpacePx.x, dp.numShownHotseatIcons);
         int iconSize = (int)(Math.round((dp.iconSizePx * 0.92f)));
-        int width = requestedWidth - (cellWidth - iconSize);
+        int width = requestedWidth;
         setMeasuredDimension(width, height);
 
         for (int i = 0; i < getChildCount(); i++) {
