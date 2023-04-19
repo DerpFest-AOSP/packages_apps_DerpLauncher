@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2022 DerpFest
+<!-- Copyright (C) 2006 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,15 +13,13 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
-
-    <!-- Themed icons -->
-    <string name="drawable_factory_class" translatable="false">com.android.launcher3.icons.ThirdPartyDrawableFactory</string>
-
-    <!-- Icon pack -->
-    <string name="icon_pack_settings_class" translatable="false">com.android.launcher3.icons.pack.IconPackSettingsFragment</string>
-
-    <!-- Sort sections of apps list, in case AlphabeticIndex (of current locale)
-         returns duplicate labels for some reasons. -->
-    <bool name="config_appsListSortSections">false</bool>
-</resources>
+<!-- Layout used by CheckBoxPreference for the checkbox style. This is inflated
+     inside android.R.layout.preference. -->
+<RadioButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/checkbox"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@null"
+    android:focusable="false"
+    android:clickable="false" />
