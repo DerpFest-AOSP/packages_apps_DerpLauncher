@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+* Copyright (C) 2022 DerpFest
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*      http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="google_folder_title">Google</string>
+
+    <!-- Application name -->
+    <string name="derp_app_name" translatable="false">DerpLauncher</string>
+
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_app">Google uygulamasına erişmek için kaydırın</string>
+
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">Google uygulamasına erişmek için ana ekranda sola kaydırın</string>
+
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">Google uygulamasına erişmek için ana ekranda sağa kaydırın</string>
+
+    <!-- Suggestions -->
+    <string name="suggestion_pref_screen_title">Öneriler</string>
+    <string name="suggestion_pref_screen_desc">Tüm uygulamalar &amp; Ana ekran için öneriler</string>
+
+    <!-- Edit workspace -->
+    <string name="settings_lock_layout_title">Düzeni kilitle</string>
+    <string name="settings_lock_layout_summary_on">Simgeler ve widget\'lar ana ekrana eklenemez, kaldırılamaz ve taşınamaz</string>
+    <string name="settings_lock_layout_summary_off">Simgeler ve widget\'lar ana ekrana eklenebilir, kaldırılabilir ve taşınabilir</string>
+    <string name="settings_edit_widgets_error">Ana ekrana widget eklemek mümkün değil</string>
+
+    <!-- Hide labels -->
+    <string name="title_desktop_labels">Ana ekran simge etiketleri</string>
+    <string name="summary_desktop_labels">Ana ekranda simge etiketlerini göster</string>
+    <string name="title_drawer_labels">Çekmecede simge etiketleri</string>
+    <string name="summary_drawer_labels">Çekmecede simge etiketlerini göster</string>
+
+    <!-- Settings Categories -->
+    <string name="category_icon">Simgeler</string>
+    <string name="category_recents">Son uygulamalar</string>
+    <string name="category_general">Genel</string>
+    <string name="category_google">Google</string>
+    <string name="category_dev">Geliştirici seçenekleri</string>
+
+    <!-- Recents Lens -->
+    <string name="action_lens">Lens</string>
+    <string name="show_lens_button_title">Lens tuşunu göster</string>
+    <string name="show_lens_button_summary">Eğer mümkünse ekran görüntüsü tuşunu Google Lens tuşu ile değiştir</string>
+
+    <!-- Hotseat searchbar -->
+    <string name="label_search">Ara</string>
+    <string name="label_lens">Google Lens</string>
+    <string name="label_voice_search">Sesli arama</string>
+    <string name="dock_search_title">Google arama çubuğu</string>
+    <string name="dock_search_summary">Alt kısımda arama çubuğunu göster</string>
+
+    <!-- All apps themed icons -->
+    <string name="pref_themed_icons_title">Temalı simgeler</string>
+    <string name="pref_themed_icons_summary">Çekmecede temalı simgeler göster</string>
+
+    <!-- Icon pack -->
+    <string name="icon_pack_title">Simge paketi</string>
+    <string name="icon_pack_default_label">Varsayılan</string>
+    <string name="icon_pack_add">Daha fazla yükle</string>
+    <string name="icon_pack_no_market">Uygulama marketinde mevcut değil</string>
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Değer: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">Varsayılan</string>
+    <string name="custom_seekbar_default_value_to_set">Varsayılan değer: <xliff:g id="v">%s</xliff:g>\nAyarlamak için uzun bas</string>
+    <string name="custom_seekbar_default_value_is_set">Varsayılan değer ayarlandı</string>
+
+    <!-- Icon size -->
+    <string name="icon_size_title">Simge boyutu</string>
+
+    <!-- Font size -->
+    <string name="font_size_title">Yazı tipi boyutu</string>
+
+    <!-- Show top shadow -->
+    <string name="show_top_shadow_title">Üst gölge</string>
+    <string name="show_top_shadow_summary">Ana ekranın üstünde gölge göster</string>
+
+    <!-- App label - max lines -->
+    <string name="icon_max_lines_title">Uygulama etiketi için maksimum satır</string>
+
+    <!-- Smartspace -->
+    <string name="smartspace_pref_title">Bir bakışta</string>
+    <string name="smartspace_pref_summary">Ana ekranın üst kısmında göster</string>
+
+    <!-- Dark Status Bar -->
+    <string name="perf_dark_status_bar_title">Koyu durum çubuğu</string>
+    <string name="perf_dark_status_bar_summary">Ana ekranda koyu durum çubuğu kullan</string>
+
+    <!-- Scroll Vibration -->
+    <string name="pref_scroll_vibration_title">Titreşim</string>
+    <string name="pref_scroll_vibration_summary">Eğer destekleniyorsa son uygulamalar geçişinde dokunma titreşimi</string>
+
+    <!-- Pause apps shortcut -->
+    <string name="pause">Duraklat</string>
+    <string name="pause_apps_dialog_title">%1$s duraklatılsın mı?</string>
+    <string name="pause_apps_dialog_message">%1$s için bildirimler duraklatılacak</string>
+    <string name="paused_apps_dialog_title">Uygulama duraklatıldı</string>
+    <string name="paused_apps_dialog_message">%1$s doğrudan başlatıcıdan duraklatıldı</string>
+    <string name="paused_apps_drop_target_label">Uygulamayı duraklat</string>
+
+    <!-- button string shown pause work profile -->
+    <string name="work_apps_pause_btn_text_calyx">İş uygulamalarını kapat</string>
+
+    <!-- Background opacity -->
+    <string name="drawer_background_opacity_title">Çekmece arka plan saydamlığı</string>
+    <string name="recents_background_opacity_title">Son uygulamalar arka plan saydamlığı</string>
+
+    <!-- Trust apps -->
+    <string name="trust_apps_manager_name">Gizli &amp; Korunan uygulamalar</string>
+    <string name="trust_apps_auth_manager">Gizli ve korunan uygulamaları yönetmek için kilidi açın</string>
+    <string name="trust_apps_auth_open_app">%1$s açmak için kimlik doğrula</string>
+    <string name="trust_apps_loading">Yükleniyor\u2026</string>
+    <string name="trust_apps_no_lock_error">Uygulama erişimini kısıtlamak için lütfen güvenli bir kilit ekranı ayarlayın</string>
+    <string name="trust_apps_help">Yardım</string>
+    <string name="trust_apps_info_hidden">Gizli uygulamalar ve bunların widget\'ları çekmeceden gizlenir</string>
+    <string name="trust_apps_info_protected">Korunan uygulamaların başlatıcıdan açılması için kimlik doğrulama gerekir</string>
+
+    <!-- Shake Clear Recents -->
+    <string name="recents_shake_clear_all_title">Tümünü temizlemek için cihazı sallayın</string>
+</resources>
