@@ -59,4 +59,19 @@
     <!-- Smartspace -->
     <string name="smartspace_pref_title">Live-Anzeige</string>
     <string name="smartspace_pref_summary">Live-Anzeige oben auf dem Startbildschirm anzeigen</string>
+
+    <!-- AppInfo -->
+    <string name="app_info_icon_pack">Symbolpaket</string>
+    <string name="app_info_icon_pack_none">Keins</string>
+    <string name="app_info_source">Quelle</string>
+    <string name="app_info_source_system">System</string>
+    <string name="app_info_last_update">Zuletzt aktualisiert</string>
+    <string name="app_info_version">Version</string>
+    <string name="app_info_more">Weiteres</string>
+
+    <!-- Icon pack -->
+    <string name="icon_pack_title">Symbolpaket</string>
+    <string name="icon_pack_default_label">Standard</string>
+    <string name="icon_pack_add">Weitere installieren</string>
+    <string name="icon_pack_no_market">Es ist kein App-Store verfügbar</string>
 </resources>

@@ -81,12 +81,9 @@
         android:key="icon_category"
         android:title="@string/category_icon">
 
-        <com.android.launcher3.settings.preference.ReloadingListPreference
+        <Preference
             android:key="pref_icon_pack"
-            android:title="@string/app_info_icon_pack"
-            android:summary="@string/placeholder_string"
-            android:defaultValue=""
-            android:persistent="true" />
+            android:title="@string/app_info_icon_pack" />
 
         <!--
         LAUNCHER_ADD_NEW_APPS_TO_HOME_SCREEN_ENABLED(613)
