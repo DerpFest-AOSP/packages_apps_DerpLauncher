@@ -305,6 +305,7 @@ public abstract class AbsSwipeUpHandler<T extends StatefulActivity<S>,
 
     private boolean mWasLauncherAlreadyVisible;
 
+    private boolean mPassedOverviewThreshold;
     private boolean mGestureStarted;
     private boolean mLogDirectionUpOrLeft = true;
     private boolean mIsLikelyToStartNewTask;
@@ -890,6 +891,14 @@ public abstract class AbsSwipeUpHandler<T extends StatefulActivity<S>,
     public void onCurrentShiftUpdated() {
         float threshold = LauncherPrefs.get(mContext).get(ALL_APPS_OVERVIEW_THRESHOLD) / 100f;
         setIsInAllAppsRegion(mCurrentShift.value >= threshold);
+
+        final boolean passed = hasReachedHomeOverviewThreshold();
+        if (passed != mPassedOverviewThreshold) {
+            mPassedOverviewThreshold = passed;
+            if (mDeviceState.isTwoButtonNavMode() && !mGestureState.isHandlingAtomicEvent()) {
+                performHapticFeedback();
+            }
+        }
         updateSysUiFlags(mCurrentShift.value);
         applyScrollAndTransform();
 
@@ -986,6 +995,8 @@ public abstract class AbsSwipeUpHandler<T extends StatefulActivity<S>,
         mStateCallback.runOnceAtState(STATE_APP_CONTROLLER_RECEIVED | STATE_GESTURE_STARTED,
                 this::startInterceptingTouchesForGesture);
         mStateCallback.setStateOnUiThread(STATE_APP_CONTROLLER_RECEIVED);
+
+        mPassedOverviewThreshold = false;
     }
 
     @Override
@@ -1265,11 +1276,19 @@ public abstract class AbsSwipeUpHandler<T extends StatefulActivity<S>,
             return willGoToNewTask || isCenteredOnNewTask ? NEW_TASK : LAST_TASK;
         }
 
+        if (!mDeviceState.isFullyGesturalNavMode()) {
+            return (!hasReachedHomeOverviewThreshold() && willGoToNewTask) ? NEW_TASK : RECENTS;
+        }
         return willGoToNewTask ? NEW_TASK : HOME;
     }
 
     private GestureEndTarget calculateEndTargetForNonFling(PointF velocity) {
         final boolean isScrollingToNewTask = isScrollingToNewTask();
+        if (!mDeviceState.isFullyGesturalNavMode()) {
+            return hasReachedHomeOverviewThreshold() && mGestureStarted
+                    ? RECENTS
+                    : (isScrollingToNewTask ? NEW_TASK : LAST_TASK);
+        }
 
         // Fully gestural mode.
         final boolean isFlingX = Math.abs(velocity.x) > mContext.getResources()
@@ -1311,6 +1330,16 @@ public abstract class AbsSwipeUpHandler<T extends StatefulActivity<S>,
      */
     public void setCanSlowSwipeGoHome(boolean canSlowSwipeGoHome) {
         mCanSlowSwipeGoHome = canSlowSwipeGoHome;
+    }
+
+    /**
+     * Returns true if swipe has reached the overview threshold.
+     */
+    private boolean hasReachedHomeOverviewThreshold() {
+        if (mIsTransientTaskbar) {
+            return mCanSlowSwipeGoHome;
+        }
+        return mCurrentShift.value > MIN_PROGRESS_FOR_OVERVIEW;
     }
 
     @UiThread
