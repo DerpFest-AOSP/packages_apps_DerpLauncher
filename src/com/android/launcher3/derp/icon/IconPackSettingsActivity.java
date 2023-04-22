@@ -34,14 +34,12 @@ import androidx.preference.PreferenceScreen;
 import com.android.launcher3.R;
 import com.android.launcher3.util.PackageManagerHelper;
 
-import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public final class IconPackSettingsActivity extends CollapsingToolbarBaseActivity implements
+public final class IconPackSettingsActivity extends Activity implements
         OnPreferenceStartFragmentCallback, OnPreferenceStartScreenCallback {
 
     @Override
@@ -57,7 +55,7 @@ public final class IconPackSettingsActivity extends CollapsingToolbarBaseActivit
                 getString(R.string.icon_pack_settings_class), null);
             // Display the fragment as the main content.
             getFragmentManager().beginTransaction()
-                    .replace(com.android.settingslib.widget.R.id.content_frame, f)
+                    .replace(android.R.id.content, f)
                     .commit();
         }
     }
@@ -72,7 +70,7 @@ public final class IconPackSettingsActivity extends CollapsingToolbarBaseActivit
         final Fragment f = Fragment.instantiate(this, fragment, args);
         getFragmentManager()
                 .beginTransaction()
-                .replace(com.android.settingslib.widget.R.id.content_frame, f)
+                .replace(android.R.id.content, f)
                 .addToBackStack(key)
                 .commit();
         return true;
