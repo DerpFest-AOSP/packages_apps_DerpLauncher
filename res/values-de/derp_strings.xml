@@ -102,17 +102,6 @@
     <string name="pref_scroll_vibration_title">Scroll-Vibration</string>
     <string name="pref_scroll_vibration_summary">Haptisches Feedback beim Scrollen durch aktuelle Apps, sofern unterstützt</string>
 
-    <!-- Pause apps shortcut -->
-    <string name="pause">Pausieren</string>
-    <string name="pause_apps_dialog_title">%1$s pausieren\?</string>
-    <string name="pause_apps_dialog_message">Benachrichtigungen für %1$s werden pausiert</string>
-    <string name="paused_apps_dialog_title">App pausiert</string>
-    <string name="paused_apps_dialog_message">%1$s wurde direkt vom DerpLauncher pausiert</string>
-    <string name="paused_apps_drop_target_label">App pausieren</string>
-
-    <!-- button string shown pause work profile -->
-    <string name="work_apps_pause_btn_text_calyx">Unternehmens-Apps deaktivieren</string>
-
     <!-- Background opacity -->
     <string name="drawer_background_opacity_title">Hintergrundtransparenz der App-Übersicht</string>
     <string name="recents_background_opacity_title">Hintergrundtransparenz der Ansicht in Letzte Apps</string>
