@@ -316,12 +316,10 @@ public class TaskOverlayFactory implements ResourceBasedOverride {
             }
 
             @SuppressLint("NewApi")
-            @Override
             public void onScreenshot() {
                 endLiveTileMode(() -> saveScreenshot(mTask));
             }
 
-            @Override
             public void onSplit() {
                 endLiveTileMode(TaskOverlay.this::enterSplitSelect);
             }
