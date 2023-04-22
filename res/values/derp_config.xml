@@ -15,8 +15,6 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Icon pack -->
-    <string name="icon_pack_settings_class" translatable="false">com.android.launcher3.derp.icon.IconPackSettingsFragment</string>
 
     <!-- Sort sections of apps list, in case AlphabeticIndex (of current locale)
          returns duplicate labels for some reasons. -->
