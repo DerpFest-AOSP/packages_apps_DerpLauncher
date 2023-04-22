@@ -37,7 +37,7 @@ import com.android.launcher3.derp.settings.RadioHeaderPreference;
 
 public class IconPackHeaderPreference extends RadioHeaderPreference {
     private static final String TAG = "IconPackHeaderPreference";
-    private static final int PREVIEW_ICON_NUM = 8;
+    private static final int PREVIEW_ICON_NUM = 4;
     // This value has been selected as an average of usual "device profile-computed" values
     private static final int PREVIEW_ICON_DPI = 500;
 
@@ -67,11 +67,7 @@ public class IconPackHeaderPreference extends RadioHeaderPreference {
             (ImageView) holder.findViewById(R.id.pref_icon_a),
             (ImageView) holder.findViewById(R.id.pref_icon_b),
             (ImageView) holder.findViewById(R.id.pref_icon_c),
-            (ImageView) holder.findViewById(R.id.pref_icon_d),
-            (ImageView) holder.findViewById(R.id.pref_icon_e),
-            (ImageView) holder.findViewById(R.id.pref_icon_f),
-            (ImageView) holder.findViewById(R.id.pref_icon_g),
-            (ImageView) holder.findViewById(R.id.pref_icon_h)
+            (ImageView) holder.findViewById(R.id.pref_icon_d)
         };
         this.icons = imageViews;
         onRadioElementSelected(null);
@@ -85,7 +81,7 @@ public class IconPackHeaderPreference extends RadioHeaderPreference {
 
     @Override
     public void onRadioElementSelected(String key) {
-        if (icons == null || icons.length == 0) {
+        if (icons == null) {
             return;
         }
 
