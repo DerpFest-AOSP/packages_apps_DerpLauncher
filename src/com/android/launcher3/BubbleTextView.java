@@ -222,36 +222,36 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
             defaultIconSize = grid.iconSizePx;
             setCenterVertically(grid.isScalableGrid);
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DESKTOP_LABELS, true);
-            mThemeAllAppsIcons = prefs.getBoolean(KEY_ALLAPPS_THEMED_ICONS, true);
+            mThemeAllAppsIcons = prefs.getBoolean(KEY_ALLAPPS_THEMED_ICONS, false);
         } else if (mDisplay == DISPLAY_ALL_APPS) {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.allAppsIconTextSizePx);
             setCompoundDrawablePadding(grid.allAppsIconDrawablePaddingPx);
             defaultIconSize = grid.allAppsIconSizePx;
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DRAWER_LABELS, true);
-            mThemeAllAppsIcons = prefs.getBoolean(KEY_ALLAPPS_THEMED_ICONS, true);
+            mThemeAllAppsIcons = prefs.getBoolean(KEY_ALLAPPS_THEMED_ICONS, false);
         } else if (mDisplay == DISPLAY_FOLDER) {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.folderChildTextSizePx);
             setCompoundDrawablePadding(grid.folderChildDrawablePaddingPx);
             defaultIconSize = grid.folderChildIconSizePx;
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DESKTOP_LABELS, true);
-            mThemeAllAppsIcons = prefs.getBoolean(KEY_ALLAPPS_THEMED_ICONS, true);
+            mThemeAllAppsIcons = prefs.getBoolean(KEY_ALLAPPS_THEMED_ICONS, false);
         } else if (mDisplay == DISPLAY_SEARCH_RESULT) {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.allAppsIconTextSizePx);
             defaultIconSize = getResources().getDimensionPixelSize(R.dimen.search_row_icon_size);
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DESKTOP_LABELS, true);
-            mThemeAllAppsIcons = prefs.getBoolean(KEY_ALLAPPS_THEMED_ICONS, true);
+            mThemeAllAppsIcons = prefs.getBoolean(KEY_ALLAPPS_THEMED_ICONS, false);
         } else if (mDisplay == DISPLAY_SEARCH_RESULT_SMALL) {
             defaultIconSize = getResources().getDimensionPixelSize(
                     R.dimen.search_row_small_icon_size);
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DESKTOP_LABELS, true);
-            mThemeAllAppsIcons = prefs.getBoolean(KEY_ALLAPPS_THEMED_ICONS, true);
+            mThemeAllAppsIcons = prefs.getBoolean(KEY_ALLAPPS_THEMED_ICONS, false);
         } else if (mDisplay == DISPLAY_TASKBAR) {
             defaultIconSize = grid.iconSizePx;
         } else {
             // widget_selection or shortcut_popup
             defaultIconSize = grid.iconSizePx;
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DESKTOP_LABELS, true);
-            mThemeAllAppsIcons = prefs.getBoolean(KEY_ALLAPPS_THEMED_ICONS, true);
+            mThemeAllAppsIcons = prefs.getBoolean(KEY_ALLAPPS_THEMED_ICONS, false);
         }
 
         mCenterVertically = a.getBoolean(R.styleable.BubbleTextView_centerVertically, false);
