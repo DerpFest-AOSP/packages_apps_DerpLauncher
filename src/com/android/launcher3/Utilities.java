@@ -158,6 +158,8 @@ public final class Utilities {
     public static final String KEY_APP_DRAWER_OPACITY = "pref_app_drawer_opacity";
     public static final String KEY_ICON_PACK = "pref_icon_pack";
     public static final String KEY_ALLOW_WALLPAPER_ZOOMING = "pref_allow_wallpaper_zooming";
+    public static final String KEY_SHORT_PARALLAX = "pref_short_parallax";
+    public static final String KEY_SINGLE_PAGE_CENTER = "pref_single_page_center";
 
     /**
      * Returns true if theme is dark.
@@ -837,5 +839,15 @@ public final class Utilities {
     public static boolean canZoomWallpaper(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return prefs.getBoolean(KEY_ALLOW_WALLPAPER_ZOOMING, true);
+    }
+
+    public static boolean isShortParallax(Context context) {
+        SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(KEY_SHORT_PARALLAX, false);
+    }
+
+    public static boolean isSinglePageCentered(Context context) {
+        SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(KEY_SINGLE_PAGE_CENTER, false);
     }
 }
