@@ -124,4 +124,10 @@
     <!-- Wallpaper scrolling -->
     <string name="allow_wallpaper_scrolling">Hintergrundbild-Bewegung</string>
     <string name="allow_wallpaper_scrolling_summary">Hintergrundbild-Bewegung beim Seitenwechsel</string>
+
+    <!-- Parallax -->
+    <string name="short_parallax_title">Kurze Parallaxe zulassen</string>
+    <string name="short_parallax_summary">Vollständiger Scroll-Effekt für das Hintergrundbild auf einer kleineren Anzahl von Seiten, anstatt das Hintergrundbild abzuschneiden</string>
+    <string name="single_page_center_title">Einzelne Seite zentrieren</string>
+    <string name="single_page_center_summary">Das Hintergrundbild zentrieren, wenn nur eine einzelne Seite verwendet wird</string>
 </resources>
