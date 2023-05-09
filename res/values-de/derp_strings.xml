@@ -64,7 +64,6 @@
     <string name="app_info_icon_pack">Symbolpaket</string>
     <string name="app_info_icon_pack_none">Keins</string>
     <string name="app_info_source">Quelle</string>
-    <string name="app_info_source_system">System</string>
     <string name="app_info_last_update">Zuletzt aktualisiert</string>
     <string name="app_info_version">Version</string>
     <string name="app_info_more">Weiteres</string>
