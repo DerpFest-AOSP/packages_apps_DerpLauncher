@@ -130,4 +130,8 @@
     <string name="short_parallax_summary">Vollständiger Scroll-Effekt für das Hintergrundbild auf einer kleineren Anzahl von Seiten, anstatt das Hintergrundbild abzuschneiden</string>
     <string name="single_page_center_title">Einzelne Seite zentrieren</string>
     <string name="single_page_center_summary">Das Hintergrundbild zentrieren, wenn nur eine einzelne Seite verwendet wird</string>
+
+    <!-- Force monochrome icons -->
+    <string name="pref_force_monochrome_themed_icons_title">Thematische Symbole erzwingen</string>
+    <string name="pref_force_monochrome_themed_icons_summary">Erzeugen von thematischen Symbolen für Anwendungen, die keine haben (erfordert erneutes Umschalten der Themensymbole)</string>
 </resources>

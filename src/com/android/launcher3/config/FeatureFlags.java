@@ -360,11 +360,6 @@ public final class FeatureFlags {
             "ENABLE_PREMIUM_HAPTICS_ALL_APPS", false,
             "Enables haptics opening/closing All apps");
 
-    public static final BooleanFlag ENABLE_FORCED_MONO_ICON = getDebugFlag(270396209,
-            "ENABLE_FORCED_MONO_ICON", false,
-            "Enable the ability to generate monochromatic icons, if it is not provided by the app"
-    );
-
     public static final BooleanFlag ENABLE_TASKBAR_EDU_TOOLTIP = getDebugFlag(270396268,
             "ENABLE_TASKBAR_EDU_TOOLTIP", true,
             "Enable the tooltip version of the Taskbar education flow.");
