@@ -25,6 +25,14 @@
         android:persistent="false"
         android:widgetLayout="@layout/notification_pref_warning" />
 
+    <SwitchPreferenceCompat
+        android:key="pref_forced_monochrome_icons"
+        android:title="@string/pref_force_monochrome_themed_icons_title"
+        android:summary="@string/pref_force_monochrome_themed_icons_summary"
+        android:defaultValue="false"
+        android:persistent="true"
+        launcher:iconSpaceReserved="false" />
+
     <com.android.launcher3.settings.preferences.ProperSeekBarPreference
         android:key="pref_custom_icon_size"
         android:title="@string/icon_size_title"
