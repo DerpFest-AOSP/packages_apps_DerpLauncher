@@ -1005,6 +1005,13 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
         }
     }
 
+    protected void setScrollbarVisibility(boolean visible) {
+        AllAppsRecyclerView rv = getActiveRecyclerView();
+        if (rv != null && rv.getScrollbar() != null) {
+            rv.getScrollbar().setVisibility(visible ? VISIBLE : GONE);
+        }
+    }
+
     protected void updateSearchResultsVisibility() {
         if (isSearching()) {
             getSearchRecyclerView().setVisibility(VISIBLE);
