@@ -19,7 +19,7 @@
     android:id="@+id/icon"
     android:singleLine="false"
     android:lines="2"
-    android:inputType="textMultiLine|textNoSuggestions"
+    android:inputType="textMultiLine"
     launcher:iconDisplay="all_apps"
     launcher:centerVertically="true" />
 
