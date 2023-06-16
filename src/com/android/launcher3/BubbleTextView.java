@@ -16,7 +16,6 @@
 
 package com.android.launcher3;
 
-import static com.android.launcher3.InvariantDeviceProfile.KEY_MAX_LINES;
 import static com.android.launcher3.InvariantDeviceProfile.KEY_SHOW_DESKTOP_LABELS;
 import static com.android.launcher3.InvariantDeviceProfile.KEY_SHOW_DRAWER_LABELS;
 import static com.android.launcher3.InvariantDeviceProfile.KEY_ALLAPPS_THEMED_ICONS;
@@ -179,7 +178,6 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
 
     private boolean mShouldShowLabel;
     private boolean mThemeAllAppsIcons;
-    private int mMaxLines;
 
     private HandlerRunnable mIconLoadRequest;
 
@@ -244,7 +242,6 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DESKTOP_LABELS, true);
             mThemeAllAppsIcons = prefs.getBoolean(KEY_ALLAPPS_THEMED_ICONS, true);
         }
-        mMaxLines = prefs.getInt(KEY_MAX_LINES, 1);
 
         mCenterVertically = a.getBoolean(R.styleable.BubbleTextView_centerVertically, false);
 
@@ -425,7 +422,6 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
     private void applyLabel(ItemInfoWithIcon info) {
         if (mShouldShowLabel) {
             setText(info.title);
-            setMaxLines(mMaxLines);
         }
         if (info.contentDescription != null) {
             setContentDescription(info.isDisabled()
@@ -703,10 +699,6 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
 
     public boolean shouldShowLabel() {
         return mShouldShowLabel;
-    }
-
-    public int getMaxLines() {
-        return mMaxLines;
     }
 
     public boolean shouldTextBeVisible() {
