@@ -7,9 +7,12 @@
     <!-- Overview scrolling scale animation -->
     <dimen name="overview_scroll_scale">0.9</dimen>
 
-     <!-- Meminfo in overview -->
+    <!-- Meminfo in overview -->
     <dimen name="meminfo_bottom_margin_gesture">15dp</dimen>
     <dimen name="meminfo_bottom_margin_transient_taskbar">96dp</dimen>
     <dimen name="meminfo_bottom_margin_three_button">15dp</dimen>
     <dimen name="meminfo_top_margin">12dp</dimen>
+
+    <!-- Hotseat QSB -->
+    <dimen name="hotseat_qsb_excess_horizontal_margin">8dp</dimen>
 </resources>
