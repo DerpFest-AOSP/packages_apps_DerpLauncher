@@ -104,7 +104,7 @@
             launcher:className="com.google.android.apps.youtube.music.activities.MusicActivity"/>
         <favorite
             launcher:packageName="com.google.android.videos"
-            launcher:className="com.google.android.youtube.videos.EntryPoint"/>
+            launcher:className="com.google.android.videos.GoogleTvEntryPoint"/>
         <favorite
             launcher:packageName="com.google.android.apps.tachyon"
             launcher:className="com.google.android.apps.tachyon.MainActivity"/>
