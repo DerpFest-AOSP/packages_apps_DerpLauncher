@@ -55,16 +55,13 @@
             launcher:className="com.google.android.apps.youtube.music.activities.MusicActivity"/>
         <favorite
             launcher:packageName="com.google.android.videos"
-            launcher:className="com.google.android.youtube.videos.EntryPoint"/>
+            launcher:className="com.google.android.videos.GoogleTvEntryPoint"/>
         <favorite
             launcher:packageName="com.google.android.apps.tachyon"
             launcher:className="com.google.android.apps.tachyon.MainActivity"/>
         <favorite
             launcher:packageName="com.google.android.apps.photos"
             launcher:className="com.google.android.apps.photos.home.HomeActivity"/>
-        <favorite
-            launcher:packageName="com.android.chrome"
-            launcher:className="com.google.android.apps.chrome.Main" />
         <favorite
             launcher:packageName="com.google.android.calendar"
             launcher:className="com.android.calendar.AllInOneActivity" />
