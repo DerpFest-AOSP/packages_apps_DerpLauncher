@@ -19,8 +19,10 @@ package com.android.quickstep.views;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.drawable.Drawable;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -28,6 +30,7 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.IntDef;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.Insettable;
@@ -388,9 +391,9 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
 
         requestLayout();
 
-        mSplitButton.setCompoundDrawablesRelativeWithIntrinsicBounds(
-                (dp.isLandscape ? R.drawable.ic_split_horizontal : R.drawable.ic_split_vertical),
-                0, 0, 0);
+        Drawable splitbutton = ContextCompat.getDrawable(getContext(), (dp.isLandscape ? R.drawable.ic_split_horizontal : R.drawable.ic_split_vertical));
+        mSplitButton.setForeground(splitbutton);
+        mSplitButton.setForegroundGravity(Gravity.CENTER);
     }
 
     /**
