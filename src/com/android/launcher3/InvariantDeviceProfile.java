@@ -93,12 +93,15 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
 
     private static final float ICON_SIZE_DEFINED_IN_APP_DP = 48;
 
+    public static final String KEY_FORCE_MONO_ICONS = "pref_force_mono_icons";
     public static final String KEY_SHOW_DESKTOP_LABELS = "pref_desktop_show_labels";
     public static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
     public static final String KEY_WORKSPACE_LOCK = "pref_workspace_lock";
     public static final String KEY_ICON_SIZE = "pref_custom_icon_size";
     public static final String KEY_FONT_SIZE = "pref_custom_font_size";
     public static final String KEY_ALLAPPS_THEMED_ICONS = "pref_allapps_themed_icons";
+
+    public static boolean mPrefForceMonoIcons;
 
     // Constants that affects the interpolation curve between statically defined device profile
     // buckets.
@@ -345,6 +348,8 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
         switch (key) {
+            case KEY_FORCE_MONO_ICONS:
+                mPrefForceMonoIcons = prefs.getBoolean(key, false);
             case KEY_SHOW_DESKTOP_LABELS:
             case KEY_SHOW_DRAWER_LABELS:
             case IconDatabase.KEY_ICON_PACK:
