@@ -68,12 +68,6 @@
     <string name="pref_themed_icons_title">Тематические иконки в меню приложений</string>
     <string name="pref_themed_icons_summary">Применить тематические значки в меню приложений</string>
 
-    <!-- Icon pack -->
-    <string name="icon_pack_title">Набор значков</string>
-    <string name="icon_pack_default_label">По умолчанию</string>
-    <string name="icon_pack_add">Установить ещё</string>
-    <string name="icon_pack_no_market">Нет доступного магазина приложений</string>
-
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Значение: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">По умолчанию</string>
@@ -90,11 +84,8 @@
     <string name="show_top_shadow_title">Верхняя тень</string>
     <string name="show_top_shadow_summary">Показать тень в верхней части главного экрана</string>
 
-    <!-- App label - max lines -->
-    <string name="icon_max_lines_title">Максимальное количество строк в названии приложения</string>
-
     <!-- Smartspace -->
-    <string name="smartspace_pref_title">At a Glance</string>
+    <string name="smartspace_pref_title">Самое главное</string>
     <string name="smartspace_pref_summary">Показывать умное пространство в верхней части главного экрана</string>
 
     <!-- Dark Status Bar -->
@@ -105,23 +96,49 @@
     <string name="pref_scroll_vibration_title">Вибрация при прокрутке</string>
     <string name="pref_scroll_vibration_summary">Виброотклик при прокрутке последних приложений, если поддерживается</string>
 
-    <!-- Pause apps shortcut -->
-    <string name="pause">Пауза</string>
-    <string name="pause_apps_dialog_title">Приостановить %1$s?</string>
-    <string name="pause_apps_dialog_message">Уведомления для %1$s будут приостановлены</string>
-    <string name="paused_apps_dialog_title">Приложение приостановлено</string>
-    <string name="paused_apps_dialog_message">%1$s был приостановлен из лаунчера</string>
-    <string name="paused_apps_drop_target_label">Приостановить приложение</string>
+    <!-- AppInfo -->
+    <string name="app_info_icon_pack">Набор значков</string>
+    <string name="app_info_icon_pack_none">Отсутствует</string>
+    <string name="app_info_source">Источник</string>
+    <string name="app_info_source_unknown">Неизвестно</string>
+    <string name="app_info_last_update">Последнее обновление</string>
+    <string name="app_info_version">Версия</string>
+    <string name="app_info_more">Ещё</string>
+
+    <!-- Icon pack -->
+    <string name="icon_pack_title">Набор значков</string>
+    <string name="icon_pack_default_label">По умолчанию</string>
+    <string name="icon_pack_add">Установить ещё</string>
+    <string name="icon_pack_no_market">Нет доступного магазина приложений</string>
 
     <!-- Background opacity -->
     <string name="drawer_background_opacity_title">Непрозрачность фона меню приложений</string>
     <string name="recents_background_opacity_title">Непрозрачность фона списка недавних приложений</string>
 
     <!-- Trust apps -->
-    <string name="trust_apps_manager_name">Скрытые приложения</string>
-    <string name="trust_apps_auth_manager">Разблокируйте, чтобы управлять скрытыми приложениями</string>
+    <string name="trust_apps_manager_name">Скрытые и защищённые приложения</string>
+    <string name="trust_apps_auth_manager">Разблокируйте, чтобы управлять скрытыми и защищёнными приложениями</string>
+    <string name="trust_apps_auth_open_app">Пройдите аутентификацию для открытия %1$s</string>
     <string name="trust_apps_loading">Загрузка\u2026</string>
     <string name="trust_apps_no_lock_error">Пожалуйста, установите блокировку экрана для ограничения доступа к приложениям</string>
     <string name="trust_apps_help">Помощь</string>
     <string name="trust_apps_info_hidden">Скрытые приложения и их виджеты не отображаются в меню приложений</string>
+    <string name="trust_apps_info_protected">Защищенные приложения требуют аутентификации для открытия из лаунчера</string>
+
+    <!-- Wallpaper scrolling -->
+    <string name="allow_wallpaper_scrolling">Прокрутка обоев</string>
+    <string name="allow_wallpaper_scrolling_summary">Эффект прокрутки обоев для нескольких страниц</string>
+
+    <!-- Parallax -->
+    <string name="short_parallax_title">Разрешить короткий параллакс</string>
+    <string name="short_parallax_summary">Включение эффекта полной прокрутки обоев на меньшем количестве страниц вместо обрезки обоев</string>
+    <string name="single_page_center_title">Выравнивание одиночной страницы</string>
+    <string name="single_page_center_summary">Выравнивание обоев при использовании только одной страницы</string>
+
+    <!-- Force monochrome icons -->
+    <string name="pref_force_monochrome_themed_icons_title">Принудительные тематические значки</string>
+    <string name="pref_force_monochrome_themed_icons_summary">Генерировать тематические значки для приложений, у которых они отсутствуют (требуется повторное включение тематических значков)</string>
+
+    <!-- App label - max lines -->
+    <string name="icon_max_lines_title">Максимальное количество строк в названии приложения</string>
 </resources>
