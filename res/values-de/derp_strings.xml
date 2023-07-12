@@ -177,4 +177,8 @@
     <!-- Dark Status Bar -->
     <string name="perf_dark_status_bar_title">Dunkle Statusleiste</string>
     <string name="perf_dark_status_bar_summary">Dunkle Statusleiste auf dem Startbildschirm verwenden</string>
+
+    <!-- Force monocrome icons -->
+    <string name="pref_force_mono_icons_title">Thematische Symbole erzwingen</string>
+    <string name="pref_force_mono_icons_summary">Thematische Symbole für Apps erzwingen, die diese nicht nativ unterstützen (erfordert ein erneutes Umschalten der thematischen Symbole)</string>
 </resources>
