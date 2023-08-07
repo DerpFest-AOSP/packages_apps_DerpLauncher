@@ -196,7 +196,8 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
         mActivityContext = ActivityContext.lookupContext(context);
         mAllAppsStore = new AllAppsStore<>(mActivityContext);
 
-        mScrimColor = Themes.getAttrColor(context, R.attr.allAppsScrimColor);
+        mScrimColor = ColorUtils.setAlphaComponent(Themes.getAttrColor(context,
+                R.attr.allAppsScrimColor), Utilities.getAllAppsOpacity(context) * 255 / 100);
         mHeaderThreshold = getResources().getDimensionPixelSize(
                 R.dimen.dynamic_grid_cell_border_spacing);
         mHeaderProtectionColor = Themes.getAttrColor(context, R.attr.allappsHeaderProtectionColor);
@@ -745,9 +746,6 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
             mTabsProtectionAlpha = tabsAlpha;
             invalidateHeader();
         }
-        
-        getSearchView().setBackgroundResource(R.drawable.bg_all_apps_searchbox);
-        
         if (mSearchUiManager.getEditText() == null) {
             return;
         }
@@ -763,9 +761,12 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
     }
 
     protected int getHeaderColor(float blendRatio) {
-        return ColorUtils.setAlphaComponent(
-                ColorUtils.blendARGB(mScrimColor, mHeaderProtectionColor, blendRatio),
-                (int) (mSearchContainer.getAlpha() * 255));
+        return ColorUtils.blendARGB(
+                ColorUtils.setAlphaComponent(mScrimColor, (int) (mSearchContainer.getAlpha()
+                        * (Utilities.getAllAppsOpacity(mActivityContext) / 100) * 255)),
+                ColorUtils.setAlphaComponent(mHeaderProtectionColor,
+                        (int) (mSearchContainer.getAlpha() * 255)),
+                blendRatio);
     }
 
     /**
