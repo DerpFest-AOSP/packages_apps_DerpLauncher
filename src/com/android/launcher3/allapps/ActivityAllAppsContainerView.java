@@ -208,6 +208,7 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
         mAllAppsStore = new AllAppsStore<>(mActivityContext);
 
         mScrimColor = Themes.getAttrColor(context, R.attr.allAppsScrimColor);
+        mBottomSheetBackgroundColor = mScrimColor;
         mHeaderThreshold = getResources().getDimensionPixelSize(
                 R.dimen.dynamic_grid_cell_border_spacing);
         mHeaderProtectionColor = Themes.getAttrColor(context, R.attr.allappsHeaderProtectionColor);
@@ -314,8 +315,6 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
                 0,
                 0 // Bottom left
         };
-        mBottomSheetBackgroundColor =
-                Themes.getAttrColor(getContext(), R.attr.materialColorSurfaceDim);
         updateBackgroundVisibility(mActivityContext.getDeviceProfile());
         mSearchUiManager.initializeSearch(this);
     }
