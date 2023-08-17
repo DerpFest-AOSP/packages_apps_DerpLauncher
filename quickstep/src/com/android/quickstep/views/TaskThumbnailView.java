@@ -564,7 +564,12 @@ public class TaskThumbnailView extends View {
             mBitmapShader.setLocalMatrix(mPreviewPositionHelper.getMatrix());
             mPaint.setShader(mBitmapShader);
         }
-        getTaskView().updateCurrentFullscreenParams(mPreviewPositionHelper);
+        TaskView taskView = getTaskView();
+        // If it's the instance of GroupedTaskView, then it's splitted task.
+        // i.e split screen.
+        boolean isGroupedTaskView = (taskView instanceof GroupedTaskView);
+        taskView.updateCurrentFullscreenParams(mPreviewPositionHelper,
+                isGroupedTaskView /* split screen */);
         invalidate();
     }
 

@@ -344,8 +344,13 @@ public class TaskViewSimulator implements TransformParams.BuilderProxy {
         }
 
         float fullScreenProgress = Utilities.boundToRange(this.fullScreenProgress.value, 0, 1);
-        mCurrentFullscreenParams.setProgress(fullScreenProgress, recentsViewScale.value,
-                /* taskViewScale= */1f, mTaskRect.width(), mDp, mPositionHelper);
+        // If the split bounds is found, then it's splitted task.
+        // i.e split screen.
+        boolean isSplitTask = mSplitBounds != null;
+        mCurrentFullscreenParams.setProgress(
+                fullScreenProgress, recentsViewScale.value,
+                /* taskViewScale= */1f, mTaskRect.width(), mDp,
+                 mPositionHelper, isSplitTask /* split screen */);
 
         // Apply thumbnail matrix
         float taskWidth = mTaskRect.width();

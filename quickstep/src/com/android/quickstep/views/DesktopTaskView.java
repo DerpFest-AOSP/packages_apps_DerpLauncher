@@ -508,7 +508,7 @@ public class DesktopTaskView extends TaskView {
             if (i == 0) {
                 // All snapshots share the same params. Only update it with the first snapshot.
                 updateFullscreenParams(mSnapshotDrawParams,
-                        mSnapshotView.getPreviewPositionHelper());
+                        mSnapshotView.getPreviewPositionHelper(), false /** split screen **/);
             }
             mSnapshotViewMap.valueAt(i).setFullscreenParams(mSnapshotDrawParams);
         }

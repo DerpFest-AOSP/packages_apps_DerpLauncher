@@ -392,7 +392,8 @@ public class GroupedTaskView extends TaskView {
 
     @Override
     protected void updateSnapshotRadius() {
-        super.updateSnapshotRadius();
+        updateCurrentFullscreenParams(mSnapshotView.getPreviewPositionHelper(), true /** split screen **/);
+        mSnapshotView.setFullscreenParams(mCurrentFullscreenParams);
         mSnapshotView2.setFullscreenParams(mCurrentFullscreenParams);
     }
 
