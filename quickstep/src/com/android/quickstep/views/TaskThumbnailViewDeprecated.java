@@ -476,6 +476,11 @@ public class TaskThumbnailViewDeprecated extends View implements ViewPool.Reusab
             mPaint.setShader(mBitmapShader);
         }
         getTaskView().updateCurrentFullscreenParams();
+        TaskView taskView = getTaskView();
+        // If it's the instance of GroupedTaskView, then it's splitted task.
+        // i.e split screen.
+        boolean isGroupedTaskView = (taskView instanceof GroupedTaskView);
+        taskView.updateCurrentFullscreenParams(isGroupedTaskView /* split screen */);
         invalidate();
     }
 

@@ -434,10 +434,13 @@ public class FloatingTaskView extends FrameLayout {
         public float mCurrentDrawnCornerRadius;
         public float mScaleX = 1;
         public float mScaleY = 1;
+        private boolean mFirstTimeDone = false;
+        private boolean haveRoundedCornersOnWindows = true;
 
         public FullscreenDrawParams(Context context) {
             mCornerRadius = TaskCornerRadius.get(context);
             mWindowCornerRadius = QuickStepContract.getWindowCornerRadius(context);
+            haveRoundedCornersOnWindows = mWindowCornerRadius != 0f;
 
             mCurrentDrawnCornerRadius = mCornerRadius;
         }
@@ -446,8 +449,20 @@ public class FloatingTaskView extends FrameLayout {
             mBounds.set(bounds);
             mScaleX = scaleX;
             mScaleY = scaleY;
-            mCurrentDrawnCornerRadius = mIsStagedTask ? mWindowCornerRadius :
-                    Utilities.mapRange(progress, mCornerRadius, mWindowCornerRadius);
+            // StagedTask has two cycle of progress.
+            // First - When it's go up on the first split task selected.
+            // Second - After the second split task selection, it will go down
+            //          to start the split screen.
+            // Here we want to remove the corner radius only in the second cycle.
+            // i.e only have to remove the corner radius at the time of starting split screen.
+            // Also we don't need to show the rounded corner radius progress for StagedTask
+            // in devices without rounded corners at the time of starting split screen.
+            mCurrentDrawnCornerRadius = (mIsStagedTask && (!mFirstTimeDone ||
+                    !haveRoundedCornersOnWindows)) ? mWindowCornerRadius :
+                    Utilities.mapRange(progress, mCornerRadius, 0f /** No corner radius */);
+            // If the first cycle of progress completed, change it to true.
+            // Or else don't change it to have intended behaviour.
+            mFirstTimeDone = (mIsStagedTask && progress == 1f) ? true : mFirstTimeDone;
         }
 
         public void setIsStagedTask(boolean isStagedTask) {

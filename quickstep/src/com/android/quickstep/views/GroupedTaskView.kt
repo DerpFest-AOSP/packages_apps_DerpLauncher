@@ -308,6 +308,14 @@ class GroupedTaskView @JvmOverloads constructor(context: Context, attrs: Attribu
         }
     }
 
+    override fun updateSnapshotRadius() {
+        updateCurrentFullscreenParams(true /* split screen */)
+        taskContainers.forEach {
+            it.thumbnailViewDeprecated.setFullscreenParams(getThumbnailFullscreenParams())
+            it.overlay.setFullscreenParams(getThumbnailFullscreenParams())
+        }
+    }
+
     companion object {
         private const val TAG = "GroupedTaskView"
     }
