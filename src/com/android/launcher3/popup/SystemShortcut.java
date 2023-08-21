@@ -3,6 +3,7 @@ package com.android.launcher3.popup;
 import static com.android.launcher3.logging.StatsLogManager.LauncherEvent.LAUNCHER_SYSTEM_SHORTCUT_APP_INFO_TAP;
 import static com.android.launcher3.logging.StatsLogManager.LauncherEvent.LAUNCHER_SYSTEM_SHORTCUT_WIDGETS_TAP;
 import static com.android.launcher3.LauncherSettings.Favorites.ITEM_TYPE_APPLICATION;
+import static com.android.launcher3.LauncherSettings.Favorites.ITEM_TYPE_TASK;
 
 import android.app.ActivityOptions;
 import android.content.ComponentName;
@@ -274,7 +275,7 @@ public abstract class SystemShortcut<T extends Context & ActivityContext> extend
             Intent intent = null;
             UserHandle user = null;
             if (item != null &&
-                    item.itemType == ITEM_TYPE_APPLICATION) {
+                    (item.itemType == ITEM_TYPE_APPLICATION || item.itemType == ITEM_TYPE_TASK)) {
                 intent = item.getIntent();
                 user = item.user;
             }
