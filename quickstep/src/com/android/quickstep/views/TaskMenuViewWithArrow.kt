@@ -162,7 +162,7 @@ class TaskMenuViewWithArrow<T> : ArrowPopup<T> where T : RecentsViewContainer, T
         this.alignedOptionIndex = alignedOptionIndex
         this.onClosedCallback = onClosedCallback
         if (!populateMenu()) return false
-        addScrim()
+        // addScrim()
         show()
         return true
     }
