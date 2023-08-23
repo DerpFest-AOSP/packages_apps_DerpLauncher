@@ -28,17 +28,38 @@
 
         <Button
             android:id="@+id/action_screenshot"
+            style="@style/OverviewActionButton"
+            android:text="@string/recents_screenshot_title"
+            android:drawableStart="@drawable/ic_screenshot" />
+
+        <Button
+            android:id="@+id/action2_screenshot"
             style="@style/OverviewActionChip"
             android:foreground="@drawable/ic_screenshot" />
 
         <Button
             android:id="@+id/action_split"
+            style="@style/OverviewActionButton"
+            android:layout_marginStart="@dimen/overview_actions_button_spacing"
+            android:text="@string/action_split"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/action2_split"
             style="@style/OverviewActionChip"
             android:layout_marginStart="@dimen/overview_actions_button_spacing"
             android:visibility="gone" />
 
         <Button
             android:id="@+id/action_lens"
+            style="@style/OverviewActionButton"
+            android:layout_marginStart="@dimen/overview_actions_button_spacing"
+            android:text="@string/recents_lens_title"
+            android:drawableStart="@drawable/ic_lens"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/action2_lens"
             style="@style/OverviewActionChip"
             android:layout_marginStart="@dimen/overview_actions_button_spacing"
             android:foreground="@drawable/ic_lens"
@@ -46,6 +67,13 @@
 
         <Button
             android:id="@+id/action_clear_all"
+            style="@style/OverviewActionButton"
+            android:layout_marginStart="@dimen/overview_actions_button_spacing"
+            android:text="@string/recents_clear_all_title"
+            android:drawableStart="@drawable/ic_clear_all" />
+
+        <Button
+            android:id="@+id/action2_clear_all"
             style="@style/OverviewActionChip"
             android:layout_marginStart="@dimen/overview_actions_button_spacing"
             android:foreground="@drawable/ic_clear_all" />
