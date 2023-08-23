@@ -2791,6 +2791,10 @@ public abstract class RecentsView<CONTAINER_TYPE extends Context & RecentsViewCo
         animateActionsViewIn();
 
         mCurrentGestureEndTarget = null;
+
+        switchToScreenshot(
+            () -> finishRecentsAnimation(true /* toRecents */, false /* shouldPip */,
+                    null));
     }
 
     /**
