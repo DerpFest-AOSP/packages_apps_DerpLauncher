@@ -103,6 +103,7 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
     public @interface SplitButtonDisabledFlags { }
     public static final int FLAG_SINGLE_TASK = 1 << 0;
 
+    private static final String KEY_RECENTS_CHIPS = "pref_recents_chips";
     private static final String KEY_RECENTS_SCREENSHOT = "pref_recents_screenshot";
     private static final String KEY_RECENTS_CLEAR_ALL = "pref_recents_clear_all";
     private static final String KEY_RECENTS_LENS = "pref_recents_lens";
@@ -131,6 +132,7 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
     protected DeviceProfile mDp;
     private final Rect mTaskSize = new Rect();
 
+    private boolean mUseChips;
     private boolean mScreenshot;
     private boolean mClearAll;
     private boolean mLens;
@@ -147,6 +149,7 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
     public OverviewActionsView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr, 0);
         SharedPreferences prefs = LauncherPrefs.getPrefs(context);
+        mUseChips = prefs.getBoolean(KEY_RECENTS_CHIPS, true);
         mScreenshot = prefs.getBoolean(KEY_RECENTS_SCREENSHOT, true);
         mClearAll = prefs.getBoolean(KEY_RECENTS_CLEAR_ALL, true);
         mLens = prefs.getBoolean(KEY_RECENTS_LENS, false);
@@ -174,18 +177,29 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
     }
 
     private void updateVisibilities() {
-        View screenshot = findViewById(R.id.action_screenshot);
+        findViewById(!mUseChips ? R.id.action2_screenshot : R.id.action_screenshot)
+                .setVisibility(GONE);
+        findViewById(!mUseChips ? R.id.action2_clear_all : R.id.action_clear_all)
+                .setVisibility(GONE);
+        findViewById(!mUseChips ? R.id.action2_lens : R.id.action_lens).setVisibility(GONE);
+        findViewById(!mUseChips ? R.id.action2_split : R.id.action_split).setVisibility(GONE);
+
+        View screenshot = findViewById(
+                mUseChips ? R.id.action2_screenshot : R.id.action_screenshot);
         screenshot.setOnClickListener(this);
         screenshot.setVisibility(mScreenshot ? VISIBLE : GONE);
         findViewById(R.id.screenshot_space).setVisibility(mScreenshot ? VISIBLE : GONE);
 
-        View clearall = findViewById(R.id.action_clear_all);
+        View clearall = findViewById(mUseChips ? R.id.action2_clear_all : R.id.action_clear_all);
         clearall.setOnClickListener(this);
         clearall.setVisibility(mClearAll ? VISIBLE : GONE);
         findViewById(R.id.clear_all_space).setVisibility(mClearAll ? VISIBLE : GONE);
 
-        View lens = findViewById(R.id.action_lens);
+        View lens = findViewById(mUseChips ? R.id.action2_lens : R.id.action_lens);
         lens.setOnClickListener(this);
+        // only show at most 2 buttons if chips are disabled (only applies to phones)
+        boolean actualLensVisibility = mLens && Utilities.isGSAEnabled(getContext())
+                && (mUseChips || !mScreenshot || !mClearAll || (mDp != null && mDp.isTablet));
         lens.setVisibility(mLens && Utilities.isGSAEnabled(getContext()) ? VISIBLE : GONE);
         findViewById(R.id.lens_space).setVisibility(mLens && Utilities.isGSAEnabled(getContext()) ? VISIBLE : GONE);
 
@@ -216,16 +230,16 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
             return;
         }
         final int id = view.getId();
-        if (id == R.id.action_screenshot) {
+        if (id == R.id.action_screenshot || id == R.id.action2_screenshot) {
             VibratorWrapper.INSTANCE.get(getContext()).vibrate(VibratorWrapper.EFFECT_CLICK);
             mCallbacks.onScreenshot();
-        } else if (id == R.id.action_split) {
+        } else if (id == R.id.action_split || id == R.id.action2_split) {
             VibratorWrapper.INSTANCE.get(getContext()).vibrate(VibratorWrapper.EFFECT_CLICK);
             mCallbacks.onSplit();
-        } else if (id == R.id.action_clear_all) {
+        } else if (id == R.id.action_clear_all || id == R.id.action2_clear_all) {
             VibratorWrapper.INSTANCE.get(getContext()).vibrate(VibratorWrapper.EFFECT_CLICK);
             mCallbacks.onClearAllTasksRequested();
-        } else if (id == R.id.action_lens) {
+        } else if (id == R.id.action_lens || id == R.id.action2_lens) {
             VibratorWrapper.INSTANCE.get(getContext()).vibrate(VibratorWrapper.EFFECT_CLICK);
             mCallbacks.onLens();
         }
@@ -246,7 +260,9 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-        if (key.equals(KEY_RECENTS_SCREENSHOT)) {
+        if (key.equals(KEY_RECENTS_CHIPS)) {
+            mUseChips = prefs.getBoolean(KEY_RECENTS_CHIPS, true);
+        } else if (key.equals(KEY_RECENTS_SCREENSHOT)) {
             mScreenshot = prefs.getBoolean(KEY_RECENTS_SCREENSHOT, true);
         } else if (key.equals(KEY_RECENTS_CLEAR_ALL)) {
             mClearAll = prefs.getBoolean(KEY_RECENTS_CLEAR_ALL, true);
@@ -390,10 +406,16 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
         updateVerticalMargin(DisplayController.getNavigationMode(getContext()));
 
         requestLayout();
-
-        Drawable splitbutton = ContextCompat.getDrawable(getContext(), (dp.isLandscape ? R.drawable.ic_split_horizontal : R.drawable.ic_split_vertical));
-        mSplitButton.setForeground(splitbutton);
-        mSplitButton.setForegroundGravity(Gravity.CENTER);
+        if (mUseChips) {
+            Drawable splitbutton = ContextCompat.getDrawable(getContext(), (dp.isLandscape
+                    ? R.drawable.ic_split_horizontal : R.drawable.ic_split_vertical));
+            mSplitButton.setForeground(splitbutton);
+            mSplitButton.setForegroundGravity(Gravity.CENTER);
+            return;
+        }
+        mSplitButton.setCompoundDrawablesRelativeWithIntrinsicBounds(
+                (dp.isLandscape ? R.drawable.ic_split_horizontal : R.drawable.ic_split_vertical),
+                0, 0, 0);
     }
 
     /**

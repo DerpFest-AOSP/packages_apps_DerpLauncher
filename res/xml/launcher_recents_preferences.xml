@@ -42,6 +42,13 @@
         android:title="@string/actions_category_title">
 
         <SwitchPreference
+            android:key="pref_recents_chips"
+            android:title="@string/recents_chips_title"
+            android:summary="@string/recents_chips_summary"
+            android:defaultValue="true"
+            android:persistent="true" />
+
+        <SwitchPreference
             android:key="pref_recents_screenshot"
             android:title="@string/recents_screenshot_title"
             android:defaultValue="true"
