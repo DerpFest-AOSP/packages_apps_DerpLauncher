@@ -54,6 +54,8 @@
     <string name="dock_search_summary">Suchleiste im unteren Dock</string>
 
     <!-- Recents icons -->
+    <string name="recents_chips_title">Ein kompaktes Design verwenden</string>
+    <string name="recents_chips_summary">Kann für die Anzeige einer großen Anzahl von Aktionen erforderlich sein</string>
     <string name="recents_screenshot_title">Screenshot</string>
     <string name="recents_clear_all_title">Alles schließen</string>
     <string name="recents_lens_title">Lens</string>
