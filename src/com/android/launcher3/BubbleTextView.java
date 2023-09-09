@@ -689,11 +689,10 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
             setPadding(getPaddingLeft(), (height - cellHeightPx) / 2, getPaddingRight(),
                     getPaddingBottom());
         }
-        // only apply two line for all_apps
-        if (mMaxLines == 3 && mDisplay == DISPLAY_ALL_APPS) {
+        if (mMaxLines >= 3) {
             setSingleLine(false);
-            setMaxLines(3);
-        } else if ((mMaxLines == 2 && mDisplay == DISPLAY_ALL_APPS)
+            setMaxLines(mMaxLines);
+        } else if (mMaxLines == 2
                 || ((FeatureFlags.ENABLE_TWOLINE_ALLAPPS.get() && mDisplay == DISPLAY_ALL_APPS)
                 || (FeatureFlags.ENABLE_TWOLINE_DEVICESEARCH.get()
                 && mDisplay == DISPLAY_SEARCH_RESULT)) && (mLastOriginalText != null)) {
