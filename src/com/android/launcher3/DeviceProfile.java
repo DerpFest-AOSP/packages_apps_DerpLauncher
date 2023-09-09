@@ -240,7 +240,6 @@ public class DeviceProfile {
     // Space required for the bubble bar between the hotseat and the edge of the screen. If there's
     // not enough space, the hotseat will adjust itself for the bubble bar.
     private final int mBubbleBarSpaceThresholdPx;
-    private boolean mShowQsb;
 
     // Bottom sheets
     public int bottomSheetTopPadding;
@@ -550,12 +549,12 @@ public class DeviceProfile {
         hotseatQsbVisualHeight = hotseatQsbHeight - 2 * hotseatQsbShadowHeight;
 
         // Whether QSB might be inline in appropriate orientation (e.g. landscape).
-        mShowQsb = Utilities.showQSB(context);
-        boolean canQsbInline = mShowQsb && (isTwoPanels ? inv.inlineQsb[INDEX_TWO_PANEL_PORTRAIT]
+        boolean showQsb = Utilities.showQSB(context);
+        boolean canQsbInline = showQsb && (isTwoPanels ? inv.inlineQsb[INDEX_TWO_PANEL_PORTRAIT]
                 || inv.inlineQsb[INDEX_TWO_PANEL_LANDSCAPE]
                 : inv.inlineQsb[INDEX_DEFAULT] || inv.inlineQsb[INDEX_LANDSCAPE])
-                && hotseatQsbHeight > 0 && mShowQsb;
-        isQsbInline = inv.inlineQsb[mTypeIndex] && canQsbInline;
+                && hotseatQsbHeight > 0 && showQsb;
+        isQsbInline = isScalableGrid && inv.inlineQsb[mTypeIndex] && canQsbInline;
 
         areNavButtonsInline = isTaskbarPresent && !isGestureMode;
         numShownHotseatIcons =
@@ -592,9 +591,9 @@ public class DeviceProfile {
             mResponsiveWorkspaceCellSpec = workspaceCellSpecs.getCalculatedSpec(
                     responsiveAspectRatio, heightPx);
         } else {
-            hotseatQsbSpace = mShowQsb
+            hotseatQsbSpace = showQsb
                     ? pxFromDp(inv.hotseatQsbSpace[mTypeIndex], mMetrics) : 0;
-            hotseatBarBottomSpace = mShowQsb || isTaskbarPresent
+            hotseatBarBottomSpace = showQsb || isTaskbarPresent
                     ? pxFromDp(inv.hotseatBarBottomSpace[mTypeIndex], mMetrics) : 0;
             mHotseatBarEdgePaddingPx =
                     isVerticalBarLayout() ? workspacePageIndicatorHeight : 0;
@@ -604,7 +603,7 @@ public class DeviceProfile {
 
         if (!isVerticalBarLayout()) {
             // Have a little space between the inset and the QSB
-            if (mShowQsb && mInsets.bottom + minQsbMargin > hotseatBarBottomSpace) {
+            if (showQsb && mInsets.bottom + minQsbMargin > hotseatBarBottomSpace) {
                 int availableSpace = hotseatQsbSpace - (mInsets.bottom - hotseatBarBottomSpace);
 
                 // Only change the spaces if there is space
@@ -899,6 +898,8 @@ public class DeviceProfile {
      * necessary.
      */
     public void recalculateHotseatWidthAndBorderSpace() {
+        if (!mIsScalableGrid) return;
+
         updateHotseatWidthAndBorderSpace(inv.numColumns);
         int numWorkspaceColumns = getPanelCount() * inv.numColumns;
         if (isTwoPanels) {
@@ -1316,7 +1317,7 @@ public class DeviceProfile {
      */
     private int calculateHotseatBorderSpace(float hotseatWidthPx, int numExtraBorder) {
         int numBorders = (numShownHotseatIcons - 1 + numExtraBorder);
-        if (numBorders <= 0 || !mShowQsb) return 0;
+        if (numBorders <= 0) return 0;
 
         float hotseatIconsTotalPx = iconSizePx * numShownHotseatIcons;
         int hotseatBorderSpacePx = (int) (hotseatWidthPx - hotseatIconsTotalPx) / numBorders;
