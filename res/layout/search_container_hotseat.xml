@@ -22,11 +22,4 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/qsb_widget_height"
         android:contentDescription="@string/label_search"
-        android:padding="0dp">
-
-    <fragment
-        android:name="com.android.launcher3.qsb.QsbContainerView$QsbFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:tag="qsb_view"/>
-</com.android.launcher3.qsb.QsbContainerView>
+        android:padding="0dp"/>

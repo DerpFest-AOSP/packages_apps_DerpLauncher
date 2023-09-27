@@ -135,9 +135,6 @@ public class PackageUpdatedTask extends BaseModelUpdateTask {
                              appsList.trackRemoves(a -> removedComponents.add(a.componentName))) {
                     for (int i = 0; i < N; i++) {
                         if (DEBUG) Log.d(TAG, "mAllAppsList.updatePackage " + packages[i]);
-                        if (isTargetPackage(packages[i])) {
-                            needsRestart = true;
-                        }
                         iconCache.updateIconsForPkg(packages[i], mUser);
                         activitiesLists.put(
                                 packages[i], appsList.updatePackage(context, packages[i], mUser));
@@ -177,11 +174,6 @@ public class PackageUpdatedTask extends BaseModelUpdateTask {
                         WorkspaceItemInfo.FLAG_DISABLED_SUSPENDED, mOp == OP_SUSPEND);
                 if (DEBUG) Log.d(TAG, "mAllAppsList.(un)suspend " + N);
                 appsList.updateDisabledFlags(matcher, flagOp);
-                for (int i = 0; i < N; i++) {
-                    if (isTargetPackage(packages[i])) {
-                        needsRestart = true;
-                    }
-                }
                 break;
             case OP_USER_AVAILABILITY_CHANGE: {
                 UserManagerState ums = new UserManagerState();
