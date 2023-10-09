@@ -111,17 +111,17 @@ public class TaskOverlayFactory implements ResourceBasedOverride {
     /** Note that these will be shown in order from top to bottom, if available for the task. */
     private static final TaskShortcutFactory[] MENU_OPTIONS = new TaskShortcutFactory[]{
             TaskShortcutFactory.APP_INFO,
-            TaskShortcutFactory.KILL_APP,
             TaskShortcutFactory.SPLIT_SELECT,
             TaskShortcutFactory.FLOATING,
-            TaskShortcutFactory.UNINSTALL,
-            TaskShortcutFactory.PIN,
-            TaskShortcutFactory.INSTALL,
             TaskShortcutFactory.FREE_FORM,
             DesktopSystemShortcut.Companion.createFactory(),
             TaskShortcutFactory.WELLBEING,
+            TaskShortcutFactory.PIN,
+            TaskShortcutFactory.INSTALL,
             TaskShortcutFactory.SAVE_APP_PAIR,
             TaskShortcutFactory.SCREENSHOT,
+            TaskShortcutFactory.KILL_APP,
+            TaskShortcutFactory.UNINSTALL,
             TaskShortcutFactory.MODAL
     };
 
