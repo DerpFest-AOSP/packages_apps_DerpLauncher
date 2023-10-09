@@ -88,7 +88,8 @@ public class TaskOverlayFactory implements ResourceBasedOverride {
             List<SystemShortcut> screenshotShortcuts = TaskShortcutFactory.SCREENSHOT
                     .getShortcuts(activity, taskContainer);
             if (screenshotShortcuts != null) {
-                shortcuts.addAll(screenshotShortcuts);
+                // -2 because we want KILL and UNINSTALL at the bottom of the list.
+                shortcuts.addAll(shortcuts.size() - 2, screenshotShortcuts);
             }
 
             // Add modal action only if display orientation is the same as the device orientation,
@@ -97,7 +98,7 @@ public class TaskOverlayFactory implements ResourceBasedOverride {
                 List<SystemShortcut> modalShortcuts = TaskShortcutFactory.MODAL
                         .getShortcuts(activity, taskContainer);
                 if (modalShortcuts != null) {
-                    shortcuts.addAll(modalShortcuts);
+                    shortcuts.addAll(shortcuts.size() - 2, modalShortcuts);
                 }
             }
         }
@@ -131,13 +132,13 @@ public class TaskOverlayFactory implements ResourceBasedOverride {
     /** Note that these will be shown in order from top to bottom, if available for the task. */
     private static final TaskShortcutFactory[] MENU_OPTIONS = new TaskShortcutFactory[]{
             TaskShortcutFactory.APP_INFO,
-            TaskShortcutFactory.KILL_APP,
             TaskShortcutFactory.SPLIT_SELECT,
-            TaskShortcutFactory.UNINSTALL,
-            TaskShortcutFactory.PIN,
-            TaskShortcutFactory.INSTALL,
             TaskShortcutFactory.FREE_FORM,
             TaskShortcutFactory.WELLBEING,
+            TaskShortcutFactory.PIN,
+            TaskShortcutFactory.INSTALL,
+            TaskShortcutFactory.KILL_APP,
+            TaskShortcutFactory.UNINSTALL,
             TaskShortcutFactory.SAVE_APP_PAIR
     };
 
