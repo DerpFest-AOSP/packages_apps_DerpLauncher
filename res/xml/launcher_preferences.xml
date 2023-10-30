@@ -247,6 +247,12 @@
             android:title="Developer Options"
             android:fragment="com.android.launcher3.uioverrides.flags.DeveloperOptionsFragment"/>
 
+        <SwitchPreference
+            android:key="pref_faster_sb_expansion"
+            android:title="@string/faster_sb_expansion"
+            android:defaultValue="false"
+            android:persistent="true" />
+
     </androidx.preference.PreferenceCategory>
 
 </androidx.preference.PreferenceScreen>
