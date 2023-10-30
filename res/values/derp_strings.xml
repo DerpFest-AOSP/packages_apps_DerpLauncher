@@ -46,6 +46,7 @@
     <string name="category_icon">Icons</string>
     <string name="category_recents">Recents</string>
     <string name="category_dev">Developer</string>
+    <string name="category_gesture">Gestures</string>
 
     <!-- Hotseat searchbar -->
     <string name="label_search">Search</string>
@@ -116,4 +117,8 @@
     <!-- Wallpaper zooming -->
     <string name="allow_wallpaper_zooming">Wallpaper zooming</string>
     <string name="allow_wallpaper_zooming_summary">Zoom in or out the wallpaper when using drawer or recent apps</string>
+
+    <!-- Faster statusbar expansion -->
+    <string name="faster_sb_expansion_title">Faster status bar expansion</string>
+    <string name="faster_sb_expansion_summary">Swipe down on the right side of home screen to expand quick settings</string>
 </resources>

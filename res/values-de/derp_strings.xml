@@ -44,6 +44,7 @@
     <string name="category_icon">Symbole</string>
     <string name="category_recents">Anwendungsverlauf</string>
     <string name="category_dev">Entwickler</string>
+    <string name="category_gesture">Gesten</string>
 
     <!-- Hotseat searchbar -->
     <string name="label_search">Suche</string>
@@ -102,4 +103,8 @@
     <!-- Wallpaper zooming -->
     <string name="allow_wallpaper_zooming">Hintergrundbild-Zoomeffekt</string>
     <string name="allow_wallpaper_zooming_summary">Herein- und Herauszoomen des Hintergrundbilds bei Verwendung von App-Übersicht und -Verlauf</string>
+
+    <!-- Faster statusbar expansion -->
+    <string name="faster_sb_expansion_title">Schnellere Erweiterung der Statusleiste</string>
+    <string name="faster_sb_expansion_summary">Auf der rechten Seite des Startbildschirms nach unten wischen, um die Schnelleinstellungen zu erweitern</string>
 </resources>

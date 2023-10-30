@@ -23,6 +23,8 @@ import static android.view.WindowManager.LayoutParams.FLAG_SLIPPERY;
 
 import static com.android.launcher3.logging.StatsLogManager.LauncherEvent.LAUNCHER_SWIPE_DOWN_WORKSPACE_NOTISHADE_OPEN;
 
+import android.app.StatusBarManager;
+import android.content.SharedPreferences;
 import android.graphics.PointF;
 import android.util.SparseArray;
 import android.view.MotionEvent;
@@ -34,6 +36,7 @@ import com.android.launcher3.AbstractFloatingView;
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.LauncherState;
+import com.android.launcher3.Utilities;
 import com.android.launcher3.util.TouchController;
 import com.android.quickstep.SystemUiProxy;
 
@@ -44,15 +47,20 @@ import java.io.PrintWriter;
  * Once the event delta mDownY passes the touch slop, the events start getting forwarded.
  * All events are offset by initial Y value of the pointer.
  */
-public class StatusBarTouchController implements TouchController {
+public class StatusBarTouchController implements TouchController,
+        SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String TAG = "StatusBarController";
+    private static final String KEY_FASTER_SB_EXPANSION = "pref_faster_sb_expansion";
 
     private final Launcher mLauncher;
     private final SystemUiProxy mSystemUiProxy;
-    private final float mTouchSlop;
+    private float mTouchSlop;
     private int mLastAction;
     private final SparseArray<PointF> mDownEvents;
+    private final StatusBarManager mSbManager;
+    private boolean mFasterSbExpansion;
+    private final SharedPreferences mSharedPrefs;
 
     /* If {@code false}, this controller should not handle the input {@link MotionEvent}.*/
     private boolean mCanIntercept;
@@ -60,9 +68,11 @@ public class StatusBarTouchController implements TouchController {
     public StatusBarTouchController(Launcher l) {
         mLauncher = l;
         mSystemUiProxy = SystemUiProxy.INSTANCE.get(mLauncher);
-        // Guard against TAPs by increasing the touch slop.
-        mTouchSlop = 2 * ViewConfiguration.get(l).getScaledTouchSlop();
         mDownEvents = new SparseArray<>();
+        mSbManager = l.getSystemService(StatusBarManager.class);
+        mSharedPrefs = l.getSharedPrefs();
+        mSharedPrefs.registerOnSharedPreferenceChangeListener(this);
+        updateFasterSbExpansion();
     }
 
     @Override
@@ -71,13 +81,52 @@ public class StatusBarTouchController implements TouchController {
         writer.println(prefix + "mLastAction:" + MotionEvent.actionToString(mLastAction));
         writer.println(prefix + "mSysUiProxy available:"
                 + SystemUiProxy.INSTANCE.get(mLauncher).isActive());
+        writer.println(prefix + "mFasterSbExpansion:" + mFasterSbExpansion);
+        writer.println(prefix + "mTouchSlop:" + mTouchSlop);
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+        if (key.equals(KEY_FASTER_SB_EXPANSION)) {
+            updateFasterSbExpansion();
+        }
+    }
+
+    private void updateFasterSbExpansion() {
+        mFasterSbExpansion = mSharedPrefs.getBoolean(KEY_FASTER_SB_EXPANSION, false);
+
+        // Guard against TAPs by increasing the touch slop.
+        int touchSlopMultiplier = mFasterSbExpansion ? 4 : 2;
+        mTouchSlop = touchSlopMultiplier * ViewConfiguration.get(mLauncher).getScaledTouchSlop();
     }
 
     private void dispatchTouchEvent(MotionEvent ev) {
+        mLastAction = ev.getActionMasked();
+        if (handleFasterSbExpansion(ev)) {
+            return;
+        }
         if (mSystemUiProxy.isActive()) {
-            mLastAction = ev.getActionMasked();
             mSystemUiProxy.onStatusBarTouchEvent(ev);
         }
+    }
+
+    private boolean handleFasterSbExpansion(MotionEvent ev) {
+        if (!mFasterSbExpansion) {
+            return false;
+        }
+        if (mLastAction == ACTION_DOWN) {
+            float x = ev.getX();
+            float w = mLauncher.getResources().getDisplayMetrics().widthPixels;
+            float region = w * 0.25f; // Matches one finger QS expand region in SystemUI
+            boolean expandQs = Utilities.isRtl(mLauncher.getResources())
+                    ? (x < region) : (w - region < x);
+            if (expandQs) {
+                mSbManager.expandSettingsPanel();
+            } else {
+                mSbManager.expandNotificationsPanel();
+            }
+        }
+        return true;
     }
 
     @Override
@@ -163,6 +212,6 @@ public class StatusBarTouchController implements TouchController {
                 return false;
             }
         }
-        return SystemUiProxy.INSTANCE.get(mLauncher).isActive();
+        return mFasterSbExpansion || SystemUiProxy.INSTANCE.get(mLauncher).isActive();
     }
 }

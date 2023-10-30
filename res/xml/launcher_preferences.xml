@@ -41,13 +41,6 @@
         android:summaryOff="@string/settings_lock_layout_summary_off" />
 
     <SwitchPreference
-        android:key="pref_dt_gesture"
-        android:title="@string/pref_dt_gesture_title"
-        android:summary="@string/pref_dt_gesture_summary"
-        android:defaultValue="true"
-        android:persistent="true"/>
-
-    <SwitchPreference
         android:key="pref_allow_wallpaper_zooming"
         android:title="@string/allow_wallpaper_zooming"
         android:summary="@string/allow_wallpaper_zooming_summary"
@@ -56,6 +49,26 @@
     <Preference
         android:key="pref_trust_apps"
         android:title="@string/trust_apps_manager_name" />
+
+    <androidx.preference.PreferenceCategory
+        android:key="gesture_category"
+        android:title="@string/category_gesture">
+
+        <SwitchPreference
+            android:key="pref_dt_gesture"
+            android:title="@string/pref_dt_gesture_title"
+            android:summary="@string/pref_dt_gesture_summary"
+            android:defaultValue="true"
+            android:persistent="true"/>
+
+        <SwitchPreference
+            android:key="pref_faster_sb_expansion"
+            android:title="@string/faster_sb_expansion_title"
+            android:summary="@string/faster_sb_expansion_summary"
+            android:defaultValue="false"
+            android:persistent="true" />
+
+    </androidx.preference.PreferenceCategory>
 
     <androidx.preference.PreferenceCategory
         android:key="google_category"
