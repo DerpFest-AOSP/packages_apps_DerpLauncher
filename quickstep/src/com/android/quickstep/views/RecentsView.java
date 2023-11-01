@@ -187,6 +187,7 @@ import com.android.quickstep.util.AnimUtils;
 import com.android.quickstep.util.DesktopTask;
 import com.android.quickstep.util.GroupTask;
 import com.android.quickstep.util.LayoutUtils;
+import com.android.quickstep.util.RecentHelper;
 import com.android.quickstep.util.RecentsOrientedState;
 import com.android.quickstep.util.SplitAnimationController.Companion.SplitAnimInitProps;
 import com.android.quickstep.util.SplitAnimationTimings;
@@ -3934,9 +3935,7 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
             if (isSuccess) {
                 // Remove all the task views now
                 finishRecentsAnimation(true /* toRecents */, false /* shouldPip */, () -> {
-                    UI_HELPER_EXECUTOR.getHandler().postDelayed(
-                            ActivityManagerWrapper.getInstance()::removeAllRecentTasks,
-                            REMOVE_TASK_WAIT_FOR_APP_STOP_MS);
+                    RecentHelper.getInstance ().clearAllTaskStacks (getContext ());
                     removeTasksViewsAndClearAllButton();
                     startHome();
                 });

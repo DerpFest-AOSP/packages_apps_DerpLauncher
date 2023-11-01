@@ -46,6 +46,7 @@ import com.android.launcher3.views.BaseDragLayer;
 import com.android.quickstep.util.VibrationConstants;
 import com.android.quickstep.views.RecentsView;
 import com.android.quickstep.views.TaskView;
+import com.android.systemui.shared.recents.model.Task;
 
 /**
  * Touch controller for handling task view card swipes
@@ -347,8 +348,9 @@ public abstract class TaskViewTouchController<T extends BaseDraggingActivity>
         if (blockedFling) {
             fling = false;
         }
+        Task task = mTaskBeingDragged.getTask();
         PagedOrientationHandler orientationHandler = mRecentsView.getPagedOrientationHandler();
-        boolean goingUp = orientationHandler.isGoingUp(velocity, mIsRtl);
+        boolean goingUp = orientationHandler.isGoingUp(velocity, mIsRtl) && !task.isLocked;
         float progress = mCurrentAnimation.getProgressFraction();
         float interpolatedProgress = mCurrentAnimation.getInterpolatedProgress();
         if (fling) {
