@@ -8,4 +8,7 @@
     <!-- Kill App recents action shortcut -->
     <string name="recent_task_option_kill_app">Force close</string>
     <string name="recents_app_killed">App closed</string>
+
+    <string name="task_menu_item_unlock">Unlock</string>
+    <string name="task_menu_item_lock">Lock</string>
 </resources>

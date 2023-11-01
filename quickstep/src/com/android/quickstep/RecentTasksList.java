@@ -74,7 +74,6 @@ public class RecentTasksList {
     private RecentsModel.RunningTasksListener mRunningTasksListener;
     // Tasks are stored in order of least recently launched to most recently launched.
     private ArrayList<ActivityManager.RunningTaskInfo> mRunningTasks;
-
     public RecentTasksList(LooperExecutor mainThreadExecutor, KeyguardManager keyguardManager,
             SystemUiProxy sysUiProxy) {
         mMainThreadExecutor = mainThreadExecutor;
@@ -309,6 +308,14 @@ public class RecentTasksList {
             }
             if (taskInfo1.isVisible) {
                 numVisibleTasks++;
+            }
+            if(task1.isLocked){
+                TaskUtils.addLockedApp(TaskUtils
+                        .toFormatLockedAppStr(rawTask
+                                .getTaskInfo1()
+                                .baseIntent.getComponent()
+                                .getPackageName(),
+                                task1Key.userId));
             }
             final SplitConfigurationOptions.SplitBounds launcherSplitBounds =
                     convertSplitBounds(rawTask.getSplitBounds());
