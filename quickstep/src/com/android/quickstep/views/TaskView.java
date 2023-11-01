@@ -71,6 +71,7 @@ import android.view.ViewStub;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.IntDef;
@@ -334,6 +335,7 @@ public class TaskView extends FrameLayout implements Reusable {
     protected Task mTask;
     protected TaskThumbnailView mSnapshotView;
     protected TaskViewIcon mIconView;
+    private ImageView mLockedView;
     protected final DigitalWellBeingToast mDigitalWellBeingToast;
     protected float mFullscreenProgress;
     private float mGridProgress;
@@ -522,6 +524,7 @@ public class TaskView extends FrameLayout implements Reusable {
             iconViewStub.setLayoutResource(R.layout.icon_view);
         }
         mIconView = (TaskViewIcon) iconViewStub.inflate();
+        mLockedView = findViewById (R.id.dis_lock);
         mIconTouchDelegate = new TransformingTouchDelegate(mIconView.asView());
     }
 
@@ -654,6 +657,7 @@ public class TaskView extends FrameLayout implements Reusable {
     public void bind(Task task, RecentsOrientedState orientedState) {
         cancelPendingLoadTasks();
         mTask = task;
+        updateLockedView (task.isLocked);
         mTaskIdContainer[0] = mTask.key.id;
         mTaskIdAttributeContainer[0] = new TaskIdAttributeContainer(task, mSnapshotView, mIconView,
                 STAGE_POSITION_UNDEFINED);
@@ -1106,6 +1110,7 @@ public class TaskView extends FrameLayout implements Reusable {
                                 setText(mIconView, task.title);
                             }
                             mDigitalWellBeingToast.initialize(task);
+                            updateLockedView(task.isLocked);
                         });
             }
             if (needsUpdate(changes, FLAG_UPDATE_CORNER_RADIUS)) {
@@ -1719,6 +1724,8 @@ public class TaskView extends FrameLayout implements Reusable {
         progress = Utilities.boundToRange(progress, 0, 1);
         mFullscreenProgress = progress;
         mIconView.setVisibility(progress < 1 ? VISIBLE : INVISIBLE);
+        boolean taskLockState = TaskUtils.getTaskLockState(getContext(), this.mTask.key.baseIntent.getComponent(), mTask.key);
+        mLockedView.setVisibility(taskLockState ? VISIBLE : INVISIBLE);
         mSnapshotView.getTaskOverlay().setFullscreenProgress(progress);
 
         // Animate icons and DWB banners in/out, except in QuickSwitch state, when tiles are
@@ -1808,6 +1815,27 @@ public class TaskView extends FrameLayout implements Reusable {
             params.height = expectedHeight;
             setLayoutParams(params);
         }
+    }
+
+    public void updateLockedView(boolean isLock, boolean isState) {
+        if (this.mLockedView == null) {
+            Log.d(TAG, "updateLockedView: mLockedView is null.");
+            return;
+        }
+        Task task = mTask;
+        if (!(task == null || task.key == null || !isState)) {
+            if (isLock == (this.mLockedView.getVisibility() != View.VISIBLE)) {
+                boolean taskLockState = TaskUtils.getTaskLockState(getContext(), mTask.key.baseIntent.getComponent(), mTask.key);
+                Log.d(TAG, "updateLockedView: update task lockState: " + isState + " -> " + taskLockState + " , task.key.id: " + mTask.key.id);
+                mTask.isLocked = taskLockState;
+                isLock = taskLockState;
+            }
+        }
+        mLockedView.setVisibility(isLock ? VISIBLE : INVISIBLE);
+    }
+
+    public void updateLockedView(boolean isLock) {
+        updateLockedView(isLock, true);
     }
 
     private float getGridTrans(float endTranslation) {
