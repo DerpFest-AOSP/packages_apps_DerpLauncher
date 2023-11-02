@@ -8,5 +8,5 @@
     <!-- Appseat -->
     <color name="appseat_color">@*android:color/system_neutral2_900</color>
 
-    <color name="mid_clear_all_background_color">@*android:color/system_neutral2_900</color>
+    <color name="mid_clear_all_background_color">@*android:color/system_neutral2_800</color>
 </resources>
