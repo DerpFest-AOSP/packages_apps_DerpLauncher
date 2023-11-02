@@ -35,6 +35,7 @@
         <Button
             android:id="@+id/action2_screenshot"
             style="@style/OverviewActionChip"
+            android:tooltipText="@string/recents_screenshot_title"
             android:foreground="@drawable/ic_screenshot" />
 
         <Button
@@ -48,6 +49,7 @@
             android:id="@+id/action2_split"
             style="@style/OverviewActionChip"
             android:layout_marginStart="@dimen/overview_actions_button_spacing"
+            android:tooltipText="@string/action_split"
             android:visibility="gone" />
 
         <Button
@@ -62,6 +64,7 @@
             android:id="@+id/action2_lens"
             style="@style/OverviewActionChip"
             android:layout_marginStart="@dimen/overview_actions_button_spacing"
+            android:tooltipText="@string/recents_lens_title"
             android:foreground="@drawable/ic_lens"
             android:visibility="gone" />
 
@@ -76,6 +79,7 @@
             android:id="@+id/action2_clear_all"
             style="@style/OverviewActionChip"
             android:layout_marginStart="@dimen/overview_actions_button_spacing"
+            android:tooltipText="@string/recents_clear_all_title"
             android:foreground="@drawable/ic_clear_all" />
 
     </LinearLayout>

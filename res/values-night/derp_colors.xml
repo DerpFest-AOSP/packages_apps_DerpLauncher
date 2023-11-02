@@ -14,5 +14,5 @@
     <!-- Appseat -->
     <color name="appseat_color">#50181c1f</color>
 
-    <color name="mid_clear_all_background_color">@*android:color/system_neutral2_900</color>
+    <color name="mid_clear_all_background_color">@*android:color/system_neutral2_800</color>
 </resources>
