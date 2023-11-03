@@ -14,6 +14,7 @@ import android.util.Log;
 
 import com.android.launcher3.BuildConfig;
 import com.android.launcher3.Launcher;
+import com.android.quickstep.TaskUtilLockState;
 import com.android.quickstep.TaskUtils;
 import com.android.quickstep.views.RecentsView;
 import com.android.systemui.shared.recents.model.Task;
@@ -38,6 +39,7 @@ public class RecentHelper {
 
     public void clearAllTaskStacks(Context context) {
         try {
+            // TODO Add support even launcher is not default
             Launcher launcher = Launcher.getLauncher(context);
             RecentsView recentsView = launcher.getOverviewPanel();
             int taskViewCount = recentsView.getTaskViewCount();
@@ -54,7 +56,7 @@ public class RecentHelper {
                             packageName = packageName.replace("unknown", "");
                             if (!packageName.isEmpty()) {
                                 packageName += "#" + UserHandle.getUserId(taskId);
-                                boolean taskLockState = TaskUtils.getTaskLockState(context, taskKey.baseIntent.getComponent(), taskKey);
+                                boolean taskLockState = TaskUtilLockState.getTaskLockState(context, taskKey.baseIntent.getComponent(), taskKey);
                                 if (!isAppLocked(packageName, context) &&
                                         !packageName.contains(BuildConfig.APPLICATION_ID) &&
                                         !taskLockState) {
@@ -69,6 +71,7 @@ public class RecentHelper {
             }
         } catch (Exception exception) {
             Log.e(TAG, "clearAllTaskStacks: ", exception);
+            ActivityManagerWrapper.getInstance().removeAllRecentTasks();
         }
     }
 

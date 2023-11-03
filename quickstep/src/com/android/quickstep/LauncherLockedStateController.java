@@ -63,7 +63,7 @@ public class LauncherLockedStateController {
             if (!TextUtils.isEmpty(packageName) && (TextUtils.isEmpty(packageName) || packageName.contains("launcher"))) {
                 SharedPreferences sharedPreferences = this.mContext.getSharedPreferences("tasklockstate", Context.MODE_PRIVATE);
                 this.mSp = sharedPreferences;
-                this.mLockedListWithUserId = sharedPreferences.getStringSet("task_lock_list_with_userid", new HashSet<>());
+                this.mLockedListWithUserId = sharedPreferences.getStringSet(TASK_LOCK_LIST_KEY_WITH_USERID, new HashSet<>());
                 this.mLockedPackageNameListWithUserId = new ArrayList<>();
                 int currentUserId = ActivityManagerWrapper.getInstance().getCurrentUserId();
                 Log.d(TAG, "init userId tasklock list: " + this.mLockedListWithUserId.size() + ", id:" + currentUserId + ", " + mReloaded + ", " + z + ", pkgName:" + packageName);
@@ -116,7 +116,7 @@ public class LauncherLockedStateController {
             }
             SharedPreferences.Editor edit = this.mSp.edit();
             edit.clear();
-            edit.putStringSet("task_lock_list_with_userid", this.mLockedListWithUserId);
+            edit.putStringSet(TASK_LOCK_LIST_KEY_WITH_USERID, this.mLockedListWithUserId);
             edit.apply();
             writeToProvider();
             if (!mReloaded) {
@@ -165,6 +165,7 @@ public class LauncherLockedStateController {
      *
      * @param str The task identifier string.
      * @param i   The user ID.
+     * TODO Remove task of the uninstalled apps
      */
     public void removeTaskLockState(final String str, final int i) {
         if (i != -1) {
@@ -323,7 +324,7 @@ public class LauncherLockedStateController {
         }
         SharedPreferences.Editor edit = this.mSp.edit();
         edit.clear();
-        edit.putStringSet("task_lock_list_with_userid", this.mLockedListWithUserId);
+        edit.putStringSet(TASK_LOCK_LIST_KEY_WITH_USERID, this.mLockedListWithUserId);
         edit.apply();
         try {
             Settings.System.putStringForUser(this.mContext.getContentResolver(), RECENT_TASK_LOCKED_LIST_BK, "done", i);
