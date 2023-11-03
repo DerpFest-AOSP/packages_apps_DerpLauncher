@@ -291,14 +291,6 @@ public class RecentTasksList {
                                 tmpLockedUsers.get(task2Key.userId) /* isLocked */);
                 task2.setLastSnapshotData(taskInfo2);
             }
-            if(task1.isLocked){
-                TaskUtils.addLockedApp(TaskUtils
-                        .toFormatLockedAppStr(rawTask
-                                .getTaskInfo1()
-                                .baseIntent.getComponent()
-                                .getPackageName(),
-                                task1Key.userId));
-            }
             final SplitConfigurationOptions.SplitBounds launcherSplitBounds =
                     convertSplitBounds(rawTask.getSplitBounds());
             allTasks.add(new GroupTask(task1, task2, launcherSplitBounds));

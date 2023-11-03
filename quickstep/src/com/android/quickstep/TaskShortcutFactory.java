@@ -48,6 +48,7 @@ import com.android.launcher3.popup.SystemShortcut.AppInfo;
 import com.android.launcher3.touch.PagedOrientationHandler;
 import com.android.launcher3.util.InstantAppResolver;
 import com.android.launcher3.util.SplitConfigurationOptions.SplitPositionOption;
+import com.android.quickstep.util.RecentHelper;
 import com.android.quickstep.views.RecentsView;
 import com.android.quickstep.views.TaskThumbnailView;
 import com.android.quickstep.views.TaskView;
@@ -111,18 +112,19 @@ public interface TaskShortcutFactory {
         public List<SystemShortcut> getShortcuts(BaseDraggingActivity activity,
                                                  TaskIdAttributeContainer taskContainer) {
             TaskView taskView = taskContainer.getTaskView();
-
             Task task = taskView.getTask();
+            boolean isLocked = RecentHelper.getInstance().isAppLocked(task.key.getPackageName(), taskView.getContext());
 
             return Collections.singletonList(new LockedSystemShortcut(
-                    task.isLocked ? R.drawable.ic_protected_unlocked : R.drawable.ic_protected_locked,
-                    task.isLocked ? R.string.task_menu_item_unlock : R.string.task_menu_item_lock,
+                    isLocked ? R.drawable.ic_protected_unlocked : R.drawable.ic_protected_locked,
+                    isLocked ? R.string.task_menu_item_unlock : R.string.task_menu_item_lock,
                     activity, taskContainer.getItemInfo (), taskContainer.getTaskView(), taskView));
         }
 
         @Override
         public boolean showForSplitscreen() {
-            return true;
+            // TODO Add support when split
+            return false;
         }
     };
 
@@ -152,18 +154,19 @@ public interface TaskShortcutFactory {
         }
 
         static void getLockTask(Task task, TaskView tv){
+            boolean isLocked = !RecentHelper.getInstance().isAppLocked(task.key.getPackageName (), tv.getContext());
             StringBuilder sb = new StringBuilder();
             sb.append("Lock Click# id: ");
             sb.append(task.key.id);
             sb.append(" component: ");
             sb.append(task.key.baseIntent.getComponent());
             sb.append(" state: ");
-            sb.append(task.isLocked);
+            sb.append(isLocked);
             sb.append(" -> ");
-            sb.append(!task.isLocked);
-            task.isLocked = !task.isLocked;
-            TaskUtils.setTaskLockState(tv.getContext(), task.key.baseIntent.getComponent(), task.isLocked, task.key);
-            tv.updateLockedView(task.isLocked, false);
+            sb.append(!isLocked);
+            Log.d(LockedSystemShortcut.class.getName () , "getLockTask: ");
+            TaskUtilLockState.setTaskLockState(tv.getContext(), task.key.baseIntent.getComponent(), isLocked, task.key);
+            tv.updateLockedView(isLocked, false);
         }
     }
 
