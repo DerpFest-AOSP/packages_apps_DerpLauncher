@@ -309,14 +309,6 @@ public class RecentTasksList {
             if (taskInfo1.isVisible) {
                 numVisibleTasks++;
             }
-            if(task1.isLocked){
-                TaskUtils.addLockedApp(TaskUtils
-                        .toFormatLockedAppStr(rawTask
-                                .getTaskInfo1()
-                                .baseIntent.getComponent()
-                                .getPackageName(),
-                                task1Key.userId));
-            }
             final SplitConfigurationOptions.SplitBounds launcherSplitBounds =
                     convertSplitBounds(rawTask.getSplitBounds());
             allTasks.add(new GroupTask(task1, task2, launcherSplitBounds));
