@@ -46,6 +46,7 @@ import com.android.launcher3.BaseDraggingActivity;
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.R;
 import com.android.launcher3.config.FeatureFlags;
+import com.android.launcher3.Utilities;
 import com.android.launcher3.logging.StatsLogManager.LauncherEvent;
 import com.android.launcher3.model.WellbeingModel;
 import com.android.launcher3.popup.SystemShortcut;
@@ -364,6 +365,25 @@ public interface TaskShortcutFactory {
             return ActivityManagerWrapper.getInstance().supportsFreeformMultiWindow(activity)
                     && !SystemProperties.getBoolean("persist.wm.debug.desktop_mode", false)
                     && !SystemProperties.getBoolean("persist.wm.debug.desktop_mode_2", false);
+        }
+    };
+
+    TaskShortcutFactory LENS = new TaskShortcutFactory() {
+        @Override
+        public List<SystemShortcut> getShortcuts(BaseDraggingActivity activity,
+                TaskIdAttributeContainer taskContainer) {
+            final Task task  = taskContainer.getTask();
+            if (!task.isDockable) {
+                return null;
+            }
+            if (!Utilities.isGSAEnabled(taskContainer.getTaskView().getContext())) {
+                return null;
+            }
+
+            SystemShortcut lensShortcut = taskContainer.getThumbnailView().getTaskOverlay()
+                    .getLensShortcut(activity, taskContainer.getItemInfo(),
+                            taskContainer.getTaskView());
+            return createSingletonShortcutList(lensShortcut);
         }
     };
 

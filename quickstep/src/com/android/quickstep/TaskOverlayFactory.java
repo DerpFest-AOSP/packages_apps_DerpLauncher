@@ -87,9 +87,14 @@ public class TaskOverlayFactory implements ResourceBasedOverride {
             // Add screenshot action to task menu.
             List<SystemShortcut> screenshotShortcuts = TaskShortcutFactory.SCREENSHOT
                     .getShortcuts(activity, taskContainer);
-            if (screenshotShortcuts != null) {
+            // Add lens action to task menu.
+            List<SystemShortcut> lensShortcuts = TaskShortcutFactory.LENS
+                    .getShortcuts(activity, taskContainer);
+
+            if (screenshotShortcuts != null && lensShortcuts != null) {
                 // -2 because we want KILL and UNINSTALL at the bottom of the list.
                 shortcuts.addAll(shortcuts.size() - 2, screenshotShortcuts);
+                shortcuts.addAll(shortcuts.size() - 2, lensShortcuts);
             }
 
             // Add modal action only if display orientation is the same as the device orientation,
@@ -258,6 +263,14 @@ public class TaskOverlayFactory implements ResourceBasedOverride {
         }
 
         /**
+         * Gets the lens shortcut for the lens that will be added to the task menu.
+         */
+        public SystemShortcut getLensShortcut(BaseDraggingActivity activity,
+                ItemInfo iteminfo, View originalView) {
+            return new LensSystemShortcut(activity, iteminfo, originalView);
+        }
+
+        /**
          * Gets the task snapshot as it is displayed on the screen.
          *
          * @return the bounds of the snapshot in screen coordinates.
@@ -314,6 +327,24 @@ public class TaskOverlayFactory implements ResourceBasedOverride {
             @Override
             public void onClick(View view) {
                 saveScreenshot(mThumbnailView.getTaskView().getTask());
+                dismissTaskMenuView(mActivity);
+            }
+        }
+
+        private class LensSystemShortcut extends SystemShortcut {
+
+            private final BaseDraggingActivity mActivity;
+
+            LensSystemShortcut(BaseDraggingActivity activity, ItemInfo itemInfo,
+                    View originalView) {
+                super(R.drawable.ic_lens, R.string.recents_lens_title, activity, itemInfo,
+                        originalView);
+                mActivity = activity;
+            }
+
+            @Override
+            public void onClick(View view) {
+                endLiveTileMode(() -> mImageApi.startLensActivity());
                 dismissTaskMenuView(mActivity);
             }
         }
