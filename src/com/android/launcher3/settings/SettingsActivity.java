@@ -23,6 +23,7 @@ import static com.android.launcher3.config.FeatureFlags.IS_STUDIO_BUILD;
 import static com.android.launcher3.Utilities.KEY_DOCK_SEARCH;
 import static com.android.launcher3.Utilities.KEY_SMARTSPACE;
 import static com.android.launcher3.states.RotationHelper.ALLOW_ROTATION_PREFERENCE_KEY;
+import static com.android.launcher3.util.Themes.isThemedIconEnabled;
 
 import static com.android.launcher3.OverlayCallbackImpl.KEY_ENABLE_MINUS_ONE;
 
@@ -217,6 +218,7 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
         private Preference mDeveloperOptionPref;
         private PreferenceGroup mDeveloperOptionPrefGroup;
         private Preference mIconPackPref;
+        private Preference mThemeAllAppsIconsPref;
 
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -354,6 +356,11 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
                     });
                     updateIconPackOption();
                     return true;
+
+                case InvariantDeviceProfile.KEY_ALLAPPS_THEMED_ICONS:
+                    mThemeAllAppsIconsPref = preference;
+                    updateThemeAllAppsIconsPref();
+                    return true;
             }
 
             return true;
@@ -385,6 +392,13 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
             mIconPackPref.setSummary(IconDatabase.getGlobalLabel(getActivity()));
         }
 
+        private void updateThemeAllAppsIconsPref() {
+            boolean enabled = isThemedIconEnabled(getContext());
+            mThemeAllAppsIconsPref.setEnabled(enabled);
+            mThemeAllAppsIconsPref.setSummary(enabled ? null : getContext().getString(
+                    R.string.themed_icons_disabled_summary));
+        }
+
         private boolean isGsaEnabled() {
             return Utilities.isGSAEnabled(getContext());
         }
@@ -398,8 +412,8 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
             super.onResume();
 
             updateDeveloperOption();
-
             updateIconPackOption();
+            updateThemeAllAppsIconsPref();
 
             if (isAdded() && !mPreferenceHighlighted) {
                 PreferenceHighlighter highlighter = createHighlighter();
