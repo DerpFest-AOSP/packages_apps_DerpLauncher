@@ -231,6 +231,7 @@
         launcher:name="5_by_7"
         launcher:numRows="7"
         launcher:numColumns="5"
+        launcher:numSearchContainerRows="2"
         launcher:numFolderRows="6"
         launcher:numFolderColumns="4"
         launcher:numHotseatIcons="5"

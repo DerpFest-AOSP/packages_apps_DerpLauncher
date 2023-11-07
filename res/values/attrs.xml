@@ -162,6 +162,8 @@
 
         <attr name="numRows" format="integer" />
         <attr name="numColumns" format="integer" />
+        <!--  numSearchContainerRows defaults to 1, if not specified -->
+        <attr name="numSearchContainerRows" format="integer" />
         <!--  numSearchContainerColumns defaults to numColumns, if not specified -->
         <attr name="numSearchContainerColumns" format="integer" />
 

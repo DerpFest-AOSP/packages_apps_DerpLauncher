@@ -1851,6 +1851,8 @@ public class DeviceProfile {
 
         writer.println(prefix + "\tinv.numRows: " + inv.numRows);
         writer.println(prefix + "\tinv.numColumns: " + inv.numColumns);
+        writer.println(prefix + "\tinv.numSearchContainerRows: "
+                + inv.numSearchContainerRows);
         writer.println(prefix + "\tinv.numSearchContainerColumns: "
                 + inv.numSearchContainerColumns);
 
