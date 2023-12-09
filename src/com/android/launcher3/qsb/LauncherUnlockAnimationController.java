@@ -39,7 +39,7 @@ public final class LauncherUnlockAnimationController extends ILauncherUnlockAnim
 
         mWorkspaceUnlockAnim = new WorkspaceUnlockAnim(launcher);
         mWorkspaceAnimator = ValueAnimator.ofFloat(0.0f, 1.0f);
-        mWorkspaceAnimator.setInterpolator(com.android.launcher3.anim.Interpolators.EMPHASIZED_DECELERATE);
+        mWorkspaceAnimator.setInterpolator(Interpolators.EMPHASIZED_DECELERATE);
         mWorkspaceAnimator.addUpdateListener(animation -> mWorkspaceUnlockAnim.setUnlockAmount(
                 (Float) animation.getAnimatedValue(), false));
     }
