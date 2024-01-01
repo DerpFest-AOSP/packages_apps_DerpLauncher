@@ -336,6 +336,7 @@ android_library {
         "com_android_systemui_shared_flags_lib",
         "SettingsLib",
         "libGoogleFeed",
+        "framework-derpfest.static",
     ],
     manifest: "AndroidManifest-common.xml",
     sdk_version: "current",
