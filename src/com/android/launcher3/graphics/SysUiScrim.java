@@ -21,6 +21,7 @@ import static android.graphics.Paint.FILTER_BITMAP_FLAG;
 import static com.android.launcher3.config.FeatureFlags.KEYGUARD_ANIMATION;
 
 import android.animation.ObjectAnimator;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
@@ -36,6 +37,7 @@ import androidx.annotation.VisibleForTesting;
 
 import com.android.launcher3.BaseDraggingActivity;
 import com.android.launcher3.DeviceProfile;
+import com.android.launcher3.LauncherPrefs;
 import com.android.launcher3.R;
 import com.android.launcher3.anim.AnimatedFloat;
 import com.android.launcher3.testing.shared.ResourceUtils;
@@ -46,7 +48,8 @@ import com.android.launcher3.util.Themes;
 /**
  * View scrim which draws behind hotseat and workspace
  */
-public class SysUiScrim implements View.OnAttachStateChangeListener {
+public class SysUiScrim implements View.OnAttachStateChangeListener,
+        SharedPreferences.OnSharedPreferenceChangeListener {
 
     /**
      * Receiver used to get a signal that the user unlocked their device.
@@ -73,6 +76,8 @@ public class SysUiScrim implements View.OnAttachStateChangeListener {
     private static final int BOTTOM_MASK_HEIGHT_DP = 200;
     private static final int TOP_MASK_HEIGHT_DP = 100;
 
+    private static final String KEY_HIDE_TOP_SHADOW = "pref_hide_top_shadow";
+
     private boolean mDrawTopScrim, mDrawBottomScrim;
 
     private final RectF mTopMaskRect = new RectF();
@@ -88,6 +93,7 @@ public class SysUiScrim implements View.OnAttachStateChangeListener {
     private final View mRoot;
     private final BaseDraggingActivity mActivity;
     private final boolean mHideSysUiScrim;
+    private boolean mHideSysUiScrimSetting;
     private boolean mSkipScrimAnimationForTest = false;
 
     private boolean mAnimateScrimOnNextDraw = false;
@@ -114,13 +120,17 @@ public class SysUiScrim implements View.OnAttachStateChangeListener {
         if (!KEYGUARD_ANIMATION.get() && !mHideSysUiScrim) {
             view.addOnAttachStateChangeListener(this);
         }
+
+        SharedPreferences prefs = LauncherPrefs.getPrefs(view.getContext());
+        mHideSysUiScrimSetting = prefs.getBoolean(KEY_HIDE_TOP_SHADOW, false);
+        prefs.registerOnSharedPreferenceChangeListener(this);
     }
 
     /**
      * Draw the top and bottom scrims
      */
     public void draw(Canvas canvas) {
-        if (!mHideSysUiScrim) {
+        if (!mHideSysUiScrim && !mHideSysUiScrimSetting) {
             if (mSysUiProgress.value <= 0) {
                 mAnimateScrimOnNextDraw = false;
                 return;
@@ -183,6 +193,14 @@ public class SysUiScrim implements View.OnAttachStateChangeListener {
         ScreenOnTracker.INSTANCE.get(mActivity).removeListener(mScreenOnListener);
     }
 
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+        if (key.equals(KEY_HIDE_TOP_SHADOW)) {
+            mHideSysUiScrimSetting = prefs.getBoolean(KEY_HIDE_TOP_SHADOW, false);
+            mRoot.invalidate();
+        }
+    }
+
     /**
      * Set the width and height of the view being scrimmed
      */
@@ -202,7 +220,7 @@ public class SysUiScrim implements View.OnAttachStateChangeListener {
 
     private void reapplySysUiAlpha() {
         reapplySysUiAlphaNoInvalidate();
-        if (!mHideSysUiScrim) {
+        if (!mHideSysUiScrim && !mHideSysUiScrimSetting) {
             mRoot.invalidate();
         }
     }

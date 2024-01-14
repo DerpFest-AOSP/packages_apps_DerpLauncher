@@ -107,4 +107,8 @@
     <!-- Faster statusbar expansion -->
     <string name="faster_sb_expansion_title">Schnellere Erweiterung der Statusleiste</string>
     <string name="faster_sb_expansion_summary">Auf der rechten Seite des Startbildschirms nach unten wischen, um die Schnelleinstellungen zu erweitern</string>
+
+    <!-- Hide top shadow -->
+    <string name="hide_top_shadow_title">Schatten oben verstecken</string>
+    <string name="hide_top_shadow_summary">Schatten oben auf dem Startbildschirm entfernen</string>
 </resources>

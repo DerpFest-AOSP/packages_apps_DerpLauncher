@@ -46,6 +46,13 @@
         android:summary="@string/allow_wallpaper_zooming_summary"
         android:defaultValue="true" />
 
+    <SwitchPreference
+        android:key="pref_hide_top_shadow"
+        android:title="@string/hide_top_shadow_title"
+        android:summary="@string/hide_top_shadow_summary"
+        android:defaultValue="false"
+        android:persistent="true" />
+
     <Preference
         android:key="pref_trust_apps"
         android:title="@string/trust_apps_manager_name" />

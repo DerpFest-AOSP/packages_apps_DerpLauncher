@@ -121,4 +121,8 @@
     <!-- Faster statusbar expansion -->
     <string name="faster_sb_expansion_title">Faster status bar expansion</string>
     <string name="faster_sb_expansion_summary">Swipe down on the right side of home screen to expand quick settings</string>
+
+    <!-- Hide top shadow -->
+    <string name="hide_top_shadow_title">Hide top shadow</string>
+    <string name="hide_top_shadow_summary">Remove shadow underneath the status bar</string>
 </resources>
