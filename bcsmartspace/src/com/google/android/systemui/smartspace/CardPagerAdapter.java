@@ -21,6 +21,7 @@ import com.android.internal.graphics.ColorUtils;
 import com.android.launcher3.icons.GraphicsUtils;
 import com.android.systemui.bcsmartspace.R;
 import com.android.systemui.plugins.BcSmartspaceDataPlugin;
+import com.android.systemui.plugins.BcSmartspaceConfigPlugin;
 import com.google.android.systemui.smartspace.logging.BcSmartspaceCardLoggerUtil;
 import com.google.android.systemui.smartspace.logging.BcSmartspaceCardLoggingInfo;
 import com.google.android.systemui.smartspace.logging.BcSmartspaceSubcardLoggingInfo;
@@ -37,6 +38,7 @@ public class CardPagerAdapter extends PagerAdapter {
     public static final int MIN_FEATURE_TYPE = -2;
     public final View mRoot;
     public BcSmartspaceDataPlugin mDataProvider;
+    public BcSmartspaceConfigPlugin configProvider;
     public int mCurrentTextColor;
     public int mPrimaryTextColor;
     public ArrayList<SmartspaceTarget> mSmartspaceTargets = new ArrayList<>();
@@ -63,11 +65,12 @@ public class CardPagerAdapter extends PagerAdapter {
         return this.mSmartspaceTargets;
     }
 
-    public CardPagerAdapter(View view) {
+    public CardPagerAdapter(View view, BcSmartspaceConfigPlugin bcSmartspaceConfigPlugin) {
         this.mRoot = view;
         int attrColor = GraphicsUtils.getAttrColor(view.getContext(), 16842806);
         this.mPrimaryTextColor = attrColor;
         this.mCurrentTextColor = attrColor;
+        this.configProvider = bcSmartspaceConfigPlugin;
     }
 
     public static int getBaseLegacyCardRes(int layout) {

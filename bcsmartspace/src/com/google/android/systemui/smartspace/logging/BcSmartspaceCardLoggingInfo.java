@@ -21,6 +21,9 @@ public final class BcSmartspaceCardLoggingInfo {
         public int mReceivedLatency;
         public BcSmartspaceSubcardLoggingInfo mSubcardInfo;
         public int mUid;
+        public final BcSmartspaceCardLoggingInfo build() {
+            return new BcSmartspaceCardLoggingInfo(this);
+        }
     }
 
     public final boolean equals(Object obj) {

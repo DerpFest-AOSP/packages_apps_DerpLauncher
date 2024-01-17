@@ -18,6 +18,7 @@
     <dimen name="enhanced_smartspace_secondary_card_start_margin">1dp</dimen>
     <dimen name="enhanced_smartspace_subtitle_margin_top">9dp</dimen>
     <dimen name="enhanced_smartspace_subtitle_size">16sp</dimen>
+    <dimen name="enhanced_smartspace_text_size_medium">16.0sp</dimen>
     <dimen name="enhanced_smartspace_title_size">20sp</dimen>
     <dimen name="key_text_shadow_dx">0.5dip</dimen>
     <dimen name="key_text_shadow_dy">0.5dip</dimen>

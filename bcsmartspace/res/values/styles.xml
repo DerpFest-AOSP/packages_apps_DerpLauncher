@@ -18,4 +18,8 @@
         <item name="android:fontFamily">@*android:string/config_headlineFontFamily</item>
         <item name="android:lineHeight">24.0sp</item>
     </style>
+    <style name="DateWeatherText" parent="@style/EnhancedSmartspaceTextTitle">
+        <item name="android:textSize">@dimen/enhanced_smartspace_text_size_medium</item>
+        <item name="android:fontFamily">@*android:string/config_bodyFontFamily</item>
+    </style>
 </resources>

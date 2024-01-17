@@ -27,16 +27,19 @@ public class DoubleShadowIconDrawable extends Drawable {
     public boolean mShowShadow;
 
     public DoubleShadowIconDrawable(Context context) {
-        int dimensionPixelSize = context.getResources().getDimensionPixelSize(R.dimen.enhanced_smartspace_icon_size);
-        int dimensionPixelSize2 = context.getResources().getDimensionPixelSize(R.dimen.enhanced_smartspace_icon_inset);
-        this.mIconInsetSize = dimensionPixelSize2;
-        int i = (dimensionPixelSize2 * 2) + dimensionPixelSize;
-        this.mCanvasSize = i;
+        this(context, context.getResources().getDimensionPixelSize(R.dimen.enhanced_smartspace_icon_size), context.getResources().getDimensionPixelSize(R.dimen.enhanced_smartspace_icon_inset));
+    }
+
+    public DoubleShadowIconDrawable(Context context, int i, int i2) {
+        this.mShowShadow = true;
+        this.mIconInsetSize = i2;
+        int i3 = (i2 * 2) + i;
+        this.mCanvasSize = i3;
         this.mAmbientShadowRadius = context.getResources().getDimensionPixelSize(R.dimen.ambient_text_shadow_radius);
         this.mKeyShadowRadius = context.getResources().getDimensionPixelSize(R.dimen.key_text_shadow_radius);
         this.mKeyShadowOffsetX = context.getResources().getDimensionPixelSize(R.dimen.key_text_shadow_dx);
         this.mKeyShadowOffsetY = context.getResources().getDimensionPixelSize(R.dimen.key_text_shadow_dy);
-        setBounds(0, 0, i, i);
+        setBounds(0, 0, i3, i3);
     }
 
     @Override // android.graphics.drawable.Drawable

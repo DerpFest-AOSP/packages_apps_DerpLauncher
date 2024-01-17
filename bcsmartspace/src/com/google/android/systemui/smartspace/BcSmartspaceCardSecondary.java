@@ -24,6 +24,14 @@ public abstract class BcSmartspaceCardSecondary extends ConstraintLayout {
         this.mPrevSmartspaceTargetId = "";
     }
 
+    public final void reset(String str) {
+        if (this.mPrevSmartspaceTargetId.equals(str)) {
+            return;
+        }
+        this.mPrevSmartspaceTargetId = str;
+        resetUi();
+    }
+
     public void resetUi() {
     }
 }
