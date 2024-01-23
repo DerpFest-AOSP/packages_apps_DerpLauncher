@@ -154,9 +154,6 @@ public class Hotseat extends CellLayout implements Insettable {
                 ? dp.hotseatQsbWidth
                 : getShortcutsAndWidgets().getMeasuredWidth();
 
-        qsbWidth += (getContext().getResources().getDimensionPixelSize(
-                R.dimen.hotseat_qsb_excess_horizontal_margin)) * 2;
-
         mQsb.measure(MeasureSpec.makeMeasureSpec(qsbWidth, MeasureSpec.EXACTLY),
                 MeasureSpec.makeMeasureSpec(dp.hotseatQsbHeight, MeasureSpec.EXACTLY));
     }
