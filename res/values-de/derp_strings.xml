@@ -12,7 +12,7 @@
     <string name="google_folder_title" translatable="false">Google</string>
 
     <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
-    <string name="title_show_google_app">Wischen, um die Google-App aufzurufen</string>
+    <string name="title_show_google_feed">Wischen, um die Google-App aufzurufen</string>
 
     <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Wische auf dem Startbildschirm nach links, um die Google App zu öffnen</string>
@@ -51,7 +51,7 @@
     <string name="label_search">Suche</string>
     <string name="label_lens">Google Lens</string>
     <string name="label_voice_search">Sprachsuche</string>
-    <string name="dock_search_title">Google Suchleiste</string>
+    <string name="dock_search_title">Google-Suchleiste</string>
     <string name="dock_search_summary">Suchleiste im unteren Dock</string>
 
     <!-- Recents icons -->
@@ -86,8 +86,18 @@
     <string name="custom_seekbar_default_value_to_set">Standardwert: <xliff:g id="v">%s</xliff:g>\nZum Einstellen gedrückt halten</string>
     <string name="custom_seekbar_default_value_is_set">Standardwert ist eingestellt</string>
 
+    <!-- Icon size -->
+    <string name="icon_size_title">Symbolgröße</string>
+
+    <!-- Font size -->
+    <string name="font_size_title">Schriftgröße</string>
+
     <!-- All apps themed icons -->
     <string name="pref_allapps_themed_icons">Thematische Symbole für App-Übersicht verwenden</string>
+
+    <!-- Force monocrome icons -->
+    <string name="pref_force_mono_icons_title">Thematische Symbole erzwingen</string>
+    <string name="pref_force_mono_icons_summary">Thematische Symbole für Apps erzwingen, die diese nicht nativ unterstützen</string>
 
     <!-- Background opacity -->
     <string name="drawer_background_opacity_title">Hintergrundtransparenz der App-Übersicht</string>
@@ -129,6 +139,10 @@
     <!-- Background blur -->
     <string name="background_blur_title">Tiefenschärfegrad des Hintergrunds</string>
     <string name="background_blur_summary">Tiefenschärfegrad in App-Übersicht und -Verlauf anpassen</string>
+
+    <!-- Dark Status Bar -->
+    <string name="perf_dark_status_bar_title">Dunkle Statusleiste</string>
+    <string name="perf_dark_status_bar_summary">Dunkle Statusleiste auf dem Startbildschirm verwenden</string>
 
     <!-- Wallpaper scrolling -->
     <string name="allow_wallpaper_scrolling">Hintergrundbild-Bewegung</string>
