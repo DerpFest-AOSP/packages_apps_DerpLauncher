@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 DerpFest
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Application name -->
+    <string name="derp_app_name" translatable="false">DerpLauncher</string>
+
+    <!-- Folder titles -->
+    <string name="google_folder_title" translatable="false">Google</string>
+
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_feed">Swipe to access Google feed</string>
+
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">From home screen, swipe left to open Google feed</string>
+    <string name="pref_show_google_now_summary" translatable="false">@string/msg_minus_one_on_right</string>
+
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">From home screen, swipe right to open Google feed</string>
+
+    <!-- Gestures -->
+    <string name="pref_dt_gesture_title">輕觸兩下以休眠</string>
+    <string name="pref_dt_gesture_summary">在空白處點兩下以關閉螢幕</string>
+
+    <!-- Suggestions -->
+    <string name="suggestion_pref_screen_title">建議</string>
+    <string name="suggestion_pref_screen_desc">在應用程式抽屜 &amp; 主畫面上顯示建議</string>
+
+    <!-- Edit workspace -->
+    <string name="settings_lock_layout_title">鎖定佈局</string>
+    <string name="settings_lock_layout_summary_on">禁止在桌面上新增、移除或移動圖示和小工具</string>
+    <string name="settings_lock_layout_summary_off">允許在桌面上新增、移除或移動圖示和小工具</string>
+    <string name="settings_edit_widgets_error">無法將小工具新增至主畫面</string>
+
+    <!-- Hide labels -->
+    <string name="title_desktop_labels">桌面標籤</string>
+    <string name="summary_desktop_labels">在桌面上顯示圖示名稱</string>
+    <string name="title_drawer_labels">應用程式抽屜標籤</string>
+    <string name="summary_drawer_labels">在應用程式抽屜中顯示圖示名稱</string>
+
+    <!-- Settings Categories -->
+    <string name="category_google">Google</string>
+    <string name="category_icon">圖示</string>
+    <string name="category_recents">最近應用程式</string>
+    <string name="category_dev">開發人員</string>
+    <string name="category_gesture">一般</string>
+    <string name="category_statusbar">狀態列</string>
+
+    <!-- Hotseat searchbar -->
+    <string name="label_search">搜尋</string>
+    <string name="label_lens">智慧鏡頭</string>
+    <string name="label_voice_search">語音搜尋</string>
+    <string name="dock_search_title">Google 搜尋列</string>
+    <string name="dock_search_summary">在底部顯示搜尋列</string>
+
+    <!-- Recents icons -->
+    <string name="recents_chips_title">Use compact action design</string>
+    <string name="recents_chips_summary">May be required for large numbers of actions to display</string>
+    <string name="recents_screenshot_title">螢幕截圖</string>
+    <string name="recents_clear_all_title">全部清除</string>
+    <string name="recents_lens_title">智慧鏡頭</string>
+
+    <!-- Smartspace -->
+    <string name="smartspace_pref_title">快速查看</string>
+    <string name="smartspace_pref_summary">在主畫面頂端顯示智慧空間</string>
+
+    <!-- AppInfo -->
+    <string name="app_info_version_value" translatable="false">%1$s (%2$d)</string>
+    <string name="app_info_icon_pack">圖示包</string>
+    <string name="app_info_icon_pack_none">無</string>
+    <string name="app_info_source">來源</string>
+    <string name="app_info_source_unknown">未知</string>
+    <string name="app_info_last_update">上次更新</string>
+    <string name="app_info_version">版本</string>
+    <string name="app_info_more">更多</string>
+
+    <!-- Icon pack -->
+    <string name="icon_pack_title">圖示包</string>
+    <string name="icon_pack_default_label">預設</string>
+    <string name="icon_pack_add">安裝更多</string>
+    <string name="icon_pack_no_market">沒有可用的應用程式商店</string>
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">值：<xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">預設</string>
+    <string name="custom_seekbar_default_value_to_set">預設值：<xliff:g id="v">%s</xliff:g>\n長按以設定</string>
+    <string name="custom_seekbar_default_value_is_set">已設定為預設值</string>
+
+    <!-- Icon size -->
+    <string name="icon_size_title">圖示大小</string>
+
+    <!-- Font size -->
+    <string name="font_size_title">字體大小</string>
+
+    <!-- All apps themed icons -->
+    <string name="pref_allapps_themed_icons">Use themed icons in drawer</string>
+    <string name="themed_icons_disabled_summary">Themed icons are turned off in Wallpaper &amp; style</string>
+
+    <!-- Force monocrome icons -->
+    <string name="pref_force_mono_icons_title">Force monochrome icons</string>
+    <string name="pref_force_mono_icons_summary">Force monochrome icons for apps that don\'t support them natively</string>
+
+    <!-- Background opacity -->
+    <string name="drawer_background_opacity_title">應用程式抽屜背景的不透明度</string>
+    <string name="recents_background_opacity_title">最近應用程式背景的不透明度</string>
+
+    <!-- Trust apps -->
+    <string name="trust_apps_manager_name">隱藏 &amp; 受保護的應用程式</string>
+    <string name="trust_apps_auth_manager">解鎖以管理隱藏和受保護的應用程式</string>
+    <string name="trust_apps_auth_open_app">進行身份驗證以開啟 %1$s</string>
+    <string name="trust_apps_loading">載入中\u2026</string>
+    <string name="trust_apps_no_lock_error">請設置安全的鎖定方式來限制應用程式的存取權限</string>
+    <string name="trust_apps_help">說明</string>
+    <string name="trust_apps_info_hidden">隱藏應用程式及其小工具</string>
+    <string name="trust_apps_info_protected">需要身份驗證才能使用受保護的應用程式</string>
+
+    <!-- Wallpaper zooming -->
+    <string name="allow_wallpaper_zooming">桌布縮放</string>
+    <string name="allow_wallpaper_zooming_summary">在開啟應用程式清單及最近使用的介面時縮放桌布</string>
+
+    <!-- Faster statusbar expansion -->
+    <string name="faster_sb_expansion_title">Faster status bar expansion</string>
+    <string name="faster_sb_expansion_summary">Swipe down on the right side of home screen to expand quick settings</string>
+
+    <!-- Hide top shadow -->
+    <string name="hide_top_shadow_title">Hide top shadow</string>
+    <string name="hide_top_shadow_summary">Remove shadow underneath the status bar</string>
+
+    <!-- Memory info -->
+    <string name="meminfo_text">可用 %1$s | 總共 %2$s</string>
+    <string name="recents_meminfo_title">記憶體</string>
+
+    <!-- Hotseat Background -->
+    <string name="hotseat_bg_title">底欄背景</string>
+    <string name="hotseat_bg_summary">在底部的應用程式列顯示透明背景</string>
+
+    <!-- Background opacity -->
+    <string name="background_opacity_title">背景透明度</string>
+
+    <!-- Background blur -->
+    <string name="background_blur_title">背景模糊度</string>
+    <string name="background_blur_summary">設定最近應用程式和應用程式抽屜的背景模糊度</string>
+
+    <!-- Dark Status Bar -->
+    <string name="perf_dark_status_bar_title">Dark status bar</string>
+    <string name="perf_dark_status_bar_summary">Use dark status bar on Home screen</string>
+
+    <!-- Wallpaper scrolling -->
+    <string name="allow_wallpaper_scrolling">桌布滑動</string>
+    <string name="allow_wallpaper_scrolling_summary">在不同頁面間滑動時使桌布跟著移動</string>
+
+    <!-- Homescreen Statusbar -->
+    <string name="show_statusbar_title">顯示狀態列</string>
+    <string name="show_statusbar_summary">在主畫面上顯示狀態列</string>
+
+    <!-- App label - max lines -->
+    <string name="icon_max_lines_title">應用程式標籤允許的最大行數</string>
+
+    <!-- Row Height -->
+    <string name="row_height_title">列高</string>
+</resources>
