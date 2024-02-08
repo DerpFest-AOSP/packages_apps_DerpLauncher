@@ -5,18 +5,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Application name -->
-    <string name="derp_app_name" translatable="false">DerpLauncher</string>
-
-    <!-- Folder titles -->
-    <string name="google_folder_title" translatable="false">Google</string>
-
     <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_feed">Swipe to access Google feed</string>
 
     <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">From home screen, swipe left to open Google feed</string>
-    <string name="pref_show_google_now_summary" translatable="false">@string/msg_minus_one_on_right</string>
 
     <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">From home screen, swipe right to open Google feed</string>
@@ -68,7 +61,6 @@
     <string name="smartspace_pref_summary">在主畫面頂端顯示智慧空間</string>
 
     <!-- AppInfo -->
-    <string name="app_info_version_value" translatable="false">%1$s (%2$d)</string>
     <string name="app_info_icon_pack">圖示包</string>
     <string name="app_info_icon_pack_none">無</string>
     <string name="app_info_source">來源</string>
@@ -104,8 +96,8 @@
     <string name="pref_force_mono_icons_summary">Force monochrome icons for apps that don\'t support them natively</string>
 
     <!-- Background opacity -->
-    <string name="drawer_background_opacity_title">應用程式抽屜背景的不透明度</string>
-    <string name="recents_background_opacity_title">最近應用程式背景的不透明度</string>
+    <string name="drawer_background_opacity_title">應用程式抽屜背景的透明度</string>
+    <string name="recents_background_opacity_title">最近應用程式背景的透明度</string>
 
     <!-- Trust apps -->
     <string name="trust_apps_manager_name">隱藏 &amp; 受保護的應用程式</string>
