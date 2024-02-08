@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 DerpFest
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Application name -->
+
+    <!-- Folder titles -->
+
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_feed">Проведите пальцем по экрану, чтобы получить доступ к ленте Google.</string>
+
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">На главном экране проведите пальцем влево, чтобы открыть ленту Google.</string>
+
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">На главном экране проведите пальцем вправо, чтобы открыть ленту Google.</string>
+
+    <!-- Gestures -->
+    <string name="pref_dt_gesture_title">Нажмите дважды, чтобы уснуть</string>
+    <string name="pref_dt_gesture_summary">Дважды нажмите на пустое место, чтобы выключить экран</string>
+
+    <!-- Suggestions -->
+    <string name="suggestion_pref_screen_title">Предложения</string>
+    <string name="suggestion_pref_screen_desc">Для всех приложений &amp; Рекомендации по главному экрану</string>
+
+    <!-- Edit workspace -->
+    <string name="settings_lock_layout_title">Расположение блокировки</string>
+    <string name="settings_lock_layout_summary_on">Значки и виджеты нельзя добавлять, удалять и перемещать на главном экране.</string>
+    <string name="settings_lock_layout_summary_off">Значки и виджеты можно добавлять, удалять и перемещать на главном экране.</string>
+    <string name="settings_edit_widgets_error">Невозможно добавить виджеты на главный экран</string>
+
+    <!-- Hide labels -->
+    <string name="title_desktop_labels">Ярлыки рабочего стола</string>
+    <string name="summary_desktop_labels">Отображение меток значков на рабочем столе</string>
+    <string name="title_drawer_labels">Подписи в меню приложений</string>
+    <string name="summary_drawer_labels">Показывать подписи иконок в меню приложений</string>
+
+    <!-- Settings Categories -->
+    <string name="category_google">Google</string>
+    <string name="category_icon">Иконки</string>
+    <string name="category_recents">Недавние</string>
+    <string name="category_dev">Разработчик</string>
+    <string name="category_gesture">Жесты</string>
+    <string name="category_statusbar">Строка состояния</string>
+
+    <!-- Hotseat searchbar -->
+    <string name="label_search">Поиск</string>
+    <string name="label_lens">Google Объектив</string>
+    <string name="label_voice_search">Голосовой поиск</string>
+    <string name="dock_search_title">Панель поиска Google</string>
+    <string name="dock_search_summary">Панель поиска в нижней части дока</string>
+
+    <!-- Recents icons -->
+    <string name="recents_chips_title">Использовать компактный дизайн действий</string>
+    <string name="recents_chips_summary">Может потребоваться для отображения большого количества действий.</string>
+    <string name="recents_screenshot_title">Скриншот</string>
+    <string name="recents_clear_all_title">Очистить все</string>
+    <string name="recents_lens_title">Объектив</string>
+
+    <!-- Smartspace -->
+    <string name="smartspace_pref_title">Краткий обзор</string>
+    <string name="smartspace_pref_summary">Показывать Smartspace в верхней части главного экрана</string>
+
+    <!-- AppInfo -->
+    <string name="app_info_icon_pack">Пакет иконок</string>
+    <string name="app_info_icon_pack_none">Нет</string>
+    <string name="app_info_source">Источник</string>
+    <string name="app_info_source_unknown">Неизвестен</string>
+    <string name="app_info_last_update">Последнее обновление</string>
+    <string name="app_info_version">Версия</string>
+    <string name="app_info_more">Еще</string>
+
+    <!-- Icon pack -->
+    <string name="icon_pack_title">Пакет иконок</string>
+    <string name="icon_pack_default_label">По умолчанию</string>
+    <string name="icon_pack_add">Установить еще</string>
+    <string name="icon_pack_no_market">Нет доступного магазина приложений</string>
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Значение: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">По умолчанию</string>
+    <string name="custom_seekbar_default_value_to_set">Значение по умолчанию: <xliff:g id="v">%s</xliff:g>\nДлительное нажатие для установки</string>
+    <string name="custom_seekbar_default_value_is_set">Установлено значение по умолчанию</string>
+
+    <!-- Icon size -->
+    <string name="icon_size_title">Размер иконки</string>
+
+    <!-- Font size -->
+    <string name="font_size_title">Размер шрифта</string>
+
+    <!-- All apps themed icons -->
+    <string name="pref_allapps_themed_icons">Использовать тематические значки в меню</string>
+    <string name="themed_icons_disabled_summary">В обоях отключены тематические значки. &amp; стиль</string>
+
+    <!-- Force monocrome icons -->
+    <string name="pref_force_mono_icons_title">Принудительные монохромные значки</string>
+    <string name="pref_force_mono_icons_summary">Принудительно использовать монохромные значки для приложений, которые не поддерживают их изначально.</string>
+
+    <!-- Background opacity -->
+    <string name="drawer_background_opacity_title">Непрозрачность фона меню</string>
+    <string name="recents_background_opacity_title">Непрозрачность фона "недавних"</string>
+
+    <!-- Trust apps -->
+    <string name="trust_apps_manager_name">Скрытые &amp; Защищенные приложения</string>
+    <string name="trust_apps_auth_manager">Разблокируйте, чтобы управлять скрытыми и защищенными приложениями.</string>
+    <string name="trust_apps_auth_open_app">Авторизуйтесь, чтобы открыть %1$s</string>
+    <string name="trust_apps_loading">Загрузка\u2026</string>
+    <string name="trust_apps_no_lock_error">Установите безопасную блокировку экрана, чтобы ограничить доступ к приложениям.</string>
+    <string name="trust_apps_help">Помощь</string>
+    <string name="trust_apps_info_hidden">Скрытые приложения и их виджеты скрыты из меню.</string>
+    <string name="trust_apps_info_protected">Защищенные приложения требуют аутентификации для открытия из панели запуска.</string>
+
+    <!-- Wallpaper zooming -->
+    <string name="allow_wallpaper_zooming">Масштабирование обоев</string>
+    <string name="allow_wallpaper_zooming_summary">Увеличение или уменьшение масштаба обоев при использовании меню или последних приложений.</string>
+
+    <!-- Faster statusbar expansion -->
+    <string name="faster_sb_expansion_title">Более быстрое расширение строки состояния</string>
+    <string name="faster_sb_expansion_summary">Проведите вниз по правой стороне главного экрана, чтобы развернуть быстрые настройки.</string>
+
+    <!-- Hide top shadow -->
+    <string name="hide_top_shadow_title">Скрыть верхнюю тень</string>
+    <string name="hide_top_shadow_summary">Удалить тень под строкой состояния</string>
+
+    <!-- Memory info -->
+    <string name="meminfo_text">%1$s доступно | %2$s</string>
+    <string name="recents_meminfo_title">Информация о памяти</string>
+
+    <!-- Hotseat Background -->
+    <string name="hotseat_bg_title">Hotseat фон</string>
+    <string name="hotseat_bg_summary">Добавление полупрозрачного фона в док-станцию приложения</string>
+
+    <!-- Background opacity -->
+    <string name="background_opacity_title">Прозрачность фона</string>
+
+    <!-- Background blur -->
+    <string name="background_blur_title">Глубина размытия фона</string>
+    <string name="background_blur_summary">Установите уровень глубины размытия для последних и панели приложений.</string>
+
+    <!-- Dark Status Bar -->
+    <string name="perf_dark_status_bar_title">Темная строка состояния</string>
+    <string name="perf_dark_status_bar_summary">Использовать темную строку состояния на главном экране</string>
+
+    <!-- Wallpaper scrolling -->
+    <string name="allow_wallpaper_scrolling">Прокрутка обоев</string>
+    <string name="allow_wallpaper_scrolling_summary">Эффект прокрутки обоев для нескольких экранов</string>
+
+    <!-- Homescreen Statusbar -->
+    <string name="show_statusbar_title">Показать строку состояния</string>
+    <string name="show_statusbar_summary">Показывать строку состояния на главном экране</string>
+
+    <!-- App label - max lines -->
+    <string name="icon_max_lines_title">Максимальное количество строк для ярлыка приложения</string>
+
+    <!-- Row Height -->
+    <string name="row_height_title">Высота строки</string>
+</resources>
