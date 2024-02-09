@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 DerpFest
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_feed">在负一屏访问 Google 推送内容</string>
+
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">从主屏幕左滑以打开 Google 推送内容</string>
+
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">从主屏幕右滑以打开 Google 推送内容</string>
+
+    <!-- Gestures -->
+    <string name="pref_dt_gesture_title">轻触两下以休眠</string>
+    <string name="pref_dt_gesture_summary">在空白处轻触两下以关闭屏幕</string>
+
+    <!-- Suggestions -->
+    <string name="suggestion_pref_screen_title">建议</string>
+    <string name="suggestion_pref_screen_desc">在“所有应用”列表中 &amp; 主屏幕上显示建议</string>
+
+    <!-- Edit workspace -->
+    <string name="settings_lock_layout_title">锁定布局</string>
+    <string name="settings_lock_layout_summary_on">无法在主屏幕上添加，移除或移动图标与微件</string>
+    <string name="settings_lock_layout_summary_off">可以在主屏幕上添加，移除或移动图标与微件</string>
+    <string name="settings_edit_widgets_error">无法向主屏幕添加微件</string>
+
+    <!-- Hide labels -->
+    <string name="title_desktop_labels">桌面标签</string>
+    <string name="summary_desktop_labels">在桌面上显示图标标签</string>
+    <string name="title_drawer_labels">应用抽屉标签</string>
+    <string name="summary_drawer_labels">在应用抽屉中显示图标标签</string>
+
+    <!-- Settings Categories -->
+    <string name="category_google">Google</string>
+    <string name="category_icon">图标</string>
+    <string name="category_recents">最近任务</string>
+    <string name="category_dev">开发者设置</string>
+    <string name="category_gesture">手势</string>
+    <string name="category_statusbar">状态栏</string>
+
+    <!-- Hotseat searchbar -->
+    <string name="label_search">搜索</string>
+    <string name="label_lens">Google 智能镜头</string>
+    <string name="label_voice_search">语音搜索</string>
+    <string name="dock_search_title">Google 搜索框</string>
+    <string name="dock_search_summary">在底部的应用行下方显示搜索框</string>
+
+    <!-- Recents icons -->
+    <string name="recents_chips_title">使用紧凑设计的操作按钮图标</string>
+    <string name="recents_chips_summary">在需要展示很多操作按钮时可能需要</string>
+    <string name="recents_screenshot_title">屏幕截图</string>
+    <string name="recents_clear_all_title">全部清除</string>
+    <string name="recents_lens_title">智能镜头</string>
+
+    <!-- Smartspace -->
+    <string name="smartspace_pref_title">资讯一览</string>
+    <string name="smartspace_pref_summary">在主屏幕顶端显示智慧空间</string>
+
+    <!-- AppInfo -->
+    <string name="app_info_icon_pack">图标包</string>
+    <string name="app_info_icon_pack_none">无</string>
+    <string name="app_info_source">来源</string>
+    <string name="app_info_source_unknown">未知</string>
+    <string name="app_info_last_update">最后更新</string>
+    <string name="app_info_version">版本</string>
+    <string name="app_info_more">更多</string>
+
+    <!-- Icon pack -->
+    <string name="icon_pack_title">图标包</string>
+    <string name="icon_pack_default_label">默认</string>
+    <string name="icon_pack_add">安装更多</string>
+    <string name="icon_pack_no_market">没有可用的应用商店</string>
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">值：<xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">默认</string>
+    <string name="custom_seekbar_default_value_to_set">默认值：<xliff:g id="v">%s</xliff:g>\n长按以设置</string>
+    <string name="custom_seekbar_default_value_is_set">已设置为默认值</string>
+
+    <!-- Icon size -->
+    <string name="icon_size_title">图标大小</string>
+
+    <!-- Font size -->
+    <string name="font_size_title">字体大小</string>
+
+    <!-- All apps themed icons -->
+    <string name="pref_allapps_themed_icons">在应用抽屉中使用主题图标</string>
+    <string name="themed_icons_disabled_summary">主题图标未在“壁纸与个性化”中启用</string>
+
+    <!-- Force monocrome icons -->
+    <string name="pref_force_mono_icons_title">强制使用单色图标</string>
+    <string name="pref_force_mono_icons_summary">使没有原生适配的应用强制使用单色图标</string>
+
+    <!-- Background opacity -->
+    <string name="drawer_background_opacity_title">应用抽屉背景不透明度</string>
+    <string name="recents_background_opacity_title">最近任务背景不透明度</string>
+
+    <!-- Trust apps -->
+    <string name="trust_apps_manager_name">隐藏 &amp; 受保护的应用</string>
+    <string name="trust_apps_auth_manager">解锁以管理隐藏的和受保护的应用</string>
+    <string name="trust_apps_auth_open_app">进行身份验证以打开 %1$s</string>
+    <string name="trust_apps_loading">加载中\u2026</string>
+    <string name="trust_apps_no_lock_error">请设置一个安全的锁屏方式以限制访问应用</string>
+    <string name="trust_apps_help">帮助</string>
+    <string name="trust_apps_info_hidden">隐藏的应用和其微件在应用抽屉中不可见</string>
+    <string name="trust_apps_info_protected">从启动器打开受保护的应用时需要进行身份验证</string>
+
+    <!-- Wallpaper zooming -->
+    <string name="allow_wallpaper_zooming">壁纸缩放</string>
+    <string name="allow_wallpaper_zooming_summary">在使用应用抽屉与最近任务时缩放壁纸</string>
+
+    <!-- Faster statusbar expansion -->
+    <string name="faster_sb_expansion_title">更快捷地下滑展开状态栏</string>
+    <string name="faster_sb_expansion_summary">在主屏幕右侧下滑以展开快速设置面板</string>
+
+    <!-- Hide top shadow -->
+    <string name="hide_top_shadow_title">隐藏顶部阴影</string>
+    <string name="hide_top_shadow_summary">移除状态栏下方的阴影</string>
+
+    <!-- Memory info -->
+    <string name="meminfo_text">%1$s 可用 | %2$s</string>
+    <string name="recents_meminfo_title">内存信息</string>
+
+    <!-- Hotseat Background -->
+    <string name="hotseat_bg_title">应用行背景</string>
+    <string name="hotseat_bg_summary">为应用行添加半透明背景</string>
+
+    <!-- Background opacity -->
+    <string name="background_opacity_title">背景不透明度</string>
+
+    <!-- Background blur -->
+    <string name="background_blur_title">背景模糊度</string>
+    <string name="background_blur_summary">为最近任务页面与应用抽屉设置背景模糊度</string>
+
+    <!-- Dark Status Bar -->
+    <string name="perf_dark_status_bar_title">深色状态栏</string>
+    <string name="perf_dark_status_bar_summary">在主屏幕上使用深色状态栏</string>
+
+    <!-- Wallpaper scrolling -->
+    <string name="allow_wallpaper_scrolling">壁纸滚动</string>
+    <string name="allow_wallpaper_scrolling_summary">在不同页面间滑动时使壁纸随之滚动</string>
+
+    <!-- Homescreen Statusbar -->
+    <string name="show_statusbar_title">显示状态栏</string>
+    <string name="show_statusbar_summary">在主屏幕显示状态栏</string>
+
+    <!-- App label - max lines -->
+    <string name="icon_max_lines_title">最大允许的应用标签行数</string>
+
+    <!-- Row Height -->
+    <string name="row_height_title">列高度</string>
+</resources>
