@@ -96,8 +96,8 @@
     <string name="pref_force_mono_icons_summary">Force monochrome icons for apps that don\'t support them natively</string>
 
     <!-- Background opacity -->
-    <string name="drawer_background_opacity_title">應用程式抽屜背景的透明度</string>
-    <string name="recents_background_opacity_title">最近應用程式背景的透明度</string>
+    <string name="drawer_background_opacity_title">應用程式抽屜背景的不透明度</string>
+    <string name="recents_background_opacity_title">最近應用程式背景的不透明度</string>
 
     <!-- Trust apps -->
     <string name="trust_apps_manager_name">隱藏 &amp; 受保護的應用程式</string>
@@ -130,15 +130,15 @@
     <string name="hotseat_bg_summary">在底部的應用程式列顯示透明背景</string>
 
     <!-- Background opacity -->
-    <string name="background_opacity_title">背景透明度</string>
+    <string name="background_opacity_title">背景不透明度</string>
 
     <!-- Background blur -->
     <string name="background_blur_title">背景模糊度</string>
     <string name="background_blur_summary">設定最近應用程式和應用程式抽屜的背景模糊度</string>
 
     <!-- Dark Status Bar -->
-    <string name="perf_dark_status_bar_title">Dark status bar</string>
-    <string name="perf_dark_status_bar_summary">Use dark status bar on Home screen</string>
+    <string name="perf_dark_status_bar_title">深色狀態列</string>
+    <string name="perf_dark_status_bar_summary">在主畫面上使用深色狀態列</string>
 
     <!-- Wallpaper scrolling -->
     <string name="allow_wallpaper_scrolling">桌布滑動</string>
