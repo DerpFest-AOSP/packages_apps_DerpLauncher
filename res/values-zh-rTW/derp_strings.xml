@@ -5,18 +5,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Application name -->
-    <string name="derp_app_name" translatable="false">DerpLauncher</string>
-
-    <!-- Folder titles -->
-    <string name="google_folder_title" translatable="false">Google</string>
-
     <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_feed">Swipe to access Google feed</string>
 
     <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">From home screen, swipe left to open Google feed</string>
-    <string name="pref_show_google_now_summary" translatable="false">@string/msg_minus_one_on_right</string>
 
     <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">From home screen, swipe right to open Google feed</string>
@@ -68,7 +61,6 @@
     <string name="smartspace_pref_summary">在主畫面頂端顯示智慧空間</string>
 
     <!-- AppInfo -->
-    <string name="app_info_version_value" translatable="false">%1$s (%2$d)</string>
     <string name="app_info_icon_pack">圖示包</string>
     <string name="app_info_icon_pack_none">無</string>
     <string name="app_info_source">來源</string>
@@ -138,15 +130,15 @@
     <string name="hotseat_bg_summary">在底部的應用程式列顯示透明背景</string>
 
     <!-- Background opacity -->
-    <string name="background_opacity_title">背景透明度</string>
+    <string name="background_opacity_title">背景不透明度</string>
 
     <!-- Background blur -->
     <string name="background_blur_title">背景模糊度</string>
     <string name="background_blur_summary">設定最近應用程式和應用程式抽屜的背景模糊度</string>
 
     <!-- Dark Status Bar -->
-    <string name="perf_dark_status_bar_title">Dark status bar</string>
-    <string name="perf_dark_status_bar_summary">Use dark status bar on Home screen</string>
+    <string name="perf_dark_status_bar_title">深色狀態列</string>
+    <string name="perf_dark_status_bar_summary">在主畫面上使用深色狀態列</string>
 
     <!-- Wallpaper scrolling -->
     <string name="allow_wallpaper_scrolling">桌布滑動</string>
