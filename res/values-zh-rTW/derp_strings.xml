@@ -6,17 +6,17 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
-    <string name="title_show_google_feed">Swipe to access Google feed</string>
+    <string name="title_show_google_feed">滑動即可訪問 Google Feed</string>
 
     <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-    <string name="msg_minus_one_on_left">From home screen, swipe left to open Google feed</string>
+    <string name="msg_minus_one_on_left">從主畫面向左滑動即可打開 Google Feed</string>
 
     <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
-    <string name="msg_minus_one_on_right">From home screen, swipe right to open Google feed</string>
+    <string name="msg_minus_one_on_right">從主畫面向右滑動即可打開 Google Feed</string>
 
     <!-- Gestures -->
-    <string name="pref_dt_gesture_title">輕觸兩下以休眠</string>
-    <string name="pref_dt_gesture_summary">在空白處點兩下以關閉螢幕</string>
+    <string name="pref_dt_gesture_title">輕觸兩下即可休眠</string>
+    <string name="pref_dt_gesture_summary">在空白處點兩下即可關閉螢幕</string>
 
     <!-- Suggestions -->
     <string name="suggestion_pref_screen_title">建議</string>
@@ -50,8 +50,8 @@
     <string name="dock_search_summary">在底部顯示搜尋列</string>
 
     <!-- Recents icons -->
-    <string name="recents_chips_title">Use compact action design</string>
-    <string name="recents_chips_summary">May be required for large numbers of actions to display</string>
+    <string name="recents_chips_title">使用緊湊設計的操作按鈕圖示</string>
+    <string name="recents_chips_summary">在需要顯示很多操作按鈕時可能需要</string>
     <string name="recents_screenshot_title">螢幕截圖</string>
     <string name="recents_clear_all_title">全部清除</string>
     <string name="recents_lens_title">智慧鏡頭</string>
@@ -88,12 +88,12 @@
     <string name="font_size_title">字體大小</string>
 
     <!-- All apps themed icons -->
-    <string name="pref_allapps_themed_icons">Use themed icons in drawer</string>
-    <string name="themed_icons_disabled_summary">Themed icons are turned off in Wallpaper &amp; style</string>
+    <string name="pref_allapps_themed_icons">在應用程式抽屜中使用主題圖示</string>
+    <string name="themed_icons_disabled_summary">主題圖示已在桌布 &amp; 樣式中關閉</string>
 
     <!-- Force monocrome icons -->
-    <string name="pref_force_mono_icons_title">Force monochrome icons</string>
-    <string name="pref_force_mono_icons_summary">Force monochrome icons for apps that don\'t support them natively</string>
+    <string name="pref_force_mono_icons_title">強制使用單色圖示</string>
+    <string name="pref_force_mono_icons_summary">對不支援原生的應用程式強制使用單色圖示</string>
 
     <!-- Background opacity -->
     <string name="drawer_background_opacity_title">應用程式抽屜背景的不透明度</string>
@@ -114,12 +114,12 @@
     <string name="allow_wallpaper_zooming_summary">在開啟應用程式清單及最近使用的介面時縮放桌布</string>
 
     <!-- Faster statusbar expansion -->
-    <string name="faster_sb_expansion_title">Faster status bar expansion</string>
-    <string name="faster_sb_expansion_summary">Swipe down on the right side of home screen to expand quick settings</string>
+    <string name="faster_sb_expansion_title">快速的展開狀態列</string>
+    <string name="faster_sb_expansion_summary">在主畫面右側向下滑動即可展開快速設定面板</string>
 
     <!-- Hide top shadow -->
-    <string name="hide_top_shadow_title">Hide top shadow</string>
-    <string name="hide_top_shadow_summary">Remove shadow underneath the status bar</string>
+    <string name="hide_top_shadow_title">隱藏頂部陰影</string>
+    <string name="hide_top_shadow_summary">移除狀態列下方的陰影</string>
 
     <!-- Memory info -->
     <string name="meminfo_text">可用 %1$s | 總共 %2$s</string>
