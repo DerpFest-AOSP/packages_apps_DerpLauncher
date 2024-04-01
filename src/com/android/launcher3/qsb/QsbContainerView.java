@@ -22,6 +22,8 @@ import static android.content.Intent.ACTION_PACKAGE_ADDED;
 import static android.content.Intent.ACTION_PACKAGE_CHANGED;
 import static android.content.Intent.ACTION_PACKAGE_REMOVED;
 
+import static com.android.launcher3.config.FeatureFlags.shouldShowFirstPageWidget;
+
 import android.app.Activity;
 import android.app.SearchManager;
 import android.appwidget.AppWidgetHost;

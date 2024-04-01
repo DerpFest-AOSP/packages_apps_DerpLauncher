@@ -33,11 +33,11 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
 import com.android.launcher3.DeviceProfile;
+import com.android.launcher3.Flags;
 import com.android.launcher3.Insettable;
 import com.android.launcher3.LauncherPrefs;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
-import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.util.DisplayController;
 import com.android.launcher3.util.MultiPropertyFactory.MultiProperty;
 import com.android.launcher3.util.MultiValueAlpha;
@@ -388,7 +388,7 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
             return 0;
         }
 
-        if (mDp.isTablet && FeatureFlags.ENABLE_GRID_ONLY_OVERVIEW.get()) {
+        if (mDp.isTablet && Flags.enableGridOnlyOverview()) {
             return mDp.stashedTaskbarHeight;
         }
 
@@ -406,16 +406,19 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
         updateVerticalMargin(DisplayController.getNavigationMode(getContext()));
 
         requestLayout();
+
         if (mUseChips) {
-            Drawable splitbutton = ContextCompat.getDrawable(getContext(), (dp.isLandscape
+            Drawable splitbutton = ContextCompat.getDrawable(getContext(), (dp.isLeftRightSplit
                     ? R.drawable.ic_split_horizontal : R.drawable.ic_split_vertical));
             mSplitButton.setForeground(splitbutton);
             mSplitButton.setForegroundGravity(Gravity.CENTER);
             return;
         }
-        mSplitButton.setCompoundDrawablesRelativeWithIntrinsicBounds(
-                (dp.isLandscape ? R.drawable.ic_split_horizontal : R.drawable.ic_split_vertical),
-                0, 0, 0);
+
+        int splitIconRes = dp.isLeftRightSplit
+                ? R.drawable.ic_split_horizontal
+                : R.drawable.ic_split_vertical;
+        mSplitButton.setCompoundDrawablesRelativeWithIntrinsicBounds(splitIconRes, 0, 0, 0);
     }
 
     /**

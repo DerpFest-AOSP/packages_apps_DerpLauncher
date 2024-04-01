@@ -43,6 +43,7 @@ import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.LauncherPrefs;
 import com.android.launcher3.Workspace;
+import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.dragndrop.DragLayer;
 import com.android.launcher3.logger.LauncherAtom;
 import com.android.launcher3.testing.TestLogging;
@@ -217,6 +218,9 @@ public class WorkspaceTouchListener extends GestureDetector.SimpleOnGestureListe
                         HapticFeedbackConstants.FLAG_IGNORE_VIEW_SETTING);
                 mLauncher.getStatsLogManager().logger().log(LAUNCHER_WORKSPACE_LONGPRESS);
                 mLauncher.showDefaultOptions(mTouchDownPoint.x, mTouchDownPoint.y);
+                if (FeatureFlags.enableSplitContextually() && mLauncher.isSplitSelectionEnabled()) {
+                    mLauncher.dismissSplitSelection();
+                }
             } else {
                 cancelLongPress();
             }

@@ -74,7 +74,7 @@ public class SysUiScrim implements View.OnAttachStateChangeListener,
     private static final int ALPHA_MASK_BITMAP_WIDTH_DP = 2;
 
     private static final int BOTTOM_MASK_HEIGHT_DP = 200;
-    private static final int TOP_MASK_HEIGHT_DP = 100;
+    private static final int TOP_MASK_HEIGHT_DP = 70;
 
     private static final String KEY_SHOW_TOP_SHADOW = "pref_show_top_shadow";
 
@@ -111,7 +111,7 @@ public class SysUiScrim implements View.OnAttachStateChangeListener,
         mHideSysUiScrim = !showScrim;
 
         mTopMaskBitmap = mHideSysUiScrim ? null : createDitheredAlphaMask(mTopMaskHeight,
-                new int[]{0x50FFFFFF, 0x0AFFFFFF, 0x00FFFFFF},
+                new int[]{0x3DFFFFFF, 0x0AFFFFFF, 0x00FFFFFF},
                 new float[]{0f, 0.7f, 1f});
         mTopMaskPaint.setColor(0xFF222222);
         mBottomMaskBitmap = mHideSysUiScrim ? null : createDitheredAlphaMask(mBottomMaskHeight,

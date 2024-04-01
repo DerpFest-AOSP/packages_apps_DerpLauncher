@@ -558,8 +558,7 @@ public class TaskThumbnailView extends View {
                     .getRecentsActivityRotation();
             boolean isRtl = getLayoutDirection() == LAYOUT_DIRECTION_RTL;
             mPreviewPositionHelper.updateThumbnailMatrix(mPreviewRect, mThumbnailData,
-                    getMeasuredWidth(), getMeasuredHeight(), dp.widthPx, dp.heightPx,
-                    dp.taskbarHeight, dp.isTablet, currentRotation, isRtl);
+                    getMeasuredWidth(), getMeasuredHeight(), dp.isTablet, currentRotation, isRtl);
 
             mBitmapShader.setLocalMatrix(mPreviewPositionHelper.getMatrix());
             mPaint.setShader(mBitmapShader);
@@ -568,8 +567,7 @@ public class TaskThumbnailView extends View {
         // If it's the instance of GroupedTaskView, then it's splitted task.
         // i.e split screen.
         boolean isGroupedTaskView = (taskView instanceof GroupedTaskView);
-        taskView.updateCurrentFullscreenParams(mPreviewPositionHelper,
-                isGroupedTaskView /* split screen */);
+        taskView.updateCurrentFullscreenParams(isGroupedTaskView /* split screen */);
         invalidate();
     }
 

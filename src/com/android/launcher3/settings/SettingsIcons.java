@@ -16,22 +16,15 @@
 
 package com.android.launcher3.settings;
 
-import static androidx.core.view.accessibility.AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS;
+import static androidx.preference.PreferenceFragmentCompat.ARG_PREFERENCE_ROOT;
 
-import android.app.Activity;
-import android.app.ActivityManager;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.VisibleForTesting;
 import androidx.core.view.WindowCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -44,8 +37,6 @@ import androidx.preference.PreferenceGroup.PreferencePositionCallback;
 import androidx.preference.PreferenceScreen;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.launcher3.DeviceProfile;
-import com.android.launcher3.InvariantDeviceProfile;
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.LauncherFiles;
 import com.android.launcher3.LauncherPrefs;
@@ -57,32 +48,35 @@ import com.android.launcher3.model.WidgetsModel;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
-/**
- * Settings activity for Launcher.
- */
 public class SettingsIcons extends CollapsingToolbarBaseActivity
         implements OnPreferenceStartFragmentCallback, OnPreferenceStartScreenCallback,
         SharedPreferences.OnSharedPreferenceChangeListener{
 
     private static final String NOTIFICATION_DOTS_PREFERENCE_KEY = "pref_icon_badging";
 
-    public static final String EXTRA_FRAGMENT_ARG_KEY = ":settings:fragment_args_key";
-    public static final String EXTRA_SHOW_FRAGMENT_ARGS = ":settings:show_fragment_args";
+    public static final String EXTRA_FRAGMENT_ARGS = ":settings:fragment_args";
+
+    // Intent extra to indicate the pref-key to highlighted when opening the settings activity
+    public static final String EXTRA_FRAGMENT_HIGHLIGHT_KEY = ":settings:fragment_args_key";
+    // Intent extra to indicate the pref-key of the root screen when opening the settings activity
+    public static final String EXTRA_FRAGMENT_ROOT_KEY = ARG_PREFERENCE_ROOT;
+
     private static final int DELAY_HIGHLIGHT_DURATION_MILLIS = 600;
     public static final String SAVE_HIGHLIGHTED_KEY = "android:preference_highlighted";
-
-    @VisibleForTesting
-    static final String EXTRA_FRAGMENT = ":settings:fragment";
-    @VisibleForTesting
-    static final String EXTRA_FRAGMENT_ARGS = ":settings:fragment_args";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
+
+        setActionBar(findViewById(R.id.action_bar));
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
         Intent intent = getIntent();
+        if (intent.hasExtra(EXTRA_FRAGMENT_ROOT_KEY) || intent.hasExtra(EXTRA_FRAGMENT_ARGS)
+                || intent.hasExtra(EXTRA_FRAGMENT_HIGHLIGHT_KEY)) {
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         if (savedInstanceState == null) {
             Bundle args = intent.getBundleExtra(EXTRA_FRAGMENT_ARGS);
@@ -90,9 +84,13 @@ public class SettingsIcons extends CollapsingToolbarBaseActivity
                 args = new Bundle();
             }
 
-            String prefKey = intent.getStringExtra(EXTRA_FRAGMENT_ARG_KEY);
-            if (!TextUtils.isEmpty(prefKey)) {
-                args.putString(EXTRA_FRAGMENT_ARG_KEY, prefKey);
+            String highlight = intent.getStringExtra(EXTRA_FRAGMENT_HIGHLIGHT_KEY);
+            if (!TextUtils.isEmpty(highlight)) {
+                args.putString(EXTRA_FRAGMENT_HIGHLIGHT_KEY, highlight);
+            }
+            String root = intent.getStringExtra(EXTRA_FRAGMENT_ROOT_KEY);
+            if (!TextUtils.isEmpty(root)) {
+                args.putString(EXTRA_FRAGMENT_ROOT_KEY, root);
             }
 
             final FragmentManager fm = getSupportFragmentManager();
@@ -100,7 +98,8 @@ public class SettingsIcons extends CollapsingToolbarBaseActivity
                     getString(R.string.icons_settings_fragment_name));
             f.setArguments(args);
             // Display the fragment as the main content.
-            fm.beginTransaction().replace(com.android.settingslib.widget.R.id.content_frame, f).commit();
+            fm.beginTransaction().replace(
+                    com.android.settingslib.collapsingtoolbar.R.id.content_frame, f).commit();
         }
         LauncherPrefs.getPrefs(getApplicationContext()).registerOnSharedPreferenceChangeListener(this);
     }
@@ -121,7 +120,6 @@ public class SettingsIcons extends CollapsingToolbarBaseActivity
             ((DialogFragment) f).show(fm, key);
         } else {
             startActivity(new Intent(this, SettingsIcons.class)
-                    .putExtra(EXTRA_FRAGMENT, fragment)
                     .putExtra(EXTRA_FRAGMENT_ARGS, args));
         }
         return true;
@@ -136,7 +134,7 @@ public class SettingsIcons extends CollapsingToolbarBaseActivity
     @Override
     public boolean onPreferenceStartScreen(PreferenceFragmentCompat caller, PreferenceScreen pref) {
         Bundle args = new Bundle();
-        args.putString(PreferenceFragmentCompat.ARG_PREFERENCE_ROOT, pref.getKey());
+        args.putString(ARG_PREFERENCE_ROOT, pref.getKey());
         return startPreference(getString(R.string.icons_category_title), args, pref.getKey());
     }
 
@@ -161,10 +159,7 @@ public class SettingsIcons extends CollapsingToolbarBaseActivity
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             final Bundle args = getArguments();
-            mHighLightKey = args == null ? null : args.getString(EXTRA_FRAGMENT_ARG_KEY);
-            if (rootKey == null && !TextUtils.isEmpty(mHighLightKey)) {
-                rootKey = getParentKeyForPref(mHighLightKey);
-            }
+            mHighLightKey = args == null ? null : args.getString(EXTRA_FRAGMENT_HIGHLIGHT_KEY);
 
             if (savedInstanceState != null) {
                 mPreferenceHighlighted = savedInstanceState.getBoolean(SAVE_HIGHLIGHTED_KEY);
@@ -196,14 +191,6 @@ public class SettingsIcons extends CollapsingToolbarBaseActivity
             }
 
             if (getActivity() != null && !TextUtils.isEmpty(getPreferenceScreen().getTitle())) {
-                if (getPreferenceScreen().getTitle().equals(
-                        getResources().getString(R.string.search_pref_screen_title))){
-                    DeviceProfile mDeviceProfile = InvariantDeviceProfile.INSTANCE.get(
-                            getContext()).getDeviceProfile(getContext());
-                    getPreferenceScreen().setTitle(mDeviceProfile.isTablet ?
-                            R.string.search_pref_screen_title_tablet
-                            : R.string.search_pref_screen_title);
-                }
                 getActivity().setTitle(getPreferenceScreen().getTitle());
             }
         }
@@ -221,6 +208,9 @@ public class SettingsIcons extends CollapsingToolbarBaseActivity
                         bottomPadding + insets.getSystemWindowInsetBottom());
                 return insets.consumeSystemWindowInsets();
             });
+
+            // Overriding Text Direction in the Androidx preference library to support RTL
+            view.setTextDirection(View.TEXT_DIRECTION_LOCALE);
         }
 
         @Override
@@ -236,10 +226,6 @@ public class SettingsIcons extends CollapsingToolbarBaseActivity
                     updatePreferences();
                     break;
             }
-        }
-
-        protected String getParentKeyForPref(String key) {
-            return null;
         }
 
         /**
@@ -267,8 +253,6 @@ public class SettingsIcons extends CollapsingToolbarBaseActivity
                 if (highlighter != null) {
                     getView().postDelayed(highlighter, DELAY_HIGHLIGHT_DURATION_MILLIS);
                     mPreferenceHighlighted = true;
-                } else {
-                    requestAccessibilityFocus(getListView());
                 }
             }
         }
@@ -289,15 +273,6 @@ public class SettingsIcons extends CollapsingToolbarBaseActivity
             return position >= 0 ? new PreferenceHighlighter(
                     list, position, screen.findPreference(mHighLightKey))
                     : null;
-        }
-
-        private void requestAccessibilityFocus(@NonNull final RecyclerView rv) {
-            rv.post(() -> {
-                if (!rv.hasFocus() && rv.getChildCount() > 0) {
-                    rv.getChildAt(0)
-                            .performAccessibilityAction(ACTION_ACCESSIBILITY_FOCUS, null);
-                }
-            });
         }
 
         private void setupIconPackPreference(Preference preference) {
