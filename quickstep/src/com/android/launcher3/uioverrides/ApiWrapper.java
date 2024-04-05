@@ -71,7 +71,9 @@ public class ApiWrapper {
         UserManager um = context.getSystemService(UserManager.class);
         Map<UserHandle, UserIconInfo> users = new ArrayMap<>();
         List<UserHandle> usersActual = um.getUserProfiles();
-        usersActual.addAll(ParallelSpaceManager.getInstance().getParallelUserHandles());
+        List<UserHandle> parallelUsers =
+                ParallelSpaceManager.getInstance().getParallelUserHandles();
+        usersActual.addAll(parallelUsers);
         if (usersActual != null) {
             for (UserHandle user : usersActual) {
                 if (android.os.Flags.allowPrivateProfile() && Flags.enablePrivateSpace()) {
@@ -93,7 +95,10 @@ public class ApiWrapper {
                     // Simple check to check if the provided user is work profile
                     // TODO: Migrate to a better platform API
                     NoopDrawable d = new NoopDrawable();
-                    boolean isWork = (d != context.getPackageManager().getUserBadgedIcon(d, user));
+                    // Parallel users also have badge so don't consider it as work profile
+                    boolean isParallelUser = parallelUsers.contains(user);
+                    boolean isWork = !isParallelUser &&
+                            d != context.getPackageManager().getUserBadgedIcon(d, user);
                     UserIconInfo info = new UserIconInfo(
                             user,
                             isWork ? UserIconInfo.TYPE_WORK : UserIconInfo.TYPE_MAIN,
