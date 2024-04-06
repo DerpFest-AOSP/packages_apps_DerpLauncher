@@ -22,11 +22,12 @@
     <PreferenceCategory
         android:title="@string/general_category_title">
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="pref_recents_meminfo"
             android:title="@string/recents_meminfo_title"
             android:defaultValue="false"
-            android:persistent="true" />
+            android:persistent="true"
+            launcher:iconSpaceReserved="false" />
 
         <com.android.launcher3.settings.preferences.CustomSeekBarPreference
             android:key="pref_recents_opacity"
@@ -41,36 +42,41 @@
     <PreferenceCategory
         android:title="@string/actions_category_title">
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="pref_recents_chips"
             android:title="@string/recents_chips_title"
             android:summary="@string/recents_chips_summary"
             android:defaultValue="true"
-            android:persistent="true" />
+            android:persistent="true"
+            launcher:iconSpaceReserved="false" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="pref_recents_screenshot"
             android:title="@string/recents_screenshot_title"
             android:defaultValue="true"
-            android:persistent="true" />
+            android:persistent="true"
+            launcher:iconSpaceReserved="false" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="pref_recents_lens"
             android:title="@string/recents_lens_title"
             android:defaultValue="false"
-            android:persistent="true" />
+            android:persistent="true"
+            launcher:iconSpaceReserved="false" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="pref_recents_clear_all"
             android:title="@string/recents_clear_all_title"
             android:defaultValue="true"
-            android:persistent="true" />
+            android:persistent="true"
+            launcher:iconSpaceReserved="false" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="pref_recents_shake_clear_all"
             android:title="@string/recents_shake_clear_all_title"
             android:defaultValue="false"
-            android:persistent="true" />
+            android:persistent="true"
+            launcher:iconSpaceReserved="false" />
     </PreferenceCategory>
 
 </androidx.preference.PreferenceScreen>

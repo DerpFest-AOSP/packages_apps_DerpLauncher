@@ -19,18 +19,20 @@
     xmlns:launcher="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.launcher3">
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="pref_drawer_search"
         android:title="@string/drawer_search_title"
         android:summary="@string/drawer_search_summary"
-        android:defaultValue="true" />
+        android:defaultValue="true"
+        launcher:iconSpaceReserved="false" />
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="pref_drawer_show_labels"
         android:title="@string/title_drawer_labels"
         android:summary="@string/summary_drawer_labels"
         android:defaultValue="true"
-        android:persistent="true" />
+        android:persistent="true"
+        launcher:iconSpaceReserved="false" />
 
     <com.android.launcher3.settings.preferences.CustomSeekBarPreference
         android:key="pref_row_height"
