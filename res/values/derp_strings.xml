@@ -205,11 +205,12 @@
     <string name="quick_event_rom_intro_welcome_ext">DerpFest time!</string>
     <string-array name="welcome_message_variants">
         <item>Thank you for choosing us</item>
-        <item>Loving us? Send us a beer</item>
         <item>Best Rom Ever.</item>
         <item>Say hi to us on Telegram</item>
         <item>Tap here to begin</item>
         <item>We love you 3000</item>
+        <item>DerpFest FTW!</item>
+        <item>#StayDerped</item>
     </string-array>
 
     <!-- QuickSpace: QuickEvent: Greetings -->
@@ -341,7 +342,6 @@
         <item>Your attitude determines your direction.</item>
     </string-array>
     <string-array name="quickspace_psa_random">
-        <item>Ignorance is Bliss</item>
         <item>Is it time to flash another update already?</item>
         <item>Make peace, not war</item>
         <item>Oh hey, what\'s up?</item>
@@ -354,7 +354,6 @@
         <item>\u003C\u003C\u003C\u003C\u003C\u003C\u003C HEAD</item>
         <item>You need DerpFest Premium to see this</item>
         <item>Remember the Lineage of the Unicorn</item>
-        <item>Enjoy Xtended battery life</item>
         <item>Starting from the ground zero</item>
         <item>We love you 3000</item>
         <item>Delicious even without Sushi</item>
@@ -362,7 +361,7 @@
         <item>This is best Pixel Experience, isn\'t it?</item>
         <item>No illusions, welcome to reality!</item>
         <item>Thank you for your support</item>
-        <item>No festival for Derps - only perfection!</item>
+        <item>Is your device derped?</item>
         <item>One of the buildbot\'s best picks</item>
         <item>Sanity for your Paranoia</item>
         <item>Try Ice Cold desserts</item>
@@ -379,6 +378,25 @@
         <item>Check your email/messages.</item>
         <item>Check your to-do list if you have one.</item>
         <item>You can disable quickspace via home settings.</item>
+        <item>#StayDerped \m/</item>
+        <item>DerpFest FTW \m/</item>
+        <item>Enjoying Android 14?</item>
+        <item>Hyped about Android 15?</item>
+        <item>Proudly presented without donations</item>
+        <item>Did you checkout all the tweaks?</item>
+        <item>Breaking News: Donald Trump changes his hair style!</item>
+        <item>You have tapped almost a 100k times.</item>
+        <item>Lots of options!</item>
+        <item>I am not your F1 button</item>
+        <item>Don\'t pass me!</item>
+        <item>Did you finish your homework? ツ</item>
+        <item>Having flu symptoms? Get tested!</item>
+        <item>This is best ROM Experience, isn\'t it?</item>
+        <item>Well done! You have earned a bonus feature</item>
+        <item>Breaking News: Apple will remove flash lights from the next iPhones</item>
+        <item>That\'s enough, stop tapping me!</item>
+        <item>Only for pro users</item>
+        <item>Got an issue? Don\'t forget a logcat</item>
     </string-array>
 
     <!-- QuickSpace: QuickEvent: Weather -->
