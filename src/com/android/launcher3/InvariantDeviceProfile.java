@@ -243,31 +243,6 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
 
     private final ArrayList<OnIDPChangeListener> mChangeListeners = new ArrayList<>();
 
-    private static final Uri ENABLE_TASKBAR_URI = Settings.System.getUriFor(
-            Settings.System.ENABLE_TASKBAR);
-
-    private final class SettingsContentObserver extends ContentObserver {
-        SettingsContentObserver() {
-            super(new Handler(Looper.getMainLooper()));
-        }
-
-        @Override
-        public void onChange(boolean selfChange, Uri uri) {
-            if (ENABLE_TASKBAR_URI.equals(uri)) {
-                // Create the illusion of this taking effect immediately
-                // Also needed because TaskbarManager inits before SystemUiProxy on start
-                boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
-                        Settings.System.ENABLE_TASKBAR, 0) == 1;
-                SystemUiProxy.INSTANCE.get(mContext).setTaskbarEnabled(enabled);
-
-                // Restart launcher
-                System.exit(0);
-            }
-        }
-    }
-
-    private final SettingsContentObserver mSettingsObserver = new SettingsContentObserver();
-
     @VisibleForTesting
     public InvariantDeviceProfile() { }
 
@@ -293,10 +268,6 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
                         onConfigChanged(displayContext);
                     }
                 });
-
-        final ContentResolver resolver = mContext.getContentResolver();
-        resolver.registerContentObserver(ENABLE_TASKBAR_URI, false,
-                mSettingsObserver);
     }
 
     /**
