@@ -155,7 +155,6 @@
 
     <!-- About info -->
     <string name="about_app_subtitle">Basierend auf AOSP Launcher3</string>
-    <string name="about_app_version">AP1A.240305.019</string>
     <string name="about_thanks_cat">Besonderen Dank an</string>
     <string name="about">Über</string>
     <string name="about_summary">Info über den DerpLauncher</string>
