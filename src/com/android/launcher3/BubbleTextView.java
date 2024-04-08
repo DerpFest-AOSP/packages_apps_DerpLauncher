@@ -260,8 +260,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
             defaultIconSize = mDeviceProfile.iconSizePx;
             setCenterVertically(mDeviceProfile.iconCenterVertically);
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DESKTOP_LABELS, true);
-        } else if (mDisplay == DISPLAY_ALL_APPS || mDisplay == DISPLAY_PREDICTION_ROW
-                || mDisplay == DISPLAY_SEARCH_RESULT_APP_ROW) {
+        } else if (displayIsAppDrawer()) {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, mDeviceProfile.allAppsIconTextSizePx);
             setCompoundDrawablePadding(mDeviceProfile.allAppsIconDrawablePaddingPx);
             defaultIconSize = mDeviceProfile.allAppsIconSizePx;
@@ -318,6 +317,12 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
         setEllipsize(TruncateAt.END);
         setAccessibilityDelegate(mActivity.getAccessibilityDelegate());
         setTextAlpha(1f);
+    }
+    
+    private boolean displayIsAppDrawer() {
+        return (mDisplay == DISPLAY_ALL_APPS 
+                || mDisplay == DISPLAY_PREDICTION_ROW
+                || mDisplay == DISPLAY_SEARCH_RESULT_APP_ROW);
     }
 
     @Override
@@ -498,7 +503,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
     protected boolean shouldUseTheme() {
         return (mDisplay == DISPLAY_WORKSPACE || mDisplay == DISPLAY_FOLDER
                 || mDisplay == DISPLAY_TASKBAR
-                || (mThemeAllAppsIcons && mDisplay == DISPLAY_ALL_APPS))
+                || (mThemeAllAppsIcons && displayIsAppDrawer()))
                 && Themes.isThemedIconEnabled(getContext());
     }
 
