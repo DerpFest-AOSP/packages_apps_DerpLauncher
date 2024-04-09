@@ -203,7 +203,7 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
         lens.setVisibility(mLens && Utilities.isGSAEnabled(getContext()) ? VISIBLE : GONE);
         findViewById(R.id.lens_space).setVisibility(mLens && Utilities.isGSAEnabled(getContext()) ? VISIBLE : GONE);
 
-        mSplitButton = findViewById(R.id.action_split);
+        mSplitButton = findViewById(mUseChips ? R.id.action2_split : R.id.action_split);
         mSplitButton.setOnClickListener(this);
     }
 
@@ -411,7 +411,7 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
             Drawable splitbutton = ContextCompat.getDrawable(getContext(), (dp.isLeftRightSplit
                     ? R.drawable.ic_split_horizontal : R.drawable.ic_split_vertical));
             mSplitButton.setForeground(splitbutton);
-            mSplitButton.setForegroundGravity(Gravity.RIGHT);
+            mSplitButton.setForegroundGravity(Gravity.CENTER);
             return;
         }
 
