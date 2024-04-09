@@ -200,6 +200,7 @@ public final class Utilities {
     public static final String KEY_LENS = "pref_recents_lens";
     public static final String KEY_SHORT_PARALLAX = "pref_short_parallax";
     public static final String KEY_SINGLE_PAGE_CENTER = "pref_single_page_center";
+    public static final String KEY_RECENTS_CHIPS = "pref_recents_chips";
     public static final String DESKTOP_SHOW_QUICKSPACE = "pref_show_quickspace";
     public static final String KEY_SHOW_ALT_QUICKSPACE = "pref_show_alt_quickspace";
     public static final String KEY_SHOW_QUICKSPACE_PSONALITY = "pref_quickspace_psonality";
