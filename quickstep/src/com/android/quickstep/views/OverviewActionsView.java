@@ -411,7 +411,7 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
             Drawable splitbutton = ContextCompat.getDrawable(getContext(), (dp.isLeftRightSplit
                     ? R.drawable.ic_split_horizontal : R.drawable.ic_split_vertical));
             mSplitButton.setForeground(splitbutton);
-            mSplitButton.setForegroundGravity(Gravity.CENTER);
+            mSplitButton.setForegroundGravity(Gravity.RIGHT);
             return;
         }
 
