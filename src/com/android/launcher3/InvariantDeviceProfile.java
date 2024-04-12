@@ -131,7 +131,6 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
     /** These resources are used to override the device profile */
     private static final String RES_GRID_NUM_ROWS = "grid_num_rows";
     private static final String RES_GRID_NUM_COLUMNS = "grid_num_columns";
-    private static final String RES_HOTSEAT_NUM_COLUMNS = "hotseat_num_columns";
     private static final String RES_GRID_ICON_SIZE_DP = "grid_icon_size_dp";
 
     /**
@@ -486,7 +485,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         startAlignTaskbar = displayOption.startAlignTaskbar;
 
         // If the partner customization apk contains any grid overrides, apply them
-        // Supported overrides: numRows, numColumns, iconSize, numShownHotseatIcons
+        // Supported overrides: numRows, numColumns, iconSize
         applyPartnerDeviceProfileOverrides(context, metrics);
 
         final List<DeviceProfile> localSupportedProfiles = new ArrayList<>();
@@ -681,7 +680,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
     /**
      * Apply any Partner customization grid overrides.
      *
-     * Currently we support: all apps row / column count / hotseat column count.
+     * Currently we support: all apps row / column count.
      */
     private void applyPartnerDeviceProfileOverrides(Context context, DisplayMetrics dm) {
         Partner p = Partner.get(context.getPackageManager());
@@ -691,15 +690,11 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         try {
             int numRows = p.getIntValue(RES_GRID_NUM_ROWS, -1);
             int numColumns = p.getIntValue(RES_GRID_NUM_COLUMNS, -1);
-            int numHotseatColumns = p.getIntValue(RES_HOTSEAT_NUM_COLUMNS, -1);
             float iconSizePx = p.getDimenValue(RES_GRID_ICON_SIZE_DP, -1);
 
             if (numRows > 0 && numColumns > 0) {
                 this.numRows = numRows;
                 this.numColumns = numColumns;
-            }
-            if (numHotseatColumns > 0) {
-                this.numShownHotseatIcons = numHotseatColumns;
             }
             if (iconSizePx > 0) {
                 this.iconSize[InvariantDeviceProfile.INDEX_DEFAULT] =
