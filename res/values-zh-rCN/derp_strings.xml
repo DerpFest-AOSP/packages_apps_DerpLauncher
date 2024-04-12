@@ -247,7 +247,7 @@
         <item>休息5分钟如何？</item>
         <item>让我们开始吧。</item>
         <item>早晨是你每天杰作的新鲜画布。</item>
-        <item>每天早晨拥抱机会的日出。</item>
+        <item>每天早晨拥抱机会。</item>
         <item>在清晨的微光中，找到照亮你道路的力量。</item>
         <item>你的一天从无限的可能性开始。</item>
         <item>每个日出都是提醒你可以重新开始。</item>
@@ -256,7 +256,7 @@
         <item>世界苏醒，你的潜力也随之苏醒。</item>
         <item>你日常冒险的第一章。</item>
         <item>让你的早晨例行公事成为成功的发射台。</item>
-        <item>无论是否有日出，你的潜力总是在上升。</item>
+        <item>无论是否有晴天，你的潜力总是在上升。</item>
         <item>是时候有新的想法和大胆的行动了。</item>
         <item>早起的鸟儿有虫吃，去捕捉你的梦想吧。</item>
         <item>找到勇气去追求你的志向。</item>
@@ -271,8 +271,8 @@
         <item>让你的微笑改变世界。</item>
         <item>生活是一个故事，让每一章都有意义。</item>
         <item>在每一个时刻都找到快乐。</item>
-        <item>最好的还在后头，继续努力。</item>
-        <item>你的机会将'如果'变为'那么'</item>
+        <item>好事多磨，继续努力。</item>
+        <item>把握机会，将如果变为那么。</item>
         <item>抓住这一天，从现在开始。</item>
         <item>幸福是一种选择，你可以在任何时候做出选择。</item>
         <item>相信自己，即使在一个昏昏欲睡的下午。</item>
@@ -306,11 +306,11 @@
     <string-array name="quickspace_psa_evening">
         <item>抓住黑夜，因为它有自己的神秘。</item>
         <item>在这个夜晚的宁静中，找到内心的平静。</item>
-        <item>生活的最伟大的冒险可以从黑暗中开始。</item>
+        <item>生活的伟大的冒险可以从黑暗中开始。</item>
         <item>你的旅程即使在太阳落山后也会继续。</item>
         <item>让黑夜成为你的画布，用梦想来作画。</item>
-        <item>在这个夜晚的寂静中，找到你的内心安宁。</item>
-        <item>星星在最黑暗的小时最亮。</item>
+        <item>在夜晚的寂静中，找到你内心的安宁。</item>
+        <item>星星在最黑暗的时候最亮。</item>
         <item>即使在深夜，也要梦想大。</item>
         <item>你的生活是一个等待被书写的故事。</item>
         <item>是时候进行反思和更新了。</item>
@@ -342,7 +342,7 @@
         <item>你的态度决定你的方向。</item>
     </string-array>
     <string-array name="quickspace_psa_random">
-        <item>又到了该闪一下更新的时候了吗？</item>
+        <item>又到了该更新的时候了吗？</item>
         <item>制造和平，而非战争</item>
         <item>嘿，你好！</item>
         <item>专注于你的任务</item>
@@ -362,19 +362,19 @@
         <item>这不是幻觉，欢迎来到现实！</item>
         <item>感谢你的支持</item>
         <item>你的设备Derped了吗？</item>
-        <item>构建机器人的最佳选择之一</item>
+        <item>Android刷机的最佳选择之一</item>
         <item>为你的恐惧带来理智</item>
         <item>尝试冰冷的甜点</item>
         <item>多么美妙的体验，不是吗？</item>
         <item>DerpFest是一个神话，对吧？</item>
-        <item>你闪光的是什么，不要成为土豆</item>
+        <item>你的闪光点是什么，不要成为平庸之辈</item>
         <item>你在想什么？</item>
         <item>Expecto Patronum</item>
         <item>Wubba Lubba Dub Dub</item>
         <item>赢家赢家....？</item>
         <item>rm -rf /</item>
         <item>Pringles其实不是薯片...</item>
-        <item>记得检查设备的电量！</item>
+        <item>记得检查手机的电量！</item>
         <item>检查你的邮件/消息。</item>
         <item>如果你有的话，检查你的待办事项清单。</item>
         <item>你可以通过家庭设置禁用Quickspace。</item>
