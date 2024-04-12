@@ -42,7 +42,6 @@ import com.android.launcher3.LauncherFiles;
 import com.android.launcher3.LauncherPrefs;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
-import com.android.launcher3.qsb.QsbContainerView;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
@@ -227,7 +226,7 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
                 mShowGoogleAppPref.setEnabled(Utilities.isGSAEnabled(getContext()));
             }
             if (mShowGoogleBarPref != null) {
-                mShowGoogleBarPref.setEnabled(QsbContainerView.getSearchWidgetPackageName(getContext()) != null);
+                mShowGoogleBarPref.setEnabled(Utilities.isGSAEnabled(getContext()));
             }
         }
 
