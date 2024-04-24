@@ -1057,7 +1057,7 @@ public class LoaderTask implements Runnable {
             mBgAllAppsList.setFlags(FLAG_PRIVATE_PROFILE_QUIET_MODE_ENABLED, isPrivateProfileQuiet);
         } else {
             mBgAllAppsList.setFlags(FLAG_QUIET_MODE_ENABLED,
-                    mUserManagerState.isAllProfilesQuietModeEnabled());
+                    mUserManagerState.isAnyProfileQuietModeEnabled());
         }
         mBgAllAppsList.setFlags(FLAG_HAS_SHORTCUT_PERMISSION,
                 hasShortcutsPermission(mApp.getContext()));
