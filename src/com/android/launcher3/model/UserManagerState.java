@@ -23,6 +23,10 @@ import android.util.SparseBooleanArray;
 
 import com.android.launcher3.pm.UserCache;
 
+import com.android.internal.derp.app.ParallelSpaceManager;
+
+import java.util.List;
+
 /**
  * Utility class to manager store and user manager state at any particular time
  */
@@ -71,9 +75,15 @@ public class UserManagerState {
             // There are no managed profiles, only the parent user, so we can return early.
             return false;
         }
+        List<UserHandle> parallelUsers =
+                ParallelSpaceManager.getInstance().getParallelUserHandles();
         for (int i = 0; i < numProfilesIncludingParent; i++) {
             if (Process.myUserHandle().equals(allUsers.valueAt(i))) {
                 // Skip the parent user.
+                continue;
+            }
+            if (parallelUsers.contains(allUsers.valueAt(i))) {
+                // Skip the parallel users.
                 continue;
             }
             long serialNo = allUsers.keyAt(i);
@@ -86,7 +96,10 @@ public class UserManagerState {
     }
 
     public boolean hasMultipleProfiles() {
-        final int numProfiles = allUsers.size() - 1; // not including the parent
+        List<UserHandle> parallelUsers =
+                ParallelSpaceManager.getInstance().getParallelUserHandles();
+        // not including the parent and parallel users
+        final int numProfiles = allUsers.size() - parallelUsers.size() - 1;
         return numProfiles > 1;
     }
 }
