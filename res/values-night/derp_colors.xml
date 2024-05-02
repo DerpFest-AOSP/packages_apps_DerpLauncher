@@ -15,4 +15,6 @@
     <color name="op_control_text_color_secondary">#89ffffff</color>
 
     <color name="gicon_mask">#1AFFFFFF</color>
+
+    <color name="derp_base_bg">@*android:color/system_accent1_100</color>
 </resources>

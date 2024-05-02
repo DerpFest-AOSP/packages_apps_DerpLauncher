@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2024 DerpFest
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <style name="TextAppearance_DerpCoolBranding">
+        <item name="android:textSize">48dp</item>
+        <item name="android:textColor">?android:attr/colorAccent</item>
+        <item name="android:fontFamily">@*android:string/config_headlineFontFamily</item>
+    </style>
+
+    <style name="derp_about_cardview_text_primary">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:fontFamily">@*android:string/config_headlineFontFamily</item>
+    </style>
+    <style name="derp_about_cardview_text_secondary">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="android:layout_marginTop">1sp</item>
+        <item name="android:layout_marginBottom">1sp</item>
+        <item name="android:fontFamily">@*android:string/config_headlineFontFamily</item>
+    </style>
+    <style name="derp_cardview_text_primary">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:fontFamily">@*android:string/config_headlineFontFamily</item>
+    </style>
+</resources>

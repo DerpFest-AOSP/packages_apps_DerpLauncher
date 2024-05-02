@@ -214,4 +214,7 @@
     <string name="pref_homescreen_gestures_notifications">Notifications</string>
     <string name="pref_homescreen_gestures_qspanel">QS panel</string>
     <string name="pref_homescreen_gestures_powermenu">Power menu</string>
+
+    <!-- Branding -->
+    <string name="derp_branding">derpfest.</string>
 </resources>
