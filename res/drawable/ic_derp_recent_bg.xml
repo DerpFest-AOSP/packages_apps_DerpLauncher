@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:androidprv="http://schemas.android.com/apk/prv/res/android" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <item>
+        <com.android.settingslib.widget.AdaptiveIconShapeDrawable android:height="@dimen/dashboard_tile_image_size" android:width="@dimen/dashboard_tile_image_size" android:color="@color/derp_base_bg"/>
+    </item>
+    <item android:gravity="center" android:tint="?android:attr/textColorSecondary" android:height="@dimen/dashboard_tile_foreground_image_size" android:width="@dimen/dashboard_tile_foreground_image_size" android:drawable="@drawable/ic_derp_recent"/>
+</layer-list>

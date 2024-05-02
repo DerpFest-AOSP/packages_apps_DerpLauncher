@@ -15,15 +15,22 @@
 -->
 
 <androidx.preference.PreferenceScreen
+    xmlns:launcher="http://schemas.android.com/apk/res-auto/com.android.launcher3"
+    xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:launcher="http://schemas.android.com/apk/res-auto">
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.launcher3"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:aapt="http://schemas.android.com/aapt">
+
+    <androidx.preference.ListPreference
+        settings:layout="@layout/derp_settings_header"
+        android:selectable="false"/>
 
     <Preference
         android:key="icons"
         android:title="@string/icons_category_title"
-        android:summary="@string/icons_category_summary"
-        android:icon="@drawable/ic_settings_icons"
-        android:layout="@layout/derp_card">
+        android:icon="@drawable/ic_derp_icons_bg"
+        android:layout="@layout/derp_dashboard_card">
     <intent
             android:action="android.settings.APPLICATION_DETAILS_SETTINGS"
             android:targetPackage="com.android.launcher3"
@@ -33,9 +40,8 @@
     <Preference
         android:key="home_screen"
         android:title="@string/home_category_title"
-        android:summary="@string/home_category_summary"
-        android:icon="@drawable/ic_settings_homescreen"
-        android:layout="@layout/derp_card">
+        android:icon="@drawable/ic_derp_home_bg"
+        android:layout="@layout/derp_dashboard_card">
     <intent
             android:action="android.settings.APPLICATION_DETAILS_SETTINGS"
             android:targetPackage="com.android.launcher3"
@@ -45,9 +51,8 @@
     <Preference
         android:key="app_drawer"
         android:title="@string/app_drawer_category_title"
-        android:summary="@string/app_drawer_category_summary"
-        android:icon="@drawable/ic_settings_appdrawer"
-        android:layout="@layout/derp_card">
+        android:icon="@drawable/ic_derp_apps_bg"
+        android:layout="@layout/derp_dashboard_card">
     <intent
             android:action="android.settings.APPLICATION_DETAILS_SETTINGS"
             android:targetPackage="com.android.launcher3"
@@ -57,9 +62,8 @@
     <Preference
         android:key="recents"
         android:title="@string/recents_category_title"
-        android:summary="@string/recents_category_summary"
-        android:icon="@drawable/ic_settings_recents"
-        android:layout="@layout/derp_card">
+        android:icon="@drawable/ic_derp_recent_bg"
+        android:layout="@layout/derp_dashboard_card">
     <intent
             android:action="android.settings.APPLICATION_DETAILS_SETTINGS"
             android:targetPackage="com.android.launcher3"
@@ -69,9 +73,8 @@
     <Preference
         android:key="miscellaneous"
         android:title="@string/misc_category_title"
-        android:summary="@string/misc_category_summary"
-        android:icon="@drawable/ic_settings_misc"
-        android:layout="@layout/derp_card">
+        android:icon="@drawable/ic_derp_more_bg"
+        android:layout="@layout/derp_dashboard_card">
     <intent
             android:action="android.settings.APPLICATION_DETAILS_SETTINGS"
             android:targetPackage="com.android.launcher3"
@@ -81,9 +84,8 @@
     <Preference
         android:key="about"
         android:title="@string/about"
-        android:summary="@string/about_summary"
-        android:icon="@drawable/ic_settings_about"
-        android:layout="@layout/derp_card">
+        android:icon="@drawable/ic_derp_suggestions_bg"
+        android:layout="@layout/derp_dashboard_card">
     <intent
             android:action="android.settings.APPLICATION_DETAILS_SETTINGS"
             android:targetPackage="com.android.launcher3"
