@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:androidprv="http://schemas.android.com/apk/prv/res/android" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginHorizontal="@dimen/derp_cardview_padding">
+    <LinearLayout android:gravity="center_vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginVertical="@dimen/derp_pref_vert">
+        <FrameLayout android:id="@+id/icon_frame" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="18dp" android:layout_marginEnd="18dp">
+            <androidx.preference.internal.PreferenceImageView android:id="@android:id/icon" android:padding="1.5dp" android:layout_width="@dimen/derp_top_icon_home" android:layout_height="@dimen/derp_top_icon_home" app:maxHeight="@dimen/derp_top_icon_home_max" app:maxWidth="@dimen/derp_top_icon_home_max"/>
+        </FrameLayout>
+        <RelativeLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginTop="@dimen/derp_cardview_margin_list" android:layout_marginBottom="@dimen/derp_cardview_margin_list" android:layout_weight="1" android:layout_marginEnd="@dimen/derp_cardview_padding">
+            <TextView android:ellipsize="marquee" android:id="@android:id/title" android:fadingEdge="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="@style/derp_cardview_text_primary"/>
+            <TextView android:id="@android:id/summary" android:visibility="gone" android:layout_width="0dp" android:layout_height="0dp" android:layout_marginTop="2dp" android:maxLines="4" android:layout_below="@android:id/title" android:layout_alignLeft="@android:id/title" android:layout_alignStart="@android:id/title"/>
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_arrow_back_ui" android:tint="?android:attr/textColorPrimary" android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@android:id/widget_frame" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginStart="18dp" android:layout_marginEnd="18dp"/>
+    </LinearLayout>
+</LinearLayout>

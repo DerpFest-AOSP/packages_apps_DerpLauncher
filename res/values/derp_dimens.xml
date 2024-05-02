@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2024 DerpFest
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <dimen name="derp_branding_half_height">40dp</dimen>
+    <dimen name="derp_card_radius">22dp</dimen>
+    <dimen name="derp_card_side_margin">18dp</dimen>
+    <dimen name="derp_cardview_margin_list">16dp</dimen>
+    <dimen name="derp_cardview_padding">16dp</dimen>
+    <dimen name="derp_pref_vert">5.5dp</dimen>
+    <dimen name="derp_top_icon">24dp</dimen>
+    <dimen name="derp_top_icon_home">42dp</dimen>
+    <dimen name="derp_top_icon_home_max">52.5dp</dimen>
+    <dimen name="derp_top_icon_max">24dp</dimen>
+    <dimen name="derp_vertical_padding">20dp</dimen>
+
+    <dimen name="dashboard_tile_foreground_image_inset">6dp</dimen>
+    <dimen name="dashboard_tile_foreground_image_size">18dp</dimen>
+    <dimen name="dashboard_tile_image_size">36dp</dimen>
+</resources>

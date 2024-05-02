@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:androidprv="http://schemas.android.com/apk/prv/res/android" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/derp_vertical_padding" android:layout_marginBottom="@dimen/derp_vertical_padding" android:layout_marginHorizontal="@dimen/derp_card_side_margin" app:cardCornerRadius="@dimen/derp_card_radius" app:cardElevation="0dp">
+    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/ui_scrim" android:alpha="0.1"/>
+        <LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="@dimen/derp_branding_half_height">
+            <TextView android:layout_gravity="center" android:id="@+id/derp_branding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/derp_branding" style="@style/TextAppearance_DerpCoolBranding"/>
+        </LinearLayout>
+    </FrameLayout>
+</androidx.cardview.widget.CardView>
