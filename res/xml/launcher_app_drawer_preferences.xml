@@ -19,14 +19,14 @@
     xmlns:launcher="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.launcher3">
 
-    <SwitchPreferenceCompat
+    <org.derpfest.support.preferences.SwitchPreferenceCompat
         android:key="pref_allapps_themed_icons"
         android:title="@string/pref_themed_icons_title"
         android:summary="@string/pref_themed_icons_summary"
         android:persistent="true"
         launcher:iconSpaceReserved="false" />
 
-    <SwitchPreferenceCompat
+    <org.derpfest.support.preferences.SwitchPreferenceCompat
         android:key="pref_force_mono_icons"
         android:title="@string/pref_force_mono_icons_title"
         android:summary="@string/pref_force_mono_icons_summary"
@@ -34,14 +34,14 @@
         android:persistent="true"
         launcher:iconSpaceReserved="false" />
 
-    <SwitchPreferenceCompat
+    <org.derpfest.support.preferences.SwitchPreferenceCompat
         android:key="pref_drawer_search"
         android:title="@string/drawer_search_title"
         android:summary="@string/drawer_search_summary"
         android:defaultValue="true"
         launcher:iconSpaceReserved="false" />
 
-    <SwitchPreferenceCompat
+    <org.derpfest.support.preferences.SwitchPreferenceCompat
         android:key="pref_drawer_show_labels"
         android:title="@string/title_drawer_labels"
         android:summary="@string/summary_drawer_labels"

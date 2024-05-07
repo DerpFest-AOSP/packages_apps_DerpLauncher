@@ -19,7 +19,7 @@
     xmlns:launcher="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.launcher3">
 
-    <SwitchPreferenceCompat
+    <org.derpfest.support.preferences.SwitchPreferenceCompat
         android:key="pref_allowRotation"
         android:title="@string/allow_rotation_title"
         android:summary="@string/allow_rotation_desc"

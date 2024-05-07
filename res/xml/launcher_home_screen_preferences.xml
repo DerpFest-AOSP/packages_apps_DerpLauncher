@@ -32,7 +32,7 @@
             android:persistent="false"
             launcher:iconSpaceReserved="false" />
 
-        <SwitchPreferenceCompat
+        <org.derpfest.support.preferences.SwitchPreferenceCompat
             android:defaultValue="false"
             android:key="pref_workspace_lock"
             android:persistent="true"
@@ -41,7 +41,7 @@
             android:summaryOff="@string/settings_lock_layout_summary_off"
             launcher:iconSpaceReserved="false" />
 
-        <SwitchPreferenceCompat
+        <org.derpfest.support.preferences.SwitchPreferenceCompat
             android:key="pref_add_icon_to_home"
             android:title="@string/auto_add_shortcuts_label"
             android:summary="@string/auto_add_shortcuts_description"
@@ -51,28 +51,28 @@
             launcher:logIdOff="614"
             launcher:iconSpaceReserved="false" />
 
-        <SwitchPreferenceCompat
+        <org.derpfest.support.preferences.SwitchPreferenceCompat
             android:key="pref_allow_wallpaper_scrolling"
             android:title="@string/allow_wallpaper_scrolling"
             android:summary="@string/allow_wallpaper_scrolling_summary"
             android:defaultValue="true"
             launcher:iconSpaceReserved="false" />
 
-        <SwitchPreferenceCompat
+        <org.derpfest.support.preferences.SwitchPreferenceCompat
             android:key="pref_allow_wallpaper_zooming"
             android:title="@string/allow_wallpaper_zooming"
             android:summary="@string/allow_wallpaper_zooming_summary"
             android:defaultValue="true"
             launcher:iconSpaceReserved="false" />
 
-        <SwitchPreferenceCompat
+        <org.derpfest.support.preferences.SwitchPreferenceCompat
             android:key="pref_short_parallax"
             android:title="@string/short_parallax_title"
             android:summary="@string/short_parallax_summary"
             android:defaultValue="false"
             launcher:iconSpaceReserved="false" />
 
-        <SwitchPreferenceCompat
+        <org.derpfest.support.preferences.SwitchPreferenceCompat
             android:key="pref_single_page_center"
             android:title="@string/single_page_center_title"
             android:summary="@string/single_page_center_summary"
@@ -84,14 +84,14 @@
     <PreferenceCategory
         android:title="@string/quickspace_category_title">
 
-        <SwitchPreferenceCompat
+        <org.derpfest.support.preferences.SwitchPreferenceCompat
             android:key="pref_smartspace"
             android:title="@string/smartspace_pref_title"
             android:summary="@string/smartspace_pref_summary"
             android:defaultValue="true"
             launcher:iconSpaceReserved="false" />
 
-        <SwitchPreferenceCompat
+        <org.derpfest.support.preferences.SwitchPreferenceCompat
             android:key="pref_enable_minus_one"
             android:title="@string/title_show_google_app"
             android:summary="@string/pref_show_google_now_summary"
@@ -103,7 +103,7 @@
     <PreferenceCategory
         android:title="@string/interface_category_title">
 
-        <SwitchPreferenceCompat
+        <org.derpfest.support.preferences.SwitchPreferenceCompat
             android:key="pref_show_statusbar"
             android:title="@string/show_statusbar_title"
             android:summary="@string/show_statusbar_summary"
@@ -111,7 +111,7 @@
             android:persistent="true"
             launcher:iconSpaceReserved="false" />
 
-        <SwitchPreferenceCompat
+        <org.derpfest.support.preferences.SwitchPreferenceCompat
             android:key="pref_dark_status_bar"
             android:title="@string/perf_dark_status_bar_title"
             android:summary="@string/perf_dark_status_bar_summary"
@@ -119,7 +119,7 @@
             android:persistent="true"
             launcher:iconSpaceReserved="false" />
 
-        <SwitchPreferenceCompat
+        <org.derpfest.support.preferences.SwitchPreferenceCompat
             android:key="pref_show_top_shadow"
             android:title="@string/show_top_shadow_title"
             android:summary="@string/show_top_shadow_summary"
@@ -127,7 +127,7 @@
             android:persistent="true"
             launcher:iconSpaceReserved="false" />
 
-        <SwitchPreferenceCompat
+        <org.derpfest.support.preferences.SwitchPreferenceCompat
             android:key="pref_desktop_show_labels"
             android:title="@string/title_desktop_labels"
             android:summary="@string/summary_desktop_labels"
@@ -135,7 +135,7 @@
             android:persistent="true"
             launcher:iconSpaceReserved="false" />
 
-        <SwitchPreferenceCompat
+        <org.derpfest.support.preferences.SwitchPreferenceCompat
             android:key="pref_show_hotseat_bg"
             android:title="@string/hotseat_bg_title"
             android:summary="@string/hotseat_bg_summary"
@@ -157,14 +157,14 @@
     <PreferenceCategory
         android:title="@string/search_bar_category_title">
 
-        <SwitchPreferenceCompat
+        <org.derpfest.support.preferences.SwitchPreferenceCompat
             android:key="pref_dock_search"
             android:title="@string/dock_search_title"
             android:summary="@string/dock_search_summary"
             android:defaultValue="true"
             launcher:iconSpaceReserved="false" />
 
-        <SwitchPreferenceCompat
+        <org.derpfest.support.preferences.SwitchPreferenceCompat
             android:key="pref_dock_theme"
             android:title="@string/dock_theme_title"
             android:summary="@string/dock_theme_summary"
