@@ -104,7 +104,7 @@
     <string name="suggestion_pref_screen_desc">In Liste aller Apps &amp; auf Startbildschirm</string>
 
     <!-- Background opacity -->
-    <string name="background_opacity_title">Hintergrundtransparenz</string>
+    <string name="background_opacity_title">Deckkraft des Hintergrunds</string>
 
     <!-- Recents icons -->
     <string name="recents_screenshot_title">Screenshot</string>
@@ -198,6 +198,6 @@
     <string name="pref_homescreen_gestures_clear_notifications">Benachrichtigungen löschen</string>
     <string name="pref_homescreen_gestures_screenshot">Screenshot</string>
     <string name="pref_homescreen_gestures_notifications">Benachrichtigungen</string>
-    <string name="pref_homescreen_gestures_qs_panel">Schnelleinstellungen</string>
+    <string name="pref_homescreen_gestures_qspanel">Schnelleinstellungen</string>
     <string name="pref_homescreen_gestures_powermenu">Ein-/Aus-Menü</string>
 </resources>
