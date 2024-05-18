@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2024 DerpFest
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- General -->
+    <string name="settings_title">主屏幕设置</string>
+
+    <!-- Categories -->
+    <string name="home_category_title">主屏幕</string>
+    <string name="home_category_summary">轻触两下、状态栏与应用行</string>
+    <string name="icons_category_title">图标</string>
+    <string name="icons_category_summary">图标包、大小与通知圆点</string>
+    <string name="app_drawer_category_title">应用抽屉</string>
+    <string name="app_drawer_category_summary">主题图标、不透明度与应用标签</string>
+    <string name="recents_category_title">最近任务</string>
+    <string name="recents_category_summary">快捷操作、不透明度与摇动手势</string>
+    <string name="misc_category_title">杂项</string>
+    <string name="misc_category_summary">其他选项</string>
+    <string name="general_category_title">通用</string>
+    <string name="interface_category_title">界面</string>
+    <string name="search_bar_category_title">搜索框</string>
+    <string name="actions_category_title">快捷操作</string>
+    <string name="quickspace_category_title">资讯一览</string>
+
+    <!-- Developer options -->
+    <string name="dev_options_title">开发者选项</string>
+    <string name="dev_options_summary">启用某些隐藏功能，风险自负</string>
+
+    <!-- Edit workspace -->
+    <string name="settings_lock_layout_title">锁定布局</string>
+    <string name="settings_lock_layout_summary_on">无法在主屏幕上添加，移除或移动图标与微件</string>
+    <string name="settings_lock_layout_summary_off">可以在主屏幕上添加，移除或移动图标与微件</string>
+    <string name="settings_edit_widgets_error">无法向主屏幕添加微件</string>
+
+    <!-- Hide labels -->
+    <string name="title_desktop_labels">桌面标签</string>
+    <string name="summary_desktop_labels">在桌面上显示图标标签</string>
+    <string name="title_drawer_labels">应用抽屉标签</string>
+    <string name="summary_drawer_labels">在应用抽屉中显示图标标签</string>
+
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_app">滑动以打开 Google 应用程序</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">当您从主屏幕向右滑动时</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">当您从主屏幕向右滑动时</string>
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">值：<xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">默认</string>
+    <string name="custom_seekbar_default_value_to_set">默认值：<xliff:g id="v">%s</xliff:g>\n长按以设置</string>
+    <string name="custom_seekbar_default_value_is_set">已设置为默认值</string>
+
+    <!-- Icon size -->
+    <string name="icon_size_title">图标大小</string>
+
+    <!-- Font size -->
+    <string name="font_size_title">字体大小</string>
+
+    <!-- App label - max lines -->
+    <string name="icon_max_lines_title">最大允许的应用标签行数</string>
+
+    <!-- Hotseat searchbar -->
+    <string name="label_search">搜索</string>
+    <string name="label_lens">Google 智能镜头</string>
+    <string name="label_voice_search">语音搜索</string>
+    <string name="dock_search_title">Google 搜索框</string>
+    <string name="dock_search_summary">在底部的应用行下方显示搜索框</string>
+    <string name="dock_theme_title">主题图标</string>
+    <string name="dock_theme_summary">为搜索框使用主题图标</string>
+    <string name="search_radius_title">圆角半径</string>
+
+    <!-- Hotseat Background -->
+    <string name="hotseat_bg_title">应用行背景</string>
+    <string name="hotseat_bg_summary">为应用行添加半透明背景</string>
+
+    <!-- Wallpaper scrolling -->
+    <string name="allow_wallpaper_scrolling">壁纸滚动</string>
+    <string name="allow_wallpaper_scrolling_summary">在不同页面间滑动时使壁纸随之滚动</string>
+
+    <!-- Wallpaper zooming -->
+    <string name="allow_wallpaper_zooming">壁纸缩放</string>
+    <string name="allow_wallpaper_zooming_summary">在使用应用抽屉与最近任务时缩放壁纸</string>
+
+    <!-- Homescreen Statusbar -->
+    <string name="show_statusbar_title">显示状态栏</string>
+    <string name="show_statusbar_summary">在主屏幕显示状态栏</string>
+
+    <!-- Top shadow -->
+    <string name="show_top_shadow_title">显示顶部阴影</string>
+    <string name="show_top_shadow_summary">在状态栏下方添加阴影</string>
+
+    <!-- Row Height -->
+    <string name="row_height_title">列高度</string>
+    
+    <!-- Background blur -->
+    <string name="background_blur_title">背景模糊度</string>
+    <string name="background_blur_summary">为最近任务页面与应用抽屉设置背景模糊度</string>
+
+    <!-- Suggestions -->
+    <string name="suggestion_pref_screen_title">建议</string>
+    <string name="suggestion_pref_screen_desc">在“所有应用”列表中 &amp; 主屏幕上显示建议</string>
+
+    <!-- Background opacity -->
+    <string name="background_opacity_title">背景不透明度</string>
+
+    <!-- Recents icons -->
+    <string name="recents_chips_title">使用紧凑设计的操作按钮图标</string>
+    <string name="recents_chips_summary">在需要展示很多操作按钮时可能需要</string>
+    <string name="recents_screenshot_title">屏幕截图</string>
+    <string name="recents_clear_all_title">全部清除</string>
+    <string name="recents_lens_title">智能镜头</string>
+    <string name="recents_kill_app_title">终止应用</string>
+
+    <!-- AppInfo -->
+    <string name="app_info_source">来源</string>
+    <string name="app_info_source_unknown">未知</string>
+    <string name="app_info_last_update">最后更新</string>
+    <string name="app_info_version">版本</string>
+    <string name="app_info_more">更多</string>
+
+    <!-- Kill App recents action shortcut -->
+    <string name="recent_task_option_kill_app">终止</string>
+    <string name="recents_app_killed">已终止应用程序</string>
+
+    <!-- Memory info -->
+    <string name="meminfo_text">%1$s 可用 | %2$s</string>
+    <string name="recents_meminfo_title">内存信息</string>
+
+    <!-- App drawer searchbar -->
+    <string name="drawer_search_title">应用搜索框</string>
+    <string name="drawer_search_summary">应用抽屉顶部的搜索框</string>
+
+    <!-- Restart launcher -->
+    <string name="pref_restart_title">重新启动</string>
+    <string name="pref_restart_summary">手动重新启动 DerpLauncher 以应用未完成的更改</string>
+    <string name="restarting_launcher">正在重新启动 DerpLauncher...</string>
+    <string name="restarting_launcher_changes">正在重新启动 DerpLauncher以应用更改...</string>
+    <string name="updating_launcher_components">重新启动 DerpLauncher 以更新组件...</string>
+
+    <!-- Shake Clear Recents -->
+    <string name="recents_shake_clear_all_title">摇动手机以清除所有任务</string>
+
+    <!-- Parallax -->
+    <string name="short_parallax_title">允许短视差滚动效果</string>
+    <string name="short_parallax_summary">在页面数量较少时启用完整壁纸滚动效果，而不是裁剪壁纸</string>
+    <string name="single_page_center_title">单页居中壁纸</string>
+    <string name="single_page_center_summary">如果仅有一个页面，则将壁纸居中</string>
+
+    <!-- Icon pack -->
+    <string name="icon_pack_title">图标包</string>
+    <string name="icon_pack_default_label">默认</string>
+    <string name="icon_pack_add">安装更多</string>
+    <string name="icon_pack_no_market">没有可用的应用商店</string>
+
+    <!-- About info -->
+    <string name="about_app_subtitle">基于 AOSP 的 Launcher3</string>
+    <string name="about_thanks_cat">特别感谢</string>
+    <string name="about">关于</string>
+    <string name="about_summary">关于 DerpLauncher 的信息</string>
+
+    <!-- Trust apps -->
+    <string name="trust_apps_manager_name">隐藏 &amp; 受保护的应用</string>
+    <string name="trust_apps_auth_manager">解锁以管理隐藏的和受保护的应用</string>
+    <string name="trust_apps_auth_open_app">进行身份验证以打开 %1$s</string>
+    <string name="trust_apps_loading">加载中\u2026</string>
+    <string name="trust_apps_no_lock_error">请设置一个安全的锁屏方式以限制访问应用</string>
+    <string name="trust_apps_help">帮助</string>
+    <string name="trust_apps_info_hidden">隐藏的应用和其微件在应用抽屉中不可见</string>
+    <string name="trust_apps_info_protected">从启动器打开受保护的应用时需要进行身份验证</string>
+
+    <!-- All apps themed icons -->
+    <string name="pref_themed_icons_title">主题图标</string>
+    <string name="pref_themed_icons_summary">跟随主屏幕上使用的主题图标</string>
+
+    <!-- Dark Status Bar -->
+    <string name="perf_dark_status_bar_title">深色状态栏</string>
+    <string name="perf_dark_status_bar_summary">在主屏幕上使用深色状态栏</string>
+
+    <!-- Force monocrome icons -->
+    <string name="pref_force_mono_icons_title">强制使用单色图标</string>
+    <string name="pref_force_mono_icons_summary">使没有原生适配的应用强制使用单色图标（需要重新开关主题图标设置）</string>
+
+    <!-- Smartspace -->
+    <string name="smartspace_pref_title">资讯一览</string>
+    <string name="smartspace_pref_summary">在主屏幕顶端显示智慧空间</string>
+
+    <!-- Scroll Vibration -->
+    <string name="pref_scroll_vibration_title">滚动时振动</string>
+    <string name="pref_scroll_vibration_summary">如果支持，在最近任务页面滚动时提供振动反馈</string>
+
+    <!-- Gestures -->
+    <string name="pref_homescreen_dt_gestures_title">轻触两下</string>
+    <string name="pref_homescreen_dt_gestures_summary">选择在主屏幕上轻触两下时进行的操作</string>
+    <string name="pref_homescreen_gestures_none">无</string>
+    <string name="pref_homescreen_gestures_sleep">关闭屏幕</string>
+    <string name="pref_homescreen_gestures_torch">手电筒</string>
+    <string name="pref_homescreen_gestures_volume_panel">音量面板</string>
+    <string name="pref_homescreen_gestures_clear_notifications">清除通知</string>
+    <string name="pref_homescreen_gestures_screenshot">屏幕截图</string>
+    <string name="pref_homescreen_gestures_notifications">通知面板</string>
+    <string name="pref_homescreen_gestures_qspanel">快速设置面板</string>
+    <string name="pref_homescreen_gestures_powermenu">电源菜单</string>
+</resources>
