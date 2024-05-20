@@ -28,7 +28,7 @@
             android:summary="@string/pref_homescreen_dt_gestures_summary"
             android:entries="@array/pref_homescreen_dt_gestures_names"
             android:entryValues="@array/pref_homescreen_dt_gestures_values"
-            android:defaultValue="0"
+            android:defaultValue="1"
             android:persistent="false"
             launcher:iconSpaceReserved="false" />
 

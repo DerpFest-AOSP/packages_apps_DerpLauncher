@@ -225,7 +225,7 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
             updateIsGoogleAppEnabled();
 
                     final ListPreference doubletabAction = (ListPreference) findPreference(KEY_HOMESCREEN_DT_GESTURES);
-                    doubletabAction.setValue(getDevicePrefs(getActivity()).getString(KEY_HOMESCREEN_DT_GESTURES, "0"));
+                    doubletabAction.setValue(getDevicePrefs(getActivity()).getString(KEY_HOMESCREEN_DT_GESTURES, "1"));
                     doubletabAction.setSummary(doubletabAction.getEntry());
                     doubletabAction.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
                         public boolean onPreferenceChange(Preference preference, Object newValue) {

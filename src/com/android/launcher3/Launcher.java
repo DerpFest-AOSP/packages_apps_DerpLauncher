@@ -688,7 +688,7 @@ public class Launcher extends StatefulActivity<LauncherState>
         }
         if (KEY_HOMESCREEN_DT_GESTURES.equals(key)) {
             mWorkspace.setDoubleTapGestures(Integer.valueOf(SharedPrefs.getString(
-                "KEY_HOMESCREEN_DT_GESTURES", "0")));
+                "KEY_HOMESCREEN_DT_GESTURES", "1")));
         }
     }
 
