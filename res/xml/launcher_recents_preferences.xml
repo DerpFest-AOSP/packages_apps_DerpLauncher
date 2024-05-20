@@ -31,6 +31,13 @@
             launcher:iconSpaceReserved="false" />
 
         <org.derpfest.support.preferences.SwitchPreferenceCompat
+            android:key="pref_recents_shake_clear_all"
+            android:title="@string/recents_shake_clear_all_title"
+            android:defaultValue="false"
+            android:persistent="true"
+            launcher:iconSpaceReserved="false" />
+
+        <org.derpfest.support.preferences.SwitchPreferenceCompat
             android:key="pref_recents_meminfo"
             android:title="@string/recents_meminfo_title"
             android:defaultValue="false"
@@ -83,13 +90,6 @@
             android:key="pref_recents_screenshot"
             android:title="@string/recents_screenshot_title"
             android:defaultValue="true"
-            android:persistent="true"
-            launcher:iconSpaceReserved="false" />
-
-        <org.derpfest.support.preferences.SwitchPreferenceCompat
-            android:key="pref_recents_shake_clear_all"
-            android:title="@string/recents_shake_clear_all_title"
-            android:defaultValue="false"
             android:persistent="true"
             launcher:iconSpaceReserved="false" />
     </PreferenceCategory>
