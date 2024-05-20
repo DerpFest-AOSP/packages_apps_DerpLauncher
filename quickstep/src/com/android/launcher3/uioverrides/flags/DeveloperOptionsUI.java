@@ -65,7 +65,7 @@ import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.PreferenceViewHolder;
 import androidx.preference.SeekBarPreference;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.launcher3.ConstantItem;
 import com.android.launcher3.Flags;
@@ -229,7 +229,7 @@ public class DeveloperOptionsUI {
                     .map(p -> new ComponentName(packageName, p.second.serviceInfo.name))
                     .collect(Collectors.toList());
             if (!componentNames.isEmpty()) {
-                SwitchPreference pref = new PluginPreference(
+                SwitchPreferenceCompat pref = new PluginPreference(
                         prefContext, si.get(0).second, enabler, componentNames);
                 pref.setSummary("Plugins: "
                         + si.stream().map(p -> p.first).collect(Collectors.joining(", ")));
@@ -425,7 +425,7 @@ public class DeveloperOptionsUI {
         return b.toString();
     }
 
-    private static class PluginPreference extends SwitchPreference {
+    private static class PluginPreference extends SwitchPreferenceCompat {
         private final String mPackageName;
         private final ResolveInfo mSettingsInfo;
         private final PreferenceDataStore mPluginEnabler;

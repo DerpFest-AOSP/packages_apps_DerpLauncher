@@ -32,7 +32,7 @@ import android.widget.Toast;
 import androidx.preference.PreferenceDataStore;
 import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceViewHolder;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.util.ActivityLifecycleCallbacksAdapter;
@@ -99,7 +99,7 @@ public final class FlagTogglerPrefUi implements ActivityLifecycleCallbacksAdapte
         // future, engineers will pick up the new value immediately. To accomplish this, we use a
         // custom preference data store.
         for (DebugFlag flag : flags) {
-            SwitchPreference switchPreference = new SwitchPreference(mContext) {
+            SwitchPreferenceCompat switchPreference = new SwitchPreferenceCompat(mContext) {
                 @Override
                 public void onBindViewHolder(PreferenceViewHolder holder) {
                     super.onBindViewHolder(holder);
@@ -132,7 +132,7 @@ public final class FlagTogglerPrefUi implements ActivityLifecycleCallbacksAdapte
     /**
      * Updates the summary to show the description and whether the flag overrides the default value.
      */
-    private void updateSummary(SwitchPreference switchPreference, DebugFlag flag) {
+    private void updateSummary(SwitchPreferenceCompat switchPreference, DebugFlag flag) {
         String summary = flag.defaultValue == TEAMFOOD
                 ? "<font color='blue'><b>[TEAMFOOD]</b> </font>" : "";
         if (FlagsFactory.getSharedPreferences().contains(flag.key)) {
