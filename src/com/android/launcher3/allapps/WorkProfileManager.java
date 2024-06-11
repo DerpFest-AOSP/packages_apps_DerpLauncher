@@ -265,14 +265,12 @@ public class WorkProfileManager extends UserProfileManager
 
     @Override
     public void setQuietMode(boolean enabled) {
-        if (Utilities.ATLEAST_P) {
-            UI_HELPER_EXECUTOR.post(() -> {
-                mUserCache.getUserProfiles()
-                        .stream()
-                        .filter(getUserMatcher())
-                        .forEach(userHandle ->
-                                mUserManager.requestQuietModeEnabled(enabled, userHandle));
-            });
-        }
+        UI_HELPER_EXECUTOR.post(() -> {
+            mUserCache.getUserProfiles()
+                    .stream()
+                    .filter(getUserMatcher())
+                    .forEach(userHandle ->
+                            mUserManager.requestQuietModeEnabled(enabled, userHandle));
+        });
     }
 }
