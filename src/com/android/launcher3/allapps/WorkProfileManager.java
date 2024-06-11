@@ -224,9 +224,8 @@ public class WorkProfileManager extends UserProfileManager
     }
 
     private void onWorkFabClickedTurnOn(View view) {
-        if (Utilities.ATLEAST_P && getCurrentState() == STATE_DISABLED
-                && mWorkModeSwitch.isEnabled()) {
-            logEvents(LAUNCHER_TURN_OFF_WORK_APPS_TAP);
+        if (getCurrentState() == STATE_DISABLED && mWorkModeSwitch.isEnabled()) {
+            logEvents(LAUNCHER_TURN_ON_WORK_APPS_TAP);
             setWorkProfileEnabled(true);
         }
     }
