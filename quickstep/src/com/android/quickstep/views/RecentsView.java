@@ -3696,7 +3696,7 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
                                 if (match) {
                                     anim.addOnFrameCallback(() -> {
                                         rth.getTaskViewSimulator().scrollScale.value =
-                                                mOrientationHandler.getPrimaryValue(
+                                                getPagedOrientationHandler().getPrimaryValue(
                                                     tv.getScaleX(),
                                                     tv.getScaleY()
                                                 );
@@ -6220,7 +6220,7 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
                 for (int id : tv.getTaskIds()) {
                     if (targets != null && targets.findTask(id) != null) {
                         rth.getTaskViewSimulator().scrollScale.value =
-                                mOrientationHandler.getPrimaryValue(
+                                getPagedOrientationHandler().getPrimaryValue(
                                     tv.getScaleX(),
                                     tv.getScaleY()
                                 );
@@ -6240,7 +6240,7 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
             RemoteAnimationTargets targets = params.getTargetSet();
             for (int id : tv.getTaskIds()) {
                 if (targets != null && targets.findTask(id) != null) {
-                    return mOrientationHandler.getPrimaryValue(
+                    return getPagedOrientationHandler().getPrimaryValue(
                                 tv.getScaleX(),
                                 tv.getScaleY()
                            );
