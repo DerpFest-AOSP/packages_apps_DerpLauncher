@@ -78,7 +78,7 @@ public class SettingsMisc extends CollapsingToolbarBaseActivity
 
     /** List of fragments that can be hosted by this activity. */
     private static final List<String> VALID_PREFERENCE_FRAGMENTS =
-            !Utilities.isDebugDevice() ? Collections.emptyList()
+            !Utilities.IS_DEBUG_DEVICE ? Collections.emptyList()
                     : Collections.singletonList(DeveloperOptionsFragment.class.getName());
 
     @VisibleForTesting
@@ -172,7 +172,7 @@ public class SettingsMisc extends CollapsingToolbarBaseActivity
     }
 
     private boolean startPreference(String fragment, Bundle args, String key) {
-        if (Utilities.ATLEAST_P && getSupportFragmentManager().isStateSaved()) {
+        if (getSupportFragmentManager().isStateSaved()) {
             // Sometimes onClick can come after onPause because of being posted on the handler.
             // Skip starting new preferences in that case.
             return false;
@@ -227,7 +227,7 @@ public class SettingsMisc extends CollapsingToolbarBaseActivity
 
         @Override
         public void onCreate(@Nullable Bundle savedInstanceState) {
-            if (Utilities.isDebugDevice()) {
+            if (Utilities.IS_DEBUG_DEVICE) {
                 Uri devUri = Settings.Global.getUriFor(DEVELOPMENT_SETTINGS_ENABLED);
                 SettingsCache settingsCache = SettingsCache.INSTANCE.get(getContext());
                 mDeveloperOptionsEnabled = settingsCache.getValue(devUri);
@@ -366,7 +366,7 @@ public class SettingsMisc extends CollapsingToolbarBaseActivity
         @Override
         public void onDestroy() {
             super.onDestroy();
-            if (Utilities.isDebugDevice()) {
+            if (Utilities.IS_DEBUG_DEVICE) {
                 SettingsCache.INSTANCE.get(getContext())
                         .unregister(Settings.Global.getUriFor(DEVELOPMENT_SETTINGS_ENABLED), this);
             }
