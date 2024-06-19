@@ -76,6 +76,6 @@ public class AppReloader {
     }
 
     private void reload(UserHandle user, String pkg) {
-        mModel.onPackageChanged(pkg, user);
+        mModel.newModelCallbacks().onPackageChanged(pkg, user);
     }
 }
