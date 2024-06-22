@@ -22,6 +22,7 @@ import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -49,6 +50,8 @@ import com.android.quickstep.util.LayoutUtils;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 /**
  * View for showing action buttons in Overview
@@ -332,6 +335,17 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
         boolean shouldBeVisible = mSplitButtonHiddenFlags == 0;
         mSplitButton.setVisibility(shouldBeVisible ? VISIBLE : GONE);
         findViewById(R.id.action_split_space).setVisibility(shouldBeVisible ? VISIBLE : GONE);
+
+        String callStack = Arrays.stream(
+                        Log.getStackTraceString(new Exception("thread stacktrace"))
+                                .split("\\n"))
+                .limit(5)
+                .skip(1) // Removes the line "java.lang.Exception: thread stacktrace"
+                .collect(Collectors.joining("\n"));
+        Log.d("b/321291049", "updateSplitButtonHiddenFlags called with flag: " + flag
+                + " enabled: " + enable
+                + " shouldBeVisible: " + shouldBeVisible
+                + " partial trace: \n" + callStack);
     }
 
     /**

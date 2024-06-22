@@ -78,7 +78,6 @@ import com.android.internal.util.derp.derpUtils;
 import com.android.launcher3.accessibility.AccessibleDragListenerAdapter;
 import com.android.launcher3.accessibility.WorkspaceAccessibilityHelper;
 import com.android.launcher3.anim.PendingAnimation;
-import com.android.launcher3.apppairs.AppPairIcon;
 import com.android.launcher3.celllayout.CellInfo;
 import com.android.launcher3.celllayout.CellLayoutLayoutParams;
 import com.android.launcher3.celllayout.CellPosMapper;
@@ -104,7 +103,6 @@ import com.android.launcher3.logging.StatsLogManager.LauncherEvent;
 import com.android.launcher3.model.data.FolderInfo;
 import com.android.launcher3.model.data.ItemInfo;
 import com.android.launcher3.model.data.LauncherAppWidgetInfo;
-import com.android.launcher3.model.data.WorkspaceItemFactory;
 import com.android.launcher3.model.data.WorkspaceItemInfo;
 import com.android.launcher3.pageindicators.PageIndicator;
 import com.android.launcher3.statemanager.StateManager;
@@ -132,8 +130,8 @@ import com.android.launcher3.widget.PendingAppWidgetHostView;
 import com.android.launcher3.widget.WidgetManagerHelper;
 import com.android.launcher3.widget.dragndrop.AppWidgetHostViewDragListener;
 import com.android.launcher3.widget.util.WidgetSizes;
-import com.android.systemui.plugins.shared.LauncherOverlayManager.LauncherOverlay;
 import com.android.systemui.plugins.shared.LauncherOverlayManager.LauncherOverlayCallbacks;
+import com.android.systemui.plugins.shared.LauncherOverlayManager.LauncherOverlayTouchProxy;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -150,7 +148,7 @@ import java.util.stream.Collectors;
  * @param <T> Class that extends View and PageIndicator
  */
 public class Workspace<T extends View & PageIndicator> extends PagedView<T>
-        implements DropTarget, DragSource, View.OnTouchListener,
+        implements DropTarget, DragSource, View.OnTouchListener, CellLayoutContainer,
         DragController.DragListener, Insettable, StateHandler<LauncherState>,
         WorkspaceLayoutManager, LauncherBindableItemsContainer, LauncherOverlayCallbacks {
 
@@ -579,11 +577,6 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
         return !FOLDABLE_SINGLE_PAGE.get() && mLauncher.mDeviceProfile.isTwoPanels;
     }
 
-    @Override
-    public int getPanelCount() {
-        return isTwoPanelEnabled() ? 2 : super.getPanelCount();
-    }
-
     public void deferRemoveExtraEmptyScreen() {
         mDeferRemoveExtraEmptyScreen = true;
     }
@@ -749,6 +742,7 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
             newScreen = (CellLayout) LayoutInflater.from(getContext()).inflate(
                     R.layout.workspace_screen, this, false /* attachToRoot */);
         }
+        newScreen.setCellLayoutContainer(this);
 
         mWorkspaceScreens.put(screenId, newScreen);
         mScreenOrder.add(insertIndex, screenId);
@@ -1015,7 +1009,8 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
         return mWorkspaceScreens.get(screenId);
     }
 
-    public int getIdForScreen(CellLayout layout) {
+    @Override
+    public int getCellLayoutId(CellLayout layout) {
         int index = mWorkspaceScreens.indexOfValue(layout);
         if (index != -1) {
             return mWorkspaceScreens.keyAt(index);
@@ -1025,6 +1020,16 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
 
     public int getPageIndexForScreenId(int screenId) {
         return indexOfChild(mWorkspaceScreens.get(screenId));
+    }
+
+    @Override
+    public int getCellLayoutIndex(CellLayout cellLayout) {
+        return indexOfChild(mWorkspaceScreens.get(getCellLayoutId(cellLayout)));
+    }
+
+    @Override
+    public int getPanelCount() {
+        return isTwoPanelEnabled() ? 2 : super.getPanelCount();
     }
 
     public IntSet getCurrentPageScreenIds() {
@@ -1067,7 +1072,7 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
         if (!isTwoPanelEnabled()) {
             return null;
         }
-        int screenId = getIdForScreen(cellLayout);
+        int screenId = getCellLayoutId(cellLayout);
         if (screenId == -1) {
             return null;
         }
@@ -1294,7 +1299,7 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
         mLauncher.onPageEndTransition();
     }
 
-    public void setLauncherOverlay(LauncherOverlay overlay) {
+    public void setLauncherOverlay(LauncherOverlayTouchProxy overlay) {
         final EdgeEffectCompat newEffect;
         if (overlay == null) {
             newEffect = new EdgeEffectCompat(getContext());
@@ -1695,9 +1700,15 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
             mDragController.addDragListener(
                     new AccessibleDragListenerAdapter(this, WorkspaceAccessibilityHelper::new) {
                         @Override
-                        protected void enableAccessibleDrag(boolean enable) {
-                            super.enableAccessibleDrag(enable);
+                        protected void enableAccessibleDrag(boolean enable,
+                                @Nullable DragObject dragObject) {
+                            super.enableAccessibleDrag(enable, dragObject);
                             setEnableForLayout(mLauncher.getHotseat(), enable);
+                            if (enable && dragObject != null
+                                    && dragObject.dragInfo instanceof LauncherAppWidgetInfo) {
+                                mLauncher.getHotseat().setImportantForAccessibility(
+                                        IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS);
+                            }
                         }
                     });
         }
@@ -1892,7 +1903,7 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
             }
         }
 
-        int screenId = getIdForScreen(dropTargetLayout);
+        int screenId = getCellLayoutId(dropTargetLayout);
         if (Workspace.EXTRA_EMPTY_SCREEN_IDS.contains(screenId)) {
             commitExtraEmptyScreens();
         }
@@ -1975,7 +1986,7 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
 
         if (v == null || hasntMoved || !mCreateUserFolderOnDrop) return false;
         mCreateUserFolderOnDrop = false;
-        final int screenId = getIdForScreen(target);
+        final int screenId = getCellLayoutId(target);
 
         boolean aboveShortcut = (v.getTag() instanceof WorkspaceItemInfo);
         boolean willBecomeShortcut = (newView.getTag() instanceof WorkspaceItemInfo);
@@ -2076,7 +2087,7 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
                         LauncherSettings.Favorites.CONTAINER_HOTSEAT :
                         LauncherSettings.Favorites.CONTAINER_DESKTOP;
                 int screenId = (mTargetCell[0] < 0) ?
-                        mDragInfo.screenId : getIdForScreen(dropTargetLayout);
+                        mDragInfo.screenId : getCellLayoutId(dropTargetLayout);
                 int spanX = mDragInfo != null ? mDragInfo.spanX : 1;
                 int spanY = mDragInfo != null ? mDragInfo.spanY : 1;
                 // First we find the cell nearest to point at which the item is
@@ -2279,7 +2290,7 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
     private Runnable getWidgetResizeFrameRunnable(DragOptions options,
             LauncherAppWidgetHostView hostView, CellLayout cellLayout) {
         AppWidgetProviderInfo pInfo = hostView.getAppWidgetInfo();
-        if (pInfo != null && !options.isAccessibleDrag) {
+        if (pInfo != null) {
             return () -> {
                 if (!isPageInTransition()) {
                     AppWidgetResizeFrame.showForWidget(hostView, cellLayout);
@@ -2400,10 +2411,6 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
         if (mDragOverlappingLayout != null) {
             mDragOverlappingLayout.setIsDragOverlapping(true);
         }
-    }
-
-    public CellLayout getCurrentDragOverlappingLayout() {
-        return mDragOverlappingLayout;
     }
 
     void setCurrentDropOverCell(int x, int y) {
@@ -2835,7 +2842,7 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
         final int container = mLauncher.isHotseatLayout(cellLayout)
                 ? LauncherSettings.Favorites.CONTAINER_HOTSEAT
                 : LauncherSettings.Favorites.CONTAINER_DESKTOP;
-        final int screenId = getIdForScreen(cellLayout);
+        final int screenId = getCellLayoutId(cellLayout);
         if (!mLauncher.isHotseatLayout(cellLayout)
                 && screenId != getScreenIdForPageIndex(mCurrentPage)
                 && !mLauncher.isInState(SPRING_LOADED)
@@ -2917,36 +2924,9 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
         } else {
             // This is for other drag/drop cases, like dragging from All Apps
             mLauncher.getStateManager().goToState(NORMAL, SPRING_LOADED_EXIT_DELAY);
-            View view;
-
-            switch (info.itemType) {
-                case LauncherSettings.Favorites.ITEM_TYPE_APPLICATION:
-                case LauncherSettings.Favorites.ITEM_TYPE_DEEP_SHORTCUT:
-                case LauncherSettings.Favorites.ITEM_TYPE_SEARCH_ACTION:
-                    if (info instanceof WorkspaceItemFactory) {
-                        // Came from all apps -- make a copy
-                        info = ((WorkspaceItemFactory) info).makeWorkspaceItem(mLauncher);
-                        d.dragInfo = info;
-                    }
-                    if (info instanceof WorkspaceItemInfo
-                            && info.container == LauncherSettings.Favorites.CONTAINER_PREDICTION) {
-                        // Came from all apps prediction row -- make a copy
-                        info = new WorkspaceItemInfo((WorkspaceItemInfo) info);
-                        d.dragInfo = info;
-                    }
-                    view = mLauncher.createShortcut(cellLayout, (WorkspaceItemInfo) info);
-                    break;
-                case LauncherSettings.Favorites.ITEM_TYPE_FOLDER:
-                    view = FolderIcon.inflateFolderAndIcon(R.layout.folder_icon, mLauncher, cellLayout,
-                            (FolderInfo) info);
-                    break;
-                case LauncherSettings.Favorites.ITEM_TYPE_APP_PAIR:
-                    view = AppPairIcon.inflateIcon(R.layout.app_pair_icon, mLauncher, cellLayout,
-                            (FolderInfo) info);
-                    break;
-                default:
-                    throw new IllegalStateException("Unknown item type: " + info.itemType);
-            }
+            View view = mLauncher.getItemInflater()
+                    .inflateItem(info, mLauncher.getModelWriter(), cellLayout);
+            d.dragInfo = info = (ItemInfo) view.getTag();
 
             // First we find the cell nearest to point at which the item is
             // dropped, without any consideration to whether there is an item there.
@@ -3071,7 +3051,7 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
     }
 
     public void animateWidgetDrop(ItemInfo info, CellLayout cellLayout, final DragView dragView,
-            final Runnable onCompleteRunnable, int animationType, final View finalView,
+            final Runnable onCompleteRunnable, int animationType, @Nullable final View finalView,
             boolean external) {
         int[] finalPos = new int[2];
         float scaleXY[] = new float[2];
@@ -3576,14 +3556,15 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
 
     @Override
     protected String getCurrentPageDescription() {
-        int page = (mNextPage != INVALID_PAGE) ? mNextPage : mCurrentPage;
-        return getPageDescription(page);
+        int pageIndex = (mNextPage != INVALID_PAGE) ? mNextPage : mCurrentPage;
+        return getPageDescription(pageIndex);
     }
 
     /**
      * @param page page index.
      * @return Description of the page at the given page index.
      */
+    @Override
     public String getPageDescription(int page) {
         int nScreens = getChildCount();
         int extraScreenId = mScreenOrder.indexOf(EXTRA_EMPTY_SCREEN_ID);

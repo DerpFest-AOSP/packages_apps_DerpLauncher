@@ -22,6 +22,7 @@ import android.content.Context;
 
 import androidx.core.graphics.ColorUtils;
 
+import com.android.internal.jank.Cuj;
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.LauncherState;
@@ -30,6 +31,7 @@ import com.android.launcher3.Utilities;
 import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.util.Themes;
 import com.android.launcher3.views.ActivityContext;
+import com.android.systemui.shared.system.InteractionJankMonitorWrapper;
 
 /**
  * Definition for AllApps state
@@ -49,6 +51,24 @@ public class AllAppsState extends LauncherState {
         return isToState
                 ? context.getDeviceProfile().allAppsOpenDuration
                 : context.getDeviceProfile().allAppsCloseDuration;
+    }
+
+    @Override
+    public void onBackPressed(Launcher launcher) {
+        InteractionJankMonitorWrapper.begin(launcher.getAppsView(),
+                Cuj.CUJ_LAUNCHER_CLOSE_ALL_APPS_BACK);
+        super.onBackPressed(launcher);
+    }
+
+    @Override
+    protected void onBackPressCompleted(boolean success) {
+        if (success) {
+            // Animation was successful.
+            InteractionJankMonitorWrapper.end(Cuj.CUJ_LAUNCHER_CLOSE_ALL_APPS_BACK);
+        } else {
+            // Animation was canceled.
+            InteractionJankMonitorWrapper.cancel(Cuj.CUJ_LAUNCHER_CLOSE_ALL_APPS_BACK);
+        }
     }
 
     @Override

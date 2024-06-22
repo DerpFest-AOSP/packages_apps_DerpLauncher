@@ -38,6 +38,7 @@ import static com.android.quickstep.views.TaskView.FLAG_UPDATE_ALL;
 
 import android.util.FloatProperty;
 import android.util.Pair;
+import android.view.animation.Interpolator;
 
 import androidx.annotation.NonNull;
 
@@ -111,15 +112,13 @@ public class FallbackRecentsStateController implements StateHandler<RecentsState
         setter.setFloat(mRecentsView, FULLSCREEN_PROGRESS, state.isFullScreen() ? 1 : 0, LINEAR);
         boolean showAsGrid = state.displayOverviewTasksAsGrid(mActivity.getDeviceProfile());
         setter.setFloat(mRecentsView, RECENTS_GRID_PROGRESS, showAsGrid ? 1f : 0f,
-                showAsGrid ? INSTANT : FINAL_FRAME);
+                getOverviewInterpolator(state));
         setter.setFloat(mRecentsView, TASK_THUMBNAIL_SPLASH_ALPHA,
-                state.showTaskThumbnailSplash() ? 1f : 0f, INSTANT);
+                state.showTaskThumbnailSplash() ? 1f : 0f, getOverviewInterpolator(state));
 
         setter.setViewBackgroundColor(mActivity.getScrimView(), state.getScrimColor(mActivity),
                 config.getInterpolator(ANIM_SCRIM_FADE, LINEAR));
-
-        RecentsState currentState = mActivity.getStateManager().getState();
-        if (isSplitSelectionState(state) && !isSplitSelectionState(currentState)) {
+        if (isSplitSelectionState(state)) {
             int duration = state.getTransitionDuration(mActivity, true /* isToState */);
             // TODO (b/246851887): Pass in setter as a NO_ANIM PendingAnimation instead
             PendingAnimation pa = new PendingAnimation(duration);
@@ -137,6 +136,10 @@ public class FallbackRecentsStateController implements StateHandler<RecentsState
         float memInfoAlpha = state.hasMemInfoView() ? 1 : 0;
         setter.setFloat(mActivity.getMemInfoView(), MemInfoView.STATE_CTRL_ALPHA,
                 memInfoAlpha, LINEAR);
+    }
+
+    private Interpolator getOverviewInterpolator(RecentsState toState) {
+        return toState.overviewUi() ? INSTANT : FINAL_FRAME;
     }
 
     /**
