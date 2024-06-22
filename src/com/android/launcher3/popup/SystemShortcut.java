@@ -388,14 +388,15 @@ public abstract class SystemShortcut<T extends ActivityContext> extends ItemInfo
         }
     }
 
-    public static final Factory<BaseDraggingActivity> UNINSTALL = (activity, itemInfo, originalView) ->
-            itemInfo.getTargetComponent() == null || PackageManagerHelper.isSystemApp(activity,
-                 itemInfo.getTargetComponent().getPackageName())
+    public static final Factory<ActivityContext> UNINSTALL = (activity, itemInfo, originalView) ->
+            itemInfo.getTargetComponent() == null ||
+                    PackageManagerHelper.isSystemApp((Context) activity,
+                    itemInfo.getTargetComponent().getPackageName())
                     ? null : new UnInstall(activity, itemInfo, originalView);
 
-    public static class UnInstall extends SystemShortcut<BaseDraggingActivity> {
+    public static class UnInstall<T extends ActivityContext> extends SystemShortcut<T> {
 
-        public UnInstall(BaseDraggingActivity target, ItemInfo itemInfo, View originalView) {
+        public UnInstall(T target, ItemInfo itemInfo, View originalView) {
             super(R.drawable.ic_uninstall_no_shadow, R.string.uninstall_drop_target_label,
                     target, itemInfo, originalView);
         }
@@ -437,7 +438,7 @@ public abstract class SystemShortcut<T extends ActivityContext> extends ItemInfo
                     .setData(Uri.fromParts("package", cn.getPackageName(), cn.getClassName()))
                     .putExtra(Intent.EXTRA_USER, mItemInfo.user);
 
-                mTarget.startActivity(intent);
+                ((Context) mTarget).startActivity(intent);
                 AbstractFloatingView.closeAllOpenViews(mTarget);
             } catch (URISyntaxException e) {
                 // Do nothing.
