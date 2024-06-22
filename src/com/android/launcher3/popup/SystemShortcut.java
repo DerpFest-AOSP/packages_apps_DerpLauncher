@@ -42,7 +42,6 @@ import com.android.launcher3.util.PackageManagerHelper;
 import com.android.launcher3.util.PackageUserKey;
 import com.android.launcher3.views.ActivityContext;
 import com.android.launcher3.widget.WidgetsBottomSheet;
-import com.android.systemui.shared.system.ActivityManagerWrapper;
 
 import java.net.URISyntaxException;
 import java.util.List;
@@ -320,9 +319,7 @@ public abstract class SystemShortcut<T extends Context & ActivityContext> extend
     }
 
     public static final Factory<BaseDraggingActivity> FREE_FORM = (activity, itemInfo, originalView) -> 
-        ActivityManagerWrapper.getInstance().supportsFreeformMultiWindow(activity) 
-        ? new FreeForm(activity, itemInfo, originalView)
-        : null;
+        new FreeForm(activity, itemInfo, originalView);
 
     public static class FreeForm extends SystemShortcut<BaseDraggingActivity> {
         private final String mPackageName;
