@@ -43,7 +43,6 @@ import com.android.launcher3.util.FlingBlockCheck;
 import com.android.launcher3.util.TouchController;
 import com.android.launcher3.util.VibratorWrapper;
 import com.android.launcher3.views.BaseDragLayer;
-import com.android.quickstep.util.RecentHelper;
 import com.android.quickstep.util.VibrationConstants;
 import com.android.quickstep.views.RecentsView;
 import com.android.quickstep.views.TaskView;
@@ -351,7 +350,7 @@ public abstract class TaskViewTouchController<T extends BaseDraggingActivity>
         }
         Task task = mTaskBeingDragged.getTask();
         PagedOrientationHandler orientationHandler = mRecentsView.getPagedOrientationHandler();
-        boolean goingUp = orientationHandler.isGoingUp(velocity, mIsRtl) && !RecentHelper.getInstance().isAppLocked (task.key.getPackageName (), mActivity.getBaseContext());
+        boolean goingUp = orientationHandler.isGoingUp(velocity, mIsRtl) && !task.isLocked;
         float progress = mCurrentAnimation.getProgressFraction();
         float interpolatedProgress = mCurrentAnimation.getInterpolatedProgress();
         if (fling) {
