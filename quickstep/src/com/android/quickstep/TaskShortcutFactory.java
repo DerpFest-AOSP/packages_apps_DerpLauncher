@@ -42,7 +42,6 @@ import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.R;
 import com.android.launcher3.logging.StatsLogManager.LauncherEvent;
 import com.android.launcher3.model.WellbeingModel;
-import com.android.launcher3.model.data.ItemInfo;
 import com.android.launcher3.popup.SystemShortcut;
 import com.android.launcher3.popup.SystemShortcut.AppInfo;
 import com.android.launcher3.touch.PagedOrientationHandler;
@@ -105,67 +104,6 @@ public interface TaskShortcutFactory {
             return true;
         }
     };
-
-    TaskShortcutFactory LOCKED = new TaskShortcutFactory() {
-        @Override
-        public List<SystemShortcut> getShortcuts(BaseDraggingActivity activity,
-                                                 TaskIdAttributeContainer taskContainer) {
-            TaskView taskView = taskContainer.getTaskView();
-
-            Task task = taskView.getTask();
-
-            return Collections.singletonList(new LockedSystemShortcut(
-                    task.isLocked ? R.drawable.ic_protected_unlocked : R.drawable.ic_protected_locked,
-                    task.isLocked ? R.string.task_menu_item_unlock : R.string.task_menu_item_lock,
-                    activity, taskContainer.getItemInfo (), taskContainer.getTaskView(), taskView));
-        }
-
-        @Override
-        public boolean showForSplitscreen() {
-            return true;
-        }
-    };
-
-    class LockedSystemShortcut extends SystemShortcut<BaseDraggingActivity> {
-
-        final Task mTask;
-        final TaskView taskView;
-
-        public LockedSystemShortcut(int iconResId,
-                                    int labelResId,
-                                    BaseDraggingActivity target,
-                                    ItemInfo itemInfo,
-                                    View originalView, TaskView taskView) {
-            super (iconResId , labelResId , target , itemInfo , originalView);
-            this.mTask = taskView.getTask();
-            this.taskView = taskView;
-        }
-
-        @Override
-        public void onClick(View view) {
-            Task task = taskView.getTask();
-            if (task == null) {
-                return;
-            }
-            getLockTask (task, taskView);
-            dismissTaskMenuView(mTarget);
-        }
-
-        static void getLockTask(Task task, TaskView tv){
-            StringBuilder sb = new StringBuilder();
-            sb.append("Lock Click# id: ");
-            sb.append(task.key.id);
-            sb.append(" component: ");
-            sb.append(task.key.baseIntent.getComponent());
-            sb.append(" state: ");
-            sb.append(task.isLocked);
-            sb.append(" -> ");
-            sb.append(!task.isLocked);
-            task.isLocked = !task.isLocked;
-            TaskUtils.setTaskLockState(tv.getContext(), task.key.baseIntent.getComponent(), task.isLocked, task.key);
-            tv.updateLockedView(task.isLocked, false);
-        }
-    }
 
     class SplitSelectSystemShortcut extends SystemShortcut {
         private final TaskView mTaskView;

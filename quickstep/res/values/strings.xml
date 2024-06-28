@@ -21,9 +21,6 @@
     <!-- Application name -->
     <string name="derived_app_name" translatable="false">@string/derp_app_name</string>
 
-    <string name="task_menu_item_unlock">Unlock</string>
-    <string name="task_menu_item_lock">Lock</string>
-
     <!-- Options for recent tasks -->
     <!-- Title for an option to keep an app pinned to the screen until it is unpinned -->
     <string name="recent_task_option_pin">Pin</string>
