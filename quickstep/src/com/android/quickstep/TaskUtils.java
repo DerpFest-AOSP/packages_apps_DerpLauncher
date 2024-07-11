@@ -36,11 +36,7 @@ import com.android.launcher3.util.PackageManagerHelper;
 import com.android.systemui.shared.recents.model.Task;
 import com.android.systemui.shared.system.ActivityManagerWrapper;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import android.os.Bundle;
 
 /**
  * Contains helpful methods for retrieving data from {@link Task}s.
@@ -48,7 +44,6 @@ import android.os.Bundle;
 public final class TaskUtils {
 
     private static final String TAG = "TaskUtils";
-
 
     private TaskUtils() {}
 
