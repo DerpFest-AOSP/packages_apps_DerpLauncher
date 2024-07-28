@@ -163,10 +163,15 @@ public class CustomLauncherModelDelegate extends QuickstepModelDelegate
             return;
         }
         Log.d(TAG, "Starting smartspace session for home");
-        mSmartspaceSession = ((SmartspaceManager) mContext.getSystemService(SmartspaceManager.class))
-                                    .createSmartspaceSession(new SmartspaceConfig.Builder(mContext, "home").build());
-        mSmartspaceSession.addOnTargetsAvailableListener(Executors.MODEL_EXECUTOR, this);
-        mSmartspaceSession.requestSmartspaceUpdate();
+
+        SmartspaceManager smartspaceManager = (SmartspaceManager) mContext.getSystemService(SmartspaceManager.class);
+        if (smartspaceManager != null) {
+            mSmartspaceSession = smartspaceManager.createSmartspaceSession(new SmartspaceConfig.Builder(mContext, "home").build());
+            mSmartspaceSession.addOnTargetsAvailableListener(Executors.MODEL_EXECUTOR, this);
+            mSmartspaceSession.requestSmartspaceUpdate();
+        } else {
+            Log.e(TAG, "SmartspaceManager is null, cannot create SmartspaceSession");
+        }
     }
 
     public class SmartspaceItem extends ItemInfo {
