@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2024 DerpFest
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Application name -->
+    <string name="derp_app_name" translatable="false">DerpLauncher</string>
+
+    <!-- Folder titles -->
+    <string name="google_folder_title" translatable="false">Google</string>
+
+    <!-- General -->
+    <string name="settings_title">Ajustes de la pantalla de inicio</string>
+
+    <!-- Categories -->
+    <string name="home_category_title">Pantalla de inicio</string>
+    <string name="home_category_summary">Doble toque, barra de estado y dock</string>
+    <string name="icons_category_title">Iconos</string>
+    <string name="icons_category_summary">Pack de iconos, tamaño y burbujas de notificación</string>
+    <string name="app_drawer_category_title">Cajón de aplicaciones</string>
+    <string name="app_drawer_category_summary">Iconos temáticos, opacidad y etiquetas de aplicaciones</string>
+    <string name="recents_category_title">Recientes</string>
+    <string name="recents_category_summary">Acciones, opacidad y gestos de agitado</string>
+    <string name="misc_category_title">Misceláneo</string>
+    <string name="misc_category_summary">Otras opciones</string>
+    <string name="general_category_title">General</string>
+    <string name="interface_category_title">Interfaz</string>
+    <string name="search_bar_category_title">Barra de búsqueda</string>
+    <string name="actions_category_title">Acciones rápidas</string>
+    <string name="quickspace_category_title">De un Vistazo</string>
+
+    <!-- Developer options -->
+    <string name="dev_options_title">Opciones de desarrollador</string>
+    <string name="dev_options_summary">Activa algunas características ocultas bajo tu responsabilidad</string>
+
+    <!-- Edit workspace -->
+    <string name="settings_lock_layout_title">Bloquear diseño</string>
+    <string name="settings_lock_layout_summary_on">Los iconos no pueden ser añadidos, quitados o movidos en la pantalla de inicio</string>
+    <string name="settings_lock_layout_summary_off">Los iconos pueden ser añadidos, quitados o movidos en la pantalla de inicio</string>
+    <string name="settings_edit_widgets_error">No es posible añadir iconos a la pantalla de inicio</string>
+
+    <!-- Hide labels -->
+    <string name="title_desktop_labels">Etiquetas de escritorio</string>
+    <string name="summary_desktop_labels">Mostrar las etiquetas de los iconos en el escritorio</string>
+    <string name="title_drawer_labels">Etiquetas en el cajón de aplicaciones</string>
+    <string name="summary_drawer_labels">Mostrar las etiquetas de los iconos en el cajón de aplicaciones</string>
+
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_app">Deslizar para acceder a la aplicación de Google</string>
+    <string name="pref_show_google_now_summary" translatable="false">@string/msg_minus_one_on_left</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">Cuando deslizas a la derecha desde la pantalla de inicio principal</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">Cuando deslizas a la izquierda desde la pantalla de inicio principal</string>
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">Por defecto</string>
+    <string name="custom_seekbar_default_value_to_set">Valor por defecto: <xliff:g id="v">%s</xliff:g>\nMantén pulsado para ajustar</string>
+    <string name="custom_seekbar_default_value_is_set">El valor por defecto está ajustado</string>
+
+    <!-- Icon size -->
+    <string name="icon_size_title">Tamaño de icono</string>
+
+    <!-- Font size -->
+    <string name="font_size_title">Tamaño de letra</string>
+
+    <!-- App label - max lines -->
+    <string name="icon_max_lines_title">Líneas máximas para las etiquetas de las aplicaciones</string>
+
+    <!-- Hotseat searchbar -->
+    <string name="label_search">Búsqueda</string>
+    <string name="label_lens">Google Lens</string>
+    <string name="label_voice_search">Búsqueda por voz</string>
+    <string name="dock_search_title">Barra de búsqueda de Google</string>
+    <string name="dock_search_summary">Barra de búsqueda en el dock inferior</string>
+    <string name="dock_theme_title">Iconos temáticos</string>
+    <string name="dock_theme_summary">Usa iconos temáticos para la barra de búsqueda</string>
+    <string name="search_radius_title">Radio de las esquinas</string>
+
+    <!-- Hotseat Background -->
+    <string name="hotseat_bg_title">Fondo del dock</string>
+    <string name="hotseat_bg_summary">Añade un fondo translúcido al dock</string>
+
+    <!-- Wallpaper scrolling -->
+    <string name="allow_wallpaper_scrolling">Desplazamiento del fondo de pantalla</string>
+    <string name="allow_wallpaper_scrolling_summary">Efecto de desplazamiento del fondo de pantalla para múltiples pantallas</string>
+
+    <!-- Wallpaper zooming -->
+    <string name="allow_wallpaper_zooming">Ampliación del fondo de pantalla</string>
+    <string name="allow_wallpaper_zooming_summary">Acerca o aleja el fondo de pantalla al usar el cajón o las aplicaciones recientes</string>
+
+    <!-- Homescreen Statusbar -->
+    <string name="show_statusbar_title">Mostrar barra de estado</string>
+    <string name="show_statusbar_summary">Muestra la barra de estado el la Pantalla de Inicio</string>
+
+    <!-- Top shadow -->
+    <string name="show_top_shadow_title">Mostrar sombra superior</string>
+    <string name="show_top_shadow_summary">Añade sombra bajo la barra de estado</string>
+
+    <!-- Row Height -->
+    <string name="row_height_title">Alto de la fila</string>
+    
+    <!-- Background blur -->
+    <string name="background_blur_title">Profundidad del desenfoque del fondo</string>
+    <string name="background_blur_summary">Ajusta el desenfoque para las tareas recientes y el cajón de aplicaciones</string>
+
+    <!-- Suggestions -->
+    <string name="suggestion_pref_screen_title">Sugerencias</string>
+    <string name="suggestion_pref_screen_desc">Sugerencias para Todas las Aplicaciones y la Pantalla de Inicio</string>
+
+    <!-- Background opacity -->
+    <string name="background_opacity_title">Opacidad del fondo</string>
+
+    <!-- Recents icons -->
+    <string name="recents_chips_title">Usar diseño compacto para las acciones</string>
+    <string name="recents_chips_summary">Puede ser requerido para mostrar un gran número de acciones</string>
+    <string name="recents_screenshot_title">Captura de pantalla</string>
+    <string name="recents_clear_all_title">Limpiar todo</string>
+    <string name="recents_lens_title">Lens</string>
+    <string name="recents_kill_app_title">Matar aplicación</string>
+
+    <!-- AppInfo -->
+    <string name="app_info_version_value" translatable="false">%1$s (%2$d)</string>
+    <string name="app_info_source">Origen</string>
+    <string name="app_info_source_unknown">Desconocido</string>
+    <string name="app_info_last_update">Última actualización</string>
+    <string name="app_info_version">Versión</string>
+    <string name="app_info_more">Más</string>
+
+    <!-- Kill App recents action shortcut -->
+    <string name="recent_task_option_kill_app">Matar</string>
+    <string name="recents_app_killed">Aplicación matada</string>
+
+    <!-- Memory info -->
+    <string name="meminfo_text">%1$s disponible | %2$s</string>
+    <string name="recents_meminfo_title">Información de memoria</string>
+
+    <!-- App drawer searchbar -->
+    <string name="drawer_search_title">Barra de búsqueda de aplicaciones</string>
+    <string name="drawer_search_summary">Barra de búsqueda en la parte superior del cajón</string>
+
+    <!-- Restart launcher -->
+    <string name="pref_restart_title">Reinicio</string>
+    <string name="pref_restart_summary">Reinicia DerpLauncher manualmente para aplicar los cambios pendientes</string>
+    <string name="restarting_launcher">Reiniciando DerpLauncher...</string>
+    <string name="restarting_launcher_changes">Reiniciando DerpLauncher para aplicar los cambios...</string>
+    <string name="updating_launcher_components">Reiniciando DerpLauncher para actualizar componentes...</string>
+
+    <!-- Shake Clear Recents -->
+    <string name="recents_shake_clear_all_title">Agitar el teléfono para limpiar todas las tareas</string>
+
+    <!-- Parallax -->
+    <string name="short_parallax_title">Permitir parallax corto</string>
+    <string name="short_parallax_summary">Activa el efecto completo de desplazamiento del fondo en un pequeño número de páginas en vez de cortar el fondo</string>
+    <string name="single_page_center_title">Centrado de una página</string>
+    <string name="single_page_center_summary">Centra el fondo si sólo se usa una página</string>
+
+    <!-- Icon pack -->
+    <string name="icon_pack_title">Paquete de iconos</string>
+    <string name="icon_pack_default_label">Por defecto</string>
+    <string name="icon_pack_add">Instalar más</string>
+    <string name="icon_pack_no_market">No hay una tienda de aplicaciones disponible</string>
+
+    <!-- About info -->
+    <string name="about_app_title" translatable="false">DerpLauncher</string>
+    <string name="about_app_subtitle">Basado en AOSP Launcher3</string>
+    <string name="about_app_version" translatable="false">AP1A.240505.005</string>
+    <string name="about_thanks_cat">Agradecimientos especiales a</string>
+    <string name="about">Acerca</string>
+    <string name="about_summary">Información acerca DerpLauncher</string>
+
+    <!-- Trust apps -->
+    <string name="trust_apps_manager_name">Aplicaciones Ocultas y Protegidas</string>
+    <string name="trust_apps_auth_manager">Desbloquear para gestionar las aplicaciones ocultas y protegidas</string>
+    <string name="trust_apps_auth_open_app">Autenticar para abrir %1$s</string>
+    <string name="trust_apps_loading">Cargando\u2026</string>
+    <string name="trust_apps_no_lock_error">Por favor, ajusta un bloqueo de pantalla seguro para restringir el acceso a aplicaciones</string>
+    <string name="trust_apps_help">Ayuda</string>
+    <string name="trust_apps_info_hidden">Las aplicaciones ocultas y sus widgets están ocultos del cajón</string>
+    <string name="trust_apps_info_protected">Las aplicaciones protegidas requieren autenticación para ser abiertas desde el lanzador</string>
+
+    <!-- All apps themed icons -->
+    <string name="pref_themed_icons_title">Iconos temáticos</string>
+    <string name="pref_themed_icons_summary">Sigue los iconos temáticos en la pantalla de inicio</string>
+
+    <!-- Dark Status Bar -->
+    <string name="perf_dark_status_bar_title">Barra de estado oscura</string>
+    <string name="perf_dark_status_bar_summary">Usa la barra de estado oscura en la Pantalla de Inicio</string>
+
+    <!-- Force monocrome icons -->
+    <string name="pref_force_mono_icons_title">Forzar iconos monocromo</string>
+    <string name="pref_force_mono_icons_summary">Fuerza los icono monocromo en las aplicaciones que no los soportan de forma nativa (requiere reactivar los iconos temáticos)</string>
+
+    <!-- Smartspace -->
+    <string name="smartspace_pref_title">De un Vistazo</string>
+    <string name="smartspace_pref_summary">Muestra el espacio inteligente en la parte superior de la pantalla de inicio</string>
+
+    <!-- Scroll Vibration -->
+    <string name="pref_scroll_vibration_title">Vibración de desplazamiento</string>
+    <string name="pref_scroll_vibration_summary">Activa la respuesta háptica al desplazarse entre las tareas recientes, si está soportado</string>
+
+    <!-- Gestures -->
+    <string name="pref_homescreen_dt_gestures_title">Doble toque</string>
+    <string name="pref_homescreen_dt_gestures_summary">Selecciona la acción del gesto de doble toque en la pantalla inicial</string>
+    <string name="pref_homescreen_gestures_none">Nada</string>
+    <string name="pref_homescreen_gestures_sleep">Apagar la pantalla</string>
+    <string name="pref_homescreen_gestures_torch">Linterna</string>
+    <string name="pref_homescreen_gestures_volume_panel">Panel de volumen</string>
+    <string name="pref_homescreen_gestures_clear_notifications">Limpiar las notificaciones</string>
+    <string name="pref_homescreen_gestures_screenshot">Captura de pantalla</string>
+    <string name="pref_homescreen_gestures_notifications">Notificationes</string>
+    <string name="pref_homescreen_gestures_qspanel">Panel de ajustes rápidos</string>
+    <string name="pref_homescreen_gestures_powermenu">Menú de apagado</string>
+</resources>
