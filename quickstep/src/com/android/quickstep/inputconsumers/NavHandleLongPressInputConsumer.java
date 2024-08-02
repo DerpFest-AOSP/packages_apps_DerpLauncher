@@ -68,9 +68,9 @@ public class NavHandleLongPressInputConsumer extends DelegateInputConsumer {
         mTouchSlopSquared = deviceState.getSquaredTouchSlop();
         mNavHandle = navHandle;
         mNavHandleWidth = navHandle.getNavHandleWidth(context);
-        mNavHandleLongPressHandler = NavHandleLongPressHandler.newInstance(context);
         mStatsLogManager = StatsLogManager.newInstance(context);
         mTopTaskTracker = TopTaskTracker.INSTANCE.get(context);
+        mNavHandleLongPressHandler = new NavHandleLongPressHandler(context, mTopTaskTracker);
     }
 
     @Override
