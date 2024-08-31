@@ -168,7 +168,7 @@ public class ImageActionUtils {
             startLensActivity(context, bitmap, crop, tag);
         });
     }
-    
+
     @WorkerThread
     public static void startLensActivity(Context context, Bitmap bitmap,
             Rect crop, String tag) {
