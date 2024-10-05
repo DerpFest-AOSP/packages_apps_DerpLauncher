@@ -3,5 +3,5 @@
     <item>
         <com.android.settingslib.widget.AdaptiveIconShapeDrawable android:height="@dimen/dashboard_tile_image_size" android:width="@dimen/dashboard_tile_image_size" android:color="@color/derp_base_bg"/>
     </item>
-    <item android:gravity="center" android:tint="?android:attr/textColorSecondary" android:height="@dimen/dashboard_tile_foreground_image_size" android:width="@dimen/dashboard_tile_foreground_image_size" android:drawable="@drawable/ic_derp_home"/>
+    <item android:gravity="center" android:tint="?android:attr/textColorSecondary" android:height="@dimen/dashboard_tile_foreground_image_size" android:width="@dimen/dashboard_tile_foreground_image_size" android:drawable="@drawable/ic_derp_icons"/>
 </layer-list>
