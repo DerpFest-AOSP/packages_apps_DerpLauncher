@@ -424,6 +424,8 @@ public class Launcher extends StatefulActivity<LauncherState>
 
     private InputMethodManager mInputMethodManager;
 
+    private boolean mWasImeOpened = false;
+
     public static Launcher getLauncher(Context context) {
         return fromContext(context);
     }
@@ -2909,11 +2911,20 @@ public class Launcher extends StatefulActivity<LauncherState>
      * @param progress Transition progress from 0 to 1; where 0 => home and 1 => all apps.
      */
     public void onAllAppsTransition(float progress) {
+        if (progress == 1f && !mWasImeOpened &&
+                Utilities.enableAutoIme(mWorkspace.getContext())) {
+            ExtendedEditText editText = mAppsView.getSearchUiManager().getEditText();
+            if (editText == null) return;
+            editText.showKeyboard();
+            mWasImeOpened = true;
+            return;
+        }
         if (progress > 0) return;
         if (mAppsView == null) return;
         if (mInputMethodManager == null) return;
         // make sure the keyboard is hidden when the AllApps view is closed
         mInputMethodManager.hideSoftInputFromWindow(mAppsView.getWindowToken(), 0);
+        mWasImeOpened = false;
     }
 
     /**

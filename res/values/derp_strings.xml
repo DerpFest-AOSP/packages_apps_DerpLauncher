@@ -192,4 +192,8 @@
     <string name="action_lock">Lock/Unlock app</string>
     <string name="unlock_app">Unlocked app in recents</string>
     <string name="lock_app">Locked app in recents</string>
+
+    <!-- Auto keyboard -->
+    <string name="pref_auto_keyboard_title">Auto keyboard</string>
+    <string name="pref_auto_keyboard_summary">Start searching when the drawer is expanded</string>
 </resources>

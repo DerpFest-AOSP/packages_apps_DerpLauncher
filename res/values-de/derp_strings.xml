@@ -169,4 +169,8 @@
     <string name="action_lock">App sperren/entsperren</string>
     <string name="unlock_app">App im App-Verlauf entsperrt</string>
     <string name="lock_app">App im App-Verlauf gesperrt</string>
+
+    <!-- Auto keyboard -->
+    <string name="pref_auto_keyboard_title">Tastaturautomatik</string>
+    <string name="pref_auto_keyboard_summary">Suche direkt starten, sobald die App-Übersicht geöffnet ist</string>
 </resources>
