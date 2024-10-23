@@ -52,4 +52,3 @@ public interface SearchCallback<T> {
      */
     void clearSearchResult();
 }
-
