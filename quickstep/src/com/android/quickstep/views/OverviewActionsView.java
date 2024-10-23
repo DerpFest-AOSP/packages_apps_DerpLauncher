@@ -206,6 +206,11 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
     }
 
     private void updateVisibilities() {
+        LayoutParams lp = (LayoutParams) mActionButtons.getLayoutParams();
+        lp.width = mUseChips ? LayoutParams.MATCH_PARENT : LayoutParams.WRAP_CONTENT;
+        mActionButtons.setLayoutParams(lp);
+
+        findViewById(R.id.end_space).setVisibility(mUseChips ? VISIBLE : GONE);
         findViewById(!mUseChips ? R.id.action2_screenshot : R.id.action_screenshot)
                 .setVisibility(GONE);
         findViewById(!mUseChips ? R.id.action2_clear_all : R.id.action_clear_all)
@@ -217,10 +222,13 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
                 mUseChips ? R.id.action2_screenshot : R.id.action_screenshot);
         screenshot.setOnClickListener(this);
         screenshot.setVisibility(mScreenshot ? VISIBLE : GONE);
+        findViewById(R.id.screenshot_space).setVisibility(
+                mUseChips && mScreenshot ? VISIBLE : GONE);
 
         View clearall = findViewById(mUseChips ? R.id.action2_clear_all : R.id.action_clear_all);
         clearall.setOnClickListener(this);
         clearall.setVisibility(mClearAll ? VISIBLE : GONE);
+        findViewById(R.id.clear_all_space).setVisibility(mUseChips && mClearAll ? VISIBLE : GONE);
 
         View lens = findViewById(mUseChips ? R.id.action2_lens : R.id.action_lens);
         lens.setOnClickListener(this);
@@ -228,6 +236,8 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
         boolean actualLensVisibility = mLens && Utilities.isGSAEnabled(getContext())
                 && (mUseChips || !mScreenshot || !mClearAll || (mDp != null && mDp.isTablet));
         lens.setVisibility(actualLensVisibility ? VISIBLE : GONE);
+        findViewById(R.id.lens_space).setVisibility(
+                actualLensVisibility && mUseChips ? VISIBLE : GONE);
 
         mSplitButton = findViewById(mUseChips ? R.id.action2_split : R.id.action_split);
         mSplitButton.setOnClickListener(this);
@@ -390,6 +400,8 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
         int desiredVisibility = mSplitButtonHiddenFlags == 0 ? VISIBLE : GONE;
         if (mSplitButton.getVisibility() != desiredVisibility) {
             mSplitButton.setVisibility(desiredVisibility);
+            findViewById(R.id.action_split_space).setVisibility(
+                    desiredVisibility == VISIBLE && mUseChips ? VISIBLE : GONE);
             mActionButtons.requestLayout();
         }
     }
