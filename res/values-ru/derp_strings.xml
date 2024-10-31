@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 DerpFest
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    
+        <!-- Общее -->
+    <string name="settings_title">Настройки главного экрана</string>
+    
+    <!-- Категории -->
+    <string name="home_category_title">Главный экран</string>
+    <string name="home_category_summary">Настройка панели Google Now и других параметров</string>
+    <string name="icons_category_title">Иконки</string>
+    <string name="icons_category_summary">Настройка размера иконок и других параметров</string>
+    <string name="app_drawer_category_title">Меню приложений</string>
+    <string name="app_drawer_category_summary">Настройка меню приложений</string>
+    <string name="recents_category_title">Недавние</string>
+    <string name="recents_category_summary">Обновление экрана обзора</string>
+    <string name="misc_category_title">Разное</string>
+    <string name="misc_category_summary">Другие опции</string>
+    <string name="general_category_title">Основные</string>
+    <string name="interface_category_title">Интерфейс</string>
+    <string name="search_bar_category_title">Поисковая строка</string>
+    
+    <!-- Опции разработчика -->
+    <string name="dev_options_title">Опции разработчика</string>
+    <string name="dev_options_summary">Включить скрытые функции на свой страх и риск</string>
+    
+    <!-- Редактирование рабочего пространства -->
+    <string name="settings_lock_layout_title">Блокировка макета</string>
+    <string name="settings_lock_layout_summary_on">Иконки и виджеты нельзя добавлять, удалять и перемещать на главном экране</string>
+    <string name="settings_lock_layout_summary_off">Иконки и виджеты можно добавлять, удалять и перемещать на главном экране</string>
+    <string name="settings_edit_widgets_error">Невозможно добавить виджеты на главный экран</string>
+    
+    <!-- Скрытие меток -->
+    <string name="title_desktop_labels">Метки на рабочем столе</string>
+    <string name="summary_desktop_labels">Показать метки иконок на рабочем столе</string>
+    <string name="title_drawer_labels">Метки в меню приложений</string>
+    <string name="summary_drawer_labels">Показать метки иконок в меню приложений</string>
+    
+    <!-- Настройки отображения Google Now на экране -1 в лаунчере -->
+    <string name="title_show_google_app">Смахните для доступа к Google</string>
+    <string name="msg_minus_one_on_left">При смахивании вправо с главного экрана</string>
+    <string name="msg_minus_one_on_right">При смахивании влево с главного экрана</string>
+    
+    <!-- Тематические иконки всех приложений -->
+    <string name="pref_themed_icons_title">Тематические иконки</string>
+    <string name="pref_themed_icons_summary">Используйте тематические иконки на главном экране</string>
+    
+    <!-- Доверенные приложения -->
+    <string name="trust_apps_manager_name">Скрытые и защищенные приложения</string>
+    <string name="trust_apps_auth_manager">Разблокируйте для управления скрытыми и защищенными приложениями</string>
+    <string name="trust_apps_auth_open_app">Аутентифицируйтесь для открытия %1$s</string>
+    <string name="trust_apps_loading">Загрузка\u2026</string>
+    <string name="trust_apps_no_lock_error">Пожалуйста, установите безопасный экран блокировки для ограничения доступа к приложениям</string>
+    <string name="trust_apps_help">Помощь</string>
+    <string name="trust_apps_info_hidden">Скрытые приложения и их виджеты скрыты из меню приложений</string>
+    <string name="trust_apps_info_protected">Для открытия защищенных приложений требуется аутентификация в лаунчере</string>
+    
+    <!-- Подсказки -->
+    <string name="suggestion_pref_screen_title">Подсказки</string>
+    <string name="suggestion_pref_screen_desc">Подсказки для всех приложений и главного экрана</string>
+    
+    <!-- Перезапуск лаунчера -->
+    <string name="pref_restart_title">Перезапуск</string>
+    <string name="pref_restart_summary">Перезапустите лаунчер вручную для применения настроек</string>
+    <string name="restarting_launcher">Перезапуск лаунчера...</string>
+    <string name="restarting_launcher_changes">Перезапуск лаунчера для применения изменений...</string>
+    <string name="updating_launcher_components">Перезапуск лаунчера для обновления компонентов...</string>
+    
+    <!-- Ползунок -->
+    <string name="proper_seekbar_value">Значение: <xliff:g id="v">%s</xliff:g></string>
+    <string name="proper_seekbar_default_value">По умолчанию</string>
+    <string name="proper_seekbar_default_value_to_set">Значение по умолчанию: <xliff:g id="v">%s</xliff:g>\nНажмите и удерживайте для установки</string>
+    <string name="proper_seekbar_default_value_is_set">Установлено значение по умолчанию</string>
+    
+    <!-- Размер иконок -->
+    <string name="icon_size_title">Размер иконок</string>
+    
+    <!-- Размер шрифта -->
+    <string name="font_size_title">Размер шрифта</string>
+    
+    <!-- Строка поиска на главном экране -->
+    <string name="label_search">Поиск</string>
+    <string name="label_lens">Google Lens</string>
+    <string name="label_voice_search">Голосовой поиск</string>
+    <string name="dock_search_title">Строка поиска Google</string>
+    <string name="dock_search_summary">Строка поиска в нижней панели</string>
+    
+    <!-- Закрытие приложения из последних действий -->
+    <string name="recent_task_option_kill_app">Принудительное закрытие</string>
+    <string name="recents_app_killed">Приложение закрыто</string>
+    
+    <!-- Фон панели быстрого запуска -->
+    <string name="hotseat_bg_title">Фон панели быстрого запуска</string>
+    <string name="hotseat_bg_summary">Добавить полупрозрачный фон к панели приложений</string>
+    
+    <!-- Прокрутка обоев -->
+    <string name="allow_wallpaper_scrolling">Прокрутка обоев</string>
+    <string name="allow_wallpaper_scrolling_summary">Эффект прокрутки обоев для нескольких экранов</string>
+    
+    <!-- Увеличение/уменьшение обоев -->
+    <string name="allow_wallpaper_zooming">Увеличение обоев</string>
+    <string name="allow_wallpaper_zooming_summary">Увеличьте или уменьшите обои при использовании меню приложений или последних приложений</string>
+    
+    <!-- Статусбар на главном экране -->
+    <string name="show_statusbar_title">Показать статусбар</string>
+    <string name="show_statusbar_summary">Показать статусбар на главном экране</string>
+    
+    <!-- Верхняя тень -->
+    <string name="show_top_shadow_title">Показать верхнюю тень</string>
+    <string name="show_top_shadow_summary">Добавить тень под статусбаром</string>
+    
+    <!-- Размытие фона -->
+    <string name="background_blur_title">Уровень размытия фона</string>
+    <string name="background_blur_summary">Настроить уровень размытия для последних и меню приложений</string>
+    
+    <!-- Прозрачность фона -->
+    <string name="background_opacity_title">Прозрачность фона</string>
+    
+    <!-- О приложении -->
+    <string name="about_app_subtitle">Основан на AOSP Launcher3</string>
+    <string name="about_app_version_text">Версия</string>
+    <string name="about_thanks_cat">Особая благодарность</string>
+    <string name="about">О приложении</string>
+    <string name="about_summary">Информация о DerpLauncher</string>
+    
+    <!-- Двойное касание для выключения -->
+    <string name="pref_sleep_gesture_title">Двойное касание для выключения</string>
+    <string name="pref_sleep_gesture_summary">Двойное касание по пустому месту для выключения экрана</string>
+    
+    <!-- Быстрые действия -->
+    <string name="category_recents">Быстрые действия</string>
+    <string name="action_lens">Lens</string>
+    <string name="show_lens_button_title">Показать кнопку Lens</string>
+    <string name="show_lens_button_summary">Заменить кнопку скриншота на кнопку Google Lens, если доступно</string>
+    
+    <!-- Информация о памяти -->
+    <string name="meminfo_text">%1$s доступно | %2$s</string>
+    <string name="recents_meminfo_title">Информация о памяти</string>
+    
+    <!-- Строка поиска в меню приложений -->
+    <string name="drawer_search_title">Строка поиска приложений</string>
+    <string name="drawer_search_summary">Строка поиска в верхней части меню приложений</string>
+    
+    <!-- Параллакс -->
+    <string name="short_parallax_title">Разрешить короткий параллакс</string>
+    <string name="short_parallax_summary">Включить полный эффект прокрутки обоев на меньшем количестве страниц вместо обрезки обоев</string>
+    <string name="single_page_center_title">Центрирование на одной странице</string>
+    <string name="single_page_center_summary">Центрировать обои при использовании одной страницы</string>
+    
+    <!-- Темный статусбар -->
+    <string name="perf_dark_status_bar_title">Темный статусбар</string>
+    <string name="perf_dark_status_bar_summary">Использовать темный статусбар на главном экране</string>
+    
+    <!-- Вибрация при прокрутке -->
+    <string name="pref_scroll_vibration_title">Вибрация при прокрутке</string>
+    <string name="pref_scroll_vibration_summary">Обратная связь при прокрутке списка последних приложений, если поддерживается</string>
+    
+    <!-- Принудительные монохромные иконки -->
+    <string name="pref_force_monochrome_themed_icons_title">Принудительно тематические иконки</string>
+    <string name="pref_force_monochrome_themed_icons_summary">Создать тематическую иконку для приложений, у которых ее нет (требуется повторное включение тематических иконок)</string>
+</resources>
+
