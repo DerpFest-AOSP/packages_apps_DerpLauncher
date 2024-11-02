@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 DerpFest
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Geral -->
+    <string name="settings_title">Configurações da tela inicial</string>
+
+    <!-- Categorias -->
+    <string name="home_category_title">Tela inicial</string>
+    <string name="home_category_summary">Personalize o painel do Google Now e mais</string>
+    <string name="icons_category_title">Ícones</string>
+    <string name="icons_category_summary">Ajuste o tamanho dos ícones e outras opções</string>
+    <string name="app_drawer_category_title">Gaveta de aplicativos</string>
+    <string name="app_drawer_category_summary">Personalize a gaveta de aplicativos</string>
+    <string name="recents_category_title">Recentes</string>
+    <string name="recents_category_summary">Personalize a tela de visão geral</string>
+    <string name="misc_category_title">Diversos</string>
+    <string name="misc_category_summary">Outras opções</string>
+    <string name="general_category_title">Geral</string>
+    <string name="interface_category_title">Interface</string>
+    <string name="search_bar_category_title">Barra de pesquisa</string>
+
+    <!-- Opções do desenvolvedor -->
+    <string name="dev_options_title">Opções do desenvolvedor</string>
+    <string name="dev_options_summary">Habilite funcionalidades ocultas por sua conta e risco</string>
+
+    <!-- Editar espaço de trabalho -->
+    <string name="settings_lock_layout_title">Bloquear layout</string>
+    <string name="settings_lock_layout_summary_on">Ícones e widgets não podem ser adicionados, removidos ou movidos na tela inicial</string>
+    <string name="settings_lock_layout_summary_off">Ícones e widgets podem ser adicionados, removidos ou movidos na tela inicial</string>
+    <string name="settings_edit_widgets_error">Não é possível adicionar widgets à tela inicial</string>
+
+    <!-- Ocultar rótulos -->
+    <string name="title_desktop_labels">Rótulos na área de trabalho</string>
+    <string name="summary_desktop_labels">Mostrar rótulos dos ícones na área de trabalho</string>
+    <string name="title_drawer_labels">Rótulos na gaveta</string>
+    <string name="summary_drawer_labels">Mostrar rótulos dos ícones na gaveta</string>
+
+    <!-- Título das configurações para mostrar o Google Now na tela -1 no launcher. -->
+    <string name="title_show_google_app">Deslizar para acessar o Google</string>
+    <!-- Mensagem de configurações explicando quando a tela -1 está disponível em um dispositivo LTR. -->
+    <string name="msg_minus_one_on_left">Quando você desliza para a direita da tela inicial principal</string>
+    <!-- Mensagem de configurações explicando quando a tela -1 está disponível em um dispositivo RTL. -->
+    <string name="msg_minus_one_on_right">Quando você desliza para a esquerda da tela inicial principal</string>
+
+    <!-- Ícones temáticos de todos os aplicativos -->
+    <string name="pref_themed_icons_title">Ícones temáticos</string>
+    <string name="pref_themed_icons_summary">Seguir ícones temáticos usados na tela inicial</string>
+
+    <!-- Aplicativos confiáveis -->
+    <string name="trust_apps_manager_name">Aplicativos ocultos e protegidos</string>
+    <string name="trust_apps_auth_manager">Desbloqueie para gerenciar aplicativos ocultos e protegidos</string>
+    <string name="trust_apps_auth_open_app">Autentique-se para abrir %1$s</string>
+    <string name="trust_apps_loading">Carregando\u2026</string>
+    <string name="trust_apps_no_lock_error">Configure uma tela de bloqueio segura para restringir o acesso aos aplicativos</string>
+    <string name="trust_apps_help">Ajuda</string>
+    <string name="trust_apps_info_hidden">Aplicativos ocultos e seus widgets estão ocultos na gaveta</string>
+    <string name="trust_apps_info_protected">Aplicativos protegidos exigem autenticação para serem abertos a partir do launcher</string>
+    
+    <!-- Sugestões -->
+    <string name="suggestion_pref_screen_title">Sugestões</string>
+    <string name="suggestion_pref_screen_desc">Para sugestões de todos os aplicativos e tela inicial</string>
+
+    <!-- Reiniciar o launcher -->
+    <string name="pref_restart_title">Reiniciar</string>
+    <string name="pref_restart_summary">Reinicie o launcher manualmente para aplicar configurações pendentes</string>
+    <string name="restarting_launcher">Reiniciando o launcher...</string>
+    <string name="restarting_launcher_changes">Reiniciando o launcher para aplicar mudanças...</string>
+    <string name="updating_launcher_components">Reiniciando o launcher para atualizar componentes...</string>
+
+    <!-- Seekbar adequada -->
+    <string name="proper_seekbar_value">Valor: <xliff:g id="v">%s</xliff:g></string>
+    <string name="proper_seekbar_default_value">Padrão</string>
+    <string name="proper_seekbar_default_value_to_set">Valor padrão: <xliff:g id="v">%s</xliff:g>\nPressione longamente para definir</string>
+    <string name="proper_seekbar_default_value_is_set">Valor padrão está definido</string>
+
+    <!-- Tamanho do ícone -->
+    <string name="icon_size_title">Tamanho do ícone</string>
+
+    <!-- Tamanho da fonte -->
+    <string name="font_size_title">Tamanho da fonte</string>
+
+    <!-- Barra de pesquisa na hotseat -->
+    <string name="label_search">Pesquisar</string>
+    <string name="label_lens">Google Lens</string>
+    <string name="label_voice_search">Pesquisa por voz</string>
+    <string name="dock_search_title">Barra de pesquisa do Google</string>
+    <string name="dock_search_summary">Barra de pesquisa na doca inferior</string>
+
+    <!-- Encerrar aplicativo na ação de atalho de recentes -->
+    <string name="recent_task_option_kill_app">Forçar fechamento</string>
+    <string name="recents_app_killed">Aplicativo fechado</string>
+
+    <!-- Fundo da hotseat -->
+    <string name="hotseat_bg_title">Fundo da hotseat</string>
+    <string name="hotseat_bg_summary">Adicionar fundo translúcido à doca de aplicativos</string>
+
+    <!-- Rolagem de papel de parede -->
+    <string name="allow_wallpaper_scrolling">Rolagem de papel de parede</string>
+    <string name="allow_wallpaper_scrolling_summary">Efeito de rolagem de papel de parede para várias telas</string>
+
+    <!-- Zoom do papel de parede -->
+    <string name="allow_wallpaper_zooming">Zoom do papel de parede</string>
+    <string name="allow_wallpaper_zooming_summary">Aumentar ou diminuir o zoom do papel de parede ao usar a gaveta ou aplicativos recentes</string>
+
+    <!-- Barra de status da tela inicial -->
+    <string name="show_statusbar_title">Mostrar barra de status</string>
+    <string name="show_statusbar_summary">Mostrar barra de status na tela inicial</string>
+
+    <!-- Sombra superior -->
+    <string name="show_top_shadow_title">Mostrar sombra superior</string>
+    <string name="show_top_shadow_summary">Adicionar sombra sob a barra de status</string>
+    
+    <!-- Desfoque de fundo -->
+    <string name="background_blur_title">Profundidade do desfoque de fundo</string>
+    <string name="background_blur_summary">Definir nível de desfoque para aplicativos recentes e gaveta de aplicativos</string>
+
+    <!-- Opacidade de fundo -->
+    <string name="background_opacity_title">Opacidade de fundo</string>
+
+    <!-- Informações sobre -->
+    <string name="about_app_subtitle">Baseado no AOSP Launcher3</string>
+    <string name="about_app_version_text">Versão</string>
+    <string name="about_thanks_cat">Agradecimentos especiais a</string>
+    <string name="about">Sobre</string>
+    <string name="about_summary">Informações sobre o DerpLauncher</string>
+
+    <!-- DT2S -->
+    <string name="pref_sleep_gesture_title">Toque duplo para dormir</string>
+    <string name="pref_sleep_gesture_summary">Toque duplo em espaço vazio para desligar a tela</string>
+
+    <!-- Recents Lens -->
+    <string name="category_recents">Ações rápidas</string>
+    <string name="action_lens">Lens</string>
+    <string name="show_lens_button_title">Mostrar botão Lens</string>
+    <string name="show_lens_button_summary">Substituir o botão de captura de tela pelo botão Google Lens, se disponível</string>
+
+    <!-- Informações de memória -->
+    <string name="meminfo_text">%1$s disponível | %2$s</string>
+    <string name="recents_meminfo_title">Informações de memória</string>
+
+    <!-- Barra de pesquisa na gaveta de aplicativos -->
+    <string name="drawer_search_title">Barra de pesquisa de aplicativos</string>
+    <string name="drawer_search_summary">Barra de pesquisa no topo da gaveta de aplicativos</string>
+
+    <!-- Parallax -->
+    <string name="short_parallax_title">Permitir efeito Parallax</string>
+    <string name="short_parallax_summary">Habilitar efeito de rolagem completo do papel de parede em números menores de páginas em vez de cortar o papel de parede</string>
+    <string name="single_page_center_title">Página única centralizada</string>
+    <string name="single_page_center_summary">Centralizar o papel de parede se estiver usando apenas uma página</string>
+
+    <!-- Barra de status escura -->
+    <string name="perf_dark_status_bar_title">Barra de status escura</string>
+    <string name="perf_dark_status_bar_summary">Usar barra de status escura na tela inicial</string>
+
+    <!-- Vibração ao rolar -->
+    <string name="pref_scroll_vibration_title">Vibração ao rolar</string>
+    <string name="pref_scroll_vibration_summary">Feedback tátil ao rolar pelos aplicativos recentes, se suportado</string>
+
+    <!-- Forçar ícones monocromáticos -->
+    <string name="pref_force_monochrome_themed_icons_title">Forçar ícones temáticos</string>
+    <string name="pref_force_monochrome_themed_icons_summary">Gerar ícone temático para aplicativos que não possuem um (requer reativação dos ícones temáticos)</string>
+</resources>
