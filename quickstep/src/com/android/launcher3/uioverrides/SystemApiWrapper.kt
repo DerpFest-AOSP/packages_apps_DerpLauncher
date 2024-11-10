@@ -46,6 +46,7 @@ import com.android.launcher3.util.Executors
 import com.android.launcher3.util.StartActivityParams
 import com.android.launcher3.util.UserIconInfo
 import com.android.quickstep.util.FadeOutRemoteTransition
+import org.derpfest.app.ParallelSpaceManager
 
 /** A wrapper for the hidden API calls */
 open class SystemApiWrapper(context: Context?) : ApiWrapper(context) {
@@ -65,7 +66,11 @@ open class SystemApiWrapper(context: Context?) : ApiWrapper(context) {
             return super.queryAllUsers()
         }
         val users = ArrayMap<UserHandle, UserIconInfo>()
-        mContext.getSystemService(UserManager::class.java)!!.userProfiles?.forEach { user ->
+        val usersList = buildList {
+            addAll(mContext.getSystemService(UserManager::class.java)!!.userProfiles)
+            addAll(ParallelSpaceManager.getInstance().getParallelUserHandles())
+        }
+        usersList.forEach { user ->
             mContext.getSystemService(LauncherApps::class.java)!!.getLauncherUserInfo(user)?.apply {
                 users[user] =
                     UserIconInfo(
