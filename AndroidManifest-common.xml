@@ -53,6 +53,7 @@
     <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.ACCESS_CONTEXTUAL_SEARCH"/>
+    <uses-permission android:name="android.permission.REGISTER_STATS_PULL_ATOM"/>
 
     <!-- for parallel spaces -->
     <uses-permission android:name="com.android.permission.MANAGE_PARALLEL_SPACES" />
