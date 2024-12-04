@@ -46,6 +46,7 @@ import static com.android.launcher3.popup.QuickstepSystemShortcut.getSplitSelect
 import static com.android.launcher3.popup.SystemShortcut.APP_INFO;
 import static com.android.launcher3.popup.SystemShortcut.BUBBLE_SHORTCUT;
 import static com.android.launcher3.popup.SystemShortcut.DONT_SUGGEST_APP;
+import static com.android.launcher3.popup.SystemShortcut.FLOATING;
 import static com.android.launcher3.popup.SystemShortcut.INSTALL;
 import static com.android.launcher3.popup.SystemShortcut.PRIVATE_PROFILE_INSTALL;
 import static com.android.launcher3.popup.SystemShortcut.UNINSTALL;
@@ -484,6 +485,7 @@ public class QuickstepLauncher extends Launcher implements RecentsViewContainer,
                 APP_INFO, WellbeingModel.SHORTCUT_FACTORY, mHotseatPredictionController));
         shortcuts.addAll(getSplitShortcuts());
         shortcuts.add(UNINSTALL);
+        shortcuts.add(FLOATING);
         shortcuts.add(WIDGETS);
         shortcuts.add(INSTALL);
         if (Flags.enablePrivateSpaceInstallShortcut()) {
