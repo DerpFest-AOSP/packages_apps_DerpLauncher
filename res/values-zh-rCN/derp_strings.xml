@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 Neoteric OS
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- General -->
+    <string name="settings_title">主屏设置</string>
+
+    <!-- Categories -->
+    <string name="home_category_title">主屏</string>
+    <string name="home_category_summary">设置 Google Now 面板等</string>
+    <string name="icons_category_title">图标</string>
+    <string name="icons_category_summary">设置图标大小等</string>
+    <string name="app_drawer_category_title">应用抽屉</string>
+    <string name="app_drawer_category_summary">自定义应用抽屉</string>
+    <string name="misc_category_title">其他</string>
+    <string name="misc_category_summary">其他选项</string>
+    <string name="general_category_title">常规</string>
+    <string name="interface_category_title">界面</string>
+    <string name="search_bar_category_title">搜索栏</string>
+    <string name="quickspace_category_title">概览</string>
+
+    <!-- Developer options -->
+    <string name="dev_options_title">开发者选项</string>
+    <string name="dev_options_summary">启用一些隐藏功能，风险自负</string>
+
+    <!-- Edit workspace -->
+    <string name="settings_lock_layout_title">锁定布局</string>
+    <string name="settings_lock_layout_summary_on">无法在主屏上添加、移除或移动图标和小部件</string>
+    <string name="settings_lock_layout_summary_off">可以在主屏上添加、移除或移动图标和小部件</string>
+    <string name="settings_edit_widgets_error">无法在主屏上添加小部件</string>
+
+    <!-- Hide labels -->
+    <string name="title_desktop_labels">桌面标签</string>
+    <string name="summary_desktop_labels">在桌面上显示图标标签</string>
+    <string name="title_drawer_labels">抽屉标签</string>
+    <string name="summary_drawer_labels">在应用抽屉中显示图标标签</string>
+
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_app">滑动访问 Google 应用</string>
+
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">从主屏右滑时可见</string>
+
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">从主屏左滑时可见</string>
+
+    <!-- All apps themed icons -->
+    <string name="pref_themed_icons_title">主题图标</string>
+    <string name="pref_themed_icons_summary">使用主屏上的主题图标</string>
+
+    <!-- Suggestions -->
+    <string name="suggestion_pref_screen_title">建议</string>
+    <string name="suggestion_pref_screen_desc">所有应用和主屏的建议</string>
+
+    <!-- Restart launcher -->
+    <string name="pref_restart_title">重启</string>
+    <string name="pref_restart_summary">手动重启启动器以应用待处理的设置</string>
+    <string name="restarting_launcher">正在重启启动器...</string>
+    <string name="restarting_launcher_changes">正在重启启动器以应用更改...</string>
+    <string name="updating_launcher_components">正在重启启动器以更新组件...</string>
+
+    <!-- Proper seekbar -->
+    <string name="proper_seekbar_value">值: <xliff:g id="v">%s</xliff:g></string>
+    <string name="proper_seekbar_default_value">默认</string>
+    <string name="proper_seekbar_default_value_to_set">默认值: <xliff:g id="v">%s</xliff:g>\n长按以设置</string>
+    <string name="proper_seekbar_default_value_is_set">默认值已设置</string>
+
+    <!-- Icon size -->
+    <string name="icon_size_title">图标大小</string>
+
+    <!-- Font size -->
+    <string name="font_size_title">字体大小</string>
+
+    <!-- Hotseat searchbar -->
+    <string name="label_search">搜索</string>
+    <string name="label_lens">Google Lens</string>
+    <string name="label_voice_search">语音搜索</string>
+    <string name="dock_search_title">Google搜索栏</string>
+    <string name="dock_search_summary">底部应用坞中的搜索栏</string>
+
+    <!-- Kill App recents action shortcut -->
+    <string name="recent_task_option_kill_app">强制关闭</string>
+    <string name="recents_app_killed">应用已关闭</string>
+
+    <!-- Hotseat Background -->
+    <string name="hotseat_bg_title">Hotseat背景</string>
+    <string name="hotseat_bg_summary">为应用坞添加半透明背景</string>
+
+    <!-- Wallpaper scrolling -->
+    <string name="allow_wallpaper_scrolling">壁纸滚动</string>
+    <string name="allow_wallpaper_scrolling_summary">为多个屏幕提供壁纸滚动效果</string>
+
+    <!-- Wallpaper zooming -->
+    <string name="allow_wallpaper_zooming">壁纸缩放</string>
+    <string name="allow_wallpaper_zooming_summary">在使用应用抽屉或最近应用时缩放壁纸</string>
+
+    <!-- Homescreen Statusbar -->
+    <string name="show_statusbar_title">显示状态栏</string>
+    <string name="show_statusbar_summary">在主屏上显示状态栏</string>
+
+    <!-- Top shadow -->
+    <string name="show_top_shadow_title">显示顶部阴影</string>
+    <string name="show_top_shadow_summary">在状态栏下方添加阴影</string>
+
+    <!-- DT2S -->
+    <string name="pref_sleep_gesture_title">双击休眠</string>
+    <string name="pref_sleep_gesture_summary">双击空白区域关闭屏幕</string>
+
+    <!-- Force monochrome icons -->
+    <string name="pref_force_monochrome_themed_icons_title">强制主题图标</string>
+    <string name="pref_force_monochrome_themed_icons_summary">为没有图标的应用生成主题图标（需要重新切换主题图标）</string>
+
+    <!-- App drawer searchbar -->
+    <string name="drawer_search_title">应用搜索栏</string>
+    <string name="drawer_search_summary">在应用抽屉顶部的搜索栏</string>
+
+    <!-- Parallax -->
+    <string name="short_parallax_title">允许短视差效果</string>
+    <string name="short_parallax_summary">在较少页面的情况下启用完整的壁纸滚动效果，而不是裁剪壁纸</string>
+    <string name="single_page_center_title">单页面居中</string>
+    <string name="single_page_center_summary">如果只使用单个页面，则将壁纸居中</string>
+
+    <!-- Dark Status Bar -->
+    <string name="perf_dark_status_bar_title">深色状态栏</string>
+    <string name="perf_dark_status_bar_summary">在主屏上使用深色状态栏</string>
+
+    <!-- Lock -->
+    <string name="action_lock">锁定/解锁应用</string>
+    <string name="unlock_app">解锁的应用在最近任务中</string>
+    <string name="lock_app">锁定的应用在最近任务中</string>
+
+    <!-- AppInfo -->
+    <string name="app_info_source">来源</string>
+    <string name="app_info_source_system">系统</string>
+    <string name="app_info_last_update">最后更新</string>
+    <string name="app_info_version">版本</string>
+    <string name="app_info_more">更多</string>
+
+    <!-- Icon pack -->
+    <string name="icon_pack_title">图标包</string>
+    <string name="icon_pack_default_label">默认</string>
+    <string name="icon_pack_add">安装更多</string>
+    <string name="icon_pack_no_market">没有可用的应用商店</string>
+
+    <!-- Smartspace -->
+    <string name="smartspace_pref_title">概览</string>
+    <string name="smartspace_pref_summary">在主屏顶部显示概览</string>
+
+    <!-- Auto keyboard -->
+    <string name="pref_auto_keyboard_title">自动键盘</string>
+    <string name="pref_auto_keyboard_summary">展开抽屉时自动开始搜索</string>
+
+    <!-- Haptics on DT2S -->
+    <string name="pref_haptics_on_dt2s_title">双击休眠时的触觉反馈</string>
+    <string name="pref_haptics_on_dt2s_summary">是否在执行双击休眠手势时启用触觉反馈</string>
+</resources>
