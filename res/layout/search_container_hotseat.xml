@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.android.launcher3.qsb.QsbLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<com.android.launcher3.qsb.QsbLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/qsb_widget_height"
     android:layout_alignParentTop="true"
     android:layout_centerHorizontal="true"
-    android:layout_gravity="center|top"
+    android:layout_gravity="top|center_horizontal"
+    
     android:background="@drawable/bg_google_qsb"
     android:backgroundTint="@color/hotseat_qsb_bg_color"
     android:contentDescription="@string/label_search">
@@ -14,47 +15,41 @@
         android:id="@+id/g_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="start|center"
+        android:layout_gravity="start|center_vertical"
         android:layout_marginStart="@dimen/qsb_g_icon_marginStart"
         android:src="@drawable/ic_super_g_color" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="end|center"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp"
-        android:paddingStart="6dp"
-        android:clipToPadding="false"
-        android:orientation="horizontal"
-        tools:ignore="RtlSymmetry">
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginTop="-6dp"
+        android:layout_marginBottom="-6dp"
+        android:layout_marginEnd="@dimen/qsb_marginEnd"
+        android:orientation="horizontal">
 
         <com.android.launcher3.qsb.AssistantIconView
             android:id="@+id/mic_icon"
-            android:layout_width="@dimen/qsb_icon_width"
+            android:layout_width="@dimen/qsb_icon_tap_size"
             android:layout_height="match_parent"
-            android:layout_marginStart="-6dp"
             android:background="@drawable/pill_ripple"
             android:clickable="true"
             android:contentDescription="@string/label_voice_search"
             android:scaleType="fitCenter"
             android:focusable="false"
-            android:padding="@dimen/qsb_icon_padding"
-            tools:src="@drawable/ic_mic_color" />
+            android:src="@drawable/ic_mic_color" />
 
         <ImageButton
             android:id="@+id/lens_icon"
-            android:layout_width="@dimen/qsb_icon_width"
+            android:layout_width="@dimen/qsb_icon_tap_size"
             android:layout_height="match_parent"
-            android:layout_marginStart="-6dp"
             android:background="@drawable/pill_ripple"
             android:clickable="true"
             android:contentDescription="@string/label_lens"
             android:focusable="false"
-            android:padding="@dimen/qsb_icon_padding"
+            android:padding="@dimen/qsb_lens_padding"
             android:scaleType="fitCenter"
             android:visibility="gone"
-            tools:src="@drawable/ic_lens_color"
-            tools:visibility="visible" />
+            android:src="@drawable/ic_lens_color" />
     </LinearLayout>
 </com.android.launcher3.qsb.QsbLayout>
