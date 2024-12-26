@@ -330,7 +330,7 @@
         <item name="android:colorEdgeEffect">?android:attr/textColorSecondary</item>
         <item name="android:colorPrimaryDark">#616161</item> <!-- Gray 700 -->
         <item name="widgetPickerPrimarySurfaceColor">
-            @color/widget_picker_primary_surface_color_dark</item>
+            @*android:color/system_neutral1_900</item>
         <item name="widgetPickerSecondarySurfaceColor">
             @color/widget_picker_secondary_surface_color_dark</item>
         <item name="widgetPickerTitleColor">
