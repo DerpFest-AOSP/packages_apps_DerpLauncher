@@ -159,7 +159,7 @@
         <item name="android:textColorHint">#A0FFFFFF</item>
         <item name="android:colorControlHighlight">#19FFFFFF</item>
         <item name="android:colorPrimary">#FF212121</item>
-        <item name="allAppsScrimColor">@*android:color/system_neutral2_900</item>
+        <item name="allAppsScrimColor">@*android:color/system_background_dark</item>
         <item name="allappsHeaderProtectionColor">@*android:color/transparent</item>
         <item name="searchHintHighlight">@*android:color/system_accent1_100</item>
         <item name="allAppsNavBarScrimColor">#80000000</item>
