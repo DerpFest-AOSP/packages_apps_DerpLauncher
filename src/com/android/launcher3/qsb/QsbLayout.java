@@ -13,16 +13,21 @@ import androidx.core.view.ViewCompat;
 import com.android.launcher3.BaseActivity;
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.R;
+import com.android.launcher3.Reorderable;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.qsb.QsbContainerView;
+import com.android.launcher3.util.MultiTranslateDelegate;
 import com.android.launcher3.views.ActivityContext;
 import android.view.View;
 
-public class QsbLayout extends FrameLayout {
+public class QsbLayout extends FrameLayout implements Reorderable {
 
     ImageButton lensIcon;
     AssistantIconView assistantIcon;
     Context mContext;
+
+    private final MultiTranslateDelegate mTranslateDelegate = new MultiTranslateDelegate(this);
+    private float mScaleForReorderBounce = 1f;
 
     public QsbLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -83,6 +88,23 @@ public class QsbLayout extends FrameLayout {
                     .putExtra("lens_activity_params", bundle);
             mContext.startActivity(lensIntent);
         });
+    }
+
+    @Override
+    public MultiTranslateDelegate getTranslateDelegate() {
+        return mTranslateDelegate;
+    }
+
+    @Override
+    public void setReorderBounceScale(float scale) {
+        mScaleForReorderBounce = scale;
+        super.setScaleX(scale);
+        super.setScaleY(scale);
+    }
+
+    @Override
+    public float getReorderBounceScale() {
+        return mScaleForReorderBounce;
     }
 
 }
