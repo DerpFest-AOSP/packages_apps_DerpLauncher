@@ -656,7 +656,7 @@ public class DeviceProfile {
         } else {
             hotseatQsbSpace = Utilities.showQSB(context)
                     ? pxFromDp(inv.hotseatQsbSpace[mTypeIndex], mMetrics) : 0;
-            hotseatBarBottomSpace = Utilities.showQSB(context)
+            hotseatBarBottomSpace = (Utilities.showQSB(context) || isTaskbarPresent)
                     ? pxFromDp(inv.hotseatBarBottomSpace[mTypeIndex], mMetrics) : 0;
             mHotseatBarEdgePaddingPx =
                     isVerticalBarLayout() ? workspacePageIndicatorHeight : 0;
