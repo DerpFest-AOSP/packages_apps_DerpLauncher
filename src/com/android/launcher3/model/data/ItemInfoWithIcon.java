@@ -113,7 +113,7 @@ public abstract class ItemInfoWithIcon extends ItemInfo {
     /**
      * Flag indicating this item can't be pinned to home screen.
      */
-    public static final int FLAG_NOT_PINNABLE = 1 << 13;
+    public static final int FLAG_NOT_PINNABLE = 0 << 13;
 
     /**
      * Flag indicating whether the package related to the item & user corresponds to that of
