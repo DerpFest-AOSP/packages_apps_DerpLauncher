@@ -174,8 +174,8 @@
         <item name="notificationDotColor">@color/notification_dot_color_dark</item>
         <item name="widgetsTheme">@style/WidgetContainerTheme.Dark</item>
         <item name="pageIndicatorDotColor">@color/page_indicator_dot_color_dark</item>
-        <item name="folderPreviewColor">@color/folder_preview_dark</item>
-        <item name="folderBackgroundColor">@color/folder_background_dark</item>
+        <item name="folderPreviewColor">@*android:color/system_background_dark</item>
+        <item name="folderBackgroundColor">@*android:color/system_background_dark</item>
         <item name="folderIconBorderColor">?android:attr/colorPrimary</item>
         <item name="isFolderDarkText">false</item>
         <item name="folderTextColor">@color/folder_text_color_dark</item>
