@@ -59,7 +59,7 @@ public class MonochromeIconFactory extends Drawable {
     private final Paint mDrawPaint;
     private final Rect mSrcRect;
 
-    MonochromeIconFactory(int iconBitmapSize) {
+    public MonochromeIconFactory(int iconBitmapSize) {
         float extraFactor = AdaptiveIconDrawable.getExtraInsetFraction();
         float viewPortScale = 1 / (1 + 2 * extraFactor);
         mBitmapSize = Math.round(iconBitmapSize * 2 * viewPortScale);
