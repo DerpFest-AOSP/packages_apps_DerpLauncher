@@ -237,60 +237,16 @@ public class PreviewSurfaceRenderer {
     private void loadModelData() {
         final Context inflationContext = getPreviewContext();
         final InvariantDeviceProfile idp = new InvariantDeviceProfile(inflationContext, mGridName);
-        if (GridSizeMigrationUtil.needsToMigrate(inflationContext, idp)) {
-            // Start the migration
-            PreviewContext previewContext = new PreviewContext(inflationContext, idp);
-            // Copy existing data to preview DB
-            LauncherDbUtils.copyTable(LauncherAppState.getInstance(mContext)
-                            .getModel().getModelDbController().getDb(),
-                    TABLE_NAME,
-                    LauncherAppState.getInstance(previewContext)
-                            .getModel().getModelDbController().getDb(),
-                    TABLE_NAME,
-                    mContext);
-            LauncherAppState.getInstance(previewContext)
-                    .getModel().getModelDbController().clearEmptyDbFlag();
-
-            BgDataModel bgModel = new BgDataModel();
-            new LoaderTask(
-                    LauncherAppState.getInstance(previewContext),
-                    /* bgAllAppsList= */ null,
-                    bgModel,
-                    LauncherAppState.getInstance(previewContext).getModel().getModelDelegate(),
-                    new BaseLauncherBinder(LauncherAppState.getInstance(previewContext), bgModel,
-                            /* bgAllAppsList= */ null, new Callbacks[0])) {
-
-                @Override
-                public void run() {
-                    DeviceProfile deviceProfile = idp.getDeviceProfile(previewContext);
-                    String query =
-                            LauncherSettings.Favorites.SCREEN + " = " + Workspace.FIRST_SCREEN_ID
-                                    + " or " + LauncherSettings.Favorites.CONTAINER + " = "
-                                    + LauncherSettings.Favorites.CONTAINER_HOTSEAT;
-                    if (deviceProfile.isTwoPanels) {
-                        query += " or " + LauncherSettings.Favorites.SCREEN + " = "
-                                + Workspace.SECOND_SCREEN_ID;
-                    }
-                    loadWorkspace(new ArrayList<>(), query, null, null);
-
-                    final SparseArray<Size> spanInfo = getLoadedLauncherWidgetInfo();
-                    MAIN_EXECUTOR.execute(() -> {
-                        renderView(previewContext, mBgDataModel, mWidgetProvidersMap, spanInfo,
-                                idp);
-                        mLifeCycleTracker.add(previewContext::onDestroy);
-                    });
-                }
-            }.run();
-        } else {
-            LauncherAppState.getInstance(inflationContext).getModel().loadAsync(dataModel -> {
-                if (dataModel != null) {
-                    MAIN_EXECUTOR.execute(() -> renderView(inflationContext, dataModel, null,
-                            null, idp));
-                } else {
-                    Log.e(TAG, "Model loading failed");
-                }
-            });
-        }
+        LauncherAppState.getInstance(inflationContext)
+                .getModel().getModelDbController().tryMigrateDB(null);
+        LauncherAppState.getInstance(inflationContext).getModel().loadAsync(dataModel -> {
+            if (dataModel != null) {
+                MAIN_EXECUTOR.execute(() -> renderView(inflationContext, dataModel, null,
+                        null, idp));
+            } else {
+                Log.e(TAG, "Model loading failed");
+            }
+        });
     }
 
     @UiThread
