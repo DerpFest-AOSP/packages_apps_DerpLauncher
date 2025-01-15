@@ -54,8 +54,7 @@ import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
  * Settings activity for Launcher.
  */
 public class SettingsHomescreen extends CollapsingToolbarBaseActivity
-        implements OnPreferenceStartFragmentCallback, OnPreferenceStartScreenCallback,
-        SharedPreferences.OnSharedPreferenceChangeListener{
+        implements OnPreferenceStartFragmentCallback, OnPreferenceStartScreenCallback {
 
     public static final String EXTRA_FRAGMENT_ARG_KEY = ":settings:fragment_args_key";
     public static final String EXTRA_SHOW_FRAGMENT_ARGS = ":settings:show_fragment_args";
@@ -94,23 +93,6 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
             fm.beginTransaction()
                     .replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame, f)
                     .commit();
-        }
-        LauncherPrefs.getPrefs(getApplicationContext()).registerOnSharedPreferenceChangeListener(this);
-    }
-
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) { 
-        switch (key) {
-            case Utilities.KEY_DOCK_SEARCH:
-            case Utilities.KEY_SHOW_HOTSEAT_BG:
-            case Utilities.KEY_STATUS_BAR:
-            case Utilities.KEY_SHORT_PARALLAX:
-            case Utilities.KEY_SINGLE_PAGE_CENTER:
-            case Utilities.KEY_SMARTSPACE:
-                LauncherAppState.getInstance(this).setNeedsRestart();
-                break;
-            default:
-                break;
         }
     }
 
@@ -158,7 +140,8 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
     /**
      * This fragment shows the launcher preferences.
      */
-    public static class HomescreenSettingsFragment extends PreferenceFragmentCompat {
+    public static class HomescreenSettingsFragment extends PreferenceFragmentCompat
+            implements SharedPreferences.OnSharedPreferenceChangeListener {
 
         private String mHighLightKey;
         private boolean mPreferenceHighlighted = false;
@@ -213,6 +196,34 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
                         bottomPadding + insets.getSystemWindowInsetBottom());
                 return insets.consumeSystemWindowInsets();
             });
+        }
+
+        @Override
+        public void onStart() {
+            super.onStart();
+            LauncherPrefs.getPrefs(getContext()).registerOnSharedPreferenceChangeListener(this);
+        }
+
+        @Override
+        public void onStop() {
+            super.onStop();
+            LauncherPrefs.getPrefs(getContext()).unregisterOnSharedPreferenceChangeListener(this);
+        }
+
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+            switch (key) {
+                case Utilities.KEY_DOCK_SEARCH:
+                case Utilities.KEY_SHOW_HOTSEAT_BG:
+                case Utilities.KEY_STATUS_BAR:
+                case Utilities.KEY_SHORT_PARALLAX:
+                case Utilities.KEY_SINGLE_PAGE_CENTER:
+                case Utilities.KEY_SMARTSPACE:
+                    LauncherAppState.getInstance(getContext()).setNeedsRestart();
+                    break;
+                default:
+                    break;
+            }
         }
 
         @Override
