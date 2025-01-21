@@ -1078,8 +1078,7 @@ public final class Utilities {
 
     public static int getBlurRadius(Context context) {
         SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
-        return prefs.getInt(KEY_BLUR_DEPTH,
-                (int) context.getResources().getDimension(R.dimen.max_depth_blur_radius));
+        return prefs.getInt(KEY_BLUR_DEPTH, 0);
     }
 
     public static int getRecentsOpacity(Context context) {
