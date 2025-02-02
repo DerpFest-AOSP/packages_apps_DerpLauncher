@@ -205,6 +205,12 @@
     <!-- A widget category label for grouping widgets related to battery. [CHAR_LIMIT=30] -->
     <string name="widget_category_battery">Battery</string>
 
+    <!-- A widget category label for grouping widgets related to bubbles. [CHAR_LIMIT=30] -->
+    <string name="widget_category_bubbles">Bubbles</string>
+
+    <!-- A widget category label for grouping widgets related to snapshot. [CHAR_LIMIT=30] -->
+    <string name="widget_category_snapshot">Snapshot</string>
+
     <!-- A widget category label for grouping widgets related to weather. [CHAR_LIMIT=30] -->
     <string name="widget_category_weather">Weather</string>
 </resources>

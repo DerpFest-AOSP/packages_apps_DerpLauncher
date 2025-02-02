@@ -26,19 +26,33 @@
         launcher:category="1"
         launcher:sectionDrawable="@drawable/ic_note_taking_widget_category"
         launcher:sectionTitle="@string/widget_category_note_taking">
-        <widget launcher:provider="com.android.systemui/.notetask.shortcut.CreateNoteTaskShortcutActivity" />
+        <widget launcher:provider="com.android.systemui/com.android.systemui.notetask.shortcut.CreateNoteTaskShortcutActivity" />
     </section>
     <section
         launcher:category="2"
         launcher:sectionDrawable="@drawable/ic_weather_widget_category"
         launcher:sectionTitle="@string/widget_category_weather">
-        <widget launcher:alsoKeepInApp="true" launcher:provider="com.google.android.googlequicksearchbox/com.google.android.apps.search.assistant.verticals.snapshot.widgets.weather.WeatherWidget_Receiver" />
-        <widget launcher:alsoKeepInApp="true" launcher:provider="com.google.android.googlequicksearchbox/com.google.android.apps.search.assistant.verticals.snapshot.widgets.weather.FreeformWeatherWidget_Receiver" />
+        <widget launcher:provider="com.google.android.googlequicksearchbox/com.google.android.apps.search.assistant.verticals.snapshot.widgets.weather.WeatherWidget_Receiver" />
+        <widget launcher:provider="com.google.android.googlequicksearchbox/com.google.android.apps.search.assistant.verticals.snapshot.widgets.weather.FreeformWeatherWidget_Receiver" />
     </section>
     <section
         launcher:category="3"
         launcher:sectionDrawable="@drawable/ic_battery_widget_category"
         launcher:sectionTitle="@string/widget_category_battery">
         <widget launcher:provider="com.google.android.settings.intelligence/com.google.android.settings.intelligence.modules.batterywidget.impl.BatteryAppWidgetProvider" />
+    </section>
+    <section
+        launcher:category="4"
+        launcher:sectionDrawable="@drawable/ic_snapshot_widget_category"
+        launcher:sectionTitle="@string/widget_category_snapshot">
+        <widget
+            launcher:provider="com.google.android.apps.pixel.familyspace/com.google.android.apps.pixel.familyspace.widget.FamilySpaceWidgetProvider" />
+    </section>
+    <section
+        launcher:category="5"
+        launcher:sectionDrawable="@drawable/ic_bubbles_widget_category"
+        launcher:sectionTitle="@string/widget_category_bubbles">
+        <widget
+            launcher:provider="com.android.systemui/com.android.wm.shell.bubbles.shortcut.CreateBubbleShortcutActivity" />
     </section>
 </widget-sections>

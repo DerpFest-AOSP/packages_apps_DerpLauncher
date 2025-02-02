@@ -20,4 +20,6 @@
     <color name="derp_base_bg">@*android:color/system_accent1_600</color>
 
     <color name="mid_clear_all_background_color">@*android:color/system_neutral2_50</color>
+
+    <color name="icon_background">#ff4285f4</color>
 </resources>
