@@ -445,6 +445,10 @@ public interface TaskShortcutFactory {
         @Override
         public List<SystemShortcut> getShortcuts(RecentsViewContainer container,
                 TaskContainer taskContainer) {
+            if (UserHandle.myUserId() != 0) {
+                return null;
+            }
+
             final Task task = taskContainer.getTask();
             if (!task.isDockable) {
                 return null;
