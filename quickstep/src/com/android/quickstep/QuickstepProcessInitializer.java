@@ -23,11 +23,15 @@ import android.os.Build;
 import android.os.RemoteException;
 import android.os.UserManager;
 import android.util.Log;
+import android.graphics.ImageDecoder;
 import android.view.ThreadedRenderer;
 
 import com.android.launcher3.BuildConfig;
 import com.android.launcher3.MainProcessInitializer;
+import com.android.launcher3.R;
 import com.android.systemui.shared.system.InteractionJankMonitorWrapper;
+
+import java.util.Set;
 
 @SuppressWarnings("unused")
 @TargetApi(Build.VERSION_CODES.R)
@@ -63,11 +67,24 @@ public class QuickstepProcessInitializer extends MainProcessInitializer {
         ThreadedRenderer.setContextPriority(
                 ThreadedRenderer.EGL_CONTEXT_PRIORITY_HIGH_IMG);
 
+        setupImageDecoder(context);
+
         // Enable binder tracing on system server for calls originating from Launcher
         try {
             ActivityManager.getService().enableBinderTracing();
         } catch (RemoteException e) {
             Log.e(TAG, "Unable to enable binder tracing", e);
         }
+    }
+
+    private void setupImageDecoder(Context context) {
+        // Limit the max memory usage.
+        int maxMemoryMb = context.getResources().getInteger(R.integer.max_launcher_memory_mb);
+        long maxMemoryBytes = maxMemoryMb * 1024L * 1024L;
+        // Get the allowed mime types from the resources.
+        Set<String> allowedMimeTypes = Set.of(context.getResources().getStringArray(
+                R.array.allowed_image_mime_types));
+        ImageDecoder.setDefaultProcessListener(
+                new LauncherProcessImageListener(maxMemoryBytes, allowedMimeTypes));
     }
 }
